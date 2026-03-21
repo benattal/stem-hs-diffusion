@@ -1,0 +1,10 @@
+{
+  "layout": "diffusionSlider",
+  "sectionLabel": "Principle: How to Generate Images",
+  "title": "Forward Diffusion Process",
+  "description": "Drag the slider to see how noise is progressively added to an image. Diffusion models learn to reverse this process — starting from pure noise and gradually recovering the original image.",
+  "sourceImage": "/slides/diffusion-interactive/source.jpg",
+  "steps": 50,
+  "labels": { "left": "Clean Image (t=0)", "right": "Pure Noise (t=T)" },
+  "footnote": "Ho, Jain, and Abbeel. \"Denoising diffusion probabilistic models.\" NeurIPS 33, 2020."
+}

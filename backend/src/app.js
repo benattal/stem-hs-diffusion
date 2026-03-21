@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
+import pollRouter from './routes/poll.js';
 
 const app = express();
 
@@ -26,6 +27,8 @@ app.get('/health', (req, res) => {
     uptime: process.uptime()
   });
 });
+
+app.use('/api/poll', pollRouter);
 
 app.get('/', (req, res) => {
   res.json({ status: 'ok', service: 'vision-workshop-api' });

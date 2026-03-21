@@ -9,6 +9,10 @@ import DiscussionSlide from './layouts/DiscussionSlide/DiscussionSlide.jsx';
 import DiagramSlide from './layouts/DiagramSlide/DiagramSlide.jsx';
 import MediaSlide from './layouts/MediaSlide/MediaSlide.jsx';
 import ColabLinkSlide from './layouts/ColabLinkSlide/ColabLinkSlide.jsx';
+import DiffusionSliderSlide from './layouts/DiffusionSliderSlide/DiffusionSliderSlide.jsx';
+import PollSlide from './layouts/PollSlide/PollSlide.jsx';
+import PollResultsSlide from './layouts/PollResultsSlide/PollResultsSlide.jsx';
+import EmbeddingSpaceSlide from './layouts/EmbeddingSpaceSlide/EmbeddingSpaceSlide.jsx';
 
 const layoutMap = {
   title: TitleSlide,
@@ -19,6 +23,10 @@ const layoutMap = {
   diagram: DiagramSlide,
   media: MediaSlide,
   colabLink: ColabLinkSlide,
+  diffusionSlider: DiffusionSliderSlide,
+  poll: PollSlide,
+  pollResults: PollResultsSlide,
+  embeddingSpace: EmbeddingSpaceSlide,
 };
 
 export default function SlideRenderer({ slide, buildStep, direction, sections }) {
@@ -41,7 +49,7 @@ export default function SlideRenderer({ slide, buildStep, direction, sections })
       onClick={(e) => {
         // Don't advance if clicking interactive elements
         const tag = e.target.tagName.toLowerCase();
-        if (tag === 'a' || tag === 'button' || tag === 'video' || tag === 'input') {
+        if (tag === 'a' || tag === 'button' || tag === 'video' || tag === 'input' || tag === 'canvas') {
           e.stopPropagation();
         }
       }}

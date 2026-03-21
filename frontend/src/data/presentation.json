@@ -12,7 +12,7 @@
     {
       "id": "benefits-dangers",
       "title": "Benefits and Dangers of Generative AI",
-      "slides": ["outline-benefits-dangers", "discussion", "why-learn"]
+      "slides": ["outline-benefits-dangers", "discussion", "poll-vote", "poll-results", "why-learn"]
     },
     {
       "id": "how-to-generate",
@@ -22,7 +22,9 @@
         "randomness-to-images",
         "architecture-build",
         "clip-model",
+        "clip-interactive",
         "diffusion-models",
+        "diffusion-interactive",
         "prompt-guidance"
       ]
     },

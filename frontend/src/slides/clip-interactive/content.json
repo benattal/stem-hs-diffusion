@@ -1,0 +1,6 @@
+{
+  "layout": "embeddingSpace",
+  "sectionLabel": "Principle: How to Generate Images",
+  "title": "CLIP Embedding Space",
+  "description": "CLIP maps images and text into the same space. Click any point to see its nearest neighbors — notice how matching image-text pairs cluster together."
+}
