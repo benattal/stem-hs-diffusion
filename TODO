@@ -6,11 +6,15 @@ Website features
 Slides
 =======
 * Benefits and dangers 
+    - Dangers slide
+        - Real time poll
     - Why we're learning about it slide
         - Visual examples of why it's useful
 * Diffusion process slide
     - Better animations for diffusion process
     - Linear diffusion process
+    - Demo
+        - Slider, manipulating the amount of noise
 * CLIP
     - Illustration of embedding
 
