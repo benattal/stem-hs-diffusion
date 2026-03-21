@@ -5,18 +5,28 @@ Website features
 
 Slides
 =======
-* Benefits and dangers 
-    - Dangers slide
-        - Real time poll
+* Benefits and dangers slide
+    - Benefits/dangers slide
+        - Add a real time poll (displayed on the next slide)
+        - For now, have preset answer distribution
+        - But add the infrastructure to let different website users vote
     - Why we're learning about it slide
-        - Visual examples of why it's useful
+        - Visual examples of...
+            * Fake articles/images
+            * Why it's a useful tool
+                - Coding/making software
+            * But emphasize that it can be wrong
 * Diffusion process slide
-    - Better animations for diffusion process
-    - Linear diffusion process
-    - Demo
-        - Slider, manipulating the amount of noise
-* CLIP
-    - Illustration of embedding
+    - Better animations for the diffusion process
+        - Linear diffusion process (image on one side, noise on the other)
+        - Make it interactable
+            * Slider to manipulate the amount of noise
+* CLIP slide
+    - Illustration of embedding mapping from text/images to 2D embedding space
+    - Interactive demo
+        - Select different points on the graph
+        - Produce different image/text pairs 
+        - Do this assigning image/text pairs to a point, finding the nearest neighbor when selecting a new point
 
 Other
 =======
