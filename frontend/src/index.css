@@ -706,6 +706,227 @@ kbd {
   margin: 0 2px;
 }
 
+/* ─── Toolbar Buttons ────────────────────────────────────────── */
+.toolbar-buttons {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  gap: 8px;
+  z-index: 50;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.presentation:hover .toolbar-buttons {
+  opacity: 1;
+}
+
+.toolbar-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all var(--transition);
+}
+
+.toolbar-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+/* ─── Presenter View ─────────────────────────────────────────── */
+.presenter-view {
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.presenter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.presenter-timer {
+  font-size: 2rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent-secondary);
+}
+
+.presenter-slide-info {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.presenter-build-info {
+  color: var(--accent);
+}
+
+.presenter-nav-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.presenter-nav-buttons button {
+  padding: 8px 20px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: var(--font);
+  transition: all var(--transition);
+}
+
+.presenter-nav-buttons button:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.presenter-body {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  padding: 16px 24px;
+  flex: 1;
+  min-height: 0;
+}
+
+.presenter-current,
+.presenter-next {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+}
+
+.presenter-current h3,
+.presenter-next h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.presenter-slide-preview {
+  background: var(--bg-slide);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  flex-shrink: 0;
+}
+
+.presenter-slide-preview--next {
+  opacity: 0.6;
+}
+
+.preview-section {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.preview-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.preview-build-step {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--accent-secondary);
+}
+
+.presenter-notes {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.presenter-notes h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+.presenter-notes-content {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  background: var(--bg-elevated);
+  border-radius: var(--radius);
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.presenter-notes-content p {
+  margin-bottom: 0.75em;
+}
+
+.presenter-notes-content p:last-child {
+  margin-bottom: 0;
+}
+
+.presenter-notes-content em {
+  color: var(--accent-secondary);
+  font-style: italic;
+}
+
+.presenter-notes-content strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.presenter-notes-content ul,
+.presenter-notes-content ol {
+  padding-left: 1.5em;
+  margin-bottom: 0.75em;
+}
+
+.presenter-notes-content code {
+  background: var(--bg-card);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.presenter-notes-content blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1em;
+  margin: 0.75em 0;
+  color: var(--text-muted);
+}
+
 /* ─── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .slide {

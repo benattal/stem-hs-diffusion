@@ -14,7 +14,10 @@
       "Bash(node scripts/extract-pptx-media.js)",
       "Bash(node:*)",
       "Bash(npx vite:*)",
-      "Bash(timeout 15 npx concurrently \"cd backend && node src/server.mjs\" \"cd frontend && npx vite --host\")"
+      "Bash(timeout 15 npx concurrently \"cd backend && node src/server.mjs\" \"cd frontend && npx vite --host\")",
+      "Bash(find /c/Users/battal/Documents/Projects/vision_workshop -type f \\\\\\(-name *.pptx -o -name assets \\\\\\))",
+      "Bash(find /c/Users/battal/Documents/Projects/vision_workshop -not -path */node_modules/* -not -path */.git/* -not -path */dist/* -type f)",
+      "Bash(npm ls:*)"
     ]
   }
 }

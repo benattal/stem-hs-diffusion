@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-export default function useKeyboardNavigation({ goNext, goPrev, toggleOverview }) {
+export default function useKeyboardNavigation({ goNext, goPrev, toggleOverview, toggleFullscreen, openPresenterWindow }) {
   useEffect(() => {
     function handleKeyDown(e) {
       // Ignore if user is typing in an input
@@ -25,6 +25,16 @@ export default function useKeyboardNavigation({ goNext, goPrev, toggleOverview }
           e.preventDefault();
           toggleOverview();
           break;
+        case 'f':
+        case 'F':
+          e.preventDefault();
+          toggleFullscreen?.();
+          break;
+        case 'p':
+        case 'P':
+          e.preventDefault();
+          openPresenterWindow?.();
+          break;
         case 'Escape':
           e.preventDefault();
           toggleOverview(false);
@@ -36,5 +46,5 @@ export default function useKeyboardNavigation({ goNext, goPrev, toggleOverview }
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [goNext, goPrev, toggleOverview]);
+  }, [goNext, goPrev, toggleOverview, toggleFullscreen, openPresenterWindow]);
 }
