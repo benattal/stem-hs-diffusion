@@ -1,4 +1,4 @@
-Website
+Website features
 =======
 * Fullscreen/presenter notes support
 * Real time poll for discussion questions
@@ -6,8 +6,12 @@ Website
     - Linear diffusion process
 * Mobile support
 
+Bug fixes
+=======
+* Clunky/jittery animations
+
 Other
-======
+=======
 * Open source/deploy source website
 * Share website with others
 * Encourage others to test notebooks on their phones

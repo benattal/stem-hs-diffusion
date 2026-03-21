@@ -2,7 +2,7 @@ const unzipper = require('unzipper');
 const fs = require('fs');
 const path = require('path');
 
-const PPTX = path.join(__dirname, '..', 'diffusion_workshop.pptx');
+const PPTX = path.join(__dirname, '../assets', 'diffusion_workshop.pptx');
 
 async function main() {
   // Step 1: Read all relevant files from the PPTX into memory
