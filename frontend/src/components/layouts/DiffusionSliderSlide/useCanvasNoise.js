@@ -19,39 +19,35 @@ function gaussianPair(rng) {
   return [mag * Math.cos(2 * Math.PI * u2), mag * Math.sin(2 * Math.PI * u2)];
 }
 
-export default function useCanvasNoise(imageSrc, steps = 50) {
+export default function useCanvasNoise(imageSrc) {
   const canvasRef = useRef(null);
   const imageDataRef = useRef(null);
   const noiseDataRef = useRef(null);
   const imageLoadedRef = useRef(false);
 
-  // Pre-generate full noise frame once the image dimensions are known
+  // Pre-generate full-color noise (independent R, G, B channels)
   const generateNoise = useCallback((width, height) => {
     const rng = mulberry32(42);
-    const noise = new Uint8ClampedArray(width * height * 4);
-    for (let i = 0; i < noise.length; i += 4) {
+    const len = width * height * 4;
+    const noise = new Uint8ClampedArray(len);
+    for (let i = 0; i < len; i += 4) {
+      // Each channel gets its own independent Gaussian sample
+      const [r1, r2] = gaussianPair(rng);
       const [g1, g2] = gaussianPair(rng);
-      const val1 = Math.round(128 + g1 * 60);
-      const val2 = Math.round(128 + g2 * 60);
-      noise[i] = val1;
-      noise[i + 1] = val1;
-      noise[i + 2] = val1;
+      // Use g2 for blue since we have a spare value
+      noise[i] = Math.round(128 + r1 * 60);     // R
+      noise[i + 1] = Math.round(128 + r2 * 60);  // G
+      noise[i + 2] = Math.round(128 + g1 * 60);  // B
       noise[i + 3] = 255;
-      if (i + 4 < noise.length) {
-        noise[i + 4] = val2;
-        noise[i + 5] = val2;
-        noise[i + 6] = val2;
-        noise[i + 7] = 255;
-        i += 4;
-      }
     }
     return noise;
   }, []);
 
-  // Load image
+  // Load image — re-runs when imageSrc changes
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    imageLoadedRef.current = false;
     const ctx = canvas.getContext('2d');
     const img = new Image();
     img.crossOrigin = 'anonymous';
@@ -63,7 +59,10 @@ export default function useCanvasNoise(imageSrc, steps = 50) {
       noiseDataRef.current = generateNoise(canvas.width, canvas.height);
       imageLoadedRef.current = true;
       // Draw clean image initially
-      ctx.putImageData(new ImageData(new Uint8ClampedArray(imageDataRef.current), canvas.width, canvas.height), 0, 0);
+      ctx.putImageData(
+        new ImageData(new Uint8ClampedArray(imageDataRef.current), canvas.width, canvas.height),
+        0, 0
+      );
     };
     img.src = imageSrc;
   }, [imageSrc, generateNoise]);
@@ -78,8 +77,7 @@ export default function useCanvasNoise(imageSrc, steps = 50) {
     const len = src.length;
     const out = new Uint8ClampedArray(len);
 
-    // Use a cosine schedule similar to real diffusion models
-    // alpha_bar goes from 1 (clean) to ~0 (noise)
+    // Cosine schedule similar to real diffusion models
     const t = noiseLevel;
     const alphaBar = Math.cos((t * Math.PI) / 2) ** 2;
     const sqrtAlpha = Math.sqrt(alphaBar);
