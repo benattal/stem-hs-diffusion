@@ -5,25 +5,23 @@ export default function ProgressiveBuildSlide({ slide, buildStep }) {
 
   return (
     <div className="slide--progressive">
-      <motion.h2
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.4 }}
-      >
-        {slide.title}
-      </motion.h2>
+      <h2>{slide.title}</h2>
 
       <div className="build-steps">
         <AnimatePresence>
           {steps.map((step, i) => {
             if (i > buildStep) return null;
+            const isNew = i === buildStep;
             return (
               <motion.div
                 key={i}
                 className="build-step"
-                initial={{ y: 30, opacity: 0, scale: 0.95 }}
-                animate={{ y: 0, opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, ease: 'easeOut' }}
+                initial={isNew ? { y: 20, opacity: 0 } : false}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                  duration: 0.4,
+                  ease: [0.25, 0.1, 0.25, 1],
+                }}
               >
                 <div className="build-step-header">
                   <span className="build-step-label">{step.label}</span>
@@ -32,12 +30,7 @@ export default function ProgressiveBuildSlide({ slide, buildStep }) {
                   )}
                 </div>
                 {step.media && step.media.length > 0 && (
-                  <motion.div
-                    className="build-step-media"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.2, duration: 0.4 }}
-                  >
+                  <div className="build-step-media">
                     {step.media.map((m, j) => (
                       m.type === 'video' ? (
                         <video key={j} src={m.src} autoPlay muted loop playsInline />
@@ -45,7 +38,7 @@ export default function ProgressiveBuildSlide({ slide, buildStep }) {
                         <img key={j} src={m.src} alt="" loading="lazy" />
                       )
                     ))}
-                  </motion.div>
+                  </div>
                 )}
               </motion.div>
             );

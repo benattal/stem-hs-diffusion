@@ -69,6 +69,11 @@
       "title": "Benefits and Dangers of Generative AI",
       "slides": [
         {
+          "id": "outline-benefits-dangers",
+          "layout": "outline",
+          "activeSection": "benefits-dangers"
+        },
+        {
           "id": "discussion",
           "layout": "discussion",
           "sectionLabel": "Benefits and Dangers of Generative AI",
@@ -167,8 +172,7 @@
           "title": "Diffusion Models",
           "description": "Diffusion models learn to reverse a noising process. Starting from pure noise, they gradually denoise to create a coherent image.",
           "media": [
-            { "type": "video", "src": "/media/videos/media2.mp4" },
-            { "type": "image", "src": "/media/images/image21.png" }
+            { "type": "video", "src": "/media/videos/media2.mp4" }
           ],
           "footnote": "Ho, Jain, and Abbeel. \"Denoising diffusion probabilistic models.\" NeurIPS 33, 2020."
         },

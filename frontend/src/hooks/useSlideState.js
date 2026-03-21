@@ -1,11 +1,23 @@
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo, useEffect } from 'react';
 import { presentation, getFlatSlides } from '../data/presentation.js';
+
+function loadSaved(key, max) {
+  try {
+    const v = parseInt(sessionStorage.getItem(key), 10);
+    return Number.isFinite(v) && v >= 0 && v < max ? v : 0;
+  } catch { return 0; }
+}
 
 export default function useSlideState() {
   const flatSlides = useMemo(() => getFlatSlides(presentation), []);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [buildStep, setBuildStep] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(() => loadSaved('slide-index', flatSlides.length));
+  const [buildStep, setBuildStep] = useState(() => loadSaved('slide-build', 100));
   const [direction, setDirection] = useState(1);
+
+  useEffect(() => {
+    sessionStorage.setItem('slide-index', currentIndex);
+    sessionStorage.setItem('slide-build', buildStep);
+  }, [currentIndex, buildStep]);
 
   const currentSlide = flatSlides[currentIndex];
   const totalSlides = flatSlides.length;

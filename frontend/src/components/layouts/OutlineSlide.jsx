@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-
 export default function OutlineSlide({ slide, sections }) {
   const activeId = slide.activeSection;
 
@@ -16,16 +14,10 @@ export default function OutlineSlide({ slide, sections }) {
           else if (i < activeIdx) cls += ' outline-item--completed';
 
           return (
-            <motion.li
-              key={section.id}
-              className={cls}
-              initial={{ x: -20, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: i * 0.1, duration: 0.4 }}
-            >
+            <li key={section.id} className={cls}>
               <span className="outline-number">{i + 1}</span>
               {section.title}
-            </motion.li>
+            </li>
           );
         })}
       </ul>
