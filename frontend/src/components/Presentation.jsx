@@ -36,12 +36,16 @@ export default function Presentation() {
     setShowOverview(prev => force !== undefined ? force : !prev);
   }, []);
 
+  const toggleNotes = useCallback(() => {
+    openPresenterWindow();
+  }, [openPresenterWindow]);
+
   useKeyboardNavigation({
     goNext: state.goNext,
     goPrev: state.goPrev,
     toggleOverview,
     toggleFullscreen,
-    openPresenterWindow,
+    openPresenterWindow: toggleNotes,
   });
 
   useSwipeNavigation({
@@ -96,7 +100,7 @@ export default function Presentation() {
         </button>
         <button
           className="toolbar-btn"
-          onClick={(e) => { e.stopPropagation(); openPresenterWindow(); }}
+          onClick={(e) => { e.stopPropagation(); toggleNotes(); }}
           title="Open presenter notes (P)"
         >
           📋
