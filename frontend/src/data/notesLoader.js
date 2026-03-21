@@ -1,21 +1,19 @@
-import presenterNotes from './presenterNotes.json';
-
-// Eagerly import all .md files from data/notes/ as raw text at build time
-const noteFiles = import.meta.glob('./notes/*.md', {
+// Eagerly import all notes .md files from slide directories at build time
+const noteFiles = import.meta.glob('../slides/**/notes*.md', {
   eager: true,
   query: '?raw',
   import: 'default',
 });
 
-// Build a filename → content map
-const fileContents = {};
+// Build a lookup: { slideId: { "notes.md": content, "notes-0.md": content, ... } }
+const notesMap = {};
 for (const [path, content] of Object.entries(noteFiles)) {
-  const filename = path.split('/').pop();
-  fileContents[filename] = content;
-}
-
-function resolve(filename) {
-  return fileContents[filename] ?? '';
+  // path looks like "../slides/{slide-id}/notes.md" or "../slides/{slide-id}/notes-0.md"
+  const parts = path.split('/');
+  const filename = parts.pop();
+  const slideId = parts.pop();
+  if (!notesMap[slideId]) notesMap[slideId] = {};
+  notesMap[slideId][filename] = content;
 }
 
 /**
@@ -23,22 +21,19 @@ function resolve(filename) {
  * For progressive-build slides, pass the current buildStep index.
  */
 export function getNotesForSlide(slideId, buildStep = 0) {
-  const entry = presenterNotes[slideId];
+  const entry = notesMap[slideId];
   if (!entry) return '';
 
-  // Build-step slides with per-step files
-  if (entry.buildStepFiles) {
-    return resolve(entry.buildStepFiles[buildStep] ?? entry.buildStepFiles[0]);
+  // Build-step slides with per-step notes files (notes-0.md, notes-1.md, ...)
+  const stepFile = `notes-${buildStep}.md`;
+  if (entry[stepFile]) {
+    return entry[stepFile];
   }
 
-  // Single file reference
-  if (entry.file) {
-    return resolve(entry.file);
+  // Single notes file
+  if (entry['notes.md']) {
+    return entry['notes.md'];
   }
 
-  // Inline fallback (notes/buildStepNotes still work if someone prefers inline)
-  if (entry.buildStepNotes) {
-    return entry.buildStepNotes[buildStep] ?? entry.buildStepNotes[0] ?? '';
-  }
-  return entry.notes ?? '';
+  return '';
 }

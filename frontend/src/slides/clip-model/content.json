@@ -1,0 +1,11 @@
+{
+  "layout": "diagram",
+  "sectionLabel": "Principle: How to Generate Images",
+  "title": "CLIP Model",
+  "description": "CLIP learns to match images with their text descriptions. It encodes both text and images into the same space, so it can measure how well they correspond.",
+  "media": [
+    { "type": "image", "src": "/slides/clip-model/image19.jpeg", "caption": "\"A photo of a cat\"" },
+    { "type": "image", "src": "/slides/clip-model/image20.jpeg", "caption": "\"A photo of a dog\"" }
+  ],
+  "footnote": "Radford et al. \"Learning transferable visual models from natural language supervision.\" ICML, 2021."
+}

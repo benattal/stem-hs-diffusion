@@ -1,0 +1,12 @@
+{
+  "layout": "content",
+  "sectionLabel": "Principle: How to Generate Images",
+  "title": "From Randomness to Images",
+  "bullets": [
+    "But how do AI images and videos actually work?"
+  ],
+  "footnote": "Reference: \"But how do AI images and videos actually work?\" \u2013 3Blue1Brown",
+  "media": [
+    { "type": "image", "src": "/slides/randomness-to-images/image15.png" }
+  ]
+}

@@ -1,9 +1,37 @@
 import presentationData from './presentation.json';
 
+// Eagerly import all slide content.json files at build time
+const slideModules = import.meta.glob('../slides/*/content.json', {
+  eager: true,
+  import: 'default',
+});
+
+// Build a slideId → content map
+const slideContent = {};
+for (const [path, content] of Object.entries(slideModules)) {
+  // path looks like "../slides/{slide-id}/content.json"
+  const slideId = path.split('/').at(-2);
+  slideContent[slideId] = content;
+}
+
 /**
- * Deep-clone the JSON data so we can mutate it freely.
+ * Deep-clone the JSON data and resolve slide references.
+ * Each section's `slides` array contains slide IDs (strings).
+ * We replace them with the full slide objects from content.json,
+ * annotated with the slide id.
  */
 const presentation = JSON.parse(JSON.stringify(presentationData));
+
+for (const section of presentation.sections) {
+  section.slides = section.slides.map((slideId) => {
+    const content = slideContent[slideId];
+    if (!content) {
+      console.warn(`No content.json found for slide "${slideId}"`);
+      return { id: slideId, layout: 'content', title: `Missing: ${slideId}` };
+    }
+    return { id: slideId, ...JSON.parse(JSON.stringify(content)) };
+  });
+}
 
 /**
  * Helper: find a slide by its id across all sections.
@@ -18,26 +46,7 @@ function findSlide(id) {
 }
 
 // ─── Slide overrides ────────────────────────────────────────────
-// Use this section to programmatically patch slides after loading
-// from JSON. This is useful for dynamic content, computed values,
-// or anything that can't be expressed in static JSON.
-//
-// Examples:
-//
-//   // Override a slide's title
-//   Object.assign(findSlide('title'), {
-//     subtitle: `Last updated: ${new Date().toLocaleDateString()}`,
-//   });
-//
-//   // Add a dynamically generated slide
-//   const introSection = presentation.sections.find(s => s.id === 'intro');
-//   introSection.slides.push({
-//     id: 'dynamic-slide',
-//     layout: 'content',
-//     title: 'Generated at build time',
-//     bullets: ['This slide was added via presentation.js'],
-//   });
-//
+// Use this section to programmatically patch slides after loading.
 // ─────────────────────────────────────────────────────────────────
 
 export { presentation, findSlide };

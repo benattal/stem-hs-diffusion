@@ -1,0 +1,11 @@
+{
+  "layout": "discussion",
+  "sectionLabel": "Benefits and Dangers of Generative AI",
+  "title": "Discussion",
+  "prompts": [
+    "Has generative AI helped you in your everyday life?",
+    "Has it made things harder in any way?",
+    "How do you think generative AI can help society?",
+    "How can it hurt society?"
+  ]
+}

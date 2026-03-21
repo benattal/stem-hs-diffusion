@@ -1,0 +1,10 @@
+{
+  "layout": "diagram",
+  "sectionLabel": "Principle: How to Generate Images",
+  "title": "Diffusion Models",
+  "description": "Diffusion models learn to reverse a noising process. Starting from pure noise, they gradually denoise to create a coherent image.",
+  "media": [
+    { "type": "video", "src": "/slides/diffusion-models/media2.mp4" }
+  ],
+  "footnote": "Ho, Jain, and Abbeel. \"Denoising diffusion probabilistic models.\" NeurIPS 33, 2020."
+}

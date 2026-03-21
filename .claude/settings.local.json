@@ -17,7 +17,15 @@
       "Bash(timeout 15 npx concurrently \"cd backend && node src/server.mjs\" \"cd frontend && npx vite --host\")",
       "Bash(find /c/Users/battal/Documents/Projects/vision_workshop -type f \\\\\\(-name *.pptx -o -name assets \\\\\\))",
       "Bash(find /c/Users/battal/Documents/Projects/vision_workshop -not -path */node_modules/* -not -path */.git/* -not -path */dist/* -type f)",
-      "Bash(npm ls:*)"
+      "Bash(npm ls:*)",
+      "Bash(cp media/images/image1.png slides/title/image1.png)",
+      "Bash(cp media/images/image2.png slides/gen-ai-types/image2.png)",
+      "Bash(cp media/images/image3.png slides/gen-ai-types/image3.png)",
+      "Bash(cp media/gifs/image4.gif slides/gen-ai-types/image4.gif)",
+      "Bash(cp media/images/image5.png slides/gen-ai-types/image5.png)",
+      "Bash(rm -f presenterNotes.json)",
+      "Bash(rm -rf notes/)",
+      "Bash(cd:*)"
     ]
   }
 }

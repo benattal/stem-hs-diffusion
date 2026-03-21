@@ -1,0 +1,40 @@
+{
+  "layout": "progressiveBuild",
+  "expandable": true,
+  "sectionLabel": "Introduction: What is Generative AI?",
+  "title": "AI That Creates Things (Usually from Text)",
+  "buildSteps": [
+    {
+      "label": "Text \u2192 Text",
+      "description": "Chatbots, translation, summarization",
+      "media": [
+        { "type": "image", "src": "/slides/gen-ai-types/image2.png" },
+        { "type": "image", "src": "/slides/gen-ai-types/image3.png" },
+        { "type": "gif", "src": "/slides/gen-ai-types/image4.gif" },
+        { "type": "image", "src": "/slides/gen-ai-types/image5.png" }
+      ]
+    },
+    {
+      "label": "Text \u2192 Image",
+      "description": "DALL-E, Midjourney, Stable Diffusion",
+      "media": [
+        { "type": "image", "src": "/slides/gen-ai-types/image6.png" },
+        { "type": "gif", "src": "/slides/gen-ai-types/image7.gif" },
+        { "type": "image", "src": "/slides/gen-ai-types/image8.png" },
+        { "type": "image", "src": "/slides/gen-ai-types/image9.png" }
+      ]
+    },
+    {
+      "label": "Text \u2192 Video",
+      "description": "Sora, Runway, Pika",
+      "media": [
+        { "type": "image", "src": "/slides/gen-ai-types/image10.png" },
+        { "type": "video", "src": "/slides/gen-ai-types/media1.mp4" },
+        { "type": "image", "src": "/slides/gen-ai-types/image11.png" },
+        { "type": "image", "src": "/slides/gen-ai-types/image12.png" },
+        { "type": "image", "src": "/slides/gen-ai-types/image13.png" },
+        { "type": "image", "src": "/slides/gen-ai-types/image14.png" }
+      ]
+    }
+  ]
+}

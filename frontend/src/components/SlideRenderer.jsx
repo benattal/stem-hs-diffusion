@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
 import { presentation } from '../data/presentation.js';
 import { getTransition } from '../transitions/transitions.js';
-import TitleSlide from './layouts/TitleSlide.jsx';
-import OutlineSlide from './layouts/OutlineSlide.jsx';
-import ContentSlide from './layouts/ContentSlide.jsx';
-import ProgressiveBuildSlide from './layouts/ProgressiveBuildSlide.jsx';
-import DiscussionSlide from './layouts/DiscussionSlide.jsx';
-import DiagramSlide from './layouts/DiagramSlide.jsx';
-import MediaSlide from './layouts/MediaSlide.jsx';
-import ColabLinkSlide from './layouts/ColabLinkSlide.jsx';
+import TitleSlide from './layouts/TitleSlide/TitleSlide.jsx';
+import OutlineSlide from './layouts/OutlineSlide/OutlineSlide.jsx';
+import ContentSlide from './layouts/ContentSlide/ContentSlide.jsx';
+import ProgressiveBuildSlide from './layouts/ProgressiveBuildSlide/ProgressiveBuildSlide.jsx';
+import DiscussionSlide from './layouts/DiscussionSlide/DiscussionSlide.jsx';
+import DiagramSlide from './layouts/DiagramSlide/DiagramSlide.jsx';
+import MediaSlide from './layouts/MediaSlide/MediaSlide.jsx';
+import ColabLinkSlide from './layouts/ColabLinkSlide/ColabLinkSlide.jsx';
 
 const layoutMap = {
   title: TitleSlide,

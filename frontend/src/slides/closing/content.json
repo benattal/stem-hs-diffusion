@@ -1,0 +1,7 @@
+{
+  "layout": "title",
+  "transition": "zoom",
+  "title": "That's All!",
+  "subtitle": "Thanks for participating!",
+  "background": "/slides/title/image1.png"
+}
