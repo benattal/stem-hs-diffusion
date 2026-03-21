@@ -1,0 +1,10 @@
+[build]
+builder = "nixpacks"
+
+[variables]
+NIXPACKS_NODE_VERSION = "20"
+
+[deploy]
+startCommand = "node src/server.mjs"
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 10

@@ -1,0 +1,301 @@
+/**
+ * Declarative presentation data.
+ * Each section contains slides; each slide has a layout and content.
+ * To add a slide: add an object to a section's slides array.
+ * To add a section: add an object to the sections array.
+ */
+
+export const presentation = {
+  title: "How to Make Images with Generative AI",
+  authors: ["Benjamin A.", "Dongyu D.", "Andrew X.", "Ali S."],
+  defaultTransition: "fade",
+
+  sections: [
+    // ─── SECTION 1: INTRODUCTION ─────────────────────────────────────
+    {
+      id: "intro",
+      title: "Introduction: What is Generative AI?",
+      slides: [
+        {
+          id: "title",
+          layout: "title",
+          transition: "zoom",
+          title: "How to Make Images with Generative AI",
+          subtitle: "Benjamin A., Dongyu D., Andrew X., Ali S.",
+          background: "/media/images/image1.png",
+        },
+        {
+          id: "outline-intro",
+          layout: "outline",
+          activeSection: "intro",
+        },
+        {
+          id: "gen-ai-types",
+          layout: "progressiveBuild",
+          sectionLabel: "Introduction: What is Generative AI?",
+          title: "AI That Creates Things (Usually from Text)",
+          buildSteps: [
+            {
+              label: "Text → Text",
+              description: "Chatbots, translation, summarization",
+              media: [
+                { type: "image", src: "/media/images/image2.png" },
+                { type: "image", src: "/media/images/image3.png" },
+                { type: "gif", src: "/media/gifs/image4.gif" },
+                { type: "image", src: "/media/images/image5.png" },
+              ],
+            },
+            {
+              label: "Text → Image",
+              description: "DALL-E, Midjourney, Stable Diffusion",
+              media: [
+                { type: "image", src: "/media/images/image6.png" },
+                { type: "gif", src: "/media/gifs/image7.gif" },
+                { type: "image", src: "/media/images/image8.png" },
+                { type: "image", src: "/media/images/image9.png" },
+              ],
+            },
+            {
+              label: "Text → Video",
+              description: "Sora, Runway, Pika",
+              media: [
+                { type: "image", src: "/media/images/image10.png" },
+                { type: "video", src: "/media/videos/media1.mp4" },
+                { type: "image", src: "/media/images/image11.png" },
+                { type: "image", src: "/media/images/image12.png" },
+                { type: "image", src: "/media/images/image13.png" },
+                { type: "image", src: "/media/images/image14.png" },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+
+    // ─── SECTION 2: BENEFITS AND DANGERS ─────────────────────────────
+    {
+      id: "benefits-dangers",
+      title: "Benefits and Dangers of Generative AI",
+      slides: [
+        {
+          id: "discussion",
+          layout: "discussion",
+          sectionLabel: "Benefits and Dangers of Generative AI",
+          title: "Discussion",
+          prompts: [
+            "Has generative AI helped you in your everyday life?",
+            "Has it made things harder in any way?",
+            "How do you think generative AI can help society?",
+            "How can it hurt society?",
+          ],
+        },
+        {
+          id: "why-learn",
+          layout: "content",
+          sectionLabel: "Benefits and Dangers of Generative AI",
+          title: "Why We're Learning About Generative AI",
+          bullets: [
+            "Knowing how it works helps you recognize fake articles, images, and videos",
+            "It can be a useful tool, and knowing how it works helps you use it responsibly",
+            "Understanding its limitations helps you get the most out of it",
+          ],
+        },
+      ],
+    },
+
+    // ─── SECTION 3: HOW TO GENERATE IMAGES ───────────────────────────
+    {
+      id: "how-to-generate",
+      title: "Principle: How to Generate Images",
+      slides: [
+        {
+          id: "outline-principles",
+          layout: "outline",
+          activeSection: "how-to-generate",
+        },
+        {
+          id: "randomness-to-images",
+          layout: "content",
+          sectionLabel: "Principle: How to Generate Images",
+          title: "From Randomness to Images",
+          bullets: [
+            "But how do AI images and videos actually work?",
+          ],
+          footnote: "Reference: \"But how do AI images and videos actually work?\" – 3Blue1Brown",
+          media: [
+            { type: "image", src: "/media/images/image15.png" },
+          ],
+        },
+        {
+          id: "architecture-build",
+          layout: "progressiveBuild",
+          sectionLabel: "Principle: How to Generate Images",
+          title: "From Randomness to Images",
+          buildSteps: [
+            {
+              label: "CLIP",
+              description: "Understands text and images together",
+              media: [
+                { type: "image", src: "/media/images/image16.png" },
+                { type: "image", src: "/media/images/image17.png" },
+              ],
+            },
+            {
+              label: "Diffusion Model",
+              description: "Turns noise into images step by step",
+              media: [
+                { type: "image", src: "/media/images/image2.png" },
+                { type: "image", src: "/media/images/image6.png" },
+              ],
+            },
+            {
+              label: "Prompt Guidance",
+              description: "Steers the generation with text prompts",
+              media: [
+                { type: "image", src: "/media/images/image18.png" },
+                { type: "image", src: "/media/images/image10.png" },
+              ],
+            },
+          ],
+        },
+        {
+          id: "clip-model",
+          layout: "diagram",
+          sectionLabel: "Principle: How to Generate Images",
+          title: "CLIP Model",
+          description: "CLIP learns to match images with their text descriptions. It encodes both text and images into the same space, so it can measure how well they correspond.",
+          media: [
+            { type: "image", src: "/media/images/image19.jpeg", caption: "\"A photo of a cat\"" },
+            { type: "image", src: "/media/images/image20.jpeg", caption: "\"A photo of a dog\"" },
+          ],
+          footnote: "Radford et al. \"Learning transferable visual models from natural language supervision.\" ICML, 2021.",
+        },
+        {
+          id: "diffusion-models",
+          layout: "diagram",
+          sectionLabel: "Principle: How to Generate Images",
+          title: "Diffusion Models",
+          description: "Diffusion models learn to reverse a noising process. Starting from pure noise, they gradually denoise to create a coherent image.",
+          media: [
+            { type: "video", src: "/media/videos/media2.mp4" },
+            { type: "image", src: "/media/images/image21.png" },
+          ],
+          footnote: "Ho, Jain, and Abbeel. \"Denoising diffusion probabilistic models.\" NeurIPS 33, 2020.",
+        },
+        {
+          id: "prompt-guidance",
+          layout: "diagram",
+          sectionLabel: "Principle: How to Generate Images",
+          title: "Prompt Guidance",
+          description: "Prompt guidance steers the diffusion process using text. A positive prompt pulls the image toward the desired content, while a negative prompt pushes it away from unwanted qualities.",
+          media: [
+            { type: "image", src: "/media/images/image22.png" },
+          ],
+          example: {
+            positive: "An astronaut riding a horse on the Moon",
+            negative: "static, gray, low quality",
+          },
+        },
+      ],
+    },
+
+    // ─── SECTION 4: PRACTICE 1 ───────────────────────────────────────
+    {
+      id: "practice-1",
+      title: "Practice 1: An Interactive App for Image Generation",
+      slides: [
+        {
+          id: "outline-practice1",
+          layout: "outline",
+          activeSection: "practice-1",
+        },
+        {
+          id: "colab-practice-1",
+          layout: "colabLink",
+          sectionLabel: "Practice 1: An Interactive App for Image Generation",
+          title: "Try It Yourself!",
+          description: "Open the Google Colab notebook and follow the instructions to generate images using an interactive app.",
+          colabUrl: "https://colab.research.google.com/drive/1my1ct-wuazSrv7R-iulHuUGut-S6ZfYm?usp=sharing",
+          note: "Best results will be shared with students!",
+        },
+      ],
+    },
+
+    // ─── SECTION 5: PRACTICE 2 ───────────────────────────────────────
+    {
+      id: "practice-2",
+      title: "Practice 2: Generating Illusions",
+      slides: [
+        {
+          id: "outline-practice2",
+          layout: "outline",
+          activeSection: "practice-2",
+        },
+        {
+          id: "illusions-1",
+          layout: "media",
+          sectionLabel: "Practice 2: Generating Illusions",
+          title: "AI Can Also Create Visual Illusions",
+          media: [
+            { type: "image", src: "/media/images/image23.png" },
+            { type: "video", src: "/media/videos/media3.mp4" },
+            { type: "image", src: "/media/images/image24.png" },
+            { type: "video", src: "/media/videos/media4.mp4" },
+          ],
+          footnote: "Geng, Park, and Owens. \"Visual anagrams: Generating multi-view optical illusions with diffusion models.\" CVPR, 2024.",
+        },
+        {
+          id: "illusions-2",
+          layout: "media",
+          sectionLabel: "Practice 2: Generating Illusions",
+          title: "AI Can Also Create Visual Illusions",
+          media: [
+            { type: "image", src: "/media/images/image25.png" },
+            { type: "video", src: "/media/videos/media5.mp4" },
+            { type: "image", src: "/media/images/image26.png" },
+            { type: "video", src: "/media/videos/media6.mp4" },
+          ],
+          footnote: "Geng, Park, and Owens. \"Visual anagrams: Generating multi-view optical illusions with diffusion models.\" CVPR, 2024.",
+        },
+        {
+          id: "colab-practice-2",
+          layout: "colabLink",
+          sectionLabel: "Practice 2: Generating Illusions",
+          title: "Generate Your Own Illusions!",
+          description: "Open the Google Colab notebook and follow the instructions to generate visual illusions using AI.",
+          colabUrl: "https://colab.research.google.com/drive/1dSrFm8MBoOZXn_5WZGaPxSSAg1oXtax_?usp=sharing",
+          note: "Best results will be shared with students!",
+        },
+        {
+          id: "closing",
+          layout: "title",
+          transition: "zoom",
+          title: "That's All!",
+          subtitle: "Thanks for participating!",
+          background: "/media/images/image1.png",
+        },
+      ],
+    },
+  ],
+};
+
+/**
+ * Helper: flatten all slides into a single ordered array,
+ * each annotated with its section info and global index.
+ */
+export function getFlatSlides(pres = presentation) {
+  const flat = [];
+  pres.sections.forEach((section, sIdx) => {
+    section.slides.forEach((slide, slideIdx) => {
+      flat.push({
+        ...slide,
+        sectionId: section.id,
+        sectionTitle: section.title,
+        sectionIndex: sIdx,
+        slideIndexInSection: slideIdx,
+        globalIndex: flat.length,
+      });
+    });
+  });
+  return flat;
+}

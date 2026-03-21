@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(cd /tmp)",
+      "Bash(unzip -q \"C:/Users/battal/Documents/Projects/vision_workshop/diffusion_workshop.pptx\" -d pptx_extracted)",
+      "Bash(find C:UsersbattalDocumentsProjectsisabella-birthdaybackendsrc -type f -name *.mjs -o -name *.js)",
+      "Bash(find C:UsersbattalDocumentsProjectsisabella-birthdayfrontend -type f \\\\\\(-name *.js -o -name *.json \\\\\\) ! -path */node_modules/*)",
+      "Bash(for slide:*)",
+      "Bash(do echo:*)",
+      "Read(//c/Users/battal/Documents/Projects/vision_workshop/**)",
+      "Bash(done)",
+      "Bash(npm install:*)",
+      "Bash(node scripts/extract-pptx-media.js)",
+      "Bash(node:*)",
+      "Bash(npx vite:*)",
+      "Bash(timeout 15 npx concurrently \"cd backend && node src/server.mjs\" \"cd frontend && npx vite --host\")"
+    ]
+  }
+}
