@@ -1,13 +1,18 @@
 Website features
 =======
 * Real time poll for discussion questions
-* Better animations for diffusion process
-    - Linear diffusion process
 * Mobile support
 
-Bug fixes
+Slides
 =======
-* Clunky/jittery animations
+* Benefits and dangers 
+    - Why we're learning about it slide
+        - Visual examples of why it's useful
+* Diffusion process slide
+    - Better animations for diffusion process
+    - Linear diffusion process
+* CLIP
+    - Illustration of embedding
 
 Other
 =======
