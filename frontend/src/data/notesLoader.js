@@ -1,7 +1,7 @@
 import presenterNotes from './presenterNotes.json';
 
-// Eagerly import all .md files from assets/notes/ as raw text at build time
-const noteFiles = import.meta.glob('../../../assets/notes/*.md', {
+// Eagerly import all .md files from data/notes/ as raw text at build time
+const noteFiles = import.meta.glob('./notes/*.md', {
   eager: true,
   query: '?raw',
   import: 'default',
