@@ -25,7 +25,9 @@
       "Bash(cp media/images/image5.png slides/gen-ai-types/image5.png)",
       "Bash(rm -f presenterNotes.json)",
       "Bash(rm -rf notes/)",
-      "Bash(cd:*)"
+      "Bash(cd:*)",
+      "Bash(for f:*)",
+      "Read(//c/Users/battal/Documents/Projects/vision_workshop/frontend/**)"
     ]
   }
 }
