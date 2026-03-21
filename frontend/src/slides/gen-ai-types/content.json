@@ -1,6 +1,5 @@
 {
   "layout": "progressiveBuild",
-  "expandable": true,
   "sectionLabel": "Introduction: What is Generative AI?",
   "title": "AI That Creates Things (Usually from Text)",
   "buildSteps": [

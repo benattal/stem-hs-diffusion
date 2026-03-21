@@ -5,8 +5,8 @@ export default function DiscussionSlide({ slide }) {
   return (
     <div className="slide--discussion">
       <motion.h2
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.4 }}
       >
         {slide.title}
@@ -17,8 +17,8 @@ export default function DiscussionSlide({ slide }) {
           <motion.div
             key={i}
             className="discussion-prompt"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ delay: 0.2 + i * 0.15, duration: 0.4 }}
           >
             <span className="prompt-number">{i + 1}</span>

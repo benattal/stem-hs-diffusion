@@ -119,7 +119,8 @@ html, body, #root {
   font-size: 0.8rem;
   color: var(--text-muted);
   font-weight: 500;
-  min-width: 200px;
+  width: 200px;
+  flex-shrink: 0;
 }
 
 .nav-controls {
@@ -184,7 +185,8 @@ html, body, #root {
 .nav-slide-counter {
   font-size: 0.8rem;
   color: var(--text-muted);
-  min-width: 80px;
+  width: 200px;
+  flex-shrink: 0;
   text-align: right;
 }
 

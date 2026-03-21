@@ -5,8 +5,8 @@ export default function ContentSlide({ slide }) {
   return (
     <div className="slide--content">
       <motion.h2
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.4 }}
       >
         {slide.title}
@@ -18,8 +18,8 @@ export default function ContentSlide({ slide }) {
             <motion.li
               key={i}
               className="bullet-item"
-              initial={{ x: -20, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ delay: 0.2 + i * 0.15, duration: 0.4 }}
             >
               <span className="bullet-icon">&#9656;</span>

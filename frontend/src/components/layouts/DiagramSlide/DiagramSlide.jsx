@@ -5,8 +5,8 @@ export default function DiagramSlide({ slide }) {
   return (
     <div className="slide--diagram">
       <motion.h2
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.4 }}
       >
         {slide.title}
@@ -26,8 +26,8 @@ export default function DiagramSlide({ slide }) {
       {slide.media && slide.media.length > 0 && (
         <motion.div
           className="diagram-media"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.5 }}
         >
           {slide.media.map((m, i) => (

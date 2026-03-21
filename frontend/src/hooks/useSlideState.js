@@ -22,10 +22,7 @@ export default function useSlideState() {
   const currentSlide = flatSlides[currentIndex];
   const totalSlides = flatSlides.length;
 
-  // How many build steps does the current slide have?
-  // Expandable slides have show + expand for each step
-  const rawSteps = currentSlide?.buildSteps?.length || 0;
-  const maxBuildSteps = currentSlide?.expandable ? rawSteps * 2 : rawSteps;
+  const maxBuildSteps = currentSlide?.buildSteps?.length || 0;
 
   const goNext = useCallback(() => {
     // If there are more build steps to reveal, advance the build step
@@ -54,8 +51,7 @@ export default function useSlideState() {
       setDirection(-1);
       const prevIndex = currentIndex - 1;
       const prevSlide = flatSlides[prevIndex];
-      const prevRawSteps = prevSlide?.buildSteps?.length || 0;
-      const prevMaxBuild = prevSlide?.expandable ? prevRawSteps * 2 : prevRawSteps;
+      const prevMaxBuild = prevSlide?.buildSteps?.length || 0;
       setCurrentIndex(prevIndex);
       // Go to the last build step of the previous slide
       setBuildStep(prevMaxBuild > 0 ? prevMaxBuild - 1 : 0);

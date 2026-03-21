@@ -1,3 +1,7 @@
+.slide:has(.slide--progressive) {
+  justify-content: flex-start;
+}
+
 .slide--progressive h2 {
   font-size: 2.5rem;
   font-weight: 700;
@@ -53,36 +57,3 @@
   object-fit: contain;
 }
 
-.build-steps--has-expanded .build-step:not(.build-step--expanded) {
-  display: none;
-}
-
-.build-step--expanded {
-  flex: 1;
-  justify-content: center;
-}
-
-.build-step--expanded .build-step-header {
-  margin-bottom: 1rem;
-}
-
-.build-step--expanded .build-step-label {
-  font-size: 2rem;
-}
-
-.build-step--expanded .build-step-description {
-  font-size: 1.25rem;
-}
-
-.build-step--expanded .build-step-media {
-  flex: 1;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.build-step--expanded .build-step-media img,
-.build-step--expanded .build-step-media video {
-  max-height: 50vh;
-  max-width: 45%;
-  border-radius: var(--radius);
-}

@@ -11,8 +11,8 @@ export default function TitleSlide({ slide }) {
         />
       )}
       <motion.h1
-        initial={{ y: 30, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.6 }}
       >
         {slide.title}
@@ -20,8 +20,8 @@ export default function TitleSlide({ slide }) {
       {slide.subtitle && (
         <motion.p
           className="subtitle"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.5 }}
         >
           {slide.subtitle}
