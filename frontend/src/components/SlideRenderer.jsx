@@ -14,6 +14,7 @@ import PollSlide from './layouts/PollSlide/PollSlide.jsx';
 import PollResultsSlide from './layouts/PollResultsSlide/PollResultsSlide.jsx';
 import EmbeddingSpaceSlide from './layouts/EmbeddingSpaceSlide/EmbeddingSpaceSlide.jsx';
 import GenAiDemoSlide from './layouts/GenAiDemoSlide/GenAiDemoSlide.jsx';
+import IllustratedPointsSlide from './layouts/IllustratedPointsSlide/IllustratedPointsSlide.jsx';
 
 const layoutMap = {
   title: TitleSlide,
@@ -29,6 +30,7 @@ const layoutMap = {
   pollResults: PollResultsSlide,
   embeddingSpace: EmbeddingSpaceSlide,
   genAiDemo: GenAiDemoSlide,
+  illustratedPoints: IllustratedPointsSlide,
 };
 
 export default function SlideRenderer({ slide, buildStep, direction, sections }) {

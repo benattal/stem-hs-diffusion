@@ -3,12 +3,12 @@
   "sectionLabel": "Benefits and Dangers of Generative AI",
   "title": "What do you think?",
   "pollId": "benefits-dangers",
-  "question": "What is the most significant impact of AI image generation?",
+  "question": "What do you think the most significant impact of generative AI is?",
   "options": [
-    "Creative empowerment",
-    "Misinformation risk",
-    "Job displacement",
-    "Accessibility improvement"
+    "Creative aid",
+    "Useful automation tool for STEM",
+    "Spread of misinformation",
+    "Job loss because of AI"
   ],
-  "presetDistribution": [15, 35, 28, 22]
+  "presetDistribution": [20, 30, 28, 22]
 }
