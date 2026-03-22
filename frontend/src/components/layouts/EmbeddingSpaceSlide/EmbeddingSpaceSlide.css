@@ -9,14 +9,14 @@
 .slide--embedding h2 {
   font-size: 2.5rem;
   font-weight: 700;
+  align-self: stretch;
 }
 
 .embedding-description {
   font-size: 1.1rem;
   color: var(--text-secondary);
-  max-width: 700px;
-  text-align: center;
   line-height: 1.5;
+  align-self: stretch;
 }
 
 .embedding-main {

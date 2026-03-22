@@ -1,9 +1,5 @@
 /* ─── GenAiDemoSlide Layout ──────────────────────────────────── */
 
-.slide:has(.slide--gen-ai-demo) {
-  justify-content: flex-start;
-}
-
 .slide--gen-ai-demo h2 {
   font-size: 2.5rem;
   font-weight: 700;

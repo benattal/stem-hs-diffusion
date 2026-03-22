@@ -1,11 +1,7 @@
-.slide:has(.slide--progressive) {
-  justify-content: flex-start;
-}
-
 .slide--progressive h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .build-steps {

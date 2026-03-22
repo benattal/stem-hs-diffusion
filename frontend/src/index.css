@@ -55,9 +55,9 @@ html, body, #root {
   inset: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding: 60px 80px;
+  padding: 80px 80px 60px;
   background: var(--bg-slide);
   overflow: hidden;
 }
@@ -506,7 +506,7 @@ kbd {
 /* ─── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .slide {
-    padding: 40px 24px;
+    padding: 48px 24px 40px;
   }
 
   .nav-dots {

@@ -1,20 +1,16 @@
 .slide--colab {
-  text-align: center;
 }
 
 .slide--colab h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .slide--colab .colab-description {
   font-size: 1.1rem;
   color: var(--text-secondary);
   margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
   line-height: 1.6;
 }
 

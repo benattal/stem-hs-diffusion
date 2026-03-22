@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
   gap: 1.5rem;
   width: 100%;
 }
@@ -10,13 +9,14 @@
 .slide--poll h2 {
   font-size: 2.5rem;
   font-weight: 700;
+  align-self: stretch;
 }
 
 .poll-question {
   font-size: 1.1rem;
   color: var(--text-secondary);
-  max-width: 600px;
   line-height: 1.5;
+  align-self: stretch;
 }
 
 .poll-options {

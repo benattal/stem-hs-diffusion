@@ -1,9 +1,5 @@
 /* ─── DiffusionModelSlide Layout ──────────────────────────────── */
 
-.slide:has(.slide--diffusion-model) {
-  justify-content: flex-start;
-}
-
 .slide--diffusion-model {
   width: 100%;
   height: 100%;

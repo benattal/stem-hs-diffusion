@@ -1,9 +1,5 @@
 /* ─── IllustratedPointsSlide Layout ──────────────────────────── */
 
-.slide:has(.slide--illustrated-points) {
-  justify-content: flex-start;
-}
-
 .slide--illustrated-points h2 {
   font-size: 2.5rem;
   font-weight: 700;
