@@ -5,28 +5,37 @@ Website features
 
 Slides
 =======
+* Title slide
+    - Specific
+        - Different background
+* What is generative AI slide
+    - General
+        - Make more interactive
+        - Separate into different slides per modality
+    - Specific
+        - Generative text->text models
+            * Ask students if they know what the technical term for these is? A: LLMs (large langugage models)
+            * Show mock chatbot
+                - User typing something in
+                - LLM responding
+            * Animate in names/logos of different chatbots at the bottom
+                - ChatGPT, Claude, Gemini
+        - Generative text->image models, text->video models
+            * Ask students if they know what the technical term for these is? A: Typically, diffusion models (image diffusion, video diffusion)
+            * Show mock chatbot
+                - User typing something in
+                - Diffusion model generating an image
+                - Also show diffusion model generating a video
+            * Animate in names/logos of different image diffusion models at the bottom
+                - Midjourney, Sora
 * Benefits and dangers slide
-    - Benefits/dangers slide
-        - Add a real time poll (displayed on the next slide)
-        - For now, have preset answer distribution
-        - But add the infrastructure to let different website users vote
-    - Why we're learning about it slide
-        - Visual examples of...
-            * Fake articles/images
-            * Why it's a useful tool
-                - Coding/making software
-            * But emphasize that it can be wrong
-* Diffusion process slide
-    - Better animations for the diffusion process
-        - Linear diffusion process (image on one side, noise on the other)
-        - Make it interactable
-            * Slider to manipulate the amount of noise
+    - Visual examples of...
+        * Fake articles/images
+        * Why it's a useful tool
+            - Coding/making software
+        * But emphasize that it can be wrong
 * CLIP slide
-    - Illustration of embedding mapping from text/images to 2D embedding space
-    - Interactive demo
-        - Select different points on the graph
-        - Produce different image/text pairs 
-        - Do this assigning image/text pairs to a point, finding the nearest neighbor when selecting a new point
+    - Less jargon
 
 Other
 =======

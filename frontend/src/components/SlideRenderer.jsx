@@ -13,6 +13,7 @@ import DiffusionSliderSlide from './layouts/DiffusionSliderSlide/DiffusionSlider
 import PollSlide from './layouts/PollSlide/PollSlide.jsx';
 import PollResultsSlide from './layouts/PollResultsSlide/PollResultsSlide.jsx';
 import EmbeddingSpaceSlide from './layouts/EmbeddingSpaceSlide/EmbeddingSpaceSlide.jsx';
+import GenAiDemoSlide from './layouts/GenAiDemoSlide/GenAiDemoSlide.jsx';
 
 const layoutMap = {
   title: TitleSlide,
@@ -27,6 +28,7 @@ const layoutMap = {
   poll: PollSlide,
   pollResults: PollResultsSlide,
   embeddingSpace: EmbeddingSpaceSlide,
+  genAiDemo: GenAiDemoSlide,
 };
 
 export default function SlideRenderer({ slide, buildStep, direction, sections }) {

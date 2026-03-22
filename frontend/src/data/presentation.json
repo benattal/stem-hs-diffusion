@@ -7,7 +7,7 @@
     {
       "id": "intro",
       "title": "Introduction: What is Generative AI?",
-      "slides": ["title", "outline-intro", "gen-ai-types"]
+      "slides": ["title", "outline-intro", "gen-ai-llms", "gen-ai-diffusion"]
     },
     {
       "id": "benefits-dangers",
