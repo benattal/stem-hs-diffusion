@@ -50,6 +50,18 @@ export default function EmbeddingScatterPlot({
       </defs>
       <rect x={PADDING} y={PADDING} width={width - 2 * PADDING} height={height - 2 * PADDING} fill="url(#grid)" />
 
+      {/* Axis lines */}
+      <line
+        x1={PADDING} y1={height - PADDING}
+        x2={width - PADDING} y2={height - PADDING}
+        stroke="rgba(255,255,255,0.2)" strokeWidth={1}
+      />
+      <line
+        x1={PADDING} y1={PADDING}
+        x2={PADDING} y2={height - PADDING}
+        stroke="rgba(255,255,255,0.2)" strokeWidth={1}
+      />
+
       {/* Crosshair on active point */}
       {activePair && (
         <>
@@ -93,14 +105,29 @@ export default function EmbeddingScatterPlot({
         );
       })}
 
-      {/* Axis labels */}
-      <text x={width / 2} y={height - 6} textAnchor="middle" fill="var(--text-muted)" fontSize={10} fontFamily="var(--font)">
-        Embedding Dimension 1
+      {/* Coordinate label on active point */}
+      {activePair && (
+        <text
+          x={toSvgX(activePair.x)}
+          y={toSvgY(activePair.y) - ACTIVE_R - 4}
+          textAnchor="middle"
+          fill="var(--accent-secondary)"
+          fontSize={9}
+          fontFamily="var(--font)"
+          fontWeight="600"
+        >
+          ({activePair.x.toFixed(2)}, {activePair.y.toFixed(2)})
+        </text>
+      )}
+
+      {/* Axis labels (KaTeX math italic) */}
+      <text x={width / 2} y={height - 4} textAnchor="middle" fill="var(--text-muted)" fontSize={15} fontFamily="KaTeX_Math, 'Times New Roman', serif" fontStyle="italic">
+        x
       </text>
-      <text x={10} y={height / 2} textAnchor="middle" fill="var(--text-muted)" fontSize={10} fontFamily="var(--font)"
-        transform={`rotate(-90, 10, ${height / 2})`}
+      <text x={8} y={height / 2} textAnchor="middle" fill="var(--text-muted)" fontSize={15} fontFamily="KaTeX_Math, 'Times New Roman', serif" fontStyle="italic"
+        transform={`rotate(-90, 8, ${height / 2})`}
       >
-        Embedding Dimension 2
+        y
       </text>
     </svg>
   );

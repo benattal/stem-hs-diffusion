@@ -141,7 +141,9 @@ export default function DiffusionSliderSlide({ slide }) {
             </div>
             <div className="diffusion-labels">
               <span className="diffusion-label-left">{labels.left}</span>
-              <span className="diffusion-step-indicator">t = {step} / {steps}</span>
+              {slide.showStepCounter !== false && (
+                <span className="diffusion-step-indicator">t = {step} / {steps}</span>
+              )}
               <span className="diffusion-label-right">{labels.right}</span>
             </div>
             <button className="diffusion-play-btn" onClick={togglePlay}>

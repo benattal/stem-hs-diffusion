@@ -19,13 +19,11 @@
       "title": "Principle: How to Generate Images",
       "slides": [
         "outline-principles",
-        "randomness-to-images",
-        "architecture-build",
-        "clip-model",
+        "generation-overview",
         "clip-interactive",
-        "diffusion-models",
-        "diffusion-interactive",
-        "prompt-guidance"
+        "embedding-clusters",
+        "noise-to-images",
+        "diffusion-models"
       ]
     },
     {

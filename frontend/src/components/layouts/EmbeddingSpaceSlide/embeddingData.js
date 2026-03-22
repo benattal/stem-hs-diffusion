@@ -31,6 +31,19 @@ export const embeddingPairs = [
   { id: 'artist', caption: 'An artist painting on canvas', x: 0.45, y: 0.55, image: '/slides/clip-interactive/artist.jpg' },
 ];
 
+// Color palette — each point gets a consistent hue
+const POINT_COLORS = [
+  '#6c63ff', '#00d2ff', '#ff6b6b', '#ffd93d', '#6bcb77',
+  '#a66cff', '#ff922b', '#20c997', '#f06595', '#339af0',
+  '#5c940d', '#e8590c', '#845ef7', '#0ca678', '#e64980',
+  '#1c7ed6', '#f76707',
+];
+
+export function getColorForPair(pair) {
+  const idx = embeddingPairs.indexOf(pair);
+  return POINT_COLORS[idx % POINT_COLORS.length];
+}
+
 // Find the nearest pair to an arbitrary (x, y) point
 export function findNearest(x, y) {
   let best = null;

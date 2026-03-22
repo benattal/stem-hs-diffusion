@@ -1,8 +1,8 @@
 {
   "layout": "diagram",
   "sectionLabel": "Principle: How to Generate Images",
-  "title": "CLIP Model",
-  "description": "CLIP learns to match images with their text descriptions. It encodes both text and images into the same space, so it can measure how well they correspond.",
+  "title": "From Text and Images to Numbers",
+  "description": "A model learns to match images with their text descriptions. It converts both text and images into lists of numbers in the same space, so it can measure how well they correspond.",
   "media": [
     { "type": "image", "src": "/slides/clip-model/image19.jpeg", "caption": "\"A photo of a cat\"" },
     { "type": "image", "src": "/slides/clip-model/image20.jpeg", "caption": "\"A photo of a dog\"" }
