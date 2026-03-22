@@ -11,8 +11,7 @@ export default function Navigation({
 }) {
   return (
     <div className="navigation" onClick={(e) => e.stopPropagation()}>
-      <div className="nav-section-label">{sectionTitle || ''}</div>
-
+      <div className="nav-section-label"></div>
       <div className="nav-controls">
         <button
           className="nav-btn"
