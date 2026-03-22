@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import pollRouter from './routes/poll.js';
+import notesRouter from './routes/notes.js';
 
 const app = express();
 
@@ -9,7 +10,7 @@ app.use(helmet());
 
 app.use(cors({
   origin: process.env.CORS_ORIGIN || '*',
-  methods: ['GET', 'POST', 'OPTIONS'],
+  methods: ['GET', 'POST', 'PUT', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
@@ -29,6 +30,7 @@ app.get('/health', (req, res) => {
 });
 
 app.use('/api/poll', pollRouter);
+app.use('/api/notes', notesRouter);
 
 app.get('/', (req, res) => {
   res.json({ status: 'ok', service: 'vision-workshop-api' });

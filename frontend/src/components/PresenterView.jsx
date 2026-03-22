@@ -82,14 +82,31 @@ export default function PresenterView() {
     setTimeout(() => textareaRef.current?.focus(), 0);
   }
 
-  function saveEdits() {
+  async function saveEdits() {
+    // Save to localStorage as immediate cache
     if (editText === fileNotes) {
-      // If edits match the file content, remove the override
       localStorage.removeItem(storageKey);
     } else {
       localStorage.setItem(storageKey, editText);
     }
     setEditing(false);
+
+    // Also persist to the markdown file via the backend API
+    if (currentSlide) {
+      try {
+        const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+        await fetch(`${apiBase}/api/notes/${currentSlide.id}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            buildStep: state.buildStep,
+            content: editText,
+          }),
+        });
+      } catch {
+        // API not available (e.g. production) — localStorage save is sufficient
+      }
+    }
   }
 
   function cancelEdits() {
@@ -177,7 +194,7 @@ export default function PresenterView() {
               </div>
             )}
           </div>
-          <div className="presenter-notes-content">
+          <div className="presenter-notes-content" onDoubleClick={!editing ? startEditing : undefined}>
             {editing ? (
               <textarea
                 ref={textareaRef}

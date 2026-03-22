@@ -47,7 +47,8 @@
       "Bash(curl -sL -o kitten.jpg \"https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&w=400\")",
       "Bash(curl -sL -o puppy.jpg \"https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=400\")",
       "Bash(find C:UsersbattalDocumentsProjectsvision_workshop -type d -name *generative* -o -type d -name *gen-ai* -o -type d -name *what-is*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(ls:*)"
     ]
   }
 }
