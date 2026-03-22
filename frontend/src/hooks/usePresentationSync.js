@@ -26,7 +26,7 @@ export function useSyncBroadcaster({ currentIndex, buildStep, totalSlides }) {
 
   const openPresenterWindow = useCallback(() => {
     const url = `${window.location.origin}${window.location.pathname}?mode=presenter`;
-    window.open(url, 'presenter-notes', 'width=800,height=600');
+    window.open(url, 'presenter-notes', 'width=1100,height=700');
   }, []);
 
   return { openPresenterWindow };

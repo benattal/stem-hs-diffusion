@@ -381,28 +381,130 @@ kbd {
 
 .presenter-body {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: auto 1fr auto;
   gap: 16px;
   padding: 16px 24px;
   flex: 1;
   min-height: 0;
 }
 
-.presenter-current,
-.presenter-next {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  min-height: 0;
-}
-
-.presenter-current h3,
-.presenter-next h3 {
+.presenter-body h3 {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: var(--text-muted);
   flex-shrink: 0;
+  margin-bottom: 8px;
+}
+
+/* ─── Left column: mobile preview ──────────────────────────── */
+
+.presenter-preview-col {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.presenter-mobile-frame {
+  flex: 1;
+  min-height: 0;
+  width: 240px;
+  max-height: 426px; /* 667 * (240/375) */
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-slide);
+  position: relative;
+}
+
+.presenter-mobile-iframe {
+  width: 375px;
+  height: 667px;
+  border: none;
+  transform-origin: top left;
+  transform: scale(calc(240 / 375));
+  display: block;
+}
+
+/* ─── Center column: notes ─────────────────────────────────── */
+
+.presenter-notes-col {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.presenter-notes-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  flex-shrink: 0;
+}
+
+.presenter-notes-header h3 {
+  margin-bottom: 0;
+}
+
+.presenter-edit-btn {
+  padding: 3px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-family: var(--font);
+  transition: all var(--transition);
+}
+
+.presenter-edit-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.presenter-edit-btn--save {
+  background: rgba(108, 99, 255, 0.2);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.presenter-edit-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.presenter-notes-content {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  background: var(--bg-elevated);
+  border-radius: var(--radius);
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.presenter-notes-editor {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1.6;
+  resize: none;
+  outline: none;
+}
+
+/* ─── Right column: next slide ─────────────────────────────── */
+
+.presenter-next-col {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
 }
 
 .presenter-slide-preview {
@@ -437,31 +539,13 @@ kbd {
   color: var(--accent-secondary);
 }
 
-.presenter-notes {
-  flex: 1;
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
-}
+/* ─── Preview mode (iframe content) ────────────────────────── */
 
-.presenter-notes h4 {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--text-muted);
-  margin-bottom: 12px;
-  flex-shrink: 0;
-}
-
-.presenter-notes-content {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  color: var(--text-secondary);
-  background: var(--bg-elevated);
-  border-radius: var(--radius);
-  padding: 20px;
-  flex: 1;
-  overflow-y: auto;
+.preview-mode .navigation,
+.preview-mode .keyboard-hint,
+.preview-mode .toolbar-buttons,
+.preview-mode .progress-bar {
+  display: none;
 }
 
 .presenter-notes-content p {

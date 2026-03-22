@@ -4,6 +4,10 @@ import { getFlatSlides, presentation } from '../data/presentation.js';
 import { getNotesForSlide } from '../data/notesLoader.js';
 import { useSyncReceiver } from '../hooks/usePresentationSync.js';
 
+function notesKey(slideId, buildStep) {
+  return `presenter-notes-${slideId}-${buildStep}`;
+}
+
 export default function PresenterView() {
   const flatSlides = useMemo(() => getFlatSlides(presentation), []);
   const [state, setState] = useState({
@@ -12,6 +16,9 @@ export default function PresenterView() {
     totalSlides: flatSlides.length,
   });
   const [elapsed, setElapsed] = useState(0);
+  const [editing, setEditing] = useState(false);
+  const [editText, setEditText] = useState('');
+  const textareaRef = useRef(null);
   const startTime = useRef(Date.now());
 
   const onStateUpdate = useCallback((data) => {
@@ -31,6 +38,8 @@ export default function PresenterView() {
   // Keyboard navigation in presenter window sends commands to main window
   useEffect(() => {
     function handleKeyDown(e) {
+      // Don't capture keyboard when editing notes
+      if (editing) return;
       switch (e.key) {
         case 'ArrowRight':
         case 'ArrowDown':
@@ -49,13 +58,68 @@ export default function PresenterView() {
     }
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [sendCommand]);
+  }, [sendCommand, editing]);
 
   const currentSlide = flatSlides[state.currentIndex];
   const nextSlide = flatSlides[state.currentIndex + 1];
-  const notes = currentSlide
+
+  // Get notes: check localStorage for edits, fall back to file content
+  const fileNotes = currentSlide
     ? getNotesForSlide(currentSlide.id, state.buildStep)
     : '';
+  const storageKey = currentSlide ? notesKey(currentSlide.id, state.buildStep) : '';
+  const savedNotes = storageKey ? localStorage.getItem(storageKey) : null;
+  const notes = savedNotes !== null ? savedNotes : fileNotes;
+
+  // When slide changes, exit edit mode
+  useEffect(() => {
+    setEditing(false);
+  }, [state.currentIndex, state.buildStep]);
+
+  function startEditing() {
+    setEditText(notes);
+    setEditing(true);
+    setTimeout(() => textareaRef.current?.focus(), 0);
+  }
+
+  function saveEdits() {
+    if (editText === fileNotes) {
+      // If edits match the file content, remove the override
+      localStorage.removeItem(storageKey);
+    } else {
+      localStorage.setItem(storageKey, editText);
+    }
+    setEditing(false);
+  }
+
+  function cancelEdits() {
+    setEditing(false);
+  }
+
+  // Build the iframe URL to show the current slide at mobile size
+  const iframeUrl = useMemo(() => {
+    const base = `${window.location.origin}${window.location.pathname}`;
+    return `${base}?mode=preview`;
+  }, []);
+
+  // Send state to the preview iframe
+  const iframeRef = useRef(null);
+  useEffect(() => {
+    const iframe = iframeRef.current;
+    if (!iframe) return;
+    function sendToIframe() {
+      iframe.contentWindow?.postMessage({
+        type: 'presenter-preview-state',
+        currentIndex: state.currentIndex,
+        buildStep: state.buildStep,
+        totalSlides: state.totalSlides,
+      }, '*');
+    }
+    // Send immediately and also when iframe loads
+    sendToIframe();
+    iframe.addEventListener('load', sendToIframe);
+    return () => iframe.removeEventListener('load', sendToIframe);
+  }, [state.currentIndex, state.buildStep, state.totalSlides]);
 
   const minutes = Math.floor(elapsed / 60);
   const seconds = elapsed % 60;
@@ -81,26 +145,54 @@ export default function PresenterView() {
       </div>
 
       <div className="presenter-body">
-        <div className="presenter-current">
-          <h3>Current Slide</h3>
-          <div className="presenter-slide-preview">
-            <div className="preview-section">{currentSlide?.sectionTitle}</div>
-            <div className="preview-title">{currentSlide?.title || currentSlide?.layout}</div>
-            {currentSlide?.buildSteps && (
-              <div className="preview-build-step">
-                Build: {currentSlide.buildSteps[state.buildStep]?.label}
-              </div>
-            )}
-          </div>
-          <div className="presenter-notes">
-            <h4>Notes</h4>
-            <div className="presenter-notes-content">
-              <Markdown>{notes || '*(No notes)*'}</Markdown>
-            </div>
+        {/* Left: mobile preview */}
+        <div className="presenter-preview-col">
+          <h3>Mobile Preview</h3>
+          <div className="presenter-mobile-frame">
+            <iframe
+              ref={iframeRef}
+              src={iframeUrl}
+              className="presenter-mobile-iframe"
+              title="Mobile preview"
+            />
           </div>
         </div>
 
-        <div className="presenter-next">
+        {/* Center: notes */}
+        <div className="presenter-notes-col">
+          <div className="presenter-notes-header">
+            <h3>Notes</h3>
+            {!editing ? (
+              <button className="presenter-edit-btn" onClick={startEditing}>
+                Edit
+              </button>
+            ) : (
+              <div className="presenter-edit-actions">
+                <button className="presenter-edit-btn presenter-edit-btn--save" onClick={saveEdits}>
+                  Save
+                </button>
+                <button className="presenter-edit-btn" onClick={cancelEdits}>
+                  Cancel
+                </button>
+              </div>
+            )}
+          </div>
+          <div className="presenter-notes-content">
+            {editing ? (
+              <textarea
+                ref={textareaRef}
+                className="presenter-notes-editor"
+                value={editText}
+                onChange={(e) => setEditText(e.target.value)}
+              />
+            ) : (
+              <Markdown>{notes || '*(No notes)*'}</Markdown>
+            )}
+          </div>
+        </div>
+
+        {/* Right: next slide */}
+        <div className="presenter-next-col">
           <h3>Up Next</h3>
           {nextSlide ? (
             <div className="presenter-slide-preview presenter-slide-preview--next">
