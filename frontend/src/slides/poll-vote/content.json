@@ -5,10 +5,10 @@
   "pollId": "benefits-dangers",
   "question": "What do you think the most significant impact of generative AI is?",
   "options": [
-    "Creative aid",
+    "Creative help",
     "Useful automation tool for STEM",
     "Spread of misinformation",
     "Job loss because of AI"
   ],
-  "presetDistribution": [20, 30, 28, 22]
+  "presetDistribution": [20, 28, 30, 22]
 }
