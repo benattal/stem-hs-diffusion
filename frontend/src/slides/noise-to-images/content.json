@@ -1,8 +1,8 @@
 {
   "layout": "diffusionSlider",
   "sectionLabel": "How to Generate Images",
-  "title": "What is Noise?",
-  "description": "Noise is just random pixel values — like TV static. Drag the slider to see how adding noise gradually destroys an image. A diffusion model learns to reverse this process.",
+  "title": "Let's Talk About Noise...",
+  "description": "Noise is just random pixel values. Drag the slider to see how adding noise gradually destroys an image.",
   "images": [
     { "src": "/slides/clip-model/image19.jpeg", "label": "Cat" },
     { "src": "/slides/clip-interactive/mountain.jpg", "label": "Mountain" },
