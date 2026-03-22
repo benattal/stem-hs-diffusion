@@ -1,6 +1,6 @@
 {
   "layout": "diagram",
-  "sectionLabel": "Principle: How to Generate Images",
+  "sectionLabel": "How to Generate Images",
   "title": "Prompt Guidance",
   "description": "Prompt guidance steers the diffusion process using text. A positive prompt pulls the image toward the desired content, while a negative prompt pushes it away from unwanted qualities.",
   "media": [

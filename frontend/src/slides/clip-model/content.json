@@ -1,6 +1,6 @@
 {
   "layout": "diagram",
-  "sectionLabel": "Principle: How to Generate Images",
+  "sectionLabel": "How to Generate Images",
   "title": "From Text and Images to Numbers",
   "description": "A model learns to match images with their text descriptions. It converts both text and images into lists of numbers in the same space, so it can measure how well they correspond.",
   "media": [

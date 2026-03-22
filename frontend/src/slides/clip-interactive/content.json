@@ -1,6 +1,6 @@
 {
   "layout": "embeddingSpace",
-  "sectionLabel": "Principle: How to Generate Images",
+  "sectionLabel": "How to Generate Images",
   "title": "From Text and Images to Numbers",
   "description": "A model learns to match images with their text descriptions. It converts both into lists of numbers in the same space — hover over any point to see how matching image-text pairs cluster together.",
   "footnote": "Radford et al. \"Learning transferable visual models from natural language supervision.\" ICML, 2021."

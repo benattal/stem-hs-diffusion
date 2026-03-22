@@ -13,14 +13,14 @@
 }
 
 .slide--diffusion-model h2 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
   flex-shrink: 0;
 }
 
 .dm-description {
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.5;
   color: var(--text-secondary);
   margin-bottom: 2rem;
@@ -76,7 +76,7 @@
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--accent);
-  font-family: 'Fira Code', 'Consolas', monospace;
+  font-family: var(--font-mono);
 }
 
 /* ─── Model box ──────────────────────────────────────────────── */

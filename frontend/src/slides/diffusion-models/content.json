@@ -1,6 +1,6 @@
 {
   "layout": "diffusionModel",
-  "sectionLabel": "Principle: How to Generate Images",
+  "sectionLabel": "How to Generate Images",
   "title": "The Diffusion Model",
   "description": "The diffusion model takes a noisy image along with the numbers from the text-image encoder. It uses these numbers to understand what the final image should look like, and tries to predict the original clean image from the noise.",
   "sequenceImage": "/slides/clip-model/image19.jpeg",

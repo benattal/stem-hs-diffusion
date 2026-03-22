@@ -7,31 +7,6 @@ Website features
 
 Slides
 =======
-* Title slide
-    - Specific
-        - Different background
-* How to generate images section
-    - Boxes with CLIP, Diffusion Model, Guidance don't make sense anymore
-        - Focus on just CLIP and Diffusion models
-        - Remove prompt guidance section
-    - Overview slide
-        - Show images and text being mapped to point in embedding space
-            - Snapshot of same graph used in CLIP slide (maybe use same JS/CSS if possible)
-        - Show points in embedding space/numbers ("that computer can understand") being given as input to the reverse diffusion process
-            - Show noise being turned into images by a diffusion model
-    - CLIP slide
-        - Remove the term "CLIP"
-        - Title the slide "from text and images to numbers"
-    - Noise slide (replaces forward diffusion process slide)
-        - Talk about what noise is (random pixel values)
-        - Have the forward diffusion process interactive demo here (but don't call it that)
-            - Remove t=0 and T=T labels, just have the clean image and pure noise labels
-            - Remove the t=N/50 label
-    - Diffusion model slide (move after the noise/forward diffusion process slide)
-        - Talk about how diffusion model sees noisy image, numbers from CLIP
-        - Tries to predict the original image
-    - Prompt guidance slide
-        - Remove
 
 Other
 =======

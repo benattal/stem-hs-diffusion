@@ -1,6 +1,6 @@
 {
   "layout": "generationOverview",
-  "sectionLabel": "Principle: How to Generate Images",
+  "sectionLabel": "How to Generate Images",
   "title": "How Image Generation Works",
   "subtitle": "Two key ideas that make it possible",
   "buildSteps": [

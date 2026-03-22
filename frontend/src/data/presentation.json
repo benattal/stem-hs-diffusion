@@ -16,7 +16,7 @@
     },
     {
       "id": "how-to-generate",
-      "title": "Principle: How to Generate Images",
+      "title": "How to Generate Images",
       "slides": [
         "outline-principles",
         "generation-overview",

@@ -1,6 +1,6 @@
 {
   "layout": "progressiveBuild",
-  "sectionLabel": "Principle: How to Generate Images",
+  "sectionLabel": "How to Generate Images",
   "title": "From Randomness to Images",
   "buildSteps": [
     {

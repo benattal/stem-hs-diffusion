@@ -5,13 +5,13 @@
 }
 
 .slide--generation-overview h2 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
 .overview-subtitle {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   color: var(--text-secondary);
   margin-bottom: 1.25rem;
 }
@@ -132,7 +132,7 @@
   font-size: 0.8rem;
   font-weight: 700;
   color: var(--accent);
-  font-family: 'Fira Code', 'Consolas', monospace;
+  font-family: var(--font-mono);
 }
 
 .overview-flow-arrow {

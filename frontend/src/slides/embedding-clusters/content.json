@@ -1,6 +1,6 @@
 {
   "layout": "embeddingClusters",
-  "sectionLabel": "Principle: How to Generate Images",
+  "sectionLabel": "How to Generate Images",
   "title": "What Do You Notice about This Graph?",
   "description": "Look at how the points are arranged in the number space. What patterns do you see?",
   "buildSteps": [

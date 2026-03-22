@@ -1,6 +1,6 @@
 {
   "layout": "diffusionSlider",
-  "sectionLabel": "Principle: How to Generate Images",
+  "sectionLabel": "How to Generate Images",
   "title": "Forward Diffusion Process",
   "description": "Drag the slider to see how noise is progressively added to an image. Try different images to see how the noise affects each one differently.",
   "images": [
