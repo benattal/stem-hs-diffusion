@@ -20,9 +20,9 @@
     }
   ],
   "logos": [
-    { "name": "ChatGPT", "color": "#10a37f" },
-    { "name": "Claude", "color": "#d97706" },
-    { "name": "Gemini", "color": "#4285f4" }
+    { "name": "ChatGPT", "color": "#10a37f", "logo": "/slides/gen-ai-llms/chatgpt-logo.svg" },
+    { "name": "Claude", "color": "#d97706", "logo": "/slides/gen-ai-llms/claude-logo.svg" },
+    { "name": "Gemini", "color": "#4285f4", "logo": "/slides/gen-ai-llms/gemini-logo.svg" }
   ],
   "buildSteps": [
     { "id": "question" },

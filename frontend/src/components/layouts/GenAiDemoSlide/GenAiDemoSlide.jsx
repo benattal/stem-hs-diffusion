@@ -202,6 +202,9 @@ function LogoBar({ logos, isVisible }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: i * 0.2 }}
         >
+          {logo.logo && (
+            <img src={logo.logo} alt="" className="logo-pill-img" />
+          )}
           {logo.name}
         </motion.div>
       ))}

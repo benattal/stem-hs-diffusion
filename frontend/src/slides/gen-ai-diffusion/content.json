@@ -20,8 +20,8 @@
     }
   ],
   "logos": [
-    { "name": "Midjourney", "color": "#e8e8f0" },
-    { "name": "Sora", "color": "#10a37f" }
+    { "name": "Midjourney", "color": "#e8e8f0", "logo": "/slides/gen-ai-diffusion/midjourney-logo.svg" },
+    { "name": "Sora", "color": "#10a37f", "logo": "/slides/gen-ai-diffusion/sora-logo.png" }
   ],
   "buildSteps": [
     { "id": "question" },

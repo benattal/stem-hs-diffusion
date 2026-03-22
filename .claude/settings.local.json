@@ -48,7 +48,16 @@
       "Bash(curl -sL -o puppy.jpg \"https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=400\")",
       "Bash(find C:UsersbattalDocumentsProjectsvision_workshop -type d -name *generative* -o -type d -name *gen-ai* -o -type d -name *what-is*)",
       "Bash(npm run:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "WebFetch(domain:commons.wikimedia.org)",
+      "WebFetch(domain:uxwing.com)",
+      "Bash(curl -sL -o \"C:/Users/battal/Documents/Projects/vision_workshop/frontend/public/slides/gen-ai-llms/chatgpt-logo.svg\" \"https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/chatgpt-icon.svg\")",
+      "Bash(curl -sL -o \"C:/Users/battal/Documents/Projects/vision_workshop/frontend/public/slides/gen-ai-llms/claude-logo.svg\" \"https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/claude-ai-icon.svg\")",
+      "Bash(curl -sL -o \"C:/Users/battal/Documents/Projects/vision_workshop/frontend/public/slides/gen-ai-llms/gemini-logo.svg\" \"https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-gemini-icon.svg\")",
+      "Bash(curl -sL -o \"C:/Users/battal/Documents/Projects/vision_workshop/frontend/public/slides/gen-ai-diffusion/midjourney-logo.svg\" \"https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/midjourney-color-icon.svg\")",
+      "WebFetch(domain:lobehub.com)",
+      "WebFetch(domain:seeklogo.com)",
+      "Bash(curl -sL -o \"C:/Users/battal/Documents/Projects/vision_workshop/frontend/public/slides/gen-ai-diffusion/sora-logo.png\" \"https://images.seeklogo.com/logo-png/61/1/openai-sora-logo-png_seeklogo-612642.png\")"
     ]
   }
 }
