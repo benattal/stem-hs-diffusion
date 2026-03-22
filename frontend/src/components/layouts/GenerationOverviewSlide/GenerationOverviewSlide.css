@@ -184,3 +184,15 @@
   border-radius: var(--radius-sm);
   padding: 0.5rem;
 }
+
+/* ─── Mobile ─────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .overview-panels {
+    flex-direction: column;
+  }
+
+  .overview-panel-slot--embed {
+    flex: none;
+  }
+}

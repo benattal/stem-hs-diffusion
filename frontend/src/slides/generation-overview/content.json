@@ -2,7 +2,7 @@
   "layout": "generationOverview",
   "sectionLabel": "How to Generate Images",
   "title": "How Image Generation Works",
-  "subtitle": "Two key ideas that make it possible",
+  "subtitle": "Two steps that make it possible",
   "buildSteps": [
     { "id": "embedding" },
     { "id": "diffusion" }

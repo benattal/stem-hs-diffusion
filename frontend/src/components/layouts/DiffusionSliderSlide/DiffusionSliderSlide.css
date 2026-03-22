@@ -211,9 +211,32 @@
   border-color: var(--accent);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  .diffusion-body {
+    max-width: 100%;
+  }
+
   .diffusion-image-picker {
     overflow-x: auto;
     flex-wrap: nowrap;
+    max-width: 100%;
+  }
+
+  .diffusion-canvas-container {
+    width: min(480px, 85vw);
+    height: min(280px, 35vh);
+  }
+
+  .diffusion-controls {
+    max-width: 100%;
+  }
+
+  .diffusion-thumb img {
+    width: 56px;
+    height: 42px;
+  }
+
+  .diffusion-thumb-label {
+    max-width: 56px;
   }
 }

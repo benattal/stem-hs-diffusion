@@ -57,9 +57,10 @@ html, body, #root {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 80px 80px 60px;
+  padding: 48px 80px 60px;
   background: var(--bg-slide);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .slide-content {
@@ -70,15 +71,13 @@ html, body, #root {
 
 /* ─── Section Label ───────────────────────────────────────────── */
 .section-label {
-  position: absolute;
-  top: 24px;
-  left: 40px;
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: var(--accent);
   opacity: 0.8;
+  margin-bottom: 1rem;
 }
 
 .slide-footnote {
@@ -506,7 +505,11 @@ kbd {
 /* ─── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .slide {
-    padding: 48px 24px 40px;
+    padding: 24px 16px 60px;
+  }
+
+  .slide h2 {
+    font-size: 1.75rem;
   }
 
   .nav-dots {

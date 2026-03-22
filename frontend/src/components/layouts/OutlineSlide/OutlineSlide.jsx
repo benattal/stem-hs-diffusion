@@ -8,7 +8,7 @@ export default function OutlineSlide({ slide, sections }) {
 
   return (
     <div className="slide--outline">
-      <h2>Outline</h2>
+      <div className="section-label">Outline</div>
       <ul className="outline-list">
         {sections.map((section, i) => {
           let cls = 'outline-item';

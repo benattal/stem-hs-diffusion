@@ -6,7 +6,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: var(--text-muted);
+  color: var(--accent);
   margin-bottom: 3rem;
 }
 

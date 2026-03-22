@@ -64,10 +64,10 @@ export default function SlideRenderer({ slide, buildStep, direction, sections })
         }
       }}
     >
-      {slide.sectionLabel && (
-        <div className="section-label">{slide.sectionLabel}</div>
-      )}
       <div className="slide-content">
+        {slide.sectionLabel && (
+          <div className="section-label">{slide.sectionLabel}</div>
+        )}
         <LayoutComponent
           slide={slide}
           buildStep={buildStep}

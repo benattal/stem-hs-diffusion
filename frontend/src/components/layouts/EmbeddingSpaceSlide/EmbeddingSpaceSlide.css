@@ -95,9 +95,15 @@
 @media (max-width: 768px) {
   .embedding-main {
     flex-direction: column;
+    gap: 1rem;
   }
 
   .embedding-preview {
+    min-width: 0;
     max-width: 100%;
+  }
+
+  .embedding-preview-image {
+    max-height: 180px;
   }
 }

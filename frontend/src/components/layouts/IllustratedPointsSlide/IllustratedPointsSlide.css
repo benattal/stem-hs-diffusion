@@ -201,3 +201,34 @@
 .ip-chat-conversation .ip-minichat {
   font-size: 0.7rem;
 }
+
+/* ─── Mobile ─────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .ip-point {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .ip-point-text {
+    max-width: none;
+    flex-shrink: 1;
+  }
+
+  .ip-image-compare {
+    flex-wrap: wrap;
+  }
+
+  .ip-image-card img {
+    width: 100px;
+    height: 66px;
+  }
+
+  .ip-chat-compare {
+    flex-direction: column;
+  }
+
+  .ip-chat-conversation .ip-minichat-wrapper {
+    max-width: none;
+  }
+}
