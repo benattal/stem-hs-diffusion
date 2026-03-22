@@ -1,15 +1,18 @@
 import { motion } from 'framer-motion';
+import DiffusionCycleBackground from '../../shared/DiffusionCycleBackground.jsx';
 import './TitleSlide.css';
 
 export default function TitleSlide({ slide }) {
   return (
     <div className="slide--title">
-      {slide.background && (
+      {slide.diffusionBackground ? (
+        <DiffusionCycleBackground />
+      ) : slide.background ? (
         <div
           className="title-bg"
           style={{ backgroundImage: `url(${slide.background})` }}
         />
-      )}
+      ) : null}
       <motion.h1
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
