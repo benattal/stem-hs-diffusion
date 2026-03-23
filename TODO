@@ -9,21 +9,36 @@ Website features
 Slides
 =======
 * Clustering slide
-    - Illustrate images being different (have them pop up and compare them)
-    - Illustrate images being similar (have them pop up and compare them)
+    - Keep the graph the same size! Don't change the posiiton of the graph
+    - Illustrate images being different
+        - Have images from different clusters expand, and compare them
+        - Make sure this pop up doesn't move other elements around
+    - Illustrate images being similar
+        - Have additional images pop up from one cluster, and compare to other images from that cluster
+        - Make sure this pop up doesn't move other elements around
 * Noise slide
-    - Noise definition
-        - Why it is called noise
-            - Compare to the term "background noise"
-            - Something that is random, hard to interpret
-* Diffusion model slide
-    - Random noise initializations lead to different random outputs
-        - A limitation of diffusion models -- why you see different random outputs when asking for the same thing
-        - A way to identify generated outputs
-        - But also a cool feature
+    - Add a definition of noise
+    - Why it is called noise
+        - Compare to the term "background noise"
+        - Something that is random, hard to interpret
+    - Show examples of noise
+        - Show image noise
+        - Show audio noise
+* Additional diffusion model slide (after existing one)
+    - Show that different random noise initializations lead to different random outputs
+    - Discuss this being a limitation of diffusion models
+        - why you see different random outputs when asking for the same prompt
+    - Discuss this being useful to identify generated outputs
+        - videos sometimes have "random" variation for a single object
+            - identities change, objects change
+* Additional what is generative AI slide
+    - Before the text->text slide
+    - Visually appealing illustration of AI model mapping text to different outputs
+        - Use chat visualization that's in later slides
 
 Presenter notes
 =======
+* Copy transcript to presenter notes
 * Dangers slide
     - Like it or not, right now they are ubiquitous, so it's useful to...
         - (maybe)
@@ -32,7 +47,6 @@ Presenter notes
 
 Other
 =======
-* Copy transcript to presenter notes
 * Open source/deploy source website
 * Share website with others
 * Encourage others to test notebooks on their phones
