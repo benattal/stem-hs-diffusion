@@ -87,7 +87,6 @@ function EmbeddingPanel({ activePair, onHover }) {
       </div>
       <p className="overview-panel-desc">
         A model maps text and images to points in a shared number space.
-        Similar concepts end up close together.
       </p>
       <div className="overview-embed-plot">
         <AnnotatedEmbeddingPlot activePair={activePair} onHover={onHover} />
@@ -106,8 +105,7 @@ function DiffusionPanel({ activePair }) {
         <span className="overview-panel-title">Numbers &rarr; Images</span>
       </div>
       <p className="overview-panel-desc">
-        A diffusion model takes those numbers and starts from pure noise,
-        gradually removing it to create an image.
+        A diffusion model takes those numbers to produce an image.
       </p>
 
       <div className="overview-diffusion-flow">

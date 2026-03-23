@@ -8,9 +8,31 @@ Website features
 
 Slides
 =======
+* Clustering slide
+    - Illustrate images being different (have them pop up and compare them)
+    - Illustrate images being similar (have them pop up and compare them)
+* Noise slide
+    - Noise definition
+        - Why it is called noise
+            - Compare to the term "background noise"
+            - Something that is random, hard to interpret
+* Diffusion model slide
+    - Random noise initializations lead to different random outputs
+        - A limitation of diffusion models -- why you see different random outputs when asking for the same thing
+        - A way to identify generated outputs
+        - But also a cool feature
+
+Presenter notes
+=======
+* Dangers slide
+    - Like it or not, right now they are ubiquitous, so it's useful to...
+        - (maybe)
+* Embedding slide
+    - "Text & image, like ... to numbers"
 
 Other
 =======
+* Copy transcript to presenter notes
 * Open source/deploy source website
 * Share website with others
 * Encourage others to test notebooks on their phones

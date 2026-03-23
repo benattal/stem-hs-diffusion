@@ -2,6 +2,6 @@
   "layout": "embeddingSpace",
   "sectionLabel": "How to Generate Images",
   "title": "From Text and Images to Numbers",
-  "description": "A model learns to convert both text captions and images into lists of numbers in the same space — hover over any point to see how matching image-text pairs cluster together.",
+  "description": "A model learns to convert both text captions and images into lists of numbers in the same space — hover over any point to see how different points in this space correspond to different images and captions.",
   "footnote": "Radford et al. \"Learning transferable visual models from natural language supervision.\" ICML, 2021."
 }
