@@ -340,61 +340,66 @@ export default function EmbeddingClustersSlide({ slide, buildStep }) {
         </motion.p>
       )}
 
-      <motion.div
-        className="ec-plot-wrapper"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.5 }}
-      >
-        <svg viewBox={`0 0 ${PLOT_W} ${PLOT_H}`} className="ec-plot-svg">
-          <EmbeddingScatterPlot
-            pairs={embeddingPairs}
-            activeId={null}
-            onHover={() => {}}
-            width={PLOT_W}
-            height={PLOT_H}
-          />
-          <ClusterOverlays visible={showClusters} highlightIds={highlightIds} />
-          <ClusterMemberThumbnails visible={showImageSimilarity} clusterId="animals" />
-        </svg>
-      </motion.div>
+      <div className="ec-columns">
+        <div className="ec-col-graph">
+          <motion.div
+            className="ec-plot-wrapper"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
+            <svg viewBox={`0 0 ${PLOT_W} ${PLOT_H}`} className="ec-plot-svg">
+              <EmbeddingScatterPlot
+                pairs={embeddingPairs}
+                activeId={null}
+                onHover={() => {}}
+                width={PLOT_W}
+                height={PLOT_H}
+              />
+              <ClusterOverlays visible={showClusters} highlightIds={highlightIds} />
+              <ClusterMemberThumbnails visible={showImageSimilarity} clusterId="animals" />
+            </svg>
+          </motion.div>
 
-      <div className="ec-caption">
-        {showClusters && !showImageDifference && !showImageSimilarity && (
-          <motion.p
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            className="ec-caption-text"
-          >
-            Similar concepts cluster together in the number space
-          </motion.p>
-        )}
-        {showImageDifference && (
-          <motion.p
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            className="ec-caption-text"
-          >
-            Images in different clusters look quite different from each other
-          </motion.p>
-        )}
-        {showImageSimilarity && (
-          <motion.p
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            className="ec-caption-text"
-          >
-            Images in the same cluster are very similar to each other
-          </motion.p>
-        )}
+          <div className="ec-caption">
+            {showClusters && !showImageDifference && !showImageSimilarity && (
+              <motion.p
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                className="ec-caption-text"
+              >
+                Similar concepts cluster together in the number space
+              </motion.p>
+            )}
+            {showImageDifference && (
+              <motion.p
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                className="ec-caption-text"
+              >
+                Images in different clusters look quite different from each other
+              </motion.p>
+            )}
+            {showImageSimilarity && (
+              <motion.p
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                className="ec-caption-text"
+              >
+                Images in the same cluster are very similar to each other
+              </motion.p>
+            )}
+          </div>
+        </div>
+
+        <div className="ec-col-overlay">
+          {showImageDifference && <ImageDifferenceOverlay />}
+          {showImageSimilarity && <ImageSimilarityOverlay />}
+        </div>
       </div>
-
-      {/* Image comparison overlays — below caption, no graph occlusion */}
-      {showImageDifference && <ImageDifferenceOverlay />}
-      {showImageSimilarity && <ImageSimilarityOverlay />}
     </div>
   );
 }
