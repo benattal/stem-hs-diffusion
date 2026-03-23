@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import katex from 'katex';
 import 'katex/dist/katex.min.css';
@@ -106,27 +106,19 @@ function ChatMessage({ type, children, delay = 0 }) {
 }
 
 function ChatDemo({ demo, isVisible }) {
-  const [phase, setPhase] = useState('typing'); // 'typing' | 'response'
-  const timerRef = useRef(null);
+  const [phase, setPhase] = useState(isVisible ? 'typing' : 'idle');
 
   useEffect(() => {
-    if (isVisible) {
-      setPhase('typing');
-      timerRef.current = setTimeout(() => {
-        setPhase('response');
-      }, 1500);
-      return () => clearTimeout(timerRef.current);
-    }
+    if (!isVisible) return;
+    setPhase('typing');
+    const timer = setTimeout(() => setPhase('response'), 1500);
+    return () => clearTimeout(timer);
   }, [isVisible]);
 
-  if (!isVisible) return null;
-
   return (
-    <motion.div
+    <div
       className="chat-demo"
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.4 }}
+      style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.4s' }}
     >
       {demo.label && <div className="chat-demo-label">{demo.label}</div>}
       <div className="chat-window">
@@ -179,7 +171,7 @@ function ChatDemo({ demo, isVisible }) {
           )}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -264,7 +256,7 @@ export default function GenAiDemoSlide({ slide, buildStep }) {
 
         {/* Chat Demos */}
         {(slide.chatDemos || []).length > 0 && (
-          <div className="chat-demos">
+          <div className={`chat-demos ${(slide.chatDemos || []).every(d => d.responseType === 'text') ? 'chat-demos--text' : 'chat-demos--media'}`}>
             {slide.chatDemos.map((demo, i) => (
               <ChatDemo
                 key={i}

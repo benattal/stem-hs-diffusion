@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './GenAiOverviewSlide.css';
 
@@ -12,15 +12,15 @@ function TypingDots() {
   );
 }
 
-function MiniChatWindow({ demo, label }) {
-  const [phase, setPhase] = useState('typing');
-  const timerRef = useRef(null);
+function MiniChatWindow({ demo, label, isVisible }) {
+  const [phase, setPhase] = useState(isVisible ? 'typing' : 'idle');
 
   useEffect(() => {
+    if (!isVisible) return;
     setPhase('typing');
-    timerRef.current = setTimeout(() => setPhase('response'), 1200);
-    return () => clearTimeout(timerRef.current);
-  }, []);
+    const timer = setTimeout(() => setPhase('response'), 1200);
+    return () => clearTimeout(timer);
+  }, [isVisible]);
 
   return (
     <div className="gao-chat-card">
@@ -102,19 +102,18 @@ export default function GenAiOverviewSlide({ slide, buildStep }) {
         </motion.div>
       )}
 
-      {/* Chat examples */}
+      {/* Chat examples — all always rendered for stable layout */}
       <div className="gao-demos">
         {outputs.map((output, i) => {
-          if (buildStep < i + 1) return null;
+          const visible = buildStep >= i + 1;
           return (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 15, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.4 }}
+              className="gao-demo-slot"
+              style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.4s' }}
             >
-              <MiniChatWindow demo={output} label={output.label} />
-            </motion.div>
+              <MiniChatWindow demo={output} label={output.label} isVisible={visible} />
+            </div>
           );
         })}
       </div>

@@ -60,12 +60,11 @@
 .gao-demos {
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
-.gao-chat-card {
-  flex: 1;
+.gao-demo-slot {
+  flex: 1 1 0;
   min-width: 220px;
   max-width: 340px;
 }
@@ -114,7 +113,7 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  min-height: 80px;
+  height: 210px;
 }
 
 .gao-msg { display: flex; }
@@ -195,7 +194,7 @@
     flex-direction: column;
     align-items: center;
   }
-  .gao-chat-card {
+  .gao-demo-slot {
     min-width: 0;
     max-width: none;
     width: 100%;
