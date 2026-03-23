@@ -173,30 +173,21 @@ export default function NoiseDefinitionSlide({ slide, buildStep }) {
 
       {/* Examples */}
       <div className="nd-examples">
-        {buildStep >= 2 && (
-          <motion.div
-            className="nd-example"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-          >
-            <div className="nd-example-label">{slide.examples[0].label}</div>
-            <p className="nd-example-desc">{slide.examples[0].description}</p>
-            <ImageNoiseDemo imageSrc={slide.examples[0].imageSrc} />
-          </motion.div>
-        )}
-
-        {buildStep >= 3 && (
-          <motion.div
-            className="nd-example"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-          >
-            <div className="nd-example-label">{slide.examples[1].label}</div>
-            <p className="nd-example-desc">{slide.examples[1].description}</p>
-            <AudioNoiseDemo />
-          </motion.div>
+        {slide.examples.map((example, i) =>
+          buildStep >= 2 + i && (
+            <motion.div
+              key={example.type}
+              className="nd-example"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+            >
+              <div className="nd-example-label">{example.label}</div>
+              <p className="nd-example-desc">{example.description}</p>
+              {example.type === 'image' && <ImageNoiseDemo imageSrc={example.imageSrc} />}
+              {example.type === 'audio' && <AudioNoiseDemo />}
+            </motion.div>
+          )
         )}
       </div>
     </div>

@@ -15,26 +15,27 @@
 
 .ec-columns {
   display: flex;
-  align-items: flex-start;
-  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
   flex: 1;
   min-height: 0;
 }
 
 .ec-col-graph {
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
   min-width: 0;
 }
 
 .ec-col-overlay {
-  flex: 0 0 320px;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 300px;
+  width: 100%;
+  max-width: 480px;
 }
 
 .ec-plot-wrapper {

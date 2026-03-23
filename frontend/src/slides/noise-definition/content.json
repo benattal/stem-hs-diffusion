@@ -9,21 +9,21 @@
   },
   "examples": [
     {
+      "type": "audio",
+      "label": "Audio Noise",
+      "description": "Random variations overlaid on a sound wave"
+    },
+    {
       "type": "image",
       "label": "Image Noise",
       "description": "Random pixel values overlaid on an image",
       "imageSrc": "/slides/clip-model/image19.jpeg"
-    },
-    {
-      "type": "audio",
-      "label": "Audio Noise",
-      "description": "Random variations overlaid on a sound wave"
     }
   ],
   "buildSteps": [
     { "id": "definition" },
     { "id": "analogy" },
-    { "id": "imageNoise" },
-    { "id": "audioNoise" }
+    { "id": "audioNoise" },
+    { "id": "imageNoise" }
   ]
 }
