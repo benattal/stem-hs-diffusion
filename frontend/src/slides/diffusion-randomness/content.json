@@ -1,0 +1,25 @@
+{
+  "layout": "diffusionRandomness",
+  "sectionLabel": "How to Generate Images",
+  "title": "Different Noise, Different Results",
+  "description": "The diffusion model starts from random noise. Different random starting points lead to different final images, even with the same text prompt.",
+  "prompt": "A cute furry animal",
+  "results": [
+    { "src": "/slides/clip-model/image19.jpeg", "label": "Result 1" },
+    { "src": "/slides/clip-interactive/kitten.jpg", "label": "Result 2" },
+    { "src": "/slides/clip-interactive/puppy.jpg", "label": "Result 3" }
+  ],
+  "limitation": {
+    "title": "Limitation:",
+    "text": "You get a different result each time you run the model. You can't precisely control the output."
+  },
+  "detection": {
+    "title": "Useful for Detection:",
+    "text": "Identities change, objects morph or disappear. These artifacts help identify AI-generated content."
+  },
+  "buildSteps": [
+    { "id": "diagram" },
+    { "id": "limitation" },
+    { "id": "detection" }
+  ]
+}

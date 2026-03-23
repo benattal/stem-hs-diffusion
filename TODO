@@ -16,7 +16,7 @@ Slides
     - Illustrate images being similar
         - Have additional images pop up from one cluster, and compare to other images from that cluster
         - Make sure this pop up doesn't move other elements around
-* Noise slide
+* Additional noise slide (before existing noise slide)
     - Add a definition of noise
     - Why it is called noise
         - Compare to the term "background noise"

@@ -37,3 +37,98 @@
   color: var(--accent-secondary);
   text-align: center;
 }
+
+/* ─── Image Comparison Overlays ─────────────────────────────── */
+
+.ec-image-overlay {
+  margin: 0.75rem auto 0;
+  z-index: 10;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  box-shadow: var(--shadow);
+  max-width: 300px;
+}
+
+.ec-image-overlay--similarity {
+  max-width: 420px;
+}
+
+.ec-overlay-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ff6b6b;
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+
+.ec-overlay-compare {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.ec-overlay-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.ec-overlay-img {
+  width: 90px;
+  height: 90px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  border: 2px solid var(--border-light);
+}
+
+.ec-overlay-cluster-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.ec-overlay-vs {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #ff6b6b;
+  flex-shrink: 0;
+}
+
+.ec-overlay-note {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Gallery for similarity overlay */
+.ec-overlay-gallery {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ec-overlay-gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.ec-overlay-gallery-item .ec-overlay-img {
+  width: 75px;
+  height: 75px;
+}
+
+.ec-overlay-img-caption {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 90px;
+  line-height: 1.3;
+}

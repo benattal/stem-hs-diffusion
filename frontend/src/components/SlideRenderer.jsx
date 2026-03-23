@@ -18,6 +18,9 @@ import IllustratedPointsSlide from './layouts/IllustratedPointsSlide/Illustrated
 import GenerationOverviewSlide from './layouts/GenerationOverviewSlide/GenerationOverviewSlide.jsx';
 import DiffusionModelSlide from './layouts/DiffusionModelSlide/DiffusionModelSlide.jsx';
 import EmbeddingClustersSlide from './layouts/EmbeddingClustersSlide/EmbeddingClustersSlide.jsx';
+import GenAiOverviewSlide from './layouts/GenAiOverviewSlide/GenAiOverviewSlide.jsx';
+import NoiseDefinitionSlide from './layouts/NoiseDefinitionSlide/NoiseDefinitionSlide.jsx';
+import DiffusionRandomnessSlide from './layouts/DiffusionRandomnessSlide/DiffusionRandomnessSlide.jsx';
 
 const layoutMap = {
   title: TitleSlide,
@@ -37,6 +40,9 @@ const layoutMap = {
   generationOverview: GenerationOverviewSlide,
   diffusionModel: DiffusionModelSlide,
   embeddingClusters: EmbeddingClustersSlide,
+  genAiOverview: GenAiOverviewSlide,
+  noiseDefinition: NoiseDefinitionSlide,
+  diffusionRandomness: DiffusionRandomnessSlide,
 };
 
 export default function SlideRenderer({ slide, buildStep, direction, sections }) {

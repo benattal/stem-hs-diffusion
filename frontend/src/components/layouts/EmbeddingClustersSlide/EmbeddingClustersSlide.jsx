@@ -72,15 +72,9 @@ function getClusterGeometry(cluster) {
   };
 }
 
-// Distance lines with explicit label offsets to avoid overlap
-const distanceLines = [
-  { from: 'animals', to: 'vehicles', label: 'Different concepts', offsetX: -55, offsetY: -20 },
-  { from: 'food', to: 'nature', label: 'Different concepts', offsetX: 55, offsetY: 20 },
-];
-
 const THUMB = 30;
 
-function ClusterOverlays({ visible }) {
+function ClusterOverlays({ visible, highlightIds }) {
   if (!visible) return null;
 
   return (
@@ -88,6 +82,9 @@ function ClusterOverlays({ visible }) {
       {clusters.map((cluster, i) => {
         const geo = getClusterGeometry(cluster);
         const rep = embeddingPairs.find((p) => p.id === cluster.repId);
+
+        const isHighlighted = !highlightIds || highlightIds.includes(cluster.id);
+        const hasHighlight = !!highlightIds;
 
         // Place label + thumbnail above the cluster circle
         const labelY = geo.cy - geo.r - 8;
@@ -99,8 +96,11 @@ function ClusterOverlays({ visible }) {
           <motion.g
             key={cluster.id}
             initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: i * 0.15 }}
+            animate={{
+              opacity: hasHighlight ? (isHighlighted ? 1 : 0.15) : 1,
+              scale: 1,
+            }}
+            transition={{ duration: 0.5, delay: hasHighlight ? 0 : i * 0.15 }}
             style={{ transformOrigin: `${geo.cx}px ${geo.cy}px` }}
           >
             {/* Circle */}
@@ -108,10 +108,10 @@ function ClusterOverlays({ visible }) {
               cx={geo.cx}
               cy={geo.cy}
               r={geo.r}
-              fill={`${cluster.color}10`}
+              fill={`${cluster.color}${hasHighlight && isHighlighted ? '22' : '10'}`}
               stroke={cluster.color}
-              strokeWidth={2}
-              strokeDasharray="6 3"
+              strokeWidth={hasHighlight && isHighlighted ? 3 : 2}
+              strokeDasharray={hasHighlight && isHighlighted ? 'none' : '6 3'}
             />
 
             {/* Label */}
@@ -120,7 +120,7 @@ function ClusterOverlays({ visible }) {
               y={labelY}
               textAnchor="middle"
               fill={cluster.color}
-              fontSize={12}
+              fontSize={hasHighlight && isHighlighted ? 13 : 12}
               fontWeight="700"
               fontFamily="var(--font)"
             >
@@ -158,56 +158,67 @@ function ClusterOverlays({ visible }) {
   );
 }
 
-function DistanceOverlays({ visible }) {
+const MEMBER_THUMB = 44;
+
+function ClusterMemberThumbnails({ visible, clusterId }) {
   if (!visible) return null;
+
+  const cluster = clusters.find(c => c.id === clusterId);
+  if (!cluster) return null;
+
+  const memberPairs = cluster.members
+    .filter(id => id !== cluster.repId)
+    .map(id => embeddingPairs.find(p => p.id === id))
+    .filter(Boolean);
 
   return (
     <>
-      {distanceLines.map((line, i) => {
-        const fromGeo = getClusterGeometry(clusters.find((c) => c.id === line.from));
-        const toGeo = getClusterGeometry(clusters.find((c) => c.id === line.to));
-        const midX = (fromGeo.cx + toGeo.cx) / 2 + line.offsetX;
-        const midY = (fromGeo.cy + toGeo.cy) / 2 + line.offsetY;
-        const labelW = 88;
+      {memberPairs.map((pair, i) => {
+        const px = toSvgX(pair.x);
+        const py = toSvgY(pair.y);
+        // Offset the thumbnail so it sits above-right of the dot
+        const tx = px + 6;
+        const ty = py - MEMBER_THUMB - 6;
 
         return (
           <motion.g
-            key={`${line.from}-${line.to}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: i * 0.3 }}
+            key={pair.id}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.1 + i * 0.1, duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
+            style={{ transformOrigin: `${px}px ${py}px` }}
           >
+            {/* Connecting line from dot to thumbnail */}
             <line
-              x1={fromGeo.cx}
-              y1={fromGeo.cy}
-              x2={toGeo.cx}
-              y2={toGeo.cy}
-              stroke="#ff6b6b"
-              strokeWidth={1.5}
-              strokeDasharray="8 4"
+              x1={px}
+              y1={py}
+              x2={tx + MEMBER_THUMB / 2}
+              y2={ty + MEMBER_THUMB}
+              stroke={cluster.color}
+              strokeWidth={1}
+              strokeOpacity={0.5}
             />
+            {/* Border */}
             <rect
-              x={midX - labelW / 2}
-              y={midY - 9}
-              width={labelW}
-              height={18}
-              rx={4}
-              fill="var(--bg-slide)"
-              fillOpacity={0.95}
-              stroke="#ff6b6b"
-              strokeWidth={0.5}
+              x={tx - 1.5}
+              y={ty - 1.5}
+              width={MEMBER_THUMB + 3}
+              height={MEMBER_THUMB + 3}
+              rx={5}
+              fill="var(--bg-card, #1e1e30)"
+              stroke={cluster.color}
+              strokeWidth={2}
             />
-            <text
-              x={midX}
-              y={midY + 4}
-              textAnchor="middle"
-              fill="#ff6b6b"
-              fontSize={9}
-              fontWeight="700"
-              fontFamily="var(--font)"
-            >
-              {line.label}
-            </text>
+            {/* Image */}
+            <image
+              href={pair.image}
+              x={tx}
+              y={ty}
+              width={MEMBER_THUMB}
+              height={MEMBER_THUMB}
+              clipPath="inset(0 round 4px)"
+              preserveAspectRatio="xMidYMid slice"
+            />
           </motion.g>
         );
       })}
@@ -215,9 +226,98 @@ function DistanceOverlays({ visible }) {
   );
 }
 
+function ImageDifferenceOverlay() {
+  const catPair = embeddingPairs.find(p => p.id === 'cat');
+  const carPair = embeddingPairs.find(p => p.id === 'car');
+  const animalCluster = clusters.find(c => c.id === 'animals');
+  const vehicleCluster = clusters.find(c => c.id === 'vehicles');
+
+  return (
+    <motion.div
+      className="ec-image-overlay"
+      initial={{ opacity: 0, scale: 0.85 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+    >
+      <div className="ec-overlay-title">These images are different!</div>
+      <div className="ec-overlay-compare">
+        <motion.div
+          className="ec-overlay-item"
+          initial={{ scale: 0.3, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.15, duration: 0.4 }}
+        >
+          <img src={catPair.image} alt={catPair.caption} className="ec-overlay-img" />
+          <span className="ec-overlay-cluster-label" style={{ color: animalCluster.color }}>
+            {animalCluster.label}
+          </span>
+        </motion.div>
+        <span className="ec-overlay-vs">&ne;</span>
+        <motion.div
+          className="ec-overlay-item"
+          initial={{ scale: 0.3, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.4 }}
+        >
+          <img src={carPair.image} alt={carPair.caption} className="ec-overlay-img" />
+          <span className="ec-overlay-cluster-label" style={{ color: vehicleCluster.color }}>
+            {vehicleCluster.label}
+          </span>
+        </motion.div>
+      </div>
+      <div className="ec-overlay-note">Far apart in the number space</div>
+    </motion.div>
+  );
+}
+
+function ImageSimilarityOverlay() {
+  const animalCluster = clusters.find(c => c.id === 'animals');
+  const animalPairs = animalCluster.members
+    .map(id => embeddingPairs.find(p => p.id === id))
+    .filter(Boolean);
+
+  return (
+    <motion.div
+      className="ec-image-overlay ec-image-overlay--similarity"
+      initial={{ opacity: 0, scale: 0.85 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+    >
+      <div className="ec-overlay-title" style={{ color: animalCluster.color }}>
+        These images are similar!
+      </div>
+      <div className="ec-overlay-gallery">
+        {animalPairs.map((pair, i) => (
+          <motion.div
+            key={pair.id}
+            className="ec-overlay-gallery-item"
+            initial={{ scale: 0.3, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.1 + i * 0.1, duration: 0.35 }}
+          >
+            <img src={pair.image} alt={pair.caption} className="ec-overlay-img" />
+            <span className="ec-overlay-img-caption">{pair.caption}</span>
+          </motion.div>
+        ))}
+      </div>
+      <div className="ec-overlay-note" style={{ color: animalCluster.color }}>
+        All from the {animalCluster.label} cluster — close together in the number space
+      </div>
+    </motion.div>
+  );
+}
+
 export default function EmbeddingClustersSlide({ slide, buildStep }) {
   const showClusters = buildStep >= 1;
-  const showDistances = buildStep >= 2;
+  const showImageDifference = buildStep === 2;
+  const showImageSimilarity = buildStep === 3;
+
+  // Determine which clusters to highlight
+  const highlightIds = showImageDifference
+    ? ['animals', 'vehicles']
+    : showImageSimilarity
+      ? ['animals']
+      : null;
 
   return (
     <div className="slide--embedding-clusters">
@@ -254,13 +354,13 @@ export default function EmbeddingClustersSlide({ slide, buildStep }) {
             width={PLOT_W}
             height={PLOT_H}
           />
-          <ClusterOverlays visible={showClusters} />
-          <DistanceOverlays visible={showDistances} />
+          <ClusterOverlays visible={showClusters} highlightIds={highlightIds} />
+          <ClusterMemberThumbnails visible={showImageSimilarity} clusterId="animals" />
         </svg>
       </motion.div>
 
       <div className="ec-caption">
-        {showClusters && !showDistances && (
+        {showClusters && !showImageDifference && !showImageSimilarity && (
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -270,17 +370,31 @@ export default function EmbeddingClustersSlide({ slide, buildStep }) {
             Similar concepts cluster together in the number space
           </motion.p>
         )}
-        {showDistances && (
+        {showImageDifference && (
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
             className="ec-caption-text"
           >
-            Concepts we judge as different are also far apart in this space
+            Images in different clusters look quite different from each other
+          </motion.p>
+        )}
+        {showImageSimilarity && (
+          <motion.p
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="ec-caption-text"
+          >
+            Images in the same cluster are very similar to each other
           </motion.p>
         )}
       </div>
+
+      {/* Image comparison overlays — below caption, no graph occlusion */}
+      {showImageDifference && <ImageDifferenceOverlay />}
+      {showImageSimilarity && <ImageSimilarityOverlay />}
     </div>
   );
 }

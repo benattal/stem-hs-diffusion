@@ -7,7 +7,7 @@
     {
       "id": "intro",
       "title": "Introduction: What is Generative AI?",
-      "slides": ["title", "outline-intro", "gen-ai-llms", "gen-ai-diffusion"]
+      "slides": ["title", "outline-intro", "gen-ai-overview", "gen-ai-llms", "gen-ai-diffusion"]
     },
     {
       "id": "benefits-dangers",
@@ -22,8 +22,10 @@
         "generation-overview",
         "clip-interactive",
         "embedding-clusters",
+        "noise-definition",
         "noise-to-images",
-        "diffusion-models"
+        "diffusion-models",
+        "diffusion-randomness"
       ]
     },
     {

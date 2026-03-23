@@ -1,0 +1,184 @@
+/* ─── NoiseDefinitionSlide Layout ───────────────────────────── */
+
+.slide--noise-definition h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* ─── Definition ────────────────────────────────────────────── */
+
+.nd-definition {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.nd-def-term {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--accent);
+  font-style: italic;
+}
+
+.nd-def-equals {
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+.nd-def-meaning {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+  flex: 1;
+  min-width: 200px;
+}
+
+/* ─── Analogy ───────────────────────────────────────────────── */
+
+.nd-analogy {
+  padding: 1rem 1.5rem;
+  background: rgba(108, 99, 255, 0.08);
+  border: 1px solid rgba(108, 99, 255, 0.2);
+  border-radius: var(--radius);
+  margin-bottom: 1.25rem;
+}
+
+.nd-analogy-header {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.nd-analogy-text {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.nd-analogy-text strong {
+  color: var(--text-primary);
+}
+
+/* ─── Examples ──────────────────────────────────────────────── */
+
+.nd-examples {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.nd-example {
+  flex: 0 0 calc(50% - 0.625rem);
+  min-width: 280px;
+}
+
+.nd-example-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.nd-example-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+/* ─── Image Noise Demo ──────────────────────────────────────── */
+
+.nd-image-demo {
+  background: var(--bg-elevated);
+  border-radius: var(--radius);
+  padding: 1rem;
+  border: 1px solid var(--border);
+}
+
+.nd-image-pair {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.nd-image-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.nd-canvas {
+  max-width: 180px;
+  max-height: 140px;
+  border-radius: var(--radius-sm);
+}
+
+.nd-pair-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.nd-pair-arrow {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* ─── Audio Noise Demo ──────────────────────────────────────── */
+
+.nd-audio-demo {
+  background: var(--bg-elevated);
+  border-radius: var(--radius);
+  padding: 1rem;
+  border: 1px solid var(--border);
+}
+
+.nd-audio-pair {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.nd-audio-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.nd-waveform {
+  width: 200px;
+  height: 55px;
+}
+
+/* ─── Mobile ────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .nd-examples {
+    flex-direction: column;
+  }
+  .nd-example {
+    min-width: 0;
+  }
+  .nd-image-pair,
+  .nd-audio-pair {
+    flex-direction: column;
+  }
+  .nd-pair-arrow {
+    transform: rotate(90deg);
+  }
+}

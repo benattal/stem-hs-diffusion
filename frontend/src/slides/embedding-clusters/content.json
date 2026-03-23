@@ -6,6 +6,7 @@
   "buildSteps": [
     { "id": "question" },
     { "id": "clusters" },
-    { "id": "distances" }
+    { "id": "imageDifference" },
+    { "id": "imageSimilarity" }
   ]
 }
