@@ -126,12 +126,12 @@ html, body, #root {
 .nav-controls {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 }
 
 .nav-btn {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   border: 1px solid var(--border-light);
   background: rgba(255, 255, 255, 0.05);
@@ -140,7 +140,7 @@ html, body, #root {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.2rem;
   transition: all var(--transition);
 }
 
@@ -162,8 +162,8 @@ html, body, #root {
 }
 
 .nav-dot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: var(--border-light);
   border: none;
@@ -174,8 +174,8 @@ html, body, #root {
 
 .nav-dot--active {
   background: var(--accent);
-  width: 24px;
-  border-radius: 4px;
+  width: 28px;
+  border-radius: 5px;
 }
 
 .nav-dot--section-start {
@@ -598,5 +598,17 @@ kbd {
 
   .nav-dots {
     display: none;
+  }
+
+  .nav-section-label {
+    display: none;
+  }
+
+  .nav-slide-counter {
+    display: none;
+  }
+
+  .navigation {
+    justify-content: center;
   }
 }

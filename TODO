@@ -1,5 +1,6 @@
 Website features
 =======
+* Better use of vertical space
 * Mobile support
 * Different presenter/student views
     - Student view tracks presenter view
@@ -8,33 +9,6 @@ Website features
 
 Slides
 =======
-* Clustering slide
-    - Keep the graph the same size! Don't change the posiiton of the graph
-    - Illustrate images being different
-        - Have images from different clusters expand, and compare them
-        - Make sure this pop up doesn't move other elements around
-    - Illustrate images being similar
-        - Have additional images pop up from one cluster, and compare to other images from that cluster
-        - Make sure this pop up doesn't move other elements around
-* Additional noise slide (before existing noise slide)
-    - Add a definition of noise
-    - Why it is called noise
-        - Compare to the term "background noise"
-        - Something that is random, hard to interpret
-    - Show examples of noise
-        - Show image noise
-        - Show audio noise
-* Additional diffusion model slide (after existing one)
-    - Show that different random noise initializations lead to different random outputs
-    - Discuss this being a limitation of diffusion models
-        - why you see different random outputs when asking for the same prompt
-    - Discuss this being useful to identify generated outputs
-        - videos sometimes have "random" variation for a single object
-            - identities change, objects change
-* Additional what is generative AI slide
-    - Before the text->text slide
-    - Visually appealing illustration of AI model mapping text to different outputs
-        - Use chat visualization that's in later slides
 
 Presenter notes
 =======
