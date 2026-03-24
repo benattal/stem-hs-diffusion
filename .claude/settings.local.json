@@ -57,7 +57,8 @@
       "Bash(curl -sL -o \"C:/Users/battal/Documents/Projects/vision_workshop/frontend/public/slides/gen-ai-diffusion/midjourney-logo.svg\" \"https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/midjourney-color-icon.svg\")",
       "WebFetch(domain:lobehub.com)",
       "WebFetch(domain:seeklogo.com)",
-      "Bash(curl -sL -o \"C:/Users/battal/Documents/Projects/vision_workshop/frontend/public/slides/gen-ai-diffusion/sora-logo.png\" \"https://images.seeklogo.com/logo-png/61/1/openai-sora-logo-png_seeklogo-612642.png\")"
+      "Bash(curl -sL -o \"C:/Users/battal/Documents/Projects/vision_workshop/frontend/public/slides/gen-ai-diffusion/sora-logo.png\" \"https://images.seeklogo.com/logo-png/61/1/openai-sora-logo-png_seeklogo-612642.png\")",
+      "Bash(git checkout:*)"
     ]
   }
 }

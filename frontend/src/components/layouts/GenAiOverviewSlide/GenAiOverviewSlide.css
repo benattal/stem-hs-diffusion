@@ -18,14 +18,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
 }
 
 .gao-flow-box {
-  padding: 0.6rem 1.25rem;
+  padding: 0.8rem 1.5rem;
   border-radius: var(--radius);
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   text-align: center;
 }
@@ -40,8 +40,8 @@
   background: var(--bg-elevated);
   border: 1px solid var(--border-light);
   color: var(--text-primary);
-  padding: 0.75rem 1.5rem;
-  font-size: 1.1rem;
+  padding: 0.9rem 1.75rem;
+  font-size: 1.25rem;
 }
 
 .gao-flow-output {
@@ -51,7 +51,7 @@
 }
 
 .gao-flow-arrow {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   color: var(--text-muted);
 }
 
@@ -109,11 +109,11 @@
 }
 
 .gao-chat-body {
-  padding: 12px;
+  padding: 14px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  height: 210px;
+  gap: 10px;
+  height: 250px;
 }
 
 .gao-msg { display: flex; }
@@ -121,10 +121,10 @@
 .gao-msg--ai { justify-content: flex-start; }
 
 .gao-bubble {
-  padding: 8px 12px;
+  padding: 10px 14px;
   max-width: 90%;
-  font-size: 0.8rem;
-  line-height: 1.4;
+  font-size: 0.9rem;
+  line-height: 1.45;
 }
 
 .gao-bubble--user {
@@ -142,12 +142,12 @@
 
 .gao-response-text {
   white-space: pre-line;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .gao-response-media {
   max-width: 100%;
-  max-height: 120px;
+  max-height: 150px;
   border-radius: var(--radius-sm);
   object-fit: contain;
 }

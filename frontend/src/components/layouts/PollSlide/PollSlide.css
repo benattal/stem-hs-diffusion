@@ -13,7 +13,7 @@
 }
 
 .poll-question {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--text-secondary);
   line-height: 1.5;
   align-self: stretch;
@@ -22,21 +22,21 @@
 .poll-options {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  max-width: 640px;
+  gap: 1.25rem;
+  max-width: 750px;
   width: 100%;
 }
 
 .poll-option {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1.25rem 1.5rem;
+  gap: 1.1rem;
+  padding: 1.5rem 1.75rem;
   border: 1px solid var(--border-light);
   border-radius: var(--radius);
   background: var(--bg-elevated);
   color: var(--text-primary);
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   cursor: pointer;
   transition: border-color var(--transition), background var(--transition), opacity var(--transition);
   text-align: left;
@@ -65,13 +65,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: var(--accent);
   color: white;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 1rem;
   flex-shrink: 0;
 }
 

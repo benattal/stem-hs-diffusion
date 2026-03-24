@@ -14,7 +14,7 @@
 
 .overview-panels {
   display: flex;
-  gap: 1.25rem;
+  gap: 1.5rem;
   align-items: stretch;
 }
 
@@ -35,10 +35,10 @@
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1rem;
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.6rem;
   height: 100%;
 }
 
@@ -52,25 +52,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background: var(--accent);
   color: white;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 700;
   flex-shrink: 0;
 }
 
 .overview-panel-title {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--accent-secondary);
 }
 
 .overview-panel-desc {
-  font-size: 0.8rem;
-  line-height: 1.4;
+  font-size: 0.95rem;
+  line-height: 1.5;
   color: var(--text-secondary);
 }
 
@@ -85,11 +85,11 @@
 
 .overview-annotated-plot {
   width: 100%;
-  max-width: 340px;
+  max-width: 380px;
   background: var(--bg-primary);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  padding: 0.4rem;
+  padding: 0.5rem;
 }
 
 .overview-annotated-svg {
@@ -141,13 +141,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.15rem;
-  padding: 0.5rem 1rem;
+  gap: 0.2rem;
+  padding: 0.65rem 1.25rem;
   background: linear-gradient(135deg, rgba(108, 99, 255, 0.15), rgba(0, 210, 255, 0.1));
   border: 1px solid rgba(108, 99, 255, 0.4);
   border-radius: var(--radius-sm);
   width: 100%;
-  max-width: 260px;
+  max-width: 290px;
 }
 
 .overview-flow-model-inner {
@@ -162,7 +162,7 @@
 }
 
 .overview-flow-model-label {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--text-primary);
 }
