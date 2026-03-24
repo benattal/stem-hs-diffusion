@@ -49,6 +49,23 @@ html, body, #root {
   overflow: hidden;
 }
 
+/* ─── Slide Stage (fixed-aspect-ratio viewport on desktop) ───── */
+.slide-stage {
+  position: absolute;
+  inset: 0;
+}
+
+@media (min-width: 769px) {
+  .slide-stage {
+    inset: auto;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+}
+
 /* ─── Slide Base ──────────────────────────────────────────────── */
 .slide {
   position: absolute;

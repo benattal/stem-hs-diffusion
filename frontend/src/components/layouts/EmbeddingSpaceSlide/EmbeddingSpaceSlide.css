@@ -21,9 +21,9 @@
 
 .embedding-main {
   display: flex;
-  gap: 2rem;
+  gap: 1.25rem;
   width: 100%;
-  max-width: 950px;
+  max-width: 760px;
   align-items: center;
   justify-content: center;
 }
@@ -58,8 +58,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 280px;
-  max-width: 360px;
+  min-width: 210px;
+  max-width: 270px;
 }
 
 .embedding-preview-inner {
@@ -72,7 +72,7 @@
 
 .embedding-preview-image {
   width: 100%;
-  max-height: 300px;
+  max-height: 220px;
   object-fit: contain;
   border-radius: var(--radius);
   border: 1px solid var(--border);
@@ -80,12 +80,12 @@
 }
 
 .embedding-preview-caption {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   color: var(--text-secondary);
   font-style: italic;
   text-align: center;
   line-height: 1.4;
-  padding: 0.75rem 1rem;
+  padding: 0.6rem 0.85rem;
   background: var(--bg-elevated);
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);

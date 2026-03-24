@@ -4,6 +4,7 @@ import useSlideState from '../hooks/useSlideState.js';
 import useKeyboardNavigation from '../hooks/useKeyboardNavigation.js';
 import useSwipeNavigation from '../hooks/useSwipeNavigation.js';
 import useFullscreen from '../hooks/useFullscreen.js';
+import useSlideScaling from '../hooks/useSlideScaling.js';
 import { useSyncBroadcaster } from '../hooks/usePresentationSync.js';
 import SlideRenderer from './SlideRenderer.jsx';
 import Navigation from './Navigation.jsx';
@@ -14,6 +15,7 @@ export default function Presentation() {
   const state = useSlideState();
   const [showOverview, setShowOverview] = useState(false);
   const { isFullscreen, toggleFullscreen } = useFullscreen();
+  const { scale, isDesktop, designWidth, designHeight } = useSlideScaling();
   const { openPresenterWindow } = useSyncBroadcaster({
     currentIndex: state.currentIndex,
     buildStep: state.buildStep,
@@ -62,15 +64,24 @@ export default function Presentation() {
     <div className="presentation" onClick={state.goNext}>
       <ProgressBar current={state.currentIndex} total={state.totalSlides} />
 
-      <AnimatePresence mode="wait">
-        <SlideRenderer
-          key={state.currentIndex}
-          slide={state.currentSlide}
-          buildStep={state.buildStep}
-          direction={state.direction}
-          sections={state.sections}
-        />
-      </AnimatePresence>
+      <div
+        className="slide-stage"
+        style={isDesktop ? {
+          width: designWidth,
+          height: designHeight,
+          transform: `translate(-50%, -50%) scale(${scale})`,
+        } : undefined}
+      >
+        <AnimatePresence mode="wait">
+          <SlideRenderer
+            key={state.currentIndex}
+            slide={state.currentSlide}
+            buildStep={state.buildStep}
+            direction={state.direction}
+            sections={state.sections}
+          />
+        </AnimatePresence>
+      </div>
 
       <Navigation
         currentIndex={state.currentIndex}

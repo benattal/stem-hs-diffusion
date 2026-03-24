@@ -15,7 +15,7 @@
 .media-grid-item img,
 .media-grid-item video {
   width: 100%;
-  max-height: 300px;
+  max-height: 195px;
   border-radius: var(--radius-sm);
   object-fit: contain;
   background: var(--bg-elevated);
