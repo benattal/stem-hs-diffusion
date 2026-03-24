@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "install:all": "cd diffusion && npm run install:all && cd ../filtering && npm run install:all",
-    "build": "cd diffusion/frontend && npx cross-env VITE_BASE=/diffusion/ npm run build && cd ../../filtering/frontend && npx cross-env VITE_BASE=/filtering/ npm run build",
+    "build": "cd diffusion/frontend && npm install && npx cross-env VITE_BASE=/diffusion/ npm run build && cd ../../filtering/frontend && npm install && npx cross-env VITE_BASE=/filtering/ npm run build",
     "start": "node server/gateway.mjs",
     "dev": "node server/dev.mjs",
     "dev:diffusion": "cd diffusion && npm run dev",
