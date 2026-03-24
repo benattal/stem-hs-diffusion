@@ -13,7 +13,11 @@ export default function App() {
     );
   }
   if (params.get('mode') === 'preview') {
-    return <PreviewMode />;
+    return (
+      <PresenterModeProvider>
+        <PreviewMode />
+      </PresenterModeProvider>
+    );
   }
   return (
     <PresenterModeProvider>

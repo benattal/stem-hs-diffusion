@@ -25,14 +25,14 @@ router.post('/:pollId/init', (req, res) => {
   res.json({ options: poll.options, counts: poll.counts });
 });
 
-// Submit a vote
+// Submit a vote (optionally changing a previous vote)
 router.post('/:pollId/vote', (req, res) => {
   const { pollId } = req.params;
-  const { optionIndex } = req.body;
+  const { optionIndex, previousIndex } = req.body;
   if (typeof optionIndex !== 'number') {
     return res.status(400).json({ error: 'optionIndex (number) required' });
   }
-  const counts = vote(pollId, optionIndex);
+  const counts = vote(pollId, optionIndex, previousIndex);
   if (!counts) {
     return res.status(404).json({ error: 'Poll not found or invalid option' });
   }

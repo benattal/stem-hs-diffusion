@@ -51,10 +51,14 @@ export function getOrCreate(pollId, options = [], initialCounts) {
   return polls[pollId];
 }
 
-export function vote(pollId, optionIndex) {
+export function vote(pollId, optionIndex, previousIndex) {
   const poll = polls[pollId];
   if (!poll || optionIndex < 0 || optionIndex >= poll.counts.length) {
     return null;
+  }
+  // Decrement the previous vote if changing
+  if (previousIndex != null && previousIndex >= 0 && previousIndex < poll.counts.length) {
+    poll.counts[previousIndex] = Math.max(0, poll.counts[previousIndex] - 1);
   }
   poll.counts[optionIndex]++;
   saveToDisk();
@@ -83,14 +87,14 @@ export function reset(pollId) {
   if (!poll) return null;
   poll.counts = new Array(poll.options.length).fill(0);
   saveToDisk();
-  broadcast(pollId);
+  broadcast(pollId, 'reset');
   return poll.counts;
 }
 
-function broadcast(pollId) {
+function broadcast(pollId, event) {
   const poll = polls[pollId];
   if (!poll) return;
-  const data = JSON.stringify({ options: poll.options, counts: poll.counts });
+  const data = JSON.stringify({ options: poll.options, counts: poll.counts, event: event || 'update' });
   for (const client of poll.clients) {
     client.write(`data: ${data}\n\n`);
   }

@@ -8,7 +8,7 @@
     "node": ">=20.0.0"
   },
   "scripts": {
-    "dev": "nodemon src/server.mjs",
+    "dev": "nodemon --ignore data/ src/server.mjs",
     "start": "node src/server.mjs",
     "build": "echo 'No build needed for backend'"
   },
