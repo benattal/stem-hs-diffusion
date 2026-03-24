@@ -1,1 +1,1 @@
-Alright, for this last section of the workshop, we're going to talk a little bit about something that you might have heard about: generative AI
+For this last section of the workshop, we're going to cover a topic that you might have heard about: generative AI

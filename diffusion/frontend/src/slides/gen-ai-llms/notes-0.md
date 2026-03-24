@@ -1,3 +1,3 @@
-Ask the students: "If you've used ChatGPT before, you've probably typed in a *prompt* and gotten text back. Does anyone know what the technical term is for these kinds of AI models?"
+The most common type of generative AI are AI models that take in text, and respond with more text.
 
-Give them a moment to think and respond.
+Does anyone know what the technical term for these kinds of AI models is?

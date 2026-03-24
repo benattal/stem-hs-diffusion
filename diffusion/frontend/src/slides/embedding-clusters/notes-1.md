@@ -1,4 +1,4 @@
-Reveal the cluster circles. Point out:
+The thing to notice is that there are different clusters for different categories or concepts:
 
 - **Animals** (cats, dogs, kittens, puppies) are all in the upper-right
 - **Vehicles** (cars, airplanes, bicycles) are in the lower-left
@@ -6,4 +6,10 @@ Reveal the cluster circles. Point out:
 - **Food** (pizza, cake, sushi) are in the lower-right
 - **People** (astronaut, artist) are in the center
 
-Key insight: the model has learned to group similar concepts together — even though nobody explicitly told it "these are all animals"!
+What this means is that the model basically learns to group similar concepts together on the graph.
+
+This is really important for generative image AI.
+
+The computer can learn to figure out that when the numbers are far apart, the images that it predicts should also be very different.
+
+And the same thing for when the numbers are close together---the images that it predicts should be kind of similar.

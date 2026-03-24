@@ -1,0 +1,3 @@
+- Last of all, knowing how it works can help you understand it's limitations. Generative AI doesn't always produce "real" things, or correct information.
+- For example, sometimes if you ask it to find you a reference for a topic, it can imagine a reference that doesn't exist.
+- Recognizing that this is something that happens, and learning to triple check the outputs of these models is an important skill.

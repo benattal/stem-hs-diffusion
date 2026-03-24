@@ -1,5 +1,4 @@
-Walk through the first chatbot demo. Point out:
+These AI models work in the following way:
 
-- The user types in a *prompt* (a text instruction)
-- The LLM generates a response — here it even renders the quadratic formula!
-- The model doesn't "know" things — it predicts what text should come next, word by word
+- The user types in a "prompt" (or text instructions) like "what is the quadratic formula"?
+- And the LLM generates a response by predicting what text should come next, word by word

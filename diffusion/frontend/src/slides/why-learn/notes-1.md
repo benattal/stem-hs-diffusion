@@ -1,0 +1,3 @@
+- Second of all, it can be a useful tool in some contexts, and knowing how it works can help you use it responsibly.
+- For example, it's much better as an aid to human intelligence, rather than a replacement for it.
+- Rather than asking it to write a full essay for you, it's better to use it to explain a concept to help you study for a test.

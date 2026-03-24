@@ -1,5 +1,4 @@
-Walk through the image generation demo:
+These models work in the following way:
 
 - The user types a creative prompt describing what they want
-- The diffusion model generates an image that matches the description
-- Notice how the image "resolves" from blur — this is similar to how the actual diffusion process works (noise to clarity)
+- The diffusion model then generates an image that matches the description

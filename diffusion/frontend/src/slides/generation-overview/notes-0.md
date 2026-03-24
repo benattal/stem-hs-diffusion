@@ -1,6 +1,4 @@
-Introduce the first key idea: **mapping text and images to numbers**.
+There are two important steps here:
 
-- Computers don't understand text or images directly — they need numbers
-- A model learns to convert both text descriptions and images into lists of numbers (vectors)
-- The key insight: similar things get mapped to similar numbers — so "a photo of a cat" ends up near actual cat photos in this number space
-- Point at the scatter plot: each dot is a text or image, and similar ones are close together
+- First of all, computers don't understand text or images directly, they need to interpret things as lists of numbers
+- So the first part of a generative image model is a step that converts both text descriptions and images into lists of numbers---which are also called vectors.

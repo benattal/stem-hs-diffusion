@@ -1,5 +1,1 @@
-Show the second example — coding help:
-
-- LLMs can also write code! Here the student asks how to make a "Hello World" program in Python
-- The model responds with a working code snippet
-- This is one of the most popular uses of LLMs today — helping people learn and write code
+LLMs these days are especially useful for writing code, and a lot of the graduate students here, and even postdocs and professors use these LLMs to help them write code.

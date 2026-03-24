@@ -1,3 +1,3 @@
-Ask the students: "We just saw AI that turns text into text. But there are also models that can create *images* and even *videos* from a text prompt. Does anyone know the technical term for these?"
+There are other types of generative AI models that take in text and respond with images or even videos.
 
-Give them a moment to think.
+Does anyone know the technical term for generative text-to-image models or text-to-video models?

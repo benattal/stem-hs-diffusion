@@ -1,7 +1,6 @@
-## Poll: Impact of Generative AI
+We're gonna start with a poll. What do you think the most significant impact of generative AI is in this day and age?
 
-- Ask the audience to vote using their devices
-- Give them ~1–2 minutes to vote **and discuss with their neighbors** — encourage them to talk about why they chose their answer
-- Walk around the room and listen to conversations; pick up on interesting points to bring up during the results
-- Mention that results will appear live on the next slide
-- If the backend isn't running, preset results will be shown instead
+- Do you think it's a helpful creative tool for artists, writers, and others?
+- Do you think it's a useful automation tool for science, technology, engineering, and math?
+- Do you think it enables the spread of misinformation? Like fake text, images, and videos?
+- Do you think lots of people will lose their jobs because of AI, and the things that it can automate?
