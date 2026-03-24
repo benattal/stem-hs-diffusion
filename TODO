@@ -1,7 +1,5 @@
 Website features
 =======
-* Better use of vertical space
-* Mobile support
 * Different presenter/student views
     - Student view tracks presenter view
     - Password protected presenter view
@@ -12,15 +10,9 @@ Slides
 
 Presenter notes
 =======
-* Copy transcript to presenter notes
-* Dangers slide
-    - Like it or not, right now they are ubiquitous, so it's useful to...
-        - (maybe)
-* Embedding slide
-    - "Text & image, like ... to numbers"
 
 Other
 =======
-* Open source/deploy source website
+* Deploy website
 * Share website with others
 * Encourage others to test notebooks on their phones

@@ -48,6 +48,7 @@ export default function Presentation() {
     toggleOverview,
     toggleFullscreen,
     openPresenterWindow: toggleNotes,
+    currentSlide: state.currentSlide,
   });
 
   useSwipeNavigation({
