@@ -72,22 +72,24 @@ function loadImageData(src, size) {
   });
 }
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 const DEFAULT_IMAGES = [
-  '/slides/clip-model/image19.jpeg',
-  '/slides/clip-interactive/mountain.jpg',
-  '/slides/clip-interactive/pizza.jpg',
-  '/slides/clip-interactive/astronaut.jpg',
-  '/slides/clip-interactive/ocean.jpg',
-  '/slides/clip-interactive/car.jpg',
-  '/slides/clip-interactive/sunflower.jpg',
-  '/slides/clip-model/image20.jpeg',
-  '/slides/clip-interactive/kitten.jpg',
-  '/slides/clip-interactive/forest.jpg',
-  '/slides/clip-interactive/cake.jpg',
-  '/slides/clip-interactive/sushi.jpg',
-  '/slides/clip-interactive/bicycle.jpg',
-  '/slides/clip-interactive/puppy.jpg',
-  '/slides/clip-interactive/artist.jpg',
+  `${base}/slides/clip-model/image19.jpeg`,
+  `${base}/slides/clip-interactive/mountain.jpg`,
+  `${base}/slides/clip-interactive/pizza.jpg`,
+  `${base}/slides/clip-interactive/astronaut.jpg`,
+  `${base}/slides/clip-interactive/ocean.jpg`,
+  `${base}/slides/clip-interactive/car.jpg`,
+  `${base}/slides/clip-interactive/sunflower.jpg`,
+  `${base}/slides/clip-model/image20.jpeg`,
+  `${base}/slides/clip-interactive/kitten.jpg`,
+  `${base}/slides/clip-interactive/forest.jpg`,
+  `${base}/slides/clip-interactive/cake.jpg`,
+  `${base}/slides/clip-interactive/sushi.jpg`,
+  `${base}/slides/clip-interactive/bicycle.jpg`,
+  `${base}/slides/clip-interactive/puppy.jpg`,
+  `${base}/slides/clip-interactive/artist.jpg`,
 ];
 
 // ─── Mosaic of tiles, each cycling through diffusion independently ───

@@ -97,7 +97,7 @@ function PresenterContent() {
   const currentSlide = flatSlides[state.currentIndex];
 
   useEffect(() => {
-    const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+    const apiBase = import.meta.env.VITE_API_URL || import.meta.env.BASE_URL.replace(/\/$/, '');
 
     function handleKeyDown(e) {
       // Don't capture keyboard when editing notes
@@ -165,7 +165,7 @@ function PresenterContent() {
     // Also persist to the markdown file via the backend API (requires presenter auth)
     if (currentSlide && token) {
       try {
-        const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+        const apiBase = import.meta.env.VITE_API_URL || import.meta.env.BASE_URL.replace(/\/$/, '');
         await fetch(`${apiBase}/api/notes/${currentSlide.id}`, {
           method: 'PUT',
           headers: {

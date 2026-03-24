@@ -63,7 +63,10 @@
       "Bash(cat /c/Users/battal/Documents/Projects/vision_workshop/frontend/.env*)",
       "Bash(curl:*)",
       "Bash(grep -r poll /c/Users/battal/Documents/Projects/vision_workshop/backend/src/*.js)",
-      "Bash(do cp:*)"
+      "Bash(do cp:*)",
+      "Bash(netstat -ano)",
+      "Bash(tasklist:*)",
+      "Bash(taskkill:*)"
     ]
   }
 }

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+const API_BASE = import.meta.env.VITE_API_URL || import.meta.env.BASE_URL.replace(/\/$/, '');
 
 export default function useKeyboardNavigation({ goNext, goPrev, toggleOverview, toggleFullscreen, openPresenterWindow, currentSlide, isPresenter, token }) {
   useEffect(() => {

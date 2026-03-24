@@ -6,6 +6,23 @@ const slideModules = import.meta.glob('../slides/*/content.json', {
   import: 'default',
 });
 
+// Prefix absolute asset paths (/slides/...) with the app's base URL
+// so they resolve correctly when served under a sub-path (e.g. /filtering/).
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+function prefixAssetPaths(obj) {
+  if (typeof obj === 'string') {
+    return obj.startsWith('/slides/') ? base + obj : obj;
+  }
+  if (Array.isArray(obj)) return obj.map(prefixAssetPaths);
+  if (obj && typeof obj === 'object') {
+    const out = {};
+    for (const [k, v] of Object.entries(obj)) out[k] = prefixAssetPaths(v);
+    return out;
+  }
+  return obj;
+}
+
 // Build a slideId → content map
 const slideContent = {};
 for (const [path, content] of Object.entries(slideModules)) {
@@ -29,7 +46,7 @@ for (const section of presentation.sections) {
       console.warn(`No content.json found for slide "${slideId}"`);
       return { id: slideId, layout: 'content', title: `Missing: ${slideId}` };
     }
-    return { id: slideId, ...JSON.parse(JSON.stringify(content)) };
+    return prefixAssetPaths({ id: slideId, ...JSON.parse(JSON.stringify(content)) });
   });
 }
 

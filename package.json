@@ -1,0 +1,29 @@
+{
+  "name": "vision-workshop",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Interactive workshop presentations on computer vision and generative AI",
+  "private": true,
+  "scripts": {
+    "install:all": "cd diffusion && npm run install:all && cd ../filtering && npm run install:all",
+    "build": "cd diffusion/frontend && npx cross-env VITE_BASE=/diffusion/ npm run build && cd ../../filtering/frontend && npx cross-env VITE_BASE=/filtering/ npm run build",
+    "start": "node server/gateway.mjs",
+    "dev": "node server/dev.mjs",
+    "dev:diffusion": "cd diffusion && npm run dev",
+    "dev:filtering": "cd filtering && npm run dev"
+  },
+  "keywords": [
+    "presentation",
+    "workshop",
+    "vision",
+    "react"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "cross-env": "^10.1.0",
+    "express": "^4.18.2",
+    "vite": "^8.0.2"
+  }
+}

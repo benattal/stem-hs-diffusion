@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+const API_BASE = import.meta.env.VITE_API_URL || import.meta.env.BASE_URL.replace(/\/$/, '');
 
 export default function usePollData(pollId, options, presetDistribution) {
   const [counts, setCounts] = useState(() => new Array(options?.length || 0).fill(0));
