@@ -29,8 +29,16 @@ router.put('/:slideId', async (req, res) => {
     await mkdir(slideDir, { recursive: true });
   }
 
-  // Determine filename
-  const filename = buildStep > 0 ? `notes-${buildStep}.md` : 'notes.md';
+  // Determine filename: use numbered scheme (notes-0.md) if the slide already
+  // has numbered notes files, otherwise use notes.md for build step 0
+  let filename;
+  if (buildStep > 0) {
+    filename = `notes-${buildStep}.md`;
+  } else if (existsSync(path.join(slideDir, 'notes-0.md'))) {
+    filename = 'notes-0.md';
+  } else {
+    filename = 'notes.md';
+  }
   const filePath = path.join(slideDir, filename);
 
   try {
