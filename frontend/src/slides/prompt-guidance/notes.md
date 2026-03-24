@@ -1,1 +1,0 @@
-Finally, the way that we prompt the diffusion model matters a lot. We can give the model both positive prompts — things that we want it to include in our image — and negative prompts — things that we *don't* want it to include in our image

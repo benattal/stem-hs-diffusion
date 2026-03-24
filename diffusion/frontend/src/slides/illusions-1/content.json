@@ -1,0 +1,12 @@
+{
+  "layout": "media",
+  "sectionLabel": "Practice 2: Generating Illusions",
+  "title": "AI Can Also Create Visual Illusions",
+  "media": [
+    { "type": "image", "src": "/slides/illusions-1/image23.png" },
+    { "type": "video", "src": "/slides/illusions-1/media3.mp4" },
+    { "type": "image", "src": "/slides/illusions-1/image24.png" },
+    { "type": "video", "src": "/slides/illusions-1/media4.mp4" }
+  ],
+  "footnote": "Geng, Park, and Owens. \"Visual anagrams: Generating multi-view optical illusions with diffusion models.\" CVPR, 2024."
+}

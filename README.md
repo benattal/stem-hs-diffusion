@@ -1,6 +1,13 @@
-# Vision Workshop: How to Make Images with Generative AI
+# Vision Workshop
 
-Interactive presentation website for the diffusion workshop. Students can visit the site and click through slides and animations.
+Monorepo containing multiple interactive workshop presentations on computer vision and generative AI topics.
+
+## Presentations
+
+| Directory | Topic | Format |
+|-----------|-------|--------|
+| `diffusion/` | How to Make Images with Generative AI | Interactive slide deck (Vite + React + Express) |
+| `filtering/` | Image Filtering | Jupyter notebook |
 
 ## Prerequisites
 
@@ -10,25 +17,26 @@ Interactive presentation website for the diffusion workshop. Students can visit 
 ## Setup
 
 ```bash
-# Create conda environment
+# Create conda environment (for notebook-based workshops)
 conda env create -f environment.yml
 conda activate vision-workshop
-
-# Install all dependencies (frontend + backend)
-npm run install:all
 ```
 
-## Development
+---
+
+## Diffusion Presentation (`diffusion/`)
+
+Interactive presentation website. Students visit the site and click through slides and animations.
+
+### Setup & Development
 
 ```bash
-# Start both frontend and backend
-npm run dev
+cd diffusion
+npm run install:all   # Install frontend + backend deps
+npm run dev           # Start both (frontend:5173, backend:3000)
 ```
 
-- Frontend: http://localhost:5173
-- Backend: http://localhost:3000
-
-## Navigation
+### Navigation
 
 | Key | Action |
 |-----|--------|
@@ -40,7 +48,7 @@ npm run dev
 | Escape | Close overview |
 | Swipe | Mobile touch navigation |
 
-## Presenter Notes
+### Presenter Notes
 
 Press **P** (or click the clipboard button in the top-right toolbar) to open a presenter notes window. Drag it to a second monitor while presenting in fullscreen on the main display. Navigation from either window stays in sync.
 
@@ -51,21 +59,20 @@ The presenter window shows:
 - An elapsed-time timer
 - Prev/Next buttons (keyboard nav also works from this window)
 
-## Production Build
+### Production Build & Deploy
 
 ```bash
+cd diffusion
 npm run build
 npm start
 ```
 
-## Deploy to Railway
+Each service (frontend/backend) has its own `railway.toml` and `nixpacks.toml`. Deploy as two separate Railway services pointing to `diffusion/frontend/` and `diffusion/backend/`.
 
-Each service (frontend/backend) has its own `railway.toml` and `nixpacks.toml`. Deploy as two separate Railway services pointing to the `frontend/` and `backend/` directories respectively.
-
-## Project Structure
+### Project Structure
 
 ```
-vision_workshop/
+diffusion/
 ├── assets/
 │   ├── diffusion_workshop.pptx
 │   └── diffusion_workshop.ipynb
@@ -103,14 +110,14 @@ vision_workshop/
 └── scripts/               # Media extraction from PPTX
 ```
 
-## Extending the Presentation
+### Extending the Diffusion Presentation
 
-### Adding a slide
+#### Adding a slide
 
-1. Create a new directory under `frontend/src/slides/` with a unique slide ID:
+1. Create a new directory under `diffusion/frontend/src/slides/` with a unique slide ID:
 
 ```
-frontend/src/slides/my-new-slide/
+diffusion/frontend/src/slides/my-new-slide/
 ├── content.json
 └── notes.md
 ```
@@ -128,7 +135,7 @@ frontend/src/slides/my-new-slide/
 
 3. Add presenter notes in `notes.md` (supports full Markdown).
 
-4. Add the slide ID to the appropriate section in `frontend/src/data/presentation.json`:
+4. Add the slide ID to the appropriate section in `diffusion/frontend/src/data/presentation.json`:
 
 ```json
 {
@@ -138,9 +145,9 @@ frontend/src/slides/my-new-slide/
 }
 ```
 
-5. If the slide has media assets, place them in `frontend/public/slides/my-new-slide/` and reference them as `/slides/my-new-slide/filename.png` in `content.json`.
+5. If the slide has media assets, place them in `diffusion/frontend/public/slides/my-new-slide/` and reference them as `/slides/my-new-slide/filename.png` in `content.json`.
 
-### Adding a section
+#### Adding a section
 
 Add a section object to the `sections` array in `presentation.json`:
 
@@ -154,11 +161,11 @@ Add a section object to the `sections` array in `presentation.json`:
 
 Outline slides (`layout: "outline"`) automatically render all sections; set `activeSection` to the current section's `id` to highlight it.
 
-### For progressive-build slides
+#### For progressive-build slides
 
 Use per-step notes files: `notes-0.md`, `notes-1.md`, `notes-2.md`, etc.
 
-### Available layouts
+#### Available layouts
 
 | Layout | Required fields | Description |
 |--------|----------------|-------------|
@@ -173,7 +180,7 @@ Use per-step notes files: `notes-0.md`, `notes-1.md`, `notes-2.md`, etc.
 
 Media objects are `{ type: "image" | "video" | "gif", src: "/slides/{slide-id}/file.png" }`.
 
-### Overriding slides in JS
+#### Overriding slides in JS
 
 For dynamic content that can't live in static JSON, use the "Slide overrides" section in `presentation.js`:
 
@@ -185,7 +192,18 @@ Object.assign(findSlide('title'), {
 });
 ```
 
-### Adding media
+#### Adding media
 
-1. Place images, GIFs, or videos in `frontend/public/slides/{slide-id}/`.
+1. Place images, GIFs, or videos in `diffusion/frontend/public/slides/{slide-id}/`.
 2. Reference them in the slide's `content.json` as `/slides/{slide-id}/filename.png`.
+
+---
+
+## Filtering Workshop (`filtering/`)
+
+Jupyter notebook-based workshop on image filtering techniques.
+
+```bash
+conda activate vision-workshop
+jupyter notebook filtering/assets/STEM_Workshop_Image_Filtering.ipynb
+```

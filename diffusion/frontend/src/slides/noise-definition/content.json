@@ -1,0 +1,29 @@
+{
+  "layout": "noiseDefinition",
+  "sectionLabel": "How to Generate Images",
+  "title": "What is Noise?",
+  "definition": "Random information that obscures the stuff you care about",
+  "analogy": {
+    "term": "background noise",
+    "explanation": "random sounds that obscure you're trying to hear. In the same way, image or data noise is random information that hides the real signal."
+  },
+  "examples": [
+    {
+      "type": "audio",
+      "label": "Audio Noise",
+      "description": "Random variations overlaid on a sound wave"
+    },
+    {
+      "type": "image",
+      "label": "Image Noise",
+      "description": "Random pixel values overlaid on an image",
+      "imageSrc": "/slides/clip-model/image19.jpeg"
+    }
+  ],
+  "buildSteps": [
+    { "id": "definition" },
+    { "id": "analogy" },
+    { "id": "audioNoise" },
+    { "id": "imageNoise" }
+  ]
+}

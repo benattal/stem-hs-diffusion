@@ -1,1 +1,0 @@
-Now that you have some basic experience with diffusion models and generative AI for making images, we're going to give you a more complicated assignment. We're going to ask you to use generative AI to make illusions

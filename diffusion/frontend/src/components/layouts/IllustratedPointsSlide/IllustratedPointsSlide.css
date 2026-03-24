@@ -1,0 +1,234 @@
+/* ─── IllustratedPointsSlide Layout ──────────────────────────── */
+
+.slide--illustrated-points h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.ip-points {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ip-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 0.8rem 1.1rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.ip-point-text {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 1rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  max-width: 290px;
+  padding-top: 0.2rem;
+}
+
+.ip-point-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.ip-point-visual {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ─── Badge (check / x) ─────────────────────────────────────── */
+
+.ip-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+  z-index: 2;
+  border: 2px solid var(--bg-slide);
+}
+
+.ip-badge--check {
+  background: var(--success);
+  color: white;
+}
+
+.ip-badge--x {
+  background: #e53935;
+  color: white;
+}
+
+/* ─── Image Compare ──────────────────────────────────────────── */
+
+.ip-image-compare {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.ip-image-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.ip-image-card img {
+  width: 105px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.ip-image-label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+/* ─── Mini Chat ──────────────────────────────────────────────── */
+
+.ip-minichat-wrapper {
+  position: relative;
+}
+
+.ip-minichat {
+  background: var(--bg-primary);
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  font-size: 0.65rem;
+}
+
+.ip-minichat-header {
+  display: flex;
+  gap: 3px;
+  padding: 4px 7px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid var(--border);
+}
+
+.ip-minichat-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.ip-minichat-body {
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ip-msg {
+  display: flex;
+}
+
+.ip-msg--user {
+  justify-content: flex-end;
+}
+
+.ip-msg--ai {
+  justify-content: flex-start;
+}
+
+.ip-msg-bubble {
+  padding: 4px 7px;
+  max-width: 90%;
+  line-height: 1.35;
+  font-size: 0.63rem;
+}
+
+.ip-msg-bubble--user {
+  background: var(--accent);
+  color: white;
+  border-radius: 8px 8px 3px 8px;
+}
+
+.ip-msg-bubble--ai {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px 8px 8px 3px;
+}
+
+/* ─── Chat Compare (two side-by-side) ────────────────────────── */
+
+.ip-chat-compare {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.ip-chat-compare .ip-minichat-wrapper {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ─── Chat Conversation (single wider) ───────────────────────── */
+
+.ip-chat-conversation .ip-minichat-wrapper {
+  max-width: 380px;
+}
+
+.ip-chat-conversation .ip-minichat {
+  font-size: 0.7rem;
+}
+
+/* ─── Mobile ─────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .ip-point {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .ip-point-text {
+    max-width: none;
+    flex-shrink: 1;
+  }
+
+  .ip-image-compare {
+    flex-wrap: wrap;
+  }
+
+  .ip-image-card img {
+    width: 100px;
+    height: 66px;
+  }
+
+  .ip-chat-compare {
+    flex-direction: column;
+  }
+
+  .ip-chat-conversation .ip-minichat-wrapper {
+    max-width: none;
+  }
+}

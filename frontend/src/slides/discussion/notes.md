@@ -1,1 +1,0 @@
-Before we talk about how generative AI works, I want to take a second to ask you all the following questions. Has generative AI helped you in your everyday life? Has it made things harder in any way? How do you think generative AI can help society? How can it hurt society? Take a couple of minutes to discuss, and then I'll ask some of you to share your answers

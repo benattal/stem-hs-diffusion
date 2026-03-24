@@ -1,0 +1,17 @@
+{
+  "layout": "diffusionSlider",
+  "sectionLabel": "How to Generate Images",
+  "title": "What is Noise?",
+  "description": "Noise is just random pixel values. Drag the slider to see how adding noise gradually destroys an image.",
+  "images": [
+    { "src": "/slides/clip-model/image19.jpeg", "label": "Cat" },
+    { "src": "/slides/clip-interactive/mountain.jpg", "label": "Mountain" },
+    { "src": "/slides/clip-interactive/car.jpg", "label": "Sports Car" },
+    { "src": "/slides/clip-interactive/sunflower.jpg", "label": "Sunflower" },
+    { "src": "/slides/clip-interactive/astronaut.jpg", "label": "Astronaut" },
+    { "src": "/slides/clip-interactive/pizza.jpg", "label": "Pizza" }
+  ],
+  "steps": 50,
+  "showStepCounter": false,
+  "labels": { "left": "Clean Image", "right": "Pure Noise" }
+}

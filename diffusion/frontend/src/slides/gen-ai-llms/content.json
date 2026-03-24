@@ -1,0 +1,34 @@
+{
+  "layout": "genAiDemo",
+  "sectionLabel": "Introduction: What is Generative AI?",
+  "title": "Text \u2192 Text",
+  "subtitle": "AI that generates text from text prompts",
+  "question": "Does anyone know the technical term for these kinds of models?",
+  "answer": "LLMs \u2014 Large Language Models",
+  "chatDemos": [
+    {
+      "label": "Math",
+      "userMessage": "Remind me what the quadratic formula is",
+      "responseType": "text",
+      "responseText": "The quadratic formula is:\n\n$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$\n\nIt gives you the solutions to any equation in the form $ax^2 + bx + c = 0$."
+    },
+    {
+      "label": "Coding",
+      "userMessage": "How do I write a Python script that makes the computer say 'hello world'?",
+      "responseType": "text",
+      "responseText": "Here you go! Just use the print function:\n\n```python\nprint(\"Hello, World!\")\n```\n\nSave this as a .py file and run it with Python."
+    }
+  ],
+  "logos": [
+    { "name": "ChatGPT", "color": "#10a37f", "logo": "/slides/gen-ai-llms/chatgpt-logo.svg" },
+    { "name": "Claude", "color": "#d97706", "logo": "/slides/gen-ai-llms/claude-logo.svg" },
+    { "name": "Gemini", "color": "#4285f4", "logo": "/slides/gen-ai-llms/gemini-logo.svg" }
+  ],
+  "buildSteps": [
+    { "id": "question" },
+    { "id": "answer" },
+    { "id": "chatDemo", "index": 0 },
+    { "id": "chatDemo", "index": 1 },
+    { "id": "logos" }
+  ]
+}

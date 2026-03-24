@@ -1,0 +1,205 @@
+/* ─── GenAiOverviewSlide Layout ─────────────────────────────── */
+
+.slide--gen-ai-overview h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.gao-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+/* ─── Flow Diagram ──────────────────────────────────────────── */
+
+.gao-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.gao-flow-box {
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius);
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.gao-flow-input {
+  background: rgba(108, 99, 255, 0.15);
+  border: 1px solid rgba(108, 99, 255, 0.4);
+  color: var(--accent);
+}
+
+.gao-flow-model {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  padding: 0.9rem 1.75rem;
+  font-size: 1.25rem;
+}
+
+.gao-flow-output {
+  background: rgba(0, 210, 255, 0.12);
+  border: 1px solid rgba(0, 210, 255, 0.35);
+  color: var(--accent-secondary);
+}
+
+.gao-flow-arrow {
+  font-size: 1.75rem;
+  color: var(--text-muted);
+}
+
+/* ─── Chat Demos ────────────────────────────────────────────── */
+
+.gao-demos {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.gao-demo-slot {
+  flex: 1 1 0;
+  min-width: 220px;
+  max-width: 340px;
+}
+
+.gao-chat-type-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-secondary);
+  margin-bottom: 0.4rem;
+}
+
+.gao-chat-window {
+  background: var(--bg-primary);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.gao-chat-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid var(--border);
+}
+
+.gao-chat-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.gao-chat-title {
+  margin-left: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.gao-chat-body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 250px;
+}
+
+.gao-msg { display: flex; }
+.gao-msg--user { justify-content: flex-end; }
+.gao-msg--ai { justify-content: flex-start; }
+
+.gao-bubble {
+  padding: 10px 14px;
+  max-width: 90%;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.gao-bubble--user {
+  background: var(--accent);
+  color: white;
+  border-radius: 10px 10px 4px 10px;
+}
+
+.gao-bubble--ai {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 10px 10px 10px 4px;
+}
+
+.gao-response-text {
+  white-space: pre-line;
+  font-size: 0.9rem;
+}
+
+.gao-response-media {
+  max-width: 100%;
+  max-height: 150px;
+  border-radius: var(--radius-sm);
+  object-fit: contain;
+}
+
+.gao-deblur {
+  animation: gao-deblur 1.5s ease-out forwards;
+}
+
+@keyframes gao-deblur {
+  0% { filter: blur(14px) brightness(0.4); opacity: 0.5; }
+  40% { filter: blur(6px) brightness(0.7); opacity: 0.8; }
+  100% { filter: blur(0) brightness(1); opacity: 1; }
+}
+
+/* ─── Typing Dots ───────────────────────────────────────────── */
+
+.gao-typing-dots {
+  display: inline-flex;
+  gap: 3px;
+  padding: 2px 0;
+}
+
+.gao-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--text-secondary);
+  border-radius: 50%;
+  animation: gao-bounce 1.4s infinite ease-in-out;
+}
+
+.gao-dot:nth-child(1) { animation-delay: 0s; }
+.gao-dot:nth-child(2) { animation-delay: 0.2s; }
+.gao-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes gao-bounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+  40% { transform: translateY(-4px); opacity: 1; }
+}
+
+/* ─── Mobile ────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .gao-demos {
+    flex-direction: column;
+    align-items: center;
+  }
+  .gao-demo-slot {
+    min-width: 0;
+    max-width: none;
+    width: 100%;
+  }
+  .gao-flow {
+    flex-wrap: wrap;
+  }
+}

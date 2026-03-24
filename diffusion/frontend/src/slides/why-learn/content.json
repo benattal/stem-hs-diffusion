@@ -1,0 +1,50 @@
+{
+  "layout": "illustratedPoints",
+  "sectionLabel": "Benefits and Dangers of Generative AI",
+  "title": "Why It's Useful to Learn About Generative AI",
+  "points": [
+    {
+      "text": "It can help you recognize fake articles, images, and videos",
+      "visual": {
+        "type": "imageCompare",
+        "fakeImg": "/slides/illusions-1/image23.png",
+        "realImg": "/slides/clip-interactive/mountain.jpg"
+      }
+    },
+    {
+      "text": "It can help you use generative AI responsibly",
+      "visual": {
+        "type": "chatCompare",
+        "bad": {
+          "messages": [
+            { "role": "user", "text": "Write my history essay about World War 2 for me" },
+            { "role": "ai", "text": "Sure! Here is a 5-paragraph essay about..." }
+          ]
+        },
+        "good": {
+          "messages": [
+            { "role": "user", "text": "Can you explain how photosynthesis works in detail? I'm studying for a bio test" },
+            { "role": "ai", "text": "Of course! Photosynthesis has two main stages: the light reactions and the Calvin cycle..." }
+          ]
+        }
+      }
+    },
+    {
+      "text": "It can help you understand generative AI's limitations",
+      "visual": {
+        "type": "chatConversation",
+        "messages": [
+          { "role": "user", "text": "What's a good source for my paper on climate change?" },
+          { "role": "ai", "text": "I recommend the article \"Rising Tides\" by Dr. Smith, published in Nature (2023)." },
+          { "role": "user", "text": "Are you sure? I looked it up and that article doesn't exist." },
+          { "role": "ai", "text": "You're right, I apologize! I made that up. Let me suggest verified sources instead..." }
+        ]
+      }
+    }
+  ],
+  "buildSteps": [
+    { "id": "point" },
+    { "id": "point" },
+    { "id": "point" }
+  ]
+}

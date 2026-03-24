@@ -1,1 +1,0 @@
-How does it do this? Well, it uses a few key ingredients. It uses something called CLIP, which we'll talk more about. Then it uses something called a *diffusion model*, which is kind of the most important part of this process

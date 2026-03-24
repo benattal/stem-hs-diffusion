@@ -1,0 +1,48 @@
+{
+  "title": "How to Make Images with Generative AI",
+  "authors": ["Benjamin A.", "Dongyu D.", "Andrew X.", "Ali S."],
+  "defaultTransition": "fade",
+
+  "sections": [
+    {
+      "id": "intro",
+      "title": "Introduction: What is Generative AI?",
+      "slides": ["title", "outline-intro", "gen-ai-overview", "gen-ai-llms", "gen-ai-diffusion"]
+    },
+    {
+      "id": "benefits-dangers",
+      "title": "Benefits and Dangers of Generative AI",
+      "slides": ["outline-benefits-dangers", "poll-vote", "poll-results", "why-learn"]
+    },
+    {
+      "id": "how-to-generate",
+      "title": "How to Generate Images",
+      "slides": [
+        "outline-principles",
+        "generation-overview",
+        "clip-interactive",
+        "embedding-clusters",
+        "noise-definition",
+        "noise-to-images",
+        "diffusion-models",
+        "diffusion-randomness"
+      ]
+    },
+    {
+      "id": "practice-1",
+      "title": "Practice 1: An Interactive App for Image Generation",
+      "slides": ["outline-practice1", "colab-practice-1"]
+    },
+    {
+      "id": "practice-2",
+      "title": "Practice 2: Generating Illusions",
+      "slides": [
+        "outline-practice2",
+        "illusions-1",
+        "illusions-2",
+        "colab-practice-2",
+        "closing"
+      ]
+    }
+  ]
+}

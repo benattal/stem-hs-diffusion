@@ -1,0 +1,11 @@
+{
+  "layout": "diagram",
+  "sectionLabel": "How to Generate Images",
+  "title": "From Text and Images to Numbers",
+  "description": "A model learns to match images with their text descriptions. It converts both text and images into lists of numbers in the same space, so it can measure how well they correspond.",
+  "media": [
+    { "type": "image", "src": "/slides/clip-model/image19.jpeg", "caption": "\"A photo of a cat\"" },
+    { "type": "image", "src": "/slides/clip-model/image20.jpeg", "caption": "\"A photo of a dog\"" }
+  ],
+  "footnote": "Radford et al. \"Learning transferable visual models from natural language supervision.\" ICML, 2021."
+}

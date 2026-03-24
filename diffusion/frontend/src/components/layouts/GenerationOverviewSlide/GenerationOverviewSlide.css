@@ -1,0 +1,198 @@
+/* ─── GenerationOverviewSlide Layout ─────────────────────────── */
+
+.slide--generation-overview h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.overview-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.overview-panels {
+  display: flex;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* Fixed-size slots */
+.overview-panel-slot {
+  min-width: 0;
+}
+
+.overview-panel-slot--embed {
+  flex: 0 0 42%;
+}
+
+.overview-panel-slot--diffusion {
+  flex: 1;
+}
+
+.overview-panel {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  height: 100%;
+}
+
+.overview-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.overview-panel-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.overview-panel-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent-secondary);
+}
+
+.overview-panel-desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* ─── Annotated Embedding Plot ───────────────────────────────── */
+
+.overview-embed-plot {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overview-annotated-plot {
+  width: 100%;
+  max-width: 380px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem;
+}
+
+.overview-annotated-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ─── Diffusion Flow (vertical pipeline) ─────────────────────── */
+
+.overview-diffusion-flow {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.overview-flow-numbers {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.7rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+}
+
+.overview-flow-numbers-label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.overview-flow-numbers-value {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: var(--font-mono);
+}
+
+.overview-flow-arrow {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1;
+}
+
+.overview-flow-model {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.65rem 1.25rem;
+  background: linear-gradient(135deg, rgba(108, 99, 255, 0.15), rgba(0, 210, 255, 0.1));
+  border: 1px solid rgba(108, 99, 255, 0.4);
+  border-radius: var(--radius-sm);
+  width: 100%;
+  max-width: 290px;
+}
+
+.overview-flow-model-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.overview-flow-model-icon {
+  font-size: 1rem;
+  color: var(--accent);
+}
+
+.overview-flow-model-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.overview-flow-model-sub {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ─── Diffusion visual output ────────────────────────────────── */
+
+.overview-diffusion-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem;
+}
+
+/* ─── Mobile ─────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .overview-panels {
+    flex-direction: column;
+  }
+
+  .overview-panel-slot--embed {
+    flex: none;
+  }
+}
