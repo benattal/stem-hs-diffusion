@@ -280,11 +280,13 @@ html, body, #root {
 .keyboard-hint {
   position: absolute;
   bottom: 70px;
-  right: 32px;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 0.7rem;
   color: var(--text-muted);
   opacity: 0.5;
   z-index: 40;
+  white-space: nowrap;
 }
 
 kbd {

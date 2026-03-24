@@ -6,12 +6,35 @@ const CHANNEL_NAME = 'vision-workshop-presenter';
  * Used by the main presentation window to broadcast state
  * and receive navigation commands from the presenter window.
  */
-export function useSyncBroadcaster({ currentIndex, buildStep, totalSlides }) {
+export function useSyncBroadcaster({ currentIndex, buildStep, totalSlides, onCommand }) {
   const channelRef = useRef(null);
+  const stateRef = useRef({ currentIndex, buildStep, totalSlides });
+  const onCommandRef = useRef(onCommand);
+
+  // Keep refs in sync so handlers always have the latest values
+  useEffect(() => {
+    stateRef.current = { currentIndex, buildStep, totalSlides };
+  }, [currentIndex, buildStep, totalSlides]);
 
   useEffect(() => {
-    channelRef.current = new BroadcastChannel(CHANNEL_NAME);
-    return () => channelRef.current?.close();
+    onCommandRef.current = onCommand;
+  }, [onCommand]);
+
+  useEffect(() => {
+    const channel = new BroadcastChannel(CHANNEL_NAME);
+    channelRef.current = channel;
+
+    channel.onmessage = (event) => {
+      if (event.data.type === 'command') {
+        if (event.data.command === 'request-state') {
+          channel.postMessage({ type: 'state', ...stateRef.current });
+        } else {
+          onCommandRef.current?.(event.data.command);
+        }
+      }
+    };
+
+    return () => channel.close();
   }, []);
 
   // Broadcast state on every change
@@ -40,13 +63,19 @@ export function useSyncReceiver(onStateUpdate) {
   const channelRef = useRef(null);
 
   useEffect(() => {
-    channelRef.current = new BroadcastChannel(CHANNEL_NAME);
-    channelRef.current.onmessage = (event) => {
+    const channel = new BroadcastChannel(CHANNEL_NAME);
+    channelRef.current = channel;
+
+    channel.onmessage = (event) => {
       if (event.data.type === 'state') {
         onStateUpdate(event.data);
       }
     };
-    return () => channelRef.current?.close();
+
+    // Ask the main window to send its current state
+    channel.postMessage({ type: 'command', command: 'request-state' });
+
+    return () => channel.close();
   }, [onStateUpdate]);
 
   const sendCommand = useCallback((command) => {

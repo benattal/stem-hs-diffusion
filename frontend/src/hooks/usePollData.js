@@ -7,20 +7,23 @@ export default function usePollData(pollId, options, presetDistribution) {
   const [isConnected, setIsConnected] = useState(false);
   const [isLive, setIsLive] = useState(false);
   const initRef = useRef(false);
+  const receivedData = useRef(false);
 
   // Initialize poll on backend and open SSE stream
   useEffect(() => {
     if (!pollId || !options) return;
 
     let eventSource;
+    receivedData.current = false;
 
     async function init() {
       try {
         // Initialize the poll on the backend (idempotent)
+        // Send presetDistribution as initial counts so the server starts with real data
         await fetch(`${API_BASE}/api/poll/${pollId}/init`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ options }),
+          body: JSON.stringify({ options, initialCounts: presetDistribution }),
         });
 
         // Open SSE stream
@@ -33,13 +36,14 @@ export default function usePollData(pollId, options, presetDistribution) {
 
         eventSource.onmessage = (event) => {
           const data = JSON.parse(event.data);
+          receivedData.current = true;
           setCounts(data.counts);
         };
 
         eventSource.onerror = () => {
           setIsConnected(false);
-          // Fall back to preset if we lose connection
-          if (presetDistribution) {
+          // Only fall back to preset if we never got live data from the server
+          if (!receivedData.current && presetDistribution) {
             setCounts(presetDistribution);
           }
         };

@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { getOrCreate, vote, getCounts, subscribe, unsubscribe, reset } from '../store/pollStore.js';
+import { requirePresenter } from './auth.js';
 
 const router = Router();
 
@@ -16,11 +17,11 @@ router.get('/:pollId', (req, res) => {
 // Initialize a poll (idempotent)
 router.post('/:pollId/init', (req, res) => {
   const { pollId } = req.params;
-  const { options } = req.body;
+  const { options, initialCounts } = req.body;
   if (!options || !Array.isArray(options) || options.length === 0) {
     return res.status(400).json({ error: 'options array required' });
   }
-  const poll = getOrCreate(pollId, options);
+  const poll = getOrCreate(pollId, options, initialCounts);
   res.json({ options: poll.options, counts: poll.counts });
 });
 
@@ -61,8 +62,8 @@ router.get('/:pollId/stream', (req, res) => {
   });
 });
 
-// Reset a poll (presenter use)
-router.post('/:pollId/reset', (req, res) => {
+// Reset a poll (presenter use — requires auth)
+router.post('/:pollId/reset', requirePresenter, (req, res) => {
   const { pollId } = req.params;
   const counts = reset(pollId);
   if (!counts) {

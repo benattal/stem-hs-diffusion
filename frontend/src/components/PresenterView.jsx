@@ -3,12 +3,69 @@ import Markdown from 'react-markdown';
 import { getFlatSlides, presentation } from '../data/presentation.js';
 import { getNotesForSlide } from '../data/notesLoader.js';
 import { useSyncReceiver } from '../hooks/usePresentationSync.js';
+import { usePresenterMode } from '../hooks/usePresenterMode.jsx';
 
 function notesKey(slideId, buildStep) {
   return `presenter-notes-${slideId}-${buildStep}`;
 }
 
-export default function PresenterView() {
+function PresenterLogin() {
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const { authenticate } = usePresenterMode();
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setError('');
+    const ok = await authenticate(password);
+    if (!ok) {
+      setError('Invalid password');
+      setPassword('');
+    }
+  }
+
+  return (
+    <div className="presenter-view" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <form onSubmit={handleSubmit} style={{ textAlign: 'center' }}>
+        <h2 style={{ marginBottom: '1rem' }}>Presenter Mode</h2>
+        <p style={{ marginBottom: '1rem', opacity: 0.7 }}>Enter the presenter password to continue.</p>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+          autoFocus
+          style={{
+            padding: '0.6rem 1rem',
+            fontSize: '1rem',
+            borderRadius: '6px',
+            border: '1px solid rgba(255,255,255,0.2)',
+            background: 'rgba(255,255,255,0.1)',
+            color: 'inherit',
+            marginRight: '0.5rem',
+          }}
+        />
+        <button
+          type="submit"
+          style={{
+            padding: '0.6rem 1.2rem',
+            fontSize: '1rem',
+            borderRadius: '6px',
+            border: 'none',
+            background: 'var(--accent, #6c5ce7)',
+            color: '#fff',
+            cursor: 'pointer',
+          }}
+        >
+          Enter
+        </button>
+        {error && <p style={{ color: '#e84393', marginTop: '0.75rem' }}>{error}</p>}
+      </form>
+    </div>
+  );
+}
+
+function PresenterContent() {
   const flatSlides = useMemo(() => getFlatSlides(presentation), []);
   const [state, setState] = useState({
     currentIndex: 0,
@@ -20,6 +77,7 @@ export default function PresenterView() {
   const [editText, setEditText] = useState('');
   const textareaRef = useRef(null);
   const startTime = useRef(Date.now());
+  const { token, logout } = usePresenterMode();
 
   const onStateUpdate = useCallback((data) => {
     setState(data);
@@ -36,7 +94,11 @@ export default function PresenterView() {
   }, []);
 
   // Keyboard navigation in presenter window sends commands to main window
+  const currentSlide = flatSlides[state.currentIndex];
+
   useEffect(() => {
+    const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+
     function handleKeyDown(e) {
       // Don't capture keyboard when editing notes
       if (editing) return;
@@ -54,13 +116,22 @@ export default function PresenterView() {
           e.preventDefault();
           sendCommand('prev');
           break;
+        case 'c':
+        case 'C':
+          e.preventDefault();
+          if (currentSlide?.pollId && token) {
+            fetch(`${apiBase}/api/poll/${currentSlide.pollId}/reset`, {
+              method: 'POST',
+              headers: { Authorization: `Bearer ${token}` },
+            });
+          }
+          break;
       }
     }
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [sendCommand, editing]);
+  }, [sendCommand, editing, currentSlide, token]);
 
-  const currentSlide = flatSlides[state.currentIndex];
   const nextSlide = flatSlides[state.currentIndex + 1];
 
   // Get notes: check localStorage for edits, fall back to file content
@@ -91,13 +162,16 @@ export default function PresenterView() {
     }
     setEditing(false);
 
-    // Also persist to the markdown file via the backend API
-    if (currentSlide) {
+    // Also persist to the markdown file via the backend API (requires presenter auth)
+    if (currentSlide && token) {
       try {
         const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:3000';
         await fetch(`${apiBase}/api/notes/${currentSlide.id}`, {
           method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
           body: JSON.stringify({
             buildStep: state.buildStep,
             content: editText,
@@ -158,6 +232,7 @@ export default function PresenterView() {
         <div className="presenter-nav-buttons">
           <button onClick={() => sendCommand('prev')}>← Prev</button>
           <button onClick={() => sendCommand('next')}>Next →</button>
+          <button onClick={logout} style={{ marginLeft: '1rem', opacity: 0.6 }}>Logout</button>
         </div>
       </div>
 
@@ -225,4 +300,14 @@ export default function PresenterView() {
       </div>
     </div>
   );
+}
+
+export default function PresenterView() {
+  const { isPresenter } = usePresenterMode();
+
+  if (!isPresenter) {
+    return <PresenterLogin />;
+  }
+
+  return <PresenterContent />;
 }

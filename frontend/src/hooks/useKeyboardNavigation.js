@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 
-export default function useKeyboardNavigation({ goNext, goPrev, toggleOverview, toggleFullscreen, openPresenterWindow, currentSlide }) {
+export default function useKeyboardNavigation({ goNext, goPrev, toggleOverview, toggleFullscreen, openPresenterWindow, currentSlide, isPresenter, token }) {
   useEffect(() => {
     function handleKeyDown(e) {
       // Ignore if user is typing in an input
@@ -40,8 +40,11 @@ export default function useKeyboardNavigation({ goNext, goPrev, toggleOverview, 
         case 'c':
         case 'C':
           e.preventDefault();
-          if (currentSlide?.pollId) {
-            fetch(`${API_BASE}/api/poll/${currentSlide.pollId}/reset`, { method: 'POST' });
+          if (isPresenter && currentSlide?.pollId) {
+            fetch(`${API_BASE}/api/poll/${currentSlide.pollId}/reset`, {
+              method: 'POST',
+              headers: { Authorization: `Bearer ${token}` },
+            });
           }
           break;
         case 'Escape':
@@ -55,5 +58,5 @@ export default function useKeyboardNavigation({ goNext, goPrev, toggleOverview, 
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [goNext, goPrev, toggleOverview, toggleFullscreen, openPresenterWindow, currentSlide]);
+  }, [goNext, goPrev, toggleOverview, toggleFullscreen, openPresenterWindow, currentSlide, isPresenter, token]);
 }

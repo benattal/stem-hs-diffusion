@@ -6,6 +6,7 @@ import useSwipeNavigation from '../hooks/useSwipeNavigation.js';
 import useFullscreen from '../hooks/useFullscreen.js';
 import useSlideScaling from '../hooks/useSlideScaling.js';
 import { useSyncBroadcaster } from '../hooks/usePresentationSync.js';
+import { usePresenterMode } from '../hooks/usePresenterMode.jsx';
 import SlideRenderer from './SlideRenderer.jsx';
 import Navigation from './Navigation.jsx';
 import ProgressBar from './ProgressBar.jsx';
@@ -16,27 +17,23 @@ export default function Presentation() {
   const [showOverview, setShowOverview] = useState(false);
   const { isFullscreen, toggleFullscreen } = useFullscreen();
   const { scale, isDesktop, designWidth, designHeight } = useSlideScaling();
+  const handlePresenterCommand = useCallback((command) => {
+    if (command === 'next') state.goNext();
+    if (command === 'prev') state.goPrev();
+  }, [state.goNext, state.goPrev]);
+
   const { openPresenterWindow } = useSyncBroadcaster({
     currentIndex: state.currentIndex,
     buildStep: state.buildStep,
     totalSlides: state.totalSlides,
+    onCommand: handlePresenterCommand,
   });
-
-  // Listen for navigation commands from the presenter window
-  useEffect(() => {
-    const channel = new BroadcastChannel('vision-workshop-presenter');
-    channel.onmessage = (event) => {
-      if (event.data.type === 'command') {
-        if (event.data.command === 'next') state.goNext();
-        if (event.data.command === 'prev') state.goPrev();
-      }
-    };
-    return () => channel.close();
-  }, [state.goNext, state.goPrev]);
 
   const toggleOverview = useCallback((force) => {
     setShowOverview(prev => force !== undefined ? force : !prev);
   }, []);
+
+  const { isPresenter, token } = usePresenterMode();
 
   const toggleNotes = useCallback(() => {
     openPresenterWindow();
@@ -49,6 +46,8 @@ export default function Presentation() {
     toggleFullscreen,
     openPresenterWindow: toggleNotes,
     currentSlide: state.currentSlide,
+    isPresenter,
+    token,
   });
 
   useSwipeNavigation({
@@ -99,7 +98,8 @@ export default function Presentation() {
       <div className="keyboard-hint">
         <kbd>O</kbd> overview &nbsp;
         <kbd>F</kbd> fullscreen &nbsp;
-        <kbd>P</kbd> presenter notes
+        <kbd>P</kbd> presenter
+        {isPresenter && <> &nbsp;<kbd>C</kbd> clear poll</>}
       </div>
 
       <div className="toolbar-buttons">

@@ -58,7 +58,10 @@
       "WebFetch(domain:lobehub.com)",
       "WebFetch(domain:seeklogo.com)",
       "Bash(curl -sL -o \"C:/Users/battal/Documents/Projects/vision_workshop/frontend/public/slides/gen-ai-diffusion/sora-logo.png\" \"https://images.seeklogo.com/logo-png/61/1/openai-sora-logo-png_seeklogo-612642.png\")",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(cat /c/Users/battal/Documents/Projects/vision_workshop/.env*)",
+      "Bash(cat /c/Users/battal/Documents/Projects/vision_workshop/frontend/.env*)",
+      "Bash(curl:*)"
     ]
   }
 }
