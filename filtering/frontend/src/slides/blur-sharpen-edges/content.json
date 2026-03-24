@@ -1,0 +1,10 @@
+{
+  "layout": "content",
+  "sectionLabel": "Kernels & Convolution",
+  "title": "Blur, Sharpen & Edge Detection",
+  "bullets": [
+    "Box blur (7×7): replaces each pixel with the average of its neighborhood",
+    "Sharpen (3×3): boosts the center pixel and subtracts neighbors",
+    "Laplacian (3×3): highlights boundaries where intensity changes quickly"
+  ]
+}

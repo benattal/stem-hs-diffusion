@@ -1,0 +1,33 @@
+{
+  "title": "Image Filtering Workshop",
+  "authors": [],
+  "defaultTransition": "fade",
+
+  "sections": [
+    {
+      "id": "intro",
+      "title": "Introduction",
+      "slides": ["title", "outline-intro", "what-is-filtering"]
+    },
+    {
+      "id": "kernels",
+      "title": "Kernels & Convolution",
+      "slides": ["outline-kernels", "convolution-basics", "blur-sharpen-edges"]
+    },
+    {
+      "id": "noise",
+      "title": "Noise & Denoising",
+      "slides": ["outline-noise", "noise-types", "denoising"]
+    },
+    {
+      "id": "edge-detection",
+      "title": "Edge Detection",
+      "slides": ["outline-edges", "sobel-canny"]
+    },
+    {
+      "id": "practice",
+      "title": "Hands-On Practice",
+      "slides": ["outline-practice", "colab-link", "closing"]
+    }
+  ]
+}

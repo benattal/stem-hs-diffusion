@@ -1,0 +1,11 @@
+{
+  "layout": "content",
+  "sectionLabel": "Introduction",
+  "title": "What is Image Filtering?",
+  "bullets": [
+    "A filter replaces each pixel with a weighted sum of nearby pixels",
+    "The weights are stored in a small matrix called a \"kernel\"",
+    "Different kernels produce different effects: blur, sharpen, edge detection",
+    "Filters are the building blocks of computer vision"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "layout": "colabLink",
+  "sectionLabel": "Hands-On Practice",
+  "title": "Try It Yourself!",
+  "description": "Open the Colab notebook to experiment with image filters interactively.",
+  "colabUrl": "https://colab.research.google.com/",
+  "note": "Upload your own image.png to get started"
+}

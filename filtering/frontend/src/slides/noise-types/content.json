@@ -1,0 +1,11 @@
+{
+  "layout": "content",
+  "sectionLabel": "Noise & Denoising",
+  "title": "Types of Image Noise",
+  "bullets": [
+    "Gaussian noise: adds small random values to many pixels",
+    "Salt & pepper noise: flips some pixels to black (0) or white (255)",
+    "Noise is unwanted random variation in pixel values",
+    "Different noise types require different removal strategies"
+  ]
+}
