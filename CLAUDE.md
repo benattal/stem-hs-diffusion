@@ -7,11 +7,13 @@ Monorepo containing multiple interactive workshop presentations on computer visi
 Each presentation lives in its own top-level directory as a self-contained sub-project:
 
 - `diffusion/` — **How to Make Images with Generative AI** — Interactive slide deck (Vite + React + Express)
-- `filtering/` — **Image Filtering** — Jupyter notebook-based workshop
+- `filtering/` — **Image Filtering** — Interactive slide deck (Vite + React + Express) + Jupyter notebook
 
 Shared root files:
+- `package.json` — Root orchestration: gateway server, unified build, dev mode
+- `server/gateway.mjs` — Production gateway: serves both presentations from one Express process
+- `server/dev.mjs` — Dev gateway: Vite middleware mode with HMR for both presentations
 - `environment.yml` — Conda environment for notebook-based workshops
-- `package.json` — Root orchestration (currently wires up `diffusion/`)
 
 ## Diffusion Presentation (`diffusion/`)
 
@@ -59,16 +61,51 @@ Shared root files:
 ```bash
 cd diffusion
 npm run install:all   # Install deps for frontend + backend
-npm run dev           # Start both (frontend:5173, backend:3000)
-npm run build         # Production build
+npm run dev           # Standalone dev (frontend:5173, backend:3000)
 ```
 
-## Filtering Workshop (`filtering/`)
+## Filtering Presentation (`filtering/`)
 
-- `filtering/assets/STEM_Workshop_Image_Filtering.ipynb` — Jupyter notebook for the image filtering workshop
+Same architecture as diffusion (Vite + React + Express). Also includes a Jupyter notebook.
+
+- `filtering/assets/filtering_workshop.ipynb` — Jupyter notebook for the image filtering workshop
+
+## Gateway (Unified Server)
+
+Both presentations are served from a single Express process under `/diffusion/` and `/filtering/`.
+
+- `server/gateway.mjs` — Production: serves built static files + backend API routes
+- `server/dev.mjs` — Development: Vite middleware mode with HMR for both presentations
+
+### Build & Run (Gateway)
 
 ```bash
-conda env create -f environment.yml
-conda activate vision-workshop
-jupyter notebook filtering/assets/STEM_Workshop_Image_Filtering.ipynb
+npm run install:all   # Install all deps (both presentations)
+npm run dev           # Dev server with HMR on port 3000
+npm run build         # Build both frontends with base paths
+npm start             # Production gateway on port 3000
 ```
+
+Routes:
+- `/` — Landing page
+- `/diffusion/` — Diffusion presentation
+- `/diffusion/api/*` — Diffusion backend APIs
+- `/filtering/` — Filtering presentation
+- `/filtering/api/*` — Filtering backend APIs
+
+### Standalone Dev (one presentation at a time)
+
+```bash
+npm run dev:diffusion   # localhost:5173
+npm run dev:filtering   # localhost:5173
+```
+
+### Deploy to Railway
+
+Deploy as a single service pointing to the repo root. Railway uses `npm run build` then `npm start`.
+
+- **Build command**: `npm run build` (builds both frontends with `/diffusion/` and `/filtering/` base paths)
+- **Start command**: `npm start` (runs `server/gateway.mjs`)
+- Set `PORT` env var if needed (defaults to 3000)
+
+Alternatively, each presentation can still be deployed independently using its own `railway.toml` and `nixpacks.toml` in `{presentation}/frontend/` and `{presentation}/backend/`.

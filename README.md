@@ -6,35 +6,31 @@ Monorepo containing multiple interactive workshop presentations on computer visi
 
 | Directory | Topic | Format |
 |-----------|-------|--------|
-| `diffusion/` | How to Make Images with Generative AI | Interactive slide deck (Vite + React + Express) |
-| `filtering/` | Image Filtering | Jupyter notebook |
+| `filtering/` | Image Filtering | Interactive slide deck + Jupyter notebook |
+| `diffusion/` | How to Make Images with Generative AI | Interactive slide deck |
 
 ## Prerequisites
 
-- [Conda](https://docs.conda.io/en/latest/) or [Mamba](https://mamba.readthedocs.io/)
 - Node.js >= 20
+- [Conda](https://docs.conda.io/en/latest/) or [Mamba](https://mamba.readthedocs.io/) (for notebook workshops)
 
-## Setup
+## Quick Start
 
 ```bash
-# Create conda environment (for notebook-based workshops)
-conda env create -f environment.yml
-conda activate vision-workshop
+npm run install:all   # Install all deps (both presentations)
+npm run dev           # Dev server with HMR on http://localhost:3000
 ```
+
+This starts a single server with both presentations:
+- http://localhost:3000/ — Landing page
+- http://localhost:3000/filtering/ — Filtering presentation
+- http://localhost:3000/diffusion/ — Diffusion presentation
 
 ---
 
 ## Diffusion Presentation (`diffusion/`)
 
 Interactive presentation website. Students visit the site and click through slides and animations.
-
-### Setup & Development
-
-```bash
-cd diffusion
-npm run install:all   # Install frontend + backend deps
-npm run dev           # Start both (frontend:5173, backend:3000)
-```
 
 ### Navigation
 
@@ -59,15 +55,13 @@ The presenter window shows:
 - An elapsed-time timer
 - Prev/Next buttons (keyboard nav also works from this window)
 
-### Production Build & Deploy
+### Standalone Development
+
+To work on just this presentation with its own Vite dev server:
 
 ```bash
-cd diffusion
-npm run build
-npm start
+npm run dev:diffusion   # frontend:5173, backend:3000
 ```
-
-Each service (frontend/backend) has its own `railway.toml` and `nixpacks.toml`. Deploy as two separate Railway services pointing to `diffusion/frontend/` and `diffusion/backend/`.
 
 ### Project Structure
 
@@ -199,11 +193,52 @@ Object.assign(findSlide('title'), {
 
 ---
 
-## Filtering Workshop (`filtering/`)
+## Filtering Presentation (`filtering/`)
 
-Jupyter notebook-based workshop on image filtering techniques.
+Interactive slide deck (same architecture as diffusion) plus a Jupyter notebook for hands-on practice.
+
+### Standalone Development
 
 ```bash
-conda activate vision-workshop
-jupyter notebook filtering/assets/STEM_Workshop_Image_Filtering.ipynb
+npm run dev:filtering   # frontend:5173, backend:3000
 ```
+
+### Jupyter Notebook
+
+```bash
+conda env create -f environment.yml
+conda activate vision-workshop
+jupyter notebook filtering/assets/filtering_workshop.ipynb
+```
+
+---
+
+## Production Build & Deploy
+
+### Local Production
+
+```bash
+npm run build   # Build both frontends with /diffusion/ and /filtering/ base paths
+npm start       # Start gateway on port 3000
+```
+
+### Deploy to Railway
+
+Deploy as a **single service** pointing to the repo root:
+
+| Setting | Value |
+|---------|-------|
+| **Root directory** | `/` (repo root) |
+| **Build command** | `npm run install:all && npm run build` |
+| **Start command** | `npm start` |
+
+The gateway server (`server/gateway.mjs`) serves both presentations and their APIs from one process:
+- `https://<your-app>.railway.app/` — Landing page
+- `https://<your-app>.railway.app/filtering/` — Filtering presentation
+- `https://<your-app>.railway.app/diffusion/` — Diffusion presentation
+
+Set the `PORT` environment variable if Railway requires a specific port (the gateway reads `process.env.PORT`, defaulting to 3000).
+
+#### Alternative: Deploy presentations independently
+
+Each presentation can also be deployed as separate Railway services using the `railway.toml` and `nixpacks.toml` files in `{presentation}/frontend/` and `{presentation}/backend/`.
