@@ -1,1 +1,1 @@
-Reveal: the correct answer is B. All ones divided by 9 = equal weight to every neighbor = simple average = box blur. Option D is actually a Gaussian blur approximation — mention this as a preview of more sophisticated filters.
+Reveal: the correct answer is B. All ones divided by 9 = equal weight to every neighbor = simple average = box blur. Option D is actually a Gaussian blur approximation; mention this as a preview of more sophisticated filters.

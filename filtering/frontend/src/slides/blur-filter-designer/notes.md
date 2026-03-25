@@ -1,1 +1,1 @@
-Interactive demo! Let the audience suggest kernel values. Try the presets first, then experiment with custom values. Key takeaway: different kernels produce dramatically different effects — blur, sharpen, edge detection — all from the same filtering operation.
+Interactive demo! Let the audience suggest kernel values. Try the presets first, then experiment with custom values. Key takeaway: different kernels produce dramatically different effects (blur, sharpen, edge detection) all from the same filtering operation.

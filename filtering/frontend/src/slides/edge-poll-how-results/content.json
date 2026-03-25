@@ -1,7 +1,7 @@
 {
   "layout": "pollResults",
   "sectionLabel": "Edge Detection",
-  "title": "Finding Edges — Results",
+  "title": "Finding Edges: Results",
   "pollId": "edge-how",
   "question": "Subtract one side from the other! If left and right pixels are similar → small result (no edge). If they're very different → large result (edge!).",
   "options": [

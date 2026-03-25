@@ -1,1 +1,1 @@
-Highlight which input pixels contribute to one output pixel. Draw the connection: each output pixel is the average of its 3x3 neighborhood.
+Zoom in to see individual pixels. Point out the highlighted center pixel — this is the pixel we're going to compute the blurred value for.

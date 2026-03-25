@@ -26,12 +26,6 @@ This starts a single server with both presentations:
 - http://localhost:3000/filtering/ — Filtering presentation
 - http://localhost:3000/diffusion/ — Diffusion presentation
 
----
-
-## Diffusion Presentation (`diffusion/`)
-
-Interactive presentation website. Students visit the site and click through slides and animations.
-
 ### Navigation
 
 | Key | Action |
@@ -55,9 +49,24 @@ The presenter window shows:
 - An elapsed-time timer
 - Prev/Next buttons (keyboard nav also works from this window)
 
-### Standalone Development
+---
 
-To work on just this presentation with its own Vite dev server:
+## Shared Core (`packages/core/`)
+
+Shared presentation framework used by all presentations via Vite alias `@core`.
+
+- **Hooks** (8): useSlideState, useKeyboardNavigation, useSwipeNavigation, useFullscreen, useSlideScaling, usePresentationSync, usePresenterMode, usePollData
+- **Components**: Navigation, SlideOverview, ProgressBar, PresenterView, PreviewMode, SlideRenderer factory
+- **Layouts** (13): TitleSlide, ContentSlide, OutlineSlide, ProgressiveBuildSlide, DiscussionSlide, DiagramSlide, MediaSlide, ColabLinkSlide, PollSlide, PollResultsSlide, GenAiDemoSlide, GenAiOverviewSlide, IllustratedPointsSlide
+- **Backend**: Express server factory with auth (JWT), live polling (SSE), and presenter notes routes
+
+---
+
+## Diffusion Presentation (`diffusion/`)
+
+Interactive presentation website. Students visit the site and click through slides and animations.
+
+### Standalone Development
 
 ```bash
 npm run dev:diffusion   # frontend:5173, backend:3000
@@ -81,28 +90,29 @@ diffusion/
 │   │   │       ├── content.json   # Slide content (layout, data, media refs)
 │   │   │       ├── notes.md       # Presenter notes (Markdown)
 │   │   │       └── notes-N.md     # Per-build-step notes (for progressive builds)
-│   │   ├── components/
-│   │   │   ├── Presentation.jsx   # Main presentation view
-│   │   │   ├── PresenterView.jsx  # Second-monitor presenter display
-│   │   │   ├── SlideRenderer.jsx  # Dispatches slides to layout components
-│   │   │   └── layouts/           # One directory per layout type
-│   │   │       └── {LayoutName}/
-│   │   │           ├── {LayoutName}.jsx  # React component
-│   │   │           ├── {LayoutName}.css  # Layout styles
-│   │   │           └── {LayoutName}.js   # Custom logic hook
-│   │   ├── hooks/
-│   │   │   ├── useSlideState.js   # Core navigation state machine
-│   │   │   ├── useKeyboardNavigation.js
-│   │   │   ├── useSwipeNavigation.js
-│   │   │   ├── useFullscreen.js
-│   │   │   └── usePresentationSync.js  # BroadcastChannel cross-window sync
-│   │   └── transitions/
+│   │   └── components/
+│   │       ├── Presentation.jsx   # Main presentation view
+│   │       ├── SlideRenderer.jsx  # Dispatches slides to layout components
+│   │       ├── shared/            # DiffusionCycleBackground, DiffusionSequence
+│   │       └── layouts/           # Presentation-specific layouts
 │   └── public/
 │       └── slides/                # Static assets per slide
 │           └── {slide-id}/        # Images, videos, GIFs
 ├── backend/               # Express API server
 └── scripts/               # Media extraction from PPTX
 ```
+
+### Custom Layouts
+
+| Layout | Description |
+|--------|-------------|
+| `diffusionSlider` | Interactive noise slider |
+| `diffusionModel` | Model architecture visualization |
+| `diffusionRandomness` | Randomness visualization |
+| `noiseDefinition` | Noise explanation |
+| `embeddingSpace` | Interactive embedding scatter plot |
+| `embeddingClusters` | Embedding clustering visualization |
+| `generationOverview` | Generation process overview |
 
 ### Extending the Diffusion Presentation
 
@@ -159,7 +169,7 @@ Outline slides (`layout: "outline"`) automatically render all sections; set `act
 
 Use per-step notes files: `notes-0.md`, `notes-1.md`, `notes-2.md`, etc.
 
-#### Available layouts
+#### Available shared layouts
 
 | Layout | Required fields | Description |
 |--------|----------------|-------------|
@@ -195,13 +205,51 @@ Object.assign(findSlide('title'), {
 
 ## Filtering Presentation (`filtering/`)
 
-Interactive slide deck (same architecture as diffusion) plus a Jupyter notebook for hands-on practice.
+Interactive slide deck (same architecture as diffusion) plus a Jupyter notebook for hands-on practice. Covers spatial/temporal blur and edge detection with interactive demos.
 
 ### Standalone Development
 
 ```bash
 npm run dev:filtering   # frontend:5173, backend:3000
 ```
+
+### Project Structure
+
+```
+filtering/
+├── assets/
+│   └── filtering_workshop.ipynb
+├── frontend/
+│   ├── src/
+│   │   ├── data/
+│   │   │   ├── presentation.json  # Section/slide ordering
+│   │   │   ├── presentation.js    # Merges slide content at build time
+│   │   │   └── notesLoader.js     # Loads notes from slide directories
+│   │   ├── slides/                # ~35 slide directories
+│   │   │   └── {slide-id}/
+│   │   │       ├── content.json
+│   │   │       └── notes.md
+│   │   └── components/
+│   │       ├── Presentation.jsx
+│   │       ├── SlideRenderer.jsx
+│   │       └── layouts/           # Presentation-specific layouts
+│   └── public/
+│       └── slides/                # Static assets per slide
+├── backend/                       # Express API server
+└── environment.yml                # Conda env (at repo root)
+```
+
+### Custom Layouts
+
+| Layout | Description |
+|--------|-------------|
+| `convolutionAnimation` | Step-by-step convolution kernel animation |
+| `filterDesigner` | Interactive kernel/filter designer tool |
+| `imagePoll` | Image-based poll with visual options |
+| `kernelPoll` | Poll for kernel/matrix value guessing |
+| `kernelPollResults` | Results display for kernel polls |
+| `spatialBlurDemo` | Interactive spatial blur demonstration |
+| `temporalBlurDemo` | Interactive temporal blur demonstration |
 
 ### Jupyter Notebook
 

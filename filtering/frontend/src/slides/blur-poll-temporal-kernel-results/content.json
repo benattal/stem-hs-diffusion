@@ -1,9 +1,9 @@
 {
   "layout": "kernelPollResults",
   "sectionLabel": "Fun Intro to Filtering",
-  "title": "Temporal Blur Kernel — Results",
+  "title": "Temporal Blur Kernel: Results",
   "pollId": "blur-temporal-kernel",
-  "question": "The correct answer is C — uniform horizontal averaging, same idea as spatial box blur but only in the direction of motion",
+  "question": "The correct answer is C: uniform horizontal averaging, same idea as spatial box blur but only in the direction of motion",
   "kernelOptions": [
     { "kernel": [[0,0,0,0,0],[0,0,0,0,0],[1,0,0,0,1],[0,0,0,0,0],[0,0,0,0,0]], "divisor": 2 },
     { "kernel": [[0,0,0,0,0],[0,0,0,0,0],[0,0,1,0,0],[0,0,0,0,0],[0,0,0,0,0]] },

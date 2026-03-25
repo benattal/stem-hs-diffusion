@@ -24,7 +24,7 @@ export default function ProgressiveBuildSlide({ slide, buildStep }) {
                 <div className="build-step-header">
                   <span className="build-step-label">{step.label}</span>
                   {step.description && (
-                    <span className="build-step-description">— {step.description}</span>
+                    <span className="build-step-description">{step.description}</span>
                   )}
                 </div>
                 {step.media && step.media.length > 0 && (

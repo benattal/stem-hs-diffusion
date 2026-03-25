@@ -8,6 +8,7 @@
     { "label": "original" },
     { "label": "small-blocks" },
     { "label": "larger-blocks" },
+    { "label": "zoom-pixel" },
     { "label": "pixel-contribution" }
   ]
 }

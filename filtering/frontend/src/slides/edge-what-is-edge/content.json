@@ -10,7 +10,7 @@
     },
     {
       "label": "Blur REMOVES edges",
-      "description": "Averaging smooths out sharp transitions — that's why blurred images look soft and boundary-free",
+      "description": "Averaging smooths out sharp transitions, which is why blurred images look soft and boundary-free",
       "media": [{ "type": "image", "src": "/slides/blur-poll-spatial/imageB.jpg" }]
     },
     {

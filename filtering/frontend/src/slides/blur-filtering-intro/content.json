@@ -20,7 +20,7 @@
     },
     {
       "label": "The common pattern: Filtering",
-      "description": "Replace each value with a weighted combination of nearby values — this is called filtering"
+      "description": "Replace each value with a weighted combination of nearby values. This is called filtering"
     }
   ]
 }

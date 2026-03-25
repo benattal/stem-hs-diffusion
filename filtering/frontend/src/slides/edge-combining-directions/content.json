@@ -5,17 +5,17 @@
   "buildSteps": [
     {
       "label": "Sobel-X catches vertical edges",
-      "description": "Brightness changes from left to right — things like the sides of buildings, poles, door frames",
+      "description": "Brightness changes from left to right: the sides of buildings, poles, door frames",
       "media": [{ "type": "image", "src": "/slides/edge-combining-directions/sobel-x.png" }]
     },
     {
       "label": "Sobel-Y catches horizontal edges",
-      "description": "Brightness changes from top to bottom — things like horizons, shelves, table edges",
+      "description": "Brightness changes from top to bottom: horizons, shelves, table edges",
       "media": [{ "type": "image", "src": "/slides/edge-combining-directions/sobel-y.png" }]
     },
     {
       "label": "Combine them for ALL edges",
-      "description": "Edge magnitude = sqrt(Gx² + Gy²) — this gives us the overall edge strength at every pixel, regardless of direction",
+      "description": "Edge magnitude = sqrt(Gx² + Gy²). This gives us the overall edge strength at every pixel, regardless of direction",
       "media": [{ "type": "image", "src": "/slides/edge-combining-directions/combined.png" }]
     },
     {

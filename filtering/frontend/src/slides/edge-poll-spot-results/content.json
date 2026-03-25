@@ -1,7 +1,7 @@
 {
   "layout": "pollResults",
   "sectionLabel": "Edge Detection",
-  "title": "Stronger Edges — Results",
+  "title": "Stronger Edges: Results",
   "pollId": "edge-spot",
   "question": "Which image has stronger edges?",
   "options": ["Image A", "Image B"],

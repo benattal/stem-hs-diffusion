@@ -78,28 +78,47 @@ Each presentation keeps only presentation-specific files:
 
 ### Slide Layouts
 
-| Layout | Location | Use |
-|--------|----------|-----|
-| `title` | core | Full-screen title with optional background |
-| `outline` | core | Section outline with active/completed indicators |
-| `content` | core | Title + bullet points + optional media |
-| `progressiveBuild` | core | Click-to-reveal steps (like PPT animations) |
-| `discussion` | core | Grid of discussion prompts |
-| `diagram` | core | Explanation + media + optional prompt example |
-| `media` | core | 2x2 media grid |
-| `colabLink` | core | Colab link button + QR code |
-| `poll` | core | Live polling with real-time results |
-| `pollResults` | core | Poll results bar chart |
-| `genAiDemo` | core | Code + math + chat UI |
-| `genAiOverview` | core | GenAI concept overview |
-| `illustratedPoints` | core | Points with side illustrations |
-| `diffusionSlider` | diffusion | Interactive noise slider |
-| `diffusionModel` | diffusion | Model architecture visualization |
-| `diffusionRandomness` | diffusion | Randomness visualization |
-| `noiseDefinition` | diffusion | Noise explanation |
-| `embeddingSpace` | diffusion | Interactive embedding scatter plot |
-| `embeddingClusters` | diffusion | Embedding clustering visualization |
-| `generationOverview` | diffusion | Generation process overview |
+#### Core layouts (shared)
+
+| Layout | Use |
+|--------|-----|
+| `title` | Full-screen title with optional background |
+| `outline` | Section outline with active/completed indicators |
+| `content` | Title + bullet points + optional media |
+| `progressiveBuild` | Click-to-reveal steps (like PPT animations) |
+| `discussion` | Grid of discussion prompts |
+| `diagram` | Explanation + media + optional prompt example |
+| `media` | 2x2 media grid |
+| `colabLink` | Colab link button + QR code |
+| `poll` | Live polling with real-time results |
+| `pollResults` | Poll results bar chart |
+| `genAiDemo` | Code + math + chat UI |
+| `genAiOverview` | GenAI concept overview |
+| `illustratedPoints` | Points with side illustrations |
+
+#### Diffusion-specific layouts
+
+| Layout | Use |
+|--------|-----|
+| `diffusionSlider` | Interactive noise slider |
+| `diffusionModel` | Model architecture visualization |
+| `diffusionRandomness` | Randomness visualization |
+| `noiseDefinition` | Noise explanation |
+| `embeddingSpace` | Interactive embedding scatter plot |
+| `embeddingClusters` | Embedding clustering visualization |
+| `generationOverview` | Generation process overview |
+
+#### Filtering-specific layouts
+
+| Layout | Use |
+|--------|-----|
+| `convolutionAnimation` | Step-by-step convolution kernel animation |
+| `filterDesigner` | Interactive kernel/filter designer |
+| `imagePoll` | Image-based poll with visual options |
+| `kernelPoll` | Poll for kernel/matrix value guessing |
+| `kernelPollResults` | Results display for kernel polls |
+| `spatialBlurDemo` | Interactive spatial blur demonstration |
+| `temporalBlurDemo` | Interactive temporal blur demonstration |
 
 ## Build & Run
 
@@ -135,6 +154,8 @@ Deploy as a single service pointing to the repo root. Railway uses `npm run buil
 - **Start command**: `npm start` (runs `server/gateway.mjs`)
 - Set `PORT` env var if needed (defaults to 3000)
 
-## Filtering Extras
+## Presentation-Specific Extras
 
-- `filtering/assets/filtering_workshop.ipynb` — Jupyter notebook for the image filtering workshop
+- `diffusion/assets/` — `diffusion_workshop.pptx`, `diffusion_workshop.ipynb`
+- `diffusion/scripts/` — Media extraction scripts (`extract-pptx-media.js`, `pptx_map.cjs`)
+- `filtering/assets/` — `filtering_workshop.ipynb` (Jupyter notebook for hands-on practice)

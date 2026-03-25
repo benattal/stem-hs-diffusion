@@ -1,1 +1,1 @@
-Reveal: the correct answer is C — uniform averaging across frames, same idea as spatial box blur but applied over time. Both spatial and temporal blur are the same operation (averaging) applied in different dimensions!
+Reveal: the correct answer is C: uniform averaging across frames, same idea as spatial box blur but applied over time. Both spatial and temporal blur are the same operation (averaging) applied in different dimensions!
