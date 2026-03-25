@@ -1,7 +1,7 @@
 import Presentation from './components/Presentation.jsx'
-import PresenterView from './components/PresenterView.jsx'
-import PreviewMode from './components/PreviewMode.jsx'
-import { PresenterModeProvider } from './hooks/usePresenterMode.jsx'
+import PresenterView from '@core/components/PresenterView.jsx'
+import PreviewMode from '@core/components/PreviewMode.jsx'
+import { PresenterModeProvider } from '@core/hooks/usePresenterMode.jsx'
 
 export default function App() {
   const params = new URLSearchParams(window.location.search);

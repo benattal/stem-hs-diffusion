@@ -1,14 +1,20 @@
 import dotenv from 'dotenv';
-import app from './app.js';
+import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
+import { createApp } from '../../../packages/core/backend/src/app.js';
 
 dotenv.config();
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const slidesDir = resolve(__dirname, '../../frontend/src/slides');
+const app = createApp(slidesDir);
 
 const PORT = process.env.PORT || 3000;
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
 const server = app.listen(PORT, () => {
   console.log('='.repeat(60));
-  console.log(`Vision Workshop API Server`);
+  console.log(`Vision Workshop API Server (diffusion)`);
   console.log('='.repeat(60));
   console.log(`Environment: ${NODE_ENV}`);
   console.log(`Server running on port ${PORT}`);
@@ -19,19 +25,11 @@ const server = app.listen(PORT, () => {
 });
 
 process.on('SIGTERM', () => {
-  console.log('SIGTERM signal received: closing HTTP server');
-  server.close(() => {
-    console.log('HTTP server closed');
-    process.exit(0);
-  });
+  server.close(() => process.exit(0));
 });
 
 process.on('SIGINT', () => {
-  console.log('\nSIGINT signal received: closing HTTP server');
-  server.close(() => {
-    console.log('HTTP server closed');
-    process.exit(0);
-  });
+  server.close(() => process.exit(0));
 });
 
 export default server;

@@ -2,12 +2,9 @@ import express from 'express';
 import { createServer as createViteServer } from 'vite';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import diffusionAuthRouter, { requirePresenter as diffusionRequirePresenter } from '../diffusion/backend/src/routes/auth.js';
-import diffusionPollRouter from '../diffusion/backend/src/routes/poll.js';
-import diffusionNotesRouter from '../diffusion/backend/src/routes/notes.js';
-import filteringAuthRouter, { requirePresenter as filteringRequirePresenter } from '../filtering/backend/src/routes/auth.js';
-import filteringPollRouter from '../filtering/backend/src/routes/poll.js';
-import filteringNotesRouter from '../filtering/backend/src/routes/notes.js';
+import authRouter, { requirePresenter } from '../packages/core/backend/src/routes/auth.js';
+import pollRouter from '../packages/core/backend/src/routes/poll.js';
+import createNotesRouter from '../packages/core/backend/src/routes/notes.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
@@ -17,15 +14,19 @@ const app = express();
 // ── Shared middleware ──────────────────────────────────────────
 app.use(express.json());
 
+// ── Notes routers (presentation-specific slides directories) ──
+const diffusionNotesRouter = createNotesRouter(join(root, 'diffusion/frontend/src/slides'));
+const filteringNotesRouter = createNotesRouter(join(root, 'filtering/frontend/src/slides'));
+
 // ── Backend API routes ─────────────────────────────────────────
-app.use('/diffusion/api/auth', diffusionAuthRouter);
-app.use('/diffusion/api/poll', diffusionPollRouter);
-app.use('/diffusion/api/notes', diffusionRequirePresenter, diffusionNotesRouter);
+app.use('/diffusion/api/auth', authRouter);
+app.use('/diffusion/api/poll', pollRouter);
+app.use('/diffusion/api/notes', requirePresenter, diffusionNotesRouter);
 app.get('/diffusion/health', (req, res) => res.json({ status: 'ok', presentation: 'diffusion' }));
 
-app.use('/filtering/api/auth', filteringAuthRouter);
-app.use('/filtering/api/poll', filteringPollRouter);
-app.use('/filtering/api/notes', filteringRequirePresenter, filteringNotesRouter);
+app.use('/filtering/api/auth', authRouter);
+app.use('/filtering/api/poll', pollRouter);
+app.use('/filtering/api/notes', requirePresenter, filteringNotesRouter);
 app.get('/filtering/health', (req, res) => res.json({ status: 'ok', presentation: 'filtering' }));
 
 // ── Vite dev servers in middleware mode (HMR enabled) ──────────

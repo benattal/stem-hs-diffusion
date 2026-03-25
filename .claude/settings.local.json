@@ -71,7 +71,11 @@
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(git ls-tree:*)",
-      "Bash(xargs grep:*)"
+      "Bash(xargs grep:*)",
+      "Bash(find /c/Users/battal/Documents/Projects/vision_workshop/filtering/frontend/src/hooks -type f -name *.js -o -name *.jsx)",
+      "Bash(find /c/Users/battal/Documents/Projects/vision_workshop/filtering/backend -type f -name *.js -o -name *.mjs)",
+      "Bash(for layout:*)",
+      "Read(//c/Users/battal/Documents/Projects/vision_workshop/diffusion/frontend/src/components/layouts/**)"
     ]
   }
 }

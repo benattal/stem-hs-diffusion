@@ -1,16 +1,16 @@
 import { useState, useCallback, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import useSlideState from '../hooks/useSlideState.js';
-import useKeyboardNavigation from '../hooks/useKeyboardNavigation.js';
-import useSwipeNavigation from '../hooks/useSwipeNavigation.js';
-import useFullscreen from '../hooks/useFullscreen.js';
-import useSlideScaling from '../hooks/useSlideScaling.js';
-import { useSyncBroadcaster } from '../hooks/usePresentationSync.js';
-import { usePresenterMode } from '../hooks/usePresenterMode.jsx';
+import useSlideState from '@core/hooks/useSlideState.js';
+import useKeyboardNavigation from '@core/hooks/useKeyboardNavigation.js';
+import useSwipeNavigation from '@core/hooks/useSwipeNavigation.js';
+import useFullscreen from '@core/hooks/useFullscreen.js';
+import useSlideScaling from '@core/hooks/useSlideScaling.js';
+import { useSyncBroadcaster } from '@core/hooks/usePresentationSync.js';
+import { usePresenterMode } from '@core/hooks/usePresenterMode.jsx';
 import SlideRenderer from './SlideRenderer.jsx';
-import Navigation from './Navigation.jsx';
-import ProgressBar from './ProgressBar.jsx';
-import SlideOverview from './SlideOverview.jsx';
+import Navigation from '@core/components/Navigation.jsx';
+import ProgressBar from '@core/components/ProgressBar.jsx';
+import SlideOverview from '@core/components/SlideOverview.jsx';
 
 export default function Presentation() {
   const state = useSlideState();

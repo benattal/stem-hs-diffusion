@@ -1,11 +1,21 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { resolve } from 'path'
 
 export default defineConfig({
   plugins: [react()],
   base: process.env.VITE_BASE || '/',
+  resolve: {
+    alias: {
+      '@core': resolve(__dirname, '../../packages/core/frontend'),
+      '@app': resolve(__dirname, 'src'),
+    },
+  },
   server: {
     port: 5173,
+    fs: {
+      allow: [resolve(__dirname, '../..')],
+    },
     proxy: {
       '/api': {
         target: 'http://localhost:3000',
