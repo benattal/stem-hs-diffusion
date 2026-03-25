@@ -1,0 +1,14 @@
+{
+  "layout": "kernelPoll",
+  "sectionLabel": "Fun Intro to Filtering",
+  "title": "What's the Kernel for Spatial Averaging?",
+  "pollId": "blur-spatial-kernel",
+  "question": "Which kernel produces a 3×3 box blur (spatial averaging)?",
+  "kernelOptions": [
+    { "kernel": [[1,0,1],[0,1,0],[1,0,1]], "divisor": 5 },
+    { "kernel": [[1,1,1],[1,1,1],[1,1,1]], "divisor": 9 },
+    { "kernel": [[0,-1,0],[-1,5,-1],[0,-1,0]] },
+    { "kernel": [[1,2,1],[2,4,2],[1,2,1]], "divisor": 16 }
+  ],
+  "presetDistribution": [8, 45, 5, 12]
+}

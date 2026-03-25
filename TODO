@@ -1,18 +1,58 @@
 Website features
 =======
-* Different presenter/student views
-    - Student view tracks presenter view
-    - Password protected presenter view
+* Student view tracks presenter view
 * Uploading and sharing results
 
-Slides
+Diffusion
 =======
 
-Presenter notes
+## Slides
+
+## Presenter notes
+
+Filtering
 =======
 
-Other
-=======
-* Deploy website
-* Share website with others
-* Encourage others to test notebooks on their phones
+## Slides
+* Fun intro to filtering
+    - Introduce as "blurring"
+    - Set of polls: which image is more "blurry"
+        - Spatial blur
+        - Temporal blur
+        - Background blur (zoom meeting)
+    - Build up to what "blurry" means
+        - We think of it as something that is removing information
+            - zoom meeting example
+        - But what is it?
+            - temporal blur example
+                - Play a video
+                - Show average of frames
+                - it is an "average" of images!
+            - Spatial blur example
+                - Zoom into an image
+                - Cycle through overlaid images, each with a different shift
+                - Show average
+                - Show which pixels contribute to the value at the pixel in an output
+    - All of these example of a more general operation called filtering
+        - Bring back original examples
+        - Describe the filtering operation with abstract example
+            - Animate a 3x3 filter sliding over an image
+            - Show entries being multiplied by image entries
+            - Show entries being added up
+    - What is the filter for spatial averaging?
+        - Show original image
+        - Spatially averaged images
+        - Provide a set of choices
+        - Poll results
+        - Reveal correct answer
+    - What is the filter for temporal blur, when an object is moving left to right
+        - Show image
+        - Temporally blurred image
+        - Poll results
+        - Reveal correct answer
+    - Designing your own filter
+        - Show image
+        - Interactive demo that allows you to specify values in different entries
+        - Result of filtering operation
+
+## Presenter notes

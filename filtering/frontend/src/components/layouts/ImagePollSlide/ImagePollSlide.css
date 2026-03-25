@@ -1,0 +1,89 @@
+.slide--image-poll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.slide--image-poll h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  align-self: stretch;
+}
+
+.image-poll-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+.image-poll-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.image-poll-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+  transition: border-color var(--transition);
+}
+
+.image-poll-card--selected img {
+  border-color: var(--accent);
+  box-shadow: 0 0 16px var(--accent-glow);
+}
+
+.image-poll-vote-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 2rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+  width: 100%;
+  justify-content: center;
+}
+
+.image-poll-vote-btn:hover {
+  border-color: var(--accent);
+  background: var(--bg-card);
+}
+
+.image-poll-vote-btn--selected {
+  border-color: var(--accent);
+  background: var(--bg-card);
+  box-shadow: 0 0 16px var(--accent-glow);
+}
+
+.image-poll-vote-btn .poll-option-letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .image-poll-images {
+    grid-template-columns: 1fr;
+  }
+}

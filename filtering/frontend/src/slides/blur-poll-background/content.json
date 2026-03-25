@@ -1,0 +1,10 @@
+{
+  "layout": "imagePoll",
+  "sectionLabel": "Fun Intro to Filtering",
+  "title": "Which image is more blurry?",
+  "pollId": "blur-background",
+  "imageA": { "src": "/slides/blur-poll-background/imageA.jpg", "label": "Image A" },
+  "imageB": { "src": "/slides/blur-poll-background/imageB.jpg", "label": "Image B" },
+  "options": ["Image A", "Image B"],
+  "presetDistribution": [25, 25]
+}

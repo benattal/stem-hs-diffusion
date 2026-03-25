@@ -1,0 +1,109 @@
+.slide--kernel-poll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.slide--kernel-poll h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  align-self: stretch;
+}
+
+.kernel-poll-question {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  align-self: stretch;
+}
+
+.kernel-poll-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  max-width: 800px;
+  width: 100%;
+}
+
+.kernel-poll-option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.kernel-poll-option:hover {
+  border-color: var(--accent);
+  background: var(--bg-card);
+}
+
+.kernel-poll-option--selected {
+  border-color: var(--accent);
+  background: var(--bg-card);
+  box-shadow: 0 0 16px var(--accent-glow);
+}
+
+.kernel-poll-letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* Kernel visualization grid */
+.kernel-vis {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.kernel-vis-grid {
+  display: grid;
+  gap: 2px;
+}
+
+.kernel-vis-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 28px;
+  font-size: 0.75rem;
+  font-family: var(--font-mono, monospace);
+  font-weight: 600;
+  background: var(--bg-card);
+  border-radius: 2px;
+  border: 1px solid var(--border-light);
+}
+
+.kernel-vis-cell--zero {
+  opacity: 0.4;
+}
+
+.kernel-vis-divisor {
+  font-size: 0.85rem;
+  font-family: var(--font-mono, monospace);
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 600px) {
+  .kernel-poll-options {
+    grid-template-columns: 1fr;
+  }
+}

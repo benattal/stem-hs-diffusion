@@ -1,0 +1,12 @@
+{
+  "layout": "temporalBlurDemo",
+  "sectionLabel": "Fun Intro to Filtering",
+  "title": "Temporal Blur: What's Happening?",
+  "videoSrc": "/slides/blur-temporal-demo/motion.mp4",
+  "frameCount": 10,
+  "buildSteps": [
+    { "label": "video" },
+    { "label": "frames" },
+    { "label": "average" }
+  ]
+}

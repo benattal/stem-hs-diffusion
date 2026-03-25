@@ -1,0 +1,1 @@
+Transition slide. First build step: acknowledge the intuition that blur = information loss. Second build step: tease that there's something more precise going on. This sets up the temporal and spatial blur demos.

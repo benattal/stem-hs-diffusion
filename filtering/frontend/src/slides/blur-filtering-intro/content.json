@@ -1,0 +1,26 @@
+{
+  "layout": "progressiveBuild",
+  "sectionLabel": "Fun Intro to Filtering",
+  "title": "These Are All Examples of Filtering!",
+  "buildSteps": [
+    {
+      "label": "Spatial blur",
+      "description": "Average of neighboring pixels in space",
+      "media": [{ "type": "image", "src": "/slides/blur-poll-spatial/imageB.jpg" }]
+    },
+    {
+      "label": "Temporal blur",
+      "description": "Average of frames over time",
+      "media": [{ "type": "image", "src": "/slides/blur-poll-temporal/imageB.jpg" }]
+    },
+    {
+      "label": "Background blur",
+      "description": "Selective averaging applied only to background regions",
+      "media": [{ "type": "image", "src": "/slides/blur-poll-background/imageB.jpg" }]
+    },
+    {
+      "label": "The common pattern: Filtering",
+      "description": "Replace each value with a weighted combination of nearby values — this is called filtering"
+    }
+  ]
+}

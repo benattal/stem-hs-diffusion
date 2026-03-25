@@ -16,6 +16,15 @@ import GenAiDemoSlide from '@core/components/layouts/GenAiDemoSlide/GenAiDemoSli
 import IllustratedPointsSlide from '@core/components/layouts/IllustratedPointsSlide/IllustratedPointsSlide.jsx';
 import GenAiOverviewSlide from '@core/components/layouts/GenAiOverviewSlide/GenAiOverviewSlide.jsx';
 
+// Filtering-specific layouts
+import ImagePollSlide from './layouts/ImagePollSlide/ImagePollSlide.jsx';
+import TemporalBlurDemoSlide from './layouts/TemporalBlurDemoSlide/TemporalBlurDemoSlide.jsx';
+import SpatialBlurDemoSlide from './layouts/SpatialBlurDemoSlide/SpatialBlurDemoSlide.jsx';
+import ConvolutionAnimationSlide from './layouts/ConvolutionAnimationSlide/ConvolutionAnimationSlide.jsx';
+import FilterDesignerSlide from './layouts/FilterDesignerSlide/FilterDesignerSlide.jsx';
+import KernelPollSlide from './layouts/KernelPollSlide/KernelPollSlide.jsx';
+import KernelPollResultsSlide from './layouts/KernelPollResultsSlide/KernelPollResultsSlide.jsx';
+
 const layoutMap = {
   title: TitleSlide,
   outline: OutlineSlide,
@@ -30,6 +39,13 @@ const layoutMap = {
   genAiDemo: GenAiDemoSlide,
   illustratedPoints: IllustratedPointsSlide,
   genAiOverview: GenAiOverviewSlide,
+  imagePoll: ImagePollSlide,
+  temporalBlurDemo: TemporalBlurDemoSlide,
+  spatialBlurDemo: SpatialBlurDemoSlide,
+  convolutionAnimation: ConvolutionAnimationSlide,
+  filterDesigner: FilterDesignerSlide,
+  kernelPoll: KernelPollSlide,
+  kernelPollResults: KernelPollResultsSlide,
 };
 
 export default createSlideRenderer(layoutMap, () => presentation);

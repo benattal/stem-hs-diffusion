@@ -1,0 +1,145 @@
+.slide--kernel-poll-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.slide--kernel-poll-results h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  align-self: stretch;
+}
+
+.kernel-results-question {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  align-self: stretch;
+}
+
+.kernel-results-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 850px;
+}
+
+.kernel-result-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.kernel-result-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+  min-width: 160px;
+}
+
+.kernel-result-letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+/* Small kernel grid for results */
+.kernel-result-vis {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.kernel-result-grid {
+  display: grid;
+  gap: 1px;
+}
+
+.kernel-result-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 20px;
+  font-size: 0.65rem;
+  font-family: var(--font-mono, monospace);
+  font-weight: 600;
+  background: var(--bg-card);
+  border-radius: 1px;
+  border: 1px solid var(--border-light);
+}
+
+.kernel-result-cell--zero {
+  opacity: 0.35;
+}
+
+.kernel-result-divisor {
+  font-size: 0.75rem;
+  font-family: var(--font-mono, monospace);
+  color: var(--text-secondary);
+}
+
+.kernel-result-bar-area {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.kernel-result-bar-container {
+  flex: 1;
+  height: 28px;
+  background: var(--bg-card);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.kernel-result-bar {
+  height: 100%;
+  border-radius: 4px;
+}
+
+.kernel-result-pct {
+  font-size: 0.9rem;
+  font-weight: 600;
+  min-width: 40px;
+  text-align: right;
+}
+
+.kernel-result-count {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  min-width: 24px;
+}
+
+.kernel-results-footer {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.kernel-results-footer .poll-total {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.kernel-results-footer .poll-status {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.kernel-results-footer .poll-status--live {
+  color: var(--success);
+}

@@ -1,0 +1,16 @@
+{
+  "layout": "progressiveBuild",
+  "sectionLabel": "Fun Intro to Filtering",
+  "title": "What Does \"Blurry\" Mean?",
+  "buildSteps": [
+    {
+      "label": "It removes information",
+      "description": "We think of blur as losing detail — like a Zoom background that hides your messy room",
+      "media": [{ "type": "image", "src": "/slides/blur-poll-background/imageB.jpg" }]
+    },
+    {
+      "label": "But what is it, really?",
+      "description": "Blur isn't just \"losing detail\" — it's a specific mathematical operation. Let's find out what."
+    }
+  ]
+}

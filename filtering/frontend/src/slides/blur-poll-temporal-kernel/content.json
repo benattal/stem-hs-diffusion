@@ -1,0 +1,14 @@
+{
+  "layout": "kernelPoll",
+  "sectionLabel": "Fun Intro to Filtering",
+  "title": "What's the Kernel for Temporal Blur?",
+  "pollId": "blur-temporal-kernel",
+  "question": "An object is moving left to right across frames. Which kernel produces this motion blur?",
+  "kernelOptions": [
+    { "kernel": [[0,0,0,0,0],[0,0,0,0,0],[1,0,0,0,1],[0,0,0,0,0],[0,0,0,0,0]], "divisor": 2 },
+    { "kernel": [[0,0,0,0,0],[0,0,0,0,0],[0,0,1,0,0],[0,0,0,0,0],[0,0,0,0,0]] },
+    { "kernel": [[0,0,0,0,0],[0,0,0,0,0],[1,1,1,1,1],[0,0,0,0,0],[0,0,0,0,0]], "divisor": 5 },
+    { "kernel": [[0,0,0,0,0],[0,0,0,0,0],[1,2,3,2,1],[0,0,0,0,0],[0,0,0,0,0]], "divisor": 9 }
+  ],
+  "presetDistribution": [5, 8, 35, 12]
+}

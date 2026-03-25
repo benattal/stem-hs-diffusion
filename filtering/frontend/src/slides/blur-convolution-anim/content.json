@@ -1,0 +1,15 @@
+{
+  "layout": "convolutionAnimation",
+  "sectionLabel": "Fun Intro to Filtering",
+  "title": "Filtering = Slide, Multiply, Sum",
+  "imageSrc": "/slides/blur-convolution-anim/sample.jpg",
+  "kernel": [[1,1,1],[1,1,1],[1,1,1]],
+  "kernelScale": 9,
+  "gridSize": 7,
+  "buildSteps": [
+    { "label": "image" },
+    { "label": "pixels" },
+    { "label": "filter" },
+    { "label": "result" }
+  ]
+}

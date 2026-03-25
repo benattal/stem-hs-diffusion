@@ -1,0 +1,1 @@
+The core filtering animation. Walk through: (1) Place the kernel over a region of the image, (2) Multiply each kernel entry by the corresponding pixel value, (3) Sum the products to get the output pixel. The kernel slides across the entire image to produce the filtered result.

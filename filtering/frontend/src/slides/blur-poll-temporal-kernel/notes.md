@@ -1,0 +1,1 @@
+Poll: which 1D kernel produces temporal/motion blur? Correct answer is C — equal averaging across 5 frames. A only uses first and last frame. B is identity (no blur). D is a weighted average (triangular window).

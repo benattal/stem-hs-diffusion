@@ -75,7 +75,9 @@
       "Bash(find /c/Users/battal/Documents/Projects/vision_workshop/filtering/frontend/src/hooks -type f -name *.js -o -name *.jsx)",
       "Bash(find /c/Users/battal/Documents/Projects/vision_workshop/filtering/backend -type f -name *.js -o -name *.mjs)",
       "Bash(for layout:*)",
-      "Read(//c/Users/battal/Documents/Projects/vision_workshop/diffusion/frontend/src/components/layouts/**)"
+      "Read(//c/Users/battal/Documents/Projects/vision_workshop/diffusion/frontend/src/components/layouts/**)",
+      "WebFetch(domain:www.pexels.com)",
+      "WebFetch(domain:pixabay.com)"
     ]
   }
 }

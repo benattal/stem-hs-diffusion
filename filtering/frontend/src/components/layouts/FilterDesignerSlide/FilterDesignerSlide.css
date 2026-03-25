@@ -1,0 +1,132 @@
+.slide--filter-designer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.slide--filter-designer h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  align-self: stretch;
+}
+
+.filter-designer-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.filter-designer-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-designer-image canvas {
+  border-radius: var(--radius);
+  border: 1px solid var(--border-light);
+}
+
+.filter-designer-image-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.filter-designer-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  min-width: 220px;
+}
+
+.kernel-grid {
+  display: grid;
+  gap: 4px;
+}
+
+.kernel-input {
+  width: 48px;
+  height: 36px;
+  text-align: center;
+  font-size: 0.85rem;
+  font-family: var(--font-mono, monospace);
+  font-weight: 600;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  transition: border-color var(--transition);
+}
+
+.kernel-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+.preset-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.preset-btn {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.preset-btn:hover {
+  border-color: var(--accent);
+  background: var(--bg-card);
+}
+
+.preset-btn--active {
+  border-color: var(--accent);
+  background: var(--bg-card);
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+.normalize-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.normalize-toggle input[type="checkbox"] {
+  accent-color: var(--accent);
+  width: 16px;
+  height: 16px;
+}
+
+.kernel-sum-display {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono, monospace);
+}
+
+@media (max-width: 800px) {
+  .filter-designer-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+}

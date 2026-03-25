@@ -1,0 +1,15 @@
+{
+  "layout": "filterDesigner",
+  "sectionLabel": "Fun Intro to Filtering",
+  "title": "Design Your Own Filter",
+  "imageSrc": "/slides/blur-filter-designer/sample.jpg",
+  "kernelSize": 5,
+  "defaultKernel": [[0,0,0,0,0],[0,0,0,0,0],[0,0,1,0,0],[0,0,0,0,0],[0,0,0,0,0]],
+  "presets": [
+    { "name": "Identity", "kernel": [[0,0,0,0,0],[0,0,0,0,0],[0,0,1,0,0],[0,0,0,0,0],[0,0,0,0,0]] },
+    { "name": "Box Blur", "kernel": [[1,1,1,1,1],[1,1,1,1,1],[1,1,1,1,1],[1,1,1,1,1],[1,1,1,1,1]] },
+    { "name": "Sharpen", "kernel": [[0,0,0,0,0],[0,0,-1,0,0],[0,-1,5,-1,0],[0,0,-1,0,0],[0,0,0,0,0]] },
+    { "name": "Edge Detect", "kernel": [[0,0,0,0,0],[0,-1,-1,-1,0],[0,-1,8,-1,0],[0,-1,-1,-1,0],[0,0,0,0,0]] },
+    { "name": "Gaussian Blur", "kernel": [[1,4,6,4,1],[4,16,24,16,4],[6,24,36,24,6],[4,16,24,16,4],[1,4,6,4,1]] }
+  ]
+}

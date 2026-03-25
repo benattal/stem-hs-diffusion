@@ -1,0 +1,73 @@
+.slide--spatial-blur {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.slide--spatial-blur h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  align-self: stretch;
+}
+
+.spatial-blur-row {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.spatial-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.spatial-slot-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  min-height: 1.2em;
+}
+
+.spatial-canvas-box {
+  border-radius: var(--radius);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  transition: opacity 0.4s ease;
+}
+
+.spatial-canvas-box canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.spatial-description-bar {
+  min-height: 1.5em;
+  text-align: center;
+}
+
+.spatial-description-bar p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.spatial-insight {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: center;
+  padding: 0.6rem 1.25rem;
+  background: var(--bg-elevated);
+  border-radius: var(--radius);
+  border: 1px solid var(--accent);
+  transition: opacity 0.4s ease;
+}

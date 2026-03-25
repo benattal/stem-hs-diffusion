@@ -1,0 +1,12 @@
+{
+  "layout": "content",
+  "sectionLabel": "Fun Intro to Filtering",
+  "title": "Blurring Is Filtering",
+  "bullets": [
+    "Blur is not just \"losing detail\" — it's a weighted average of nearby values",
+    "Spatial blur averages neighboring pixels; temporal blur averages frames over time",
+    "The weights are stored in a small matrix called a kernel (or filter)",
+    "Different kernels produce different effects: blur, sharpen, edge detection",
+    "Next up: we'll explore kernels and convolution in depth"
+  ]
+}

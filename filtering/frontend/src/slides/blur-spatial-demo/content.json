@@ -1,0 +1,13 @@
+{
+  "layout": "spatialBlurDemo",
+  "sectionLabel": "Fun Intro to Filtering",
+  "title": "Spatial Blur: Averaging Neighbors",
+  "imageSrc": "/slides/blur-spatial-demo/sample.jpg",
+  "blockSizes": [1, 2, 4, 8, 16],
+  "buildSteps": [
+    { "label": "original" },
+    { "label": "small-blocks" },
+    { "label": "larger-blocks" },
+    { "label": "pixel-contribution" }
+  ]
+}

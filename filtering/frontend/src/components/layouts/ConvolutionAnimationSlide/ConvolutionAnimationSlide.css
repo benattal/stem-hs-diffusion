@@ -1,0 +1,216 @@
+.slide--convolution-anim {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.slide--convolution-anim h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  align-self: stretch;
+}
+
+/* Main 3-column layout: input | center | output */
+.conv-main {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.conv-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+/* Stack layers on top of each other */
+.conv-stack {
+  position: relative;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+}
+
+.conv-stack-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.6s ease;
+}
+
+/* Center column: kernel + computation + controls */
+.conv-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 160px;
+  transition: opacity 0.4s ease;
+}
+
+.conv-kernel-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.kernel-display-grid {
+  display: grid;
+  gap: 2px;
+}
+
+.kernel-display-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 26px;
+  font-size: 0.75rem;
+  font-family: var(--font-mono, monospace);
+  font-weight: 600;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 2px;
+}
+
+.kernel-display-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono, monospace);
+}
+
+/* Shared labels */
+.grid-section-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Pixel grids */
+.pixel-grid {
+  display: grid;
+  gap: 1px;
+  background: var(--border-light);
+  border-radius: 4px;
+  position: relative;
+}
+
+.pixel-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  font-family: var(--font-mono, monospace);
+  transition: background 0.2s;
+}
+
+.pixel-cell--highlighted {
+  outline: 2px solid var(--accent);
+  outline-offset: -1px;
+  z-index: 1;
+}
+
+.kernel-overlay {
+  position: absolute;
+  border: 3px solid var(--accent);
+  border-radius: 3px;
+  pointer-events: none;
+  z-index: 2;
+  transition: top 0.4s ease, left 0.4s ease;
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* Computation panel */
+.computation-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: var(--bg-elevated);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-light);
+}
+
+.computation-panel h4 {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.computation-grid {
+  display: grid;
+  gap: 3px;
+}
+
+.computation-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.35rem;
+  font-size: 0.65rem;
+  font-family: var(--font-mono, monospace);
+  background: var(--bg-card);
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.computation-result {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: var(--font-mono, monospace);
+}
+
+/* Controls */
+.convolution-controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.convolution-controls button {
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.convolution-controls button:hover {
+  border-color: var(--accent);
+  background: var(--bg-card);
+}
+
+.convolution-controls button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.convolution-controls .btn--playing {
+  border-color: var(--accent);
+  background: var(--bg-card);
+}
+
+.convolution-progress {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono, monospace);
+}

@@ -1,0 +1,1 @@
+Background blur (like a Zoom meeting virtual background). This one is trickier — the foreground is sharp but the background is blurred. Is it "blurry"? This sets up the discussion about what blur really means.
