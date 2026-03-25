@@ -1,6 +1,6 @@
 {
   "layout": "kernelPollResults",
-  "sectionLabel": "Fun Intro to Filtering",
+  "sectionLabel": "Introduction to Filtering",
   "title": "Spatial Averaging Kernel: Results",
   "pollId": "blur-spatial-kernel",
   "question": "The correct answer is B: all ones divided by 9 = equal weight to every neighbor = box blur",

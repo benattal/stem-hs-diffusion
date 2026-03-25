@@ -1,6 +1,6 @@
 {
   "layout": "kernelPoll",
-  "sectionLabel": "Fun Intro to Filtering",
+  "sectionLabel": "Introduction to Filtering",
   "title": "What's the Kernel for Spatial Averaging?",
   "pollId": "blur-spatial-kernel",
   "question": "Which kernel produces a 3×3 box blur (spatial averaging)?",

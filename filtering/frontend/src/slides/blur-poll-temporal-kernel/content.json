@@ -1,6 +1,6 @@
 {
   "layout": "kernelPoll",
-  "sectionLabel": "Fun Intro to Filtering",
+  "sectionLabel": "Introduction to Filtering",
   "title": "What's the Kernel for Temporal Blur?",
   "pollId": "blur-temporal-kernel",
   "question": "An object is moving left to right across frames. Which kernel produces this motion blur?",

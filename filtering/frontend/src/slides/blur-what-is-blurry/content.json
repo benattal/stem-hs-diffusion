@@ -1,6 +1,6 @@
 {
   "layout": "progressiveBuild",
-  "sectionLabel": "Fun Intro to Filtering",
+  "sectionLabel": "Introduction to Filtering",
   "title": "What Does \"Blurry\" Mean?",
   "buildSteps": [
     {

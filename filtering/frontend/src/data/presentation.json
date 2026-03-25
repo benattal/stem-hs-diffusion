@@ -6,7 +6,7 @@
   "sections": [
     {
       "id": "blurring-intro",
-      "title": "Fun Intro to Filtering",
+      "title": "Introduction to Filtering",
       "slides": [
         "blur-intro-title",
         "blur-poll-spatial",

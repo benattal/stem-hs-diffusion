@@ -1,6 +1,6 @@
 {
   "layout": "pollResults",
-  "sectionLabel": "Fun Intro to Filtering",
+  "sectionLabel": "Introduction to Filtering",
   "title": "Temporal Blur: Results",
   "pollId": "blur-temporal",
   "question": "Which image is more blurry?",

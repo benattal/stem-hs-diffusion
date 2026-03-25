@@ -1,6 +1,6 @@
 {
   "layout": "filterDesigner",
-  "sectionLabel": "Fun Intro to Filtering",
+  "sectionLabel": "Introduction to Filtering",
   "title": "Design Your Own Filter",
   "imageSrc": "/slides/blur-filter-designer/sample.jpg",
   "kernelSize": 5,

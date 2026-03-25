@@ -1,6 +1,6 @@
 {
   "layout": "imagePoll",
-  "sectionLabel": "Fun Intro to Filtering",
+  "sectionLabel": "Introduction to Filtering",
   "title": "Which image is more blurry?",
   "pollId": "blur-background",
   "imageA": { "src": "/slides/blur-poll-background/imageA.jpg", "label": "Image A" },
