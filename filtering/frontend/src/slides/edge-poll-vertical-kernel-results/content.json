@@ -1,0 +1,14 @@
+{
+  "layout": "kernelPollResults",
+  "sectionLabel": "Edge Detection",
+  "title": "Vertical Edge Kernel — Results",
+  "pollId": "edge-vertical-kernel",
+  "question": "The correct answer is C — the Sobel-X kernel. Left column is negative, right column is positive: it subtracts left from right to find vertical edges. Notice it's just the horizontal kernel rotated 90°!",
+  "kernelOptions": [
+    { "kernel": [[-1,-2,-1],[0,0,0],[1,2,1]] },
+    { "kernel": [[0,0,0],[0,1,0],[0,0,0]] },
+    { "kernel": [[-1,0,1],[-2,0,2],[-1,0,1]] },
+    { "kernel": [[1,0,-1],[0,0,0],[-1,0,1]] }
+  ],
+  "presetDistribution": [10, 2, 35, 6]
+}

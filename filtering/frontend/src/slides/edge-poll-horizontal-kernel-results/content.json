@@ -1,0 +1,14 @@
+{
+  "layout": "kernelPollResults",
+  "sectionLabel": "Edge Detection",
+  "title": "Horizontal Edge Kernel — Results",
+  "pollId": "edge-horizontal-kernel",
+  "question": "The correct answer is B — the Sobel-Y kernel. Top row is negative, bottom row is positive: it subtracts top from bottom to find horizontal edges.",
+  "kernelOptions": [
+    { "kernel": [[1,1,1],[1,1,1],[1,1,1]], "divisor": 9 },
+    { "kernel": [[-1,-2,-1],[0,0,0],[1,2,1]] },
+    { "kernel": [[-1,0,1],[-2,0,2],[-1,0,1]] },
+    { "kernel": [[0,-1,0],[-1,4,-1],[0,-1,0]] }
+  ],
+  "presetDistribution": [3, 30, 15, 8]
+}

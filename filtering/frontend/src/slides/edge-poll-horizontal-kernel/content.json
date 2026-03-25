@@ -1,0 +1,14 @@
+{
+  "layout": "kernelPoll",
+  "sectionLabel": "Edge Detection",
+  "title": "Which Kernel Finds Horizontal Edges?",
+  "pollId": "edge-horizontal-kernel",
+  "question": "Which 3×3 kernel detects horizontal edges (brightness changes from top to bottom)?",
+  "kernelOptions": [
+    { "kernel": [[1,1,1],[1,1,1],[1,1,1]], "divisor": 9 },
+    { "kernel": [[-1,-2,-1],[0,0,0],[1,2,1]] },
+    { "kernel": [[-1,0,1],[-2,0,2],[-1,0,1]] },
+    { "kernel": [[0,-1,0],[-1,4,-1],[0,-1,0]] }
+  ],
+  "presetDistribution": [3, 30, 15, 8]
+}

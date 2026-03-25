@@ -1,0 +1,10 @@
+{
+  "layout": "imagePoll",
+  "sectionLabel": "Edge Detection",
+  "title": "Which image has stronger edges?",
+  "pollId": "edge-spot",
+  "imageA": { "src": "/slides/blur-poll-spatial/imageA.jpg", "label": "Image A" },
+  "imageB": { "src": "/slides/blur-poll-spatial/imageB.jpg", "label": "Image B" },
+  "options": ["Image A", "Image B"],
+  "presetDistribution": [35, 15]
+}

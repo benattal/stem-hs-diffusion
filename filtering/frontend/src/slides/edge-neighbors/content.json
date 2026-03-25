@@ -1,0 +1,23 @@
+{
+  "layout": "progressiveBuild",
+  "sectionLabel": "Edge Detection",
+  "title": "Edge Detection Is Just Subtraction",
+  "buildSteps": [
+    {
+      "label": "Compare neighbors",
+      "description": "Put negative weights on one side of the kernel and positive weights on the other — this subtracts one side from the other"
+    },
+    {
+      "label": "Same values cancel out",
+      "description": "In smooth regions, left and right pixels are similar — subtracting them gives ~0 (no edge detected)"
+    },
+    {
+      "label": "Different values light up",
+      "description": "At a boundary, one side is dark and the other is bright — the difference is large, so the kernel output is large (edge!)"
+    },
+    {
+      "label": "Direction matters",
+      "description": "Negative-left / positive-right finds vertical edges. Negative-top / positive-bottom finds horizontal edges. Let's see which kernels do what..."
+    }
+  ]
+}

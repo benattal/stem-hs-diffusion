@@ -1,0 +1,14 @@
+{
+  "layout": "poll",
+  "sectionLabel": "Edge Detection",
+  "title": "How Would You Find Edges?",
+  "pollId": "edge-how",
+  "question": "If you had to detect edges using a 3×3 kernel, which approach makes the most sense?",
+  "options": [
+    "Average all 9 pixels together",
+    "Subtract one side from the other",
+    "Keep only the center pixel",
+    "Multiply all pixels by 2"
+  ],
+  "presetDistribution": [5, 38, 8, 3]
+}

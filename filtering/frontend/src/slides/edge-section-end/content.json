@@ -1,0 +1,15 @@
+{
+  "layout": "content",
+  "sectionLabel": "Edge Detection",
+  "title": "Edge Detection Recap",
+  "bullets": [
+    "Edges are sudden changes in pixel brightness — they mark object boundaries",
+    "We detect edges by subtracting one side from the other using a kernel",
+    "Sobel-X finds vertical edges; Sobel-Y finds horizontal edges",
+    "Combine both with sqrt(Gx² + Gy²) for a full edge map",
+    "Edge detection is just another filtering operation — same convolution, different kernel!"
+  ],
+  "media": [
+    { "type": "image", "src": "/slides/edge-combining-directions/combined.png" }
+  ]
+}

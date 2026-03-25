@@ -70,5 +70,57 @@
       35,
       12
     ]
+  },
+  "edge-how": {
+    "options": [
+      "Average all 9 pixels together",
+      "Subtract one side from the other",
+      "Keep only the center pixel",
+      "Multiply all pixels by 2"
+    ],
+    "counts": [
+      5,
+      38,
+      8,
+      3
+    ]
+  },
+  "edge-horizontal-kernel": {
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "counts": [
+      3,
+      30,
+      15,
+      8
+    ]
+  },
+  "edge-vertical-kernel": {
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "counts": [
+      10,
+      2,
+      35,
+      6
+    ]
+  },
+  "edge-spot": {
+    "options": [
+      "Image A",
+      "Image B"
+    ],
+    "counts": [
+      35,
+      15
+    ]
   }
 }

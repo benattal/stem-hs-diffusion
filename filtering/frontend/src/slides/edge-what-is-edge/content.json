@@ -1,0 +1,25 @@
+{
+  "layout": "progressiveBuild",
+  "sectionLabel": "Edge Detection",
+  "title": "What Is an Edge?",
+  "buildSteps": [
+    {
+      "label": "A sudden change in brightness",
+      "description": "When neighboring pixels jump from dark to light (or light to dark), our eyes see a boundary",
+      "media": [{ "type": "image", "src": "/slides/blur-poll-spatial/imageA.jpg" }]
+    },
+    {
+      "label": "Blur REMOVES edges",
+      "description": "Averaging smooths out sharp transitions — that's why blurred images look soft and boundary-free",
+      "media": [{ "type": "image", "src": "/slides/blur-poll-spatial/imageB.jpg" }]
+    },
+    {
+      "label": "So edge detection is the OPPOSITE of blur",
+      "description": "Instead of averaging neighbors to smooth things out, we look at the difference between neighbors to find where things change"
+    },
+    {
+      "label": "The key question",
+      "description": "How do we measure \"change\" between neighboring pixels? Sounds like a job for... a kernel!"
+    }
+  ]
+}

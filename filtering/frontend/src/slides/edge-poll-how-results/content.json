@@ -1,0 +1,14 @@
+{
+  "layout": "pollResults",
+  "sectionLabel": "Edge Detection",
+  "title": "Finding Edges — Results",
+  "pollId": "edge-how",
+  "question": "Subtract one side from the other! If left and right pixels are similar → small result (no edge). If they're very different → large result (edge!).",
+  "options": [
+    "Average all 9 pixels together",
+    "Subtract one side from the other",
+    "Keep only the center pixel",
+    "Multiply all pixels by 2"
+  ],
+  "presetDistribution": [5, 38, 8, 3]
+}

@@ -1,0 +1,15 @@
+{
+  "layout": "filterDesigner",
+  "sectionLabel": "Edge Detection",
+  "title": "Try Edge Detection Kernels",
+  "imageSrc": "/slides/blur-filter-designer/sample.jpg",
+  "kernelSize": 5,
+  "defaultKernel": [[0,0,0,0,0],[0,0,0,0,0],[0,0,1,0,0],[0,0,0,0,0],[0,0,0,0,0]],
+  "presets": [
+    { "name": "Identity", "kernel": [[0,0,0,0,0],[0,0,0,0,0],[0,0,1,0,0],[0,0,0,0,0],[0,0,0,0,0]] },
+    { "name": "Sobel-X", "kernel": [[0,0,0,0,0],[0,-1,0,1,0],[0,-2,0,2,0],[0,-1,0,1,0],[0,0,0,0,0]] },
+    { "name": "Sobel-Y", "kernel": [[0,0,0,0,0],[0,-1,-2,-1,0],[0,0,0,0,0],[0,1,2,1,0],[0,0,0,0,0]] },
+    { "name": "Laplacian", "kernel": [[0,0,0,0,0],[0,0,-1,0,0],[0,-1,4,-1,0],[0,0,-1,0,0],[0,0,0,0,0]] },
+    { "name": "Sharpen", "kernel": [[0,0,0,0,0],[0,0,-1,0,0],[0,-1,5,-1,0],[0,0,-1,0,0],[0,0,0,0,0]] }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "layout": "kernelPoll",
+  "sectionLabel": "Edge Detection",
+  "title": "Which Kernel Finds Vertical Edges?",
+  "pollId": "edge-vertical-kernel",
+  "question": "Now pick the kernel that detects vertical edges (brightness changes from left to right).",
+  "kernelOptions": [
+    { "kernel": [[-1,-2,-1],[0,0,0],[1,2,1]] },
+    { "kernel": [[0,0,0],[0,1,0],[0,0,0]] },
+    { "kernel": [[-1,0,1],[-2,0,2],[-1,0,1]] },
+    { "kernel": [[1,0,-1],[0,0,0],[-1,0,1]] }
+  ],
+  "presetDistribution": [10, 2, 35, 6]
+}

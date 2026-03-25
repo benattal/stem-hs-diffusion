@@ -1,0 +1,15 @@
+{
+  "layout": "convolutionAnimation",
+  "sectionLabel": "Edge Detection",
+  "title": "Edge Detection in Action",
+  "imageSrc": "/slides/blur-convolution-anim/sample.jpg",
+  "kernel": [[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]],
+  "kernelScale": 1,
+  "gridSize": 7,
+  "buildSteps": [
+    { "label": "image" },
+    { "label": "pixels" },
+    { "label": "filter" },
+    { "label": "result" }
+  ]
+}
