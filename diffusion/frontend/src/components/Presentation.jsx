@@ -95,13 +95,6 @@ export default function Presentation() {
         isLast={state.isLast}
       />
 
-      <div className="keyboard-hint">
-        <kbd>O</kbd> overview &nbsp;
-        <kbd>F</kbd> fullscreen &nbsp;
-        <kbd>P</kbd> presenter
-        {isPresenter && <> &nbsp;<kbd>C</kbd> clear poll</>}
-      </div>
-
       <div className="toolbar-buttons">
         <button
           className="toolbar-btn"

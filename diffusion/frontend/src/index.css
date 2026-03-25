@@ -119,6 +119,11 @@ html, body, #root {
 }
 
 /* ─── Navigation ──────────────────────────────────────────────── */
+:fullscreen .navigation,
+:fullscreen .toolbar-buttons {
+  display: none;
+}
+
 .navigation {
   position: absolute;
   bottom: 0;
@@ -277,18 +282,6 @@ html, body, #root {
 }
 
 /* ─── Keyboard Hint ───────────────────────────────────────────── */
-.keyboard-hint {
-  position: absolute;
-  bottom: 70px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.7rem;
-  color: var(--text-muted);
-  opacity: 0.5;
-  z-index: 40;
-  white-space: nowrap;
-}
-
 kbd {
   display: inline-block;
   padding: 2px 6px;
@@ -561,7 +554,6 @@ kbd {
 /* ─── Preview mode (iframe content) ────────────────────────── */
 
 .preview-mode .navigation,
-.preview-mode .keyboard-hint,
 .preview-mode .toolbar-buttons,
 .preview-mode .progress-bar {
   display: none;
