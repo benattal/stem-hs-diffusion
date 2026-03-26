@@ -8,14 +8,16 @@ Monorepo containing multiple interactive workshop presentations on computer visi
 packages/core/           — Shared presentation framework (frontend + backend)
 diffusion/               — Diffusion presentation (presentation-specific code + content)
 filtering/               — Filtering presentation (presentation-specific code + content)
+face-and-hand-tracking/  — Tracking presentation (presentation-specific code + content)
 server/                  — Gateway server (production + dev)
 ```
 
 - `packages/core/` — Shared framework: hooks, components, layouts, CSS, transitions, backend routes
 - `diffusion/` — **How to Make Images with Generative AI** — Interactive slide deck
 - `filtering/` — **Image Filtering** — Interactive slide deck + Jupyter notebook
-- `server/gateway.mjs` — Production gateway: serves both presentations from one Express process
-- `server/dev.mjs` — Dev gateway: Vite middleware mode with HMR for both presentations
+- `face-and-hand-tracking/` — **Face and Hand Tracking** — Interactive slide deck
+- `server/gateway.mjs` — Production gateway: serves all presentations from one Express process
+- `server/dev.mjs` — Dev gateway: Vite middleware mode with HMR for all presentations
 - `environment.yml` — Conda environment for notebook-based workshops
 
 ## Shared Core (`packages/core/`)
@@ -120,14 +122,18 @@ Each presentation keeps only presentation-specific files:
 | `spatialBlurDemo` | Interactive spatial blur demonstration |
 | `temporalBlurDemo` | Interactive temporal blur demonstration |
 
+#### Tracking-specific layouts
+
+No presentation-specific layouts. Uses core layouts only: `title`, `outline`, `content`, `progressiveBuild`, `diagram`, `media`, `colabLink`.
+
 ## Build & Run
 
-### Gateway (both presentations)
+### Gateway (all presentations)
 
 ```bash
-npm run install:all   # Install all deps (both presentations)
+npm run install:all   # Install all deps (all presentations)
 npm run dev           # Dev server with HMR on port 3000
-npm run build         # Build both frontends with base paths
+npm run build         # Build all frontends with base paths
 npm start             # Production gateway on port 3000
 ```
 
@@ -136,6 +142,7 @@ npm start             # Production gateway on port 3000
 ```bash
 npm run dev:diffusion   # localhost:5173
 npm run dev:filtering   # localhost:5173
+npm run dev:tracking    # localhost:5173
 ```
 
 ### Routes
@@ -145,12 +152,14 @@ npm run dev:filtering   # localhost:5173
 - `/diffusion/api/*` — Diffusion backend APIs
 - `/filtering/` — Filtering presentation
 - `/filtering/api/*` — Filtering backend APIs
+- `/tracking/` — Tracking presentation
+- `/tracking/api/*` — Tracking backend APIs
 
 ### Deploy to Railway
 
 Deploy as a single service pointing to the repo root. Railway uses `npm run build` then `npm start`.
 
-- **Build command**: `npm run build` (builds both frontends with `/diffusion/` and `/filtering/` base paths)
+- **Build command**: `npm run build` (builds all frontends with `/diffusion/`, `/filtering/`, and `/tracking/` base paths)
 - **Start command**: `npm start` (runs `server/gateway.mjs`)
 - Set `PORT` env var if needed (defaults to 3000)
 
@@ -168,3 +177,5 @@ Both Vite configs set `envDir` to the repo root so presentations share the same 
 - `diffusion/assets/` — `diffusion_workshop.pptx`, `diffusion_workshop.ipynb`
 - `diffusion/scripts/` — Media extraction scripts (`extract-pptx-media.js`, `pptx_map.cjs`)
 - `filtering/assets/` — `filtering_workshop.ipynb` (Jupyter notebook for hands-on practice)
+- `face-and-hand-tracking/assets/` — `face-and-hand-tracking.pptx`, extracted slides in `slides/`
+- `face-and-hand-tracking/scripts/` — PPTX extraction script (`extract-pptx.cjs`)

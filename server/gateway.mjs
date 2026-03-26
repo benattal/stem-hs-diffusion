@@ -21,6 +21,7 @@ app.use((req, res, next) => {
 // ── Notes routers (presentation-specific slides directories) ──
 const diffusionNotesRouter = createNotesRouter(join(root, 'diffusion/frontend/src/slides'));
 const filteringNotesRouter = createNotesRouter(join(root, 'filtering/frontend/src/slides'));
+const trackingNotesRouter = createNotesRouter(join(root, 'face-and-hand-tracking/frontend/src/slides'));
 
 // Diffusion API
 app.use('/diffusion/api/auth', authRouter);
@@ -34,10 +35,17 @@ app.use('/filtering/api/poll', pollRouter);
 app.use('/filtering/api/notes', requirePresenter, filteringNotesRouter);
 app.get('/filtering/health', (req, res) => res.json({ status: 'ok', presentation: 'filtering', timestamp: new Date().toISOString() }));
 
+// Tracking API
+app.use('/tracking/api/auth', authRouter);
+app.use('/tracking/api/poll', pollRouter);
+app.use('/tracking/api/notes', requirePresenter, trackingNotesRouter);
+app.get('/tracking/health', (req, res) => res.json({ status: 'ok', presentation: 'tracking', timestamp: new Date().toISOString() }));
+
 // ── Serve each frontend's built static files ──────────────────
 
 app.use('/diffusion', express.static(join(root, 'diffusion/frontend/dist')));
 app.use('/filtering', express.static(join(root, 'filtering/frontend/dist')));
+app.use('/tracking', express.static(join(root, 'face-and-hand-tracking/frontend/dist')));
 
 // SPA fallback: serve index.html for any non-file route under each prefix
 app.get('/diffusion/*', (req, res) => {
@@ -45,6 +53,9 @@ app.get('/diffusion/*', (req, res) => {
 });
 app.get('/filtering/*', (req, res) => {
   res.sendFile(join(root, 'filtering/frontend/dist/index.html'));
+});
+app.get('/tracking/*', (req, res) => {
+  res.sendFile(join(root, 'face-and-hand-tracking/frontend/dist/index.html'));
 });
 
 // ── Landing page ──────────────────────────────────────────────
@@ -124,6 +135,11 @@ app.get('/', (req, res) => {
       <h2>Generative AI &amp; Diffusion</h2>
       <p>How to make images with generative AI</p>
     </a>
+    <a class="card" href="/tracking/">
+      <div class="card-icon">&#x1f91a;</div>
+      <h2>Face &amp; Hand Tracking</h2>
+      <p>Computer vision for interactive digital humans</p>
+    </a>
   </div>
 </body>
 </html>`);
@@ -133,7 +149,7 @@ app.get('/', (req, res) => {
 app.get('/health', (req, res) => {
   res.json({
     status: 'ok',
-    presentations: ['diffusion', 'filtering'],
+    presentations: ['diffusion', 'filtering', 'tracking'],
     timestamp: new Date().toISOString(),
     uptime: process.uptime(),
   });
@@ -150,6 +166,7 @@ const server = app.listen(PORT, () => {
   console.log(`  http://localhost:${PORT}/            Landing page`);
   console.log(`  http://localhost:${PORT}/diffusion/   Diffusion presentation`);
   console.log(`  http://localhost:${PORT}/filtering/   Filtering presentation`);
+  console.log(`  http://localhost:${PORT}/tracking/    Tracking presentation`);
   console.log('='.repeat(60));
 });
 

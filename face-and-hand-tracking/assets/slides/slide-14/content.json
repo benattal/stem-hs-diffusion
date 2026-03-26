@@ -1,0 +1,144 @@
+{
+  "slideIndex": 14,
+  "originalSlideNum": 14,
+  "texts": [
+    "Google model for hand landmarks: https://tinyurl.com/5e64f7fw",
+    "Try it out with your webcam on the browser!",
+    "Now, let’s build a demo with this representation of hands",
+    "Google Trained a Model for us!"
+  ],
+  "shapes": [
+    {
+      "name": "Content Placeholder 12",
+      "texts": [
+        "Google model for hand landmarks: https://tinyurl.com/5e64f7fw",
+        "Try it out with your webcam on the browser!",
+        "Now, let’s build a demo with this representation of hands"
+      ]
+    },
+    {
+      "name": "Title 1",
+      "placeholderType": "title",
+      "texts": [
+        "Google Trained a Model for us!"
+      ]
+    },
+    {
+      "name": "Content Placeholder 3",
+      "type": "picture",
+      "embedRef": "rId3"
+    },
+    {
+      "name": "Picture 13",
+      "type": "picture",
+      "embedRef": "rId4"
+    },
+    {
+      "name": "Picture 14",
+      "type": "picture",
+      "embedRef": "rId5"
+    }
+  ],
+  "media": [
+    {
+      "filename": "image22.png",
+      "relId": "rId3",
+      "type": "image",
+      "size": 427097
+    },
+    {
+      "filename": "image32.png",
+      "relId": "rId5",
+      "type": "image",
+      "size": 149510
+    },
+    {
+      "filename": "image21.png",
+      "relId": "rId4",
+      "type": "image",
+      "size": 45204
+    }
+  ],
+  "externalLinks": [
+    {
+      "id": "rId2",
+      "url": "https://tinyurl.com/5e64f7fw",
+      "type": "hyperlink"
+    }
+  ],
+  "animations": [
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "buildSequence",
+      "steps": 28
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    }
+  ],
+  "layoutHints": {
+    "hasTitle": true,
+    "hasBody": true,
+    "hasPictures": true,
+    "hasGroups": true
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "layout": "flowDiagram",
+  "sectionLabel": "AI for Digital Humans",
+  "title": "AI for Digital Humans",
+  "description": "How do we obtain landmarks from a face image? We use AI!",
+  "steps": [
+    {
+      "label": "Face Image",
+      "media": [
+        { "type": "image", "src": "/slides/ai-landmarks-question/face-landmarks.png" }
+      ]
+    },
+    {
+      "label": "AI model for landmarks",
+      "icon": "\uD83E\uDDE0",
+      "accent": true
+    },
+    {
+      "label": "Landmarks",
+      "zoom": true,
+      "media": [
+        { "type": "image", "src": "/slides/ai-landmarks-question/face-photo.jpeg" }
+      ]
+    }
+  ],
+  "buildSteps": [
+    { "id": "step" },
+    { "id": "step" },
+    { "id": "step" }
+  ]
+}

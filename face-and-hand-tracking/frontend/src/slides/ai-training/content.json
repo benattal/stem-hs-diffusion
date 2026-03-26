@@ -1,0 +1,31 @@
+{
+  "layout": "flowDiagram",
+  "sectionLabel": "AI for Digital Humans",
+  "title": "AI Introduction: How to Get That AI Model?",
+  "description": "We need images for which we know the category already. Then, train model with the data to distinguish between the categories.",
+  "steps": [
+    {
+      "label": "Our data",
+      "sublabel": "Images with known categories",
+      "media": [
+        { "type": "image", "src": "/slides/ai-classification/cat1.jpeg" },
+        { "type": "image", "src": "/slides/ai-classification/dog1.jpeg" }
+      ]
+    },
+    {
+      "label": "Train",
+      "icon": "\u2699\uFE0F",
+      "accent": true
+    },
+    {
+      "label": "AI model for cat/dog images",
+      "icon": "\uD83E\uDDE0",
+      "sublabel": "Trained model"
+    }
+  ],
+  "buildSteps": [
+    { "id": "step" },
+    { "id": "step" },
+    { "id": "step" }
+  ]
+}

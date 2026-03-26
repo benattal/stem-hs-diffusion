@@ -1,0 +1,12 @@
+{
+  "layout": "videoShowcase",
+  "sectionLabel": "Landmark Detection",
+  "title": "AI for Landmark Detection",
+  "media": [
+    { "type": "video", "src": "/slides/landmark-models/landmark-detection.mp4" }
+  ],
+  "bullets": [
+    "Companies like Google or Snapchat trained models for landmarks",
+    "We can use them out-of-the-box to get landmarks for new face images"
+  ]
+}

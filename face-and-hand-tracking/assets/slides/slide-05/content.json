@@ -1,0 +1,263 @@
+{
+  "slideIndex": 5,
+  "originalSlideNum": 5,
+  "texts": [
+    "Computer Vision for Digital Humans",
+    "How do computer vision algorithms power digital humans?",
+    "Landmark detection and animation",
+    "Virtual character creation from images",
+    "Personal assistants"
+  ],
+  "shapes": [
+    {
+      "name": "Title 1",
+      "placeholderType": "title",
+      "texts": [
+        "Computer Vision for Digital Humans"
+      ]
+    },
+    {
+      "name": "Content Placeholder 2",
+      "texts": [
+        "How do computer vision algorithms power digital humans?"
+      ]
+    },
+    {
+      "name": "TextBox 5",
+      "texts": [
+        "Landmark detection and animation"
+      ]
+    },
+    {
+      "name": "TextBox 8",
+      "texts": [
+        "Virtual character creation from images"
+      ]
+    },
+    {
+      "name": "TextBox 10",
+      "texts": [
+        "Personal assistants"
+      ]
+    },
+    {
+      "name": "Picture 2",
+      "type": "picture",
+      "embedRef": "rId3"
+    },
+    {
+      "name": "Picture 4",
+      "type": "picture",
+      "embedRef": "rId4"
+    },
+    {
+      "name": "Picture 6",
+      "type": "picture",
+      "embedRef": "rId5"
+    },
+    {
+      "name": "Picture 8",
+      "type": "picture",
+      "embedRef": "rId6"
+    },
+    {
+      "name": "Picture 10",
+      "type": "picture",
+      "embedRef": "rId7"
+    },
+    {
+      "name": "Picture 12",
+      "type": "picture",
+      "embedRef": "rId8"
+    },
+    {
+      "name": "Picture 12",
+      "type": "picture",
+      "embedRef": "rId8"
+    }
+  ],
+  "media": [
+    {
+      "filename": "image20.gif",
+      "relId": "rId8",
+      "type": "gif",
+      "size": 2377884
+    },
+    {
+      "filename": "image15.png",
+      "relId": "rId3",
+      "type": "image",
+      "size": 1592406
+    },
+    {
+      "filename": "image19.png",
+      "relId": "rId7",
+      "type": "image",
+      "size": 326908
+    },
+    {
+      "filename": "image18.jpeg",
+      "relId": "rId6",
+      "type": "image",
+      "size": 59834
+    },
+    {
+      "filename": "image17.jpeg",
+      "relId": "rId5",
+      "type": "image",
+      "size": 91362
+    },
+    {
+      "filename": "image16.jpeg",
+      "relId": "rId4",
+      "type": "image",
+      "size": 51392
+    }
+  ],
+  "animations": [
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "buildSequence",
+      "steps": 64
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    }
+  ],
+  "layoutHints": {
+    "hasTitle": true,
+    "hasBody": true,
+    "hasPictures": true
+  }
+}

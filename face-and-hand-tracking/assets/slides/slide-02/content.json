@@ -1,0 +1,190 @@
+{
+  "slideIndex": 2,
+  "originalSlideNum": 2,
+  "texts": [
+    "Computer Vision Algorithms for Digital Humans"
+  ],
+  "shapes": [
+    {
+      "name": "Title 3",
+      "placeholderType": "title",
+      "texts": [
+        "Computer Vision Algorithms for Digital Humans"
+      ]
+    },
+    {
+      "name": "AvatarFireandAshStephenLangPerformanceCapturej65ZFV2j8Y4-ezgif.com-crop-video",
+      "type": "picture",
+      "embedRef": "rId1",
+      "linkRef": "rId2"
+    },
+    {
+      "name": "AvatarFireandAshStephenLangPerformanceCapturej65ZFV2j8Y4-ezgif.com-crop-video (1)",
+      "type": "picture",
+      "embedRef": "rId3",
+      "linkRef": "rId4"
+    },
+    {
+      "name": "lex_mark_vertical-ezgif.com-crop-video",
+      "type": "picture",
+      "embedRef": "rId5",
+      "linkRef": "rId6"
+    },
+    {
+      "name": "Picture 2",
+      "type": "picture",
+      "embedRef": "rId14"
+    },
+    {
+      "name": "How to Use Instagram Face Filters [3WtelnEgmvM]",
+      "type": "picture",
+      "embedRef": "rId7",
+      "linkRef": "rId8"
+    }
+  ],
+  "media": [
+    {
+      "filename": "media4.mp4",
+      "relId": "rId8",
+      "type": "video",
+      "size": 9345076
+    },
+    {
+      "filename": "image3.png",
+      "relId": "rId13",
+      "type": "image",
+      "size": 118642
+    },
+    {
+      "filename": "media2.mp4",
+      "relId": "rId3",
+      "type": "video",
+      "size": 1492232
+    },
+    {
+      "filename": "media4.mp4",
+      "relId": "rId7",
+      "type": "video",
+      "size": 9345076
+    },
+    {
+      "filename": "image2.png",
+      "relId": "rId12",
+      "type": "image",
+      "size": 572398
+    },
+    {
+      "filename": "media1.mp4",
+      "relId": "rId2",
+      "type": "video",
+      "size": 1801839
+    },
+    {
+      "filename": "media1.mp4",
+      "relId": "rId1",
+      "type": "video",
+      "size": 1801839
+    },
+    {
+      "filename": "media3.mp4",
+      "relId": "rId6",
+      "type": "video",
+      "size": 608349
+    },
+    {
+      "filename": "image1.png",
+      "relId": "rId11",
+      "type": "image",
+      "size": 427086
+    },
+    {
+      "filename": "media3.mp4",
+      "relId": "rId5",
+      "type": "video",
+      "size": 608349
+    },
+    {
+      "filename": "image5.png",
+      "relId": "rId15",
+      "type": "image",
+      "size": 1314914
+    },
+    {
+      "filename": "media2.mp4",
+      "relId": "rId4",
+      "type": "video",
+      "size": 1492232
+    },
+    {
+      "filename": "image4.png",
+      "relId": "rId14",
+      "type": "image",
+      "size": 270293
+    }
+  ],
+  "animations": [
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "buildSequence",
+      "steps": 35
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    }
+  ],
+  "layoutHints": {
+    "hasTitle": true,
+    "hasPictures": true,
+    "hasVideo": true
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "slideIndex": 9,
+  "originalSlideNum": 9,
+  "texts": [
+    "How do we obtain landmarks from a face image -&gt; we use AI",
+    "AI model for landmarks",
+    "AI for Digital Humans"
+  ],
+  "shapes": [
+    {
+      "name": "Content Placeholder 2",
+      "texts": [
+        "How do we obtain landmarks from a face image -&gt; we use AI"
+      ]
+    },
+    {
+      "name": "Rounded Rectangle 8",
+      "texts": [
+        "AI model for landmarks"
+      ]
+    },
+    {
+      "name": "Title 1",
+      "placeholderType": "title",
+      "texts": [
+        "AI for Digital Humans"
+      ]
+    },
+    {
+      "name": "Picture 4",
+      "type": "picture",
+      "embedRef": "rId2"
+    },
+    {
+      "name": "Picture 2",
+      "type": "picture",
+      "embedRef": "rId3"
+    }
+  ],
+  "media": [
+    {
+      "filename": "image6.jpeg",
+      "relId": "rId3",
+      "type": "image",
+      "size": 119272
+    },
+    {
+      "filename": "image23.png",
+      "relId": "rId2",
+      "type": "image",
+      "size": 1475620
+    }
+  ],
+  "layoutHints": {
+    "hasTitle": true,
+    "hasBody": true,
+    "hasPictures": true,
+    "hasGroups": true
+  }
+}

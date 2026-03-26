@@ -1,0 +1,34 @@
+{
+  "layout": "flowDiagram",
+  "sectionLabel": "AI for Digital Humans",
+  "title": "AI Introduction: Working with Trained Model",
+  "description": "With this model, we can input new images with unknown category. The trained model gives us a prediction for the category.",
+  "steps": [
+    {
+      "label": "New images",
+      "sublabel": "Unknown category",
+      "mediaStacked": true,
+      "media": [
+        { "type": "image", "src": "/slides/ai-classification/cat2.jpg", "label": "Image A" },
+        { "type": "image", "src": "/slides/ai-classification/dog2.jpg", "label": "Image B" }
+      ]
+    },
+    {
+      "label": "AI model for cat/dog images",
+      "icon": "\uD83E\uDDE0",
+      "accent": true
+    },
+    {
+      "label": "Predictions",
+      "items": [
+        { "icon": "\u2705", "text": "Image A \u2192 \u201ccat\u201d" },
+        { "icon": "\u2705", "text": "Image B \u2192 \u201cdog\u201d" }
+      ]
+    }
+  ],
+  "buildSteps": [
+    { "id": "step" },
+    { "id": "step" },
+    { "id": "step" }
+  ]
+}

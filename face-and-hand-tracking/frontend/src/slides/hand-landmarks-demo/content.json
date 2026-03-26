@@ -1,0 +1,8 @@
+{
+  "layout": "colabLink",
+  "sectionLabel": "Landmark Detection",
+  "title": "Google Trained a Model for us!",
+  "description": "Google model for hand landmarks. Try it out with your webcam on the browser!",
+  "colabUrl": "https://tinyurl.com/5e64f7fw",
+  "note": "Now, let's build a demo with this representation of hands"
+}

@@ -1,0 +1,28 @@
+{
+  "layout": "splitReveal",
+  "sectionLabel": "AI for Digital Humans",
+  "title": "AI Introduction: Cat vs. Dog Images",
+  "subtitle": "We have images with different objects/things in them",
+  "panels": [
+    {
+      "label": "Cat",
+      "media": [
+        { "type": "image", "src": "/slides/ai-classification/cat1.jpeg" },
+        { "type": "image", "src": "/slides/ai-classification/cat2.jpg" }
+      ]
+    },
+    {
+      "label": "Dog",
+      "media": [
+        { "type": "image", "src": "/slides/ai-classification/dog1.jpeg" },
+        { "type": "image", "src": "/slides/ai-classification/dog2.jpg" }
+      ]
+    }
+  ],
+  "conclusion": "We want an AI model that can categorize images into \u201ccat\u201d vs. \u201cdog\u201d",
+  "buildSteps": [
+    { "id": "panel" },
+    { "id": "panel" },
+    { "id": "conclusion" }
+  ]
+}

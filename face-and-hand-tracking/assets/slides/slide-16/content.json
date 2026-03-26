@@ -1,0 +1,30 @@
+{
+  "slideIndex": 16,
+  "originalSlideNum": 16,
+  "texts": [
+    "Your Task",
+    "Task notebook: https://tinyurl.com/fingernotebook",
+    "Solution notebook: https://tinyurl.com/fingersolutions​"
+  ],
+  "shapes": [
+    {
+      "name": "Title 1",
+      "placeholderType": "title",
+      "texts": [
+        "Your Task"
+      ]
+    },
+    {
+      "name": "Content Placeholder 2",
+      "texts": [
+        "Task notebook: https://tinyurl.com/fingernotebook",
+        "Solution notebook: https://tinyurl.com/fingersolutions​"
+      ]
+    }
+  ],
+  "media": [],
+  "layoutHints": {
+    "hasTitle": true,
+    "hasBody": true
+  }
+}

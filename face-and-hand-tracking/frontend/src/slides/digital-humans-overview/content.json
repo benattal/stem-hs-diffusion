@@ -1,0 +1,11 @@
+{
+  "layout": "videoShowcase",
+  "sectionLabel": "Introduction",
+  "title": "Computer Vision Algorithms for Digital Humans",
+  "media": [
+    { "type": "video", "src": "/slides/digital-humans-overview/performance-capture.mp4", "caption": "Performance capture" },
+    { "type": "video", "src": "/slides/digital-humans-overview/avatar-capture.mp4", "caption": "Avatar capture" },
+    { "type": "video", "src": "/slides/digital-humans-overview/face-tracking.mp4", "caption": "Face tracking" },
+    { "type": "video", "src": "/slides/digital-humans-overview/instagram-filters.mp4", "caption": "Instagram face filters" }
+  ]
+}

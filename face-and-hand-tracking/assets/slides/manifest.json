@@ -1,0 +1,146 @@
+[
+  {
+    "slideDir": "slide-01",
+    "slideIndex": 1,
+    "originalSlideNum": 1,
+    "title": "Workshop: Face and Hand Tracking",
+    "mediaCount": 0,
+    "hasNotes": true,
+    "hasAnimations": false
+  },
+  {
+    "slideDir": "slide-02",
+    "slideIndex": 2,
+    "originalSlideNum": 2,
+    "title": "Computer Vision Algorithms for Digital Humans",
+    "mediaCount": 13,
+    "hasNotes": true,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-03",
+    "slideIndex": 3,
+    "originalSlideNum": 3,
+    "title": "Computer Vision &amp; Digital Humans",
+    "mediaCount": 0,
+    "hasNotes": true,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-04",
+    "slideIndex": 4,
+    "originalSlideNum": 4,
+    "title": "Digital Humans",
+    "mediaCount": 9,
+    "hasNotes": true,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-05",
+    "slideIndex": 5,
+    "originalSlideNum": 5,
+    "title": "Computer Vision for Digital Humans",
+    "mediaCount": 6,
+    "hasNotes": true,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-06",
+    "slideIndex": 6,
+    "originalSlideNum": 6,
+    "title": "Skeleton",
+    "mediaCount": 11,
+    "hasNotes": true,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-07",
+    "slideIndex": 7,
+    "originalSlideNum": 7,
+    "title": "Digital Representations Humans",
+    "mediaCount": 11,
+    "hasNotes": false,
+    "hasAnimations": false
+  },
+  {
+    "slideDir": "slide-08",
+    "slideIndex": 8,
+    "originalSlideNum": 8,
+    "title": "AI for Digital Humans",
+    "mediaCount": 2,
+    "hasNotes": false,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-09",
+    "slideIndex": 9,
+    "originalSlideNum": 9,
+    "title": "How do we obtain landmarks from a face image -&gt; we use AI",
+    "mediaCount": 2,
+    "hasNotes": false,
+    "hasAnimations": false
+  },
+  {
+    "slideDir": "slide-10",
+    "slideIndex": 10,
+    "originalSlideNum": 10,
+    "title": "AI Introduction: Cat vs. Dog Images",
+    "mediaCount": 2,
+    "hasNotes": false,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-11",
+    "slideIndex": 11,
+    "originalSlideNum": 11,
+    "title": "AI Introduction: How to Get That AI Model?",
+    "mediaCount": 1,
+    "hasNotes": false,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-12",
+    "slideIndex": 12,
+    "originalSlideNum": 12,
+    "title": "With this model, we can input new images with unknown category",
+    "mediaCount": 1,
+    "hasNotes": false,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-13",
+    "slideIndex": 13,
+    "originalSlideNum": 13,
+    "title": "Companies like Google or Snapchat trained models for landmarks",
+    "mediaCount": 6,
+    "hasNotes": false,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-14",
+    "slideIndex": 14,
+    "originalSlideNum": 14,
+    "title": "Google model for hand landmarks: https://tinyurl.com/5e64f7fw",
+    "mediaCount": 3,
+    "hasNotes": false,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-15",
+    "slideIndex": 15,
+    "originalSlideNum": 15,
+    "title": "Your Task",
+    "mediaCount": 0,
+    "hasNotes": false,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-16",
+    "slideIndex": 16,
+    "originalSlideNum": 16,
+    "title": "Your Task",
+    "mediaCount": 0,
+    "hasNotes": false,
+    "hasAnimations": false
+  }
+]

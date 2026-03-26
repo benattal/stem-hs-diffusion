@@ -1,0 +1,184 @@
+{
+  "slideIndex": 13,
+  "originalSlideNum": 13,
+  "texts": [
+    "Companies like Google or Snapchat trained models for landmarks",
+    "We can use them out-of-the-box to get landmarks for new face images",
+    "AI for Landmark Detection",
+    "trained AI model for landmarks"
+  ],
+  "shapes": [
+    {
+      "name": "Content Placeholder 9",
+      "texts": [
+        "Companies like Google or Snapchat trained models for landmarks",
+        "We can use them out-of-the-box to get landmarks for new face images"
+      ]
+    },
+    {
+      "name": "Title 1",
+      "placeholderType": "title",
+      "texts": [
+        "AI for Landmark Detection"
+      ]
+    },
+    {
+      "name": "Rounded Rectangle 5",
+      "texts": [
+        "trained AI model for landmarks"
+      ]
+    },
+    {
+      "name": "landmark_prediction",
+      "type": "picture",
+      "embedRef": "rId1",
+      "linkRef": "rId2"
+    },
+    {
+      "name": "Picture 23",
+      "type": "picture",
+      "embedRef": "rId5"
+    },
+    {
+      "name": "Picture 2",
+      "type": "picture",
+      "embedRef": "rId6"
+    },
+    {
+      "name": "Picture 12",
+      "type": "picture",
+      "embedRef": "rId7"
+    }
+  ],
+  "media": [
+    {
+      "filename": "image31.png",
+      "relId": "rId7",
+      "type": "image",
+      "size": 3916
+    },
+    {
+      "filename": "media5.mp4",
+      "relId": "rId2",
+      "type": "video",
+      "size": 5981595
+    },
+    {
+      "filename": "media5.mp4",
+      "relId": "rId1",
+      "type": "video",
+      "size": 5981595
+    },
+    {
+      "filename": "image30.png",
+      "relId": "rId6",
+      "type": "image",
+      "size": 8175
+    },
+    {
+      "filename": "image29.png",
+      "relId": "rId5",
+      "type": "image",
+      "size": 632297
+    },
+    {
+      "filename": "image28.png",
+      "relId": "rId4",
+      "type": "image",
+      "size": 386842
+    }
+  ],
+  "animations": [
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "buildSequence",
+      "steps": 38
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    }
+  ],
+  "layoutHints": {
+    "hasTitle": true,
+    "hasBody": true,
+    "hasPictures": true,
+    "hasVideo": true
+  }
+}

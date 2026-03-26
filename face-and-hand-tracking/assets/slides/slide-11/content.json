@@ -1,0 +1,109 @@
+{
+  "slideIndex": 11,
+  "originalSlideNum": 11,
+  "texts": [
+    "AI Introduction: How to Get That AI Model?",
+    "We need images for which we know the category already: our data",
+    "Then, train model with the data to distinguish between the categories",
+    "AI model for cat/dog images",
+    "train"
+  ],
+  "shapes": [
+    {
+      "name": "Title 1",
+      "placeholderType": "title",
+      "texts": [
+        "AI Introduction: How to Get That AI Model?"
+      ]
+    },
+    {
+      "name": "Content Placeholder 2",
+      "texts": [
+        "We need images for which we know the category already: our data",
+        "Then, train model with the data to distinguish between the categories"
+      ]
+    },
+    {
+      "name": "Rounded Rectangle 9",
+      "texts": [
+        "AI model for cat/dog images"
+      ]
+    },
+    {
+      "name": "TextBox 14",
+      "texts": [
+        "train"
+      ]
+    },
+    {
+      "name": "Picture 22",
+      "type": "picture",
+      "embedRef": "rId2"
+    }
+  ],
+  "media": [
+    {
+      "filename": "image26.png",
+      "relId": "rId2",
+      "type": "image",
+      "size": 1250248
+    }
+  ],
+  "animations": [
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "buildSequence",
+      "steps": 22
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    }
+  ],
+  "layoutHints": {
+    "hasTitle": true,
+    "hasBody": true,
+    "hasPictures": true,
+    "hasGroups": true
+  }
+}

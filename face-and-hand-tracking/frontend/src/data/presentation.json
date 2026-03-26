@@ -1,0 +1,54 @@
+{
+  "title": "Face and Hand Tracking",
+  "authors": [],
+  "defaultTransition": "fade",
+  "sections": [
+    {
+      "id": "intro",
+      "title": "Introduction",
+      "slides": [
+        "title",
+        "outline-intro",
+        "digital-humans-overview"
+      ]
+    },
+    {
+      "id": "digital-humans",
+      "title": "Digital Humans",
+      "slides": [
+        "outline-digital-humans",
+        "digital-representations",
+        "cv-applications"
+      ]
+    },
+    {
+      "id": "ai-intro",
+      "title": "AI for Digital Humans",
+      "slides": [
+        "outline-ai",
+        "ai-landmarks-question",
+        "ai-classification",
+        "ai-training",
+        "ai-prediction"
+      ]
+    },
+    {
+      "id": "landmark-detection",
+      "title": "Landmark Detection",
+      "slides": [
+        "outline-landmarks",
+        "landmark-models",
+        "hand-landmarks-demo"
+      ]
+    },
+    {
+      "id": "hands-on",
+      "title": "Hands-on Challenge",
+      "slides": [
+        "outline-hands-on",
+        "task-notebook",
+        "task-solution"
+      ]
+    }
+  ]
+}

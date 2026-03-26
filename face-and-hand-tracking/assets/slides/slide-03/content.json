@@ -1,0 +1,87 @@
+{
+  "slideIndex": 3,
+  "originalSlideNum": 3,
+  "texts": [
+    "Computer Vision &amp; Digital Humans",
+    "What are digital humans and what are they used for?",
+    "How is computer vision used to power digital humans?",
+    "Digital representation of humans we work with today",
+    "Short introduction to AI",
+    "Hands-on programming challenge"
+  ],
+  "shapes": [
+    {
+      "name": "Title 1",
+      "placeholderType": "title",
+      "texts": [
+        "Computer Vision &amp; Digital Humans"
+      ]
+    },
+    {
+      "name": "Content Placeholder 2",
+      "texts": [
+        "What are digital humans and what are they used for?",
+        "How is computer vision used to power digital humans?",
+        "Digital representation of humans we work with today",
+        "Short introduction to AI",
+        "Hands-on programming challenge"
+      ]
+    }
+  ],
+  "media": [],
+  "animations": [
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "buildSequence",
+      "steps": 26
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    }
+  ],
+  "layoutHints": {
+    "hasTitle": true,
+    "hasBody": true
+  }
+}

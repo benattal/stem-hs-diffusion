@@ -1,0 +1,100 @@
+.slide--card-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem 2rem;
+}
+
+.slide--card-grid h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.cg-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 650px;
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+}
+
+.cg-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cg-cols, 4), 1fr);
+  grid-template-rows: 1fr auto;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.cg-card {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 2;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cg-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 24px rgba(108, 99, 255, 0.15);
+}
+
+.cg-card-media {
+  display: flex;
+  gap: 2px;
+  background: rgba(0, 0, 0, 0.2);
+  min-height: 120px;
+  overflow: hidden;
+}
+
+.cg-card-media img,
+.cg-card-media video {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cg-card-body {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+}
+
+.cg-card-number {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cg-card-text h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.cg-card-text p {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+@media (max-width: 800px) {
+  .cg-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

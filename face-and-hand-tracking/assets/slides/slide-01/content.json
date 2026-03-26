@@ -1,0 +1,31 @@
+{
+  "slideIndex": 1,
+  "originalSlideNum": 1,
+  "texts": [
+    "Workshop: Face and Hand Tracking",
+    "Exploring computer vision algorithms for interactive digital humans"
+  ],
+  "shapes": [
+    {
+      "name": "Title 1",
+      "placeholderType": "ctrTitle",
+      "texts": [
+        "Workshop: Face and Hand Tracking"
+      ]
+    },
+    {
+      "name": "Subtitle 2",
+      "placeholderType": "subTitle",
+      "texts": [
+        "Exploring computer vision algorithms for interactive digital humans"
+      ]
+    }
+  ],
+  "media": [],
+  "layoutHints": {
+    "hasTitle": true,
+    "centerTitle": true,
+    "hasBody": true,
+    "hasSubtitle": true
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "slideIndex": 15,
+  "originalSlideNum": 15,
+  "texts": [
+    "Your Task",
+    "Task notebook: https://tinyurl.com/fingernotebook",
+    "In the next hour, we go through some cool hand tracking applications",
+    "We'll be coming around if you have any questions"
+  ],
+  "shapes": [
+    {
+      "name": "Title 1",
+      "placeholderType": "title",
+      "texts": [
+        "Your Task"
+      ]
+    },
+    {
+      "name": "Content Placeholder 2",
+      "texts": [
+        "Task notebook: https://tinyurl.com/fingernotebook",
+        "In the next hour, we go through some cool hand tracking applications",
+        "We'll be coming around if you have any questions"
+      ]
+    }
+  ],
+  "media": [],
+  "animations": [
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "buildSequence",
+      "steps": 11
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    }
+  ],
+  "layoutHints": {
+    "hasTitle": true,
+    "hasBody": true
+  }
+}

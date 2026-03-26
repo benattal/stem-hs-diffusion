@@ -1,0 +1,389 @@
+{
+  "slideIndex": 4,
+  "originalSlideNum": 4,
+  "texts": [
+    "Digital Humans",
+    "How to represent humans in digital environment?",
+    "Landmarks",
+    "Distinct key points on face, body joints",
+    "Skeleton",
+    "3D Meshes",
+    "Textures",
+    "Bones and joint rotations",
+    "Network of vertices and triangles",
+    "Color maps that add detailed appearance"
+  ],
+  "shapes": [
+    {
+      "name": "Title 1",
+      "placeholderType": "title",
+      "texts": [
+        "Digital Humans"
+      ]
+    },
+    {
+      "name": "Content Placeholder 2",
+      "texts": [
+        "How to represent humans in digital environment?"
+      ]
+    },
+    {
+      "name": "TextBox 5",
+      "texts": [
+        "Landmarks"
+      ]
+    },
+    {
+      "name": "TextBox 6",
+      "texts": [
+        "Distinct key points on face, body joints"
+      ]
+    },
+    {
+      "name": "TextBox 8",
+      "texts": [
+        "Skeleton"
+      ]
+    },
+    {
+      "name": "TextBox 10",
+      "texts": [
+        "3D Meshes"
+      ]
+    },
+    {
+      "name": "TextBox 12",
+      "texts": [
+        "Textures"
+      ]
+    },
+    {
+      "name": "TextBox 13",
+      "texts": [
+        "Bones and joint rotations"
+      ]
+    },
+    {
+      "name": "TextBox 16",
+      "texts": [
+        "Network of vertices and triangles"
+      ]
+    },
+    {
+      "name": "TextBox 17",
+      "texts": [
+        "Color maps that add detailed appearance"
+      ]
+    },
+    {
+      "name": "Picture 2",
+      "type": "picture",
+      "embedRef": "rId3"
+    },
+    {
+      "name": "Picture 4",
+      "type": "picture",
+      "embedRef": "rId4"
+    },
+    {
+      "name": "Picture 8",
+      "type": "picture",
+      "embedRef": "rId5"
+    },
+    {
+      "name": "Picture 10",
+      "type": "picture",
+      "embedRef": "rId6"
+    },
+    {
+      "name": "Picture 12",
+      "type": "picture",
+      "embedRef": "rId7"
+    },
+    {
+      "name": "Picture 14",
+      "type": "picture",
+      "embedRef": "rId8"
+    },
+    {
+      "name": "Picture 16",
+      "type": "picture",
+      "embedRef": "rId9"
+    },
+    {
+      "name": "Picture 18",
+      "type": "picture",
+      "embedRef": "rId10"
+    },
+    {
+      "name": "Picture 6",
+      "type": "picture",
+      "embedRef": "rId11"
+    }
+  ],
+  "media": [
+    {
+      "filename": "image11.png",
+      "relId": "rId8",
+      "type": "image",
+      "size": 1320840
+    },
+    {
+      "filename": "image6.jpeg",
+      "relId": "rId3",
+      "type": "image",
+      "size": 119272
+    },
+    {
+      "filename": "image10.jpeg",
+      "relId": "rId7",
+      "type": "image",
+      "size": 284205
+    },
+    {
+      "filename": "image9.jpeg",
+      "relId": "rId6",
+      "type": "image",
+      "size": 20449
+    },
+    {
+      "filename": "image14.png",
+      "relId": "rId11",
+      "type": "image",
+      "size": 1639725
+    },
+    {
+      "filename": "image8.jpeg",
+      "relId": "rId5",
+      "type": "image",
+      "size": 43580
+    },
+    {
+      "filename": "image13.jpeg",
+      "relId": "rId10",
+      "type": "image",
+      "size": 62266
+    },
+    {
+      "filename": "image7.png",
+      "relId": "rId4",
+      "type": "image",
+      "size": 1155392
+    },
+    {
+      "filename": "image12.jpeg",
+      "relId": "rId9",
+      "type": "image",
+      "size": 207316
+    }
+  ],
+  "animations": [
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "buildSequence",
+      "steps": 83
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    }
+  ],
+  "layoutHints": {
+    "hasTitle": true,
+    "hasBody": true,
+    "hasPictures": true
+  }
+}

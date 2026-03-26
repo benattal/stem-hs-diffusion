@@ -1,0 +1,106 @@
+{
+  "slideIndex": 10,
+  "originalSlideNum": 10,
+  "texts": [
+    "AI Introduction: Cat vs. Dog Images",
+    "We have images with different objects/things in them",
+    "We want an AI model that can categorize images into “cat” vs. “dog”"
+  ],
+  "shapes": [
+    {
+      "name": "Title 1",
+      "placeholderType": "title",
+      "texts": [
+        "AI Introduction: Cat vs. Dog Images"
+      ]
+    },
+    {
+      "name": "Content Placeholder 2",
+      "texts": [
+        "We have images with different objects/things in them",
+        "We want an AI model that can categorize images into “cat” vs. “dog”"
+      ]
+    },
+    {
+      "name": "Picture 8",
+      "type": "picture",
+      "embedRef": "rId2"
+    },
+    {
+      "name": "Picture 7",
+      "type": "picture",
+      "embedRef": "rId3"
+    }
+  ],
+  "media": [
+    {
+      "filename": "image25.png",
+      "relId": "rId3",
+      "type": "image",
+      "size": 447017
+    },
+    {
+      "filename": "image24.png",
+      "relId": "rId2",
+      "type": "image",
+      "size": 444476
+    }
+  ],
+  "animations": [
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "buildSequence",
+      "steps": 22
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    }
+  ],
+  "layoutHints": {
+    "hasTitle": true,
+    "hasBody": true,
+    "hasPictures": true,
+    "hasGroups": true
+  }
+}

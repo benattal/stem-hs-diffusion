@@ -17,6 +17,7 @@ app.use(express.json());
 // ── Notes routers (presentation-specific slides directories) ──
 const diffusionNotesRouter = createNotesRouter(join(root, 'diffusion/frontend/src/slides'));
 const filteringNotesRouter = createNotesRouter(join(root, 'filtering/frontend/src/slides'));
+const trackingNotesRouter = createNotesRouter(join(root, 'face-and-hand-tracking/frontend/src/slides'));
 
 // ── Backend API routes ─────────────────────────────────────────
 app.use('/diffusion/api/auth', authRouter);
@@ -28,6 +29,11 @@ app.use('/filtering/api/auth', authRouter);
 app.use('/filtering/api/poll', pollRouter);
 app.use('/filtering/api/notes', requirePresenter, filteringNotesRouter);
 app.get('/filtering/health', (req, res) => res.json({ status: 'ok', presentation: 'filtering' }));
+
+app.use('/tracking/api/auth', authRouter);
+app.use('/tracking/api/poll', pollRouter);
+app.use('/tracking/api/notes', requirePresenter, trackingNotesRouter);
+app.get('/tracking/health', (req, res) => res.json({ status: 'ok', presentation: 'tracking' }));
 
 // ── Vite dev servers in middleware mode (HMR enabled) ──────────
 const diffusionVite = await createViteServer({
@@ -44,8 +50,16 @@ const filteringVite = await createViteServer({
   appType: 'spa',
 });
 
+const trackingVite = await createViteServer({
+  root: join(root, 'face-and-hand-tracking/frontend'),
+  base: '/tracking/',
+  server: { middlewareMode: true, hmr: { port: 24680 } },
+  appType: 'spa',
+});
+
 app.use('/diffusion', diffusionVite.middlewares);
 app.use('/filtering', filteringVite.middlewares);
+app.use('/tracking', trackingVite.middlewares);
 
 // ── Landing page ──────────────────────────────────────────────
 app.get('/', (req, res) => {
@@ -100,6 +114,11 @@ app.get('/', (req, res) => {
       <h2>Generative AI &amp; Diffusion</h2>
       <p>How to make images with generative AI</p>
     </a>
+    <a class="card" href="/tracking/">
+      <div class="card-icon">&#x1f91a;</div>
+      <h2>Face &amp; Hand Tracking</h2>
+      <p>Computer vision for interactive digital humans</p>
+    </a>
   </div>
 </body>
 </html>`);
@@ -115,16 +134,19 @@ const server = app.listen(PORT, () => {
   console.log(`  http://localhost:${PORT}/            Landing page`);
   console.log(`  http://localhost:${PORT}/diffusion/   Diffusion (HMR)`);
   console.log(`  http://localhost:${PORT}/filtering/   Filtering (HMR)`);
+  console.log(`  http://localhost:${PORT}/tracking/    Tracking (HMR)`);
   console.log('='.repeat(60));
 });
 
 process.on('SIGTERM', () => {
   diffusionVite.close();
   filteringVite.close();
+  trackingVite.close();
   server.close(() => process.exit(0));
 });
 process.on('SIGINT', () => {
   diffusionVite.close();
   filteringVite.close();
+  trackingVite.close();
   server.close(() => process.exit(0));
 });

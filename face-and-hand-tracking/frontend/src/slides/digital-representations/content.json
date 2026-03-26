@@ -1,0 +1,46 @@
+{
+  "layout": "cardGrid",
+  "sectionLabel": "Digital Humans",
+  "title": "Digital Humans",
+  "subtitle": "How to represent humans in digital environment?",
+  "cards": [
+    {
+      "label": "Landmarks",
+      "description": "Distinct key points on face, body joints",
+      "media": [
+        { "type": "image", "src": "/slides/digital-representations/landmarks-face.jpeg" },
+        { "type": "image", "src": "/slides/digital-representations/landmarks-body.png" }
+      ]
+    },
+    {
+      "label": "Skeleton",
+      "description": "Bones and joint rotations",
+      "media": [
+        { "type": "image", "src": "/slides/digital-representations/skeleton-bones.jpeg" },
+        { "type": "image", "src": "/slides/digital-representations/skeleton-joints.jpeg" }
+      ]
+    },
+    {
+      "label": "3D Meshes",
+      "description": "Network of vertices and triangles",
+      "media": [
+        { "type": "image", "src": "/slides/digital-representations/mesh-face.jpeg" },
+        { "type": "image", "src": "/slides/digital-representations/mesh-body.png" }
+      ]
+    },
+    {
+      "label": "Textures",
+      "description": "Color maps that add detailed appearance",
+      "media": [
+        { "type": "image", "src": "/slides/digital-representations/texture-face.jpeg" },
+        { "type": "image", "src": "/slides/digital-representations/texture-character.jpeg" }
+      ]
+    }
+  ],
+  "buildSteps": [
+    { "id": "card" },
+    { "id": "card" },
+    { "id": "card" },
+    { "id": "card" }
+  ]
+}

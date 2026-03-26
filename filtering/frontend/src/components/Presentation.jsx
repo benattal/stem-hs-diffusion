@@ -61,7 +61,7 @@ export default function Presentation() {
   }, [state.goToSlide]);
 
   return (
-    <div className="presentation" onClick={state.goNext}>
+    <div className="presentation">
       <ProgressBar current={state.currentIndex} total={state.totalSlides} />
 
       <div
@@ -98,14 +98,14 @@ export default function Presentation() {
       <div className="toolbar-buttons">
         <button
           className="toolbar-btn"
-          onClick={(e) => { e.stopPropagation(); toggleFullscreen(); }}
+          onClick={toggleFullscreen}
           title="Toggle fullscreen (F)"
         >
           {isFullscreen ? '⛶' : '⛶'}
         </button>
         <button
           className="toolbar-btn"
-          onClick={(e) => { e.stopPropagation(); toggleNotes(); }}
+          onClick={toggleNotes}
           title="Open presenter notes (P)"
         >
           📋

@@ -7,6 +7,8 @@ export default function useKeyboardNavigation({ goNext, goPrev, toggleOverview, 
     function handleKeyDown(e) {
       // Ignore if user is typing in an input
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      // Don't intercept browser shortcuts (Ctrl+C, Ctrl+V, etc.)
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
 
       switch (e.key) {
         case 'ArrowRight':

@@ -1,0 +1,34 @@
+{
+  "layout": "cardGrid",
+  "sectionLabel": "Digital Humans",
+  "title": "Computer Vision for Digital Humans",
+  "subtitle": "How do computer vision algorithms power digital humans?",
+  "cards": [
+    {
+      "label": "Landmark detection and animation",
+      "media": [
+        { "type": "image", "src": "/slides/cv-applications/landmark-animation.png" },
+        { "type": "image", "src": "/slides/cv-applications/virtual-character.jpeg" }
+      ]
+    },
+    {
+      "label": "Virtual character creation from images",
+      "media": [
+        { "type": "image", "src": "/slides/cv-applications/face-rig.jpeg" },
+        { "type": "image", "src": "/slides/cv-applications/personal-assistant.jpeg" }
+      ]
+    },
+    {
+      "label": "Personal assistants",
+      "media": [
+        { "type": "image", "src": "/slides/cv-applications/emoji-animation.png" },
+        { "type": "image", "src": "/slides/cv-applications/tracking-demo.gif" }
+      ]
+    }
+  ],
+  "buildSteps": [
+    { "id": "card" },
+    { "id": "card" },
+    { "id": "card" }
+  ]
+}
