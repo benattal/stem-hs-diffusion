@@ -10,5 +10,5 @@
     { "kernel": [[0,-1,0],[-1,5,-1],[0,-1,0]] },
     { "kernel": [[1,2,1],[2,4,2],[1,2,1]], "divisor": 16 }
   ],
-  "presetDistribution": [8, 45, 5, 12]
+  "presetDistribution": [0, 0, 0, 0]
 }

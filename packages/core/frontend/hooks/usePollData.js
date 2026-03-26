@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 
 const API_BASE = import.meta.env.VITE_API_URL || import.meta.env.BASE_URL.replace(/\/$/, '');
+const VOTING_DISABLED = import.meta.env.VITE_VOTING_DISABLED === 'true';
 
 export default function usePollData(pollId, options, presetDistribution) {
   const [counts, setCounts] = useState(() => new Array(options?.length || 0).fill(0));
@@ -72,6 +73,7 @@ export default function usePollData(pollId, options, presetDistribution) {
   const totalVotes = counts.reduce((sum, c) => sum + c, 0);
 
   const submitVote = useCallback(async (optionIndex, previousIndex) => {
+    if (VOTING_DISABLED) return false;
     try {
       await fetch(`${API_BASE}/api/poll/${pollId}/vote`, {
         method: 'POST',
@@ -86,5 +88,5 @@ export default function usePollData(pollId, options, presetDistribution) {
 
   const clearReset = useCallback(() => setWasReset(false), []);
 
-  return { counts, totalVotes, isConnected, isLive, submitVote, wasReset, clearReset };
+  return { counts, totalVotes, isConnected, isLive, submitVote, wasReset, clearReset, votingDisabled: VOTING_DISABLED };
 }

@@ -27,6 +27,9 @@ router.post('/:pollId/init', (req, res) => {
 
 // Submit a vote (optionally changing a previous vote)
 router.post('/:pollId/vote', (req, res) => {
+  if (process.env.VOTING_DISABLED === 'true') {
+    return res.status(403).json({ error: 'Voting is currently disabled' });
+  }
   const { pollId } = req.params;
   const { optionIndex, previousIndex } = req.body;
   if (typeof optionIndex !== 'number') {

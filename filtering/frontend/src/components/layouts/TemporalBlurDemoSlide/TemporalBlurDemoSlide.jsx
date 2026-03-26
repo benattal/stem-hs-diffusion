@@ -250,7 +250,7 @@ export default function TemporalBlurDemoSlide({ slide, buildStep }) {
                   >
                     {animationDone
                       ? `Average of all ${frames.length} frames`
-                      : `Average of frames 1–${currentAvgIdx + 1}`}
+                      : `Average of frames`}
                   </motion.div>
                   <AnimatePresence mode="wait">
                     <motion.img

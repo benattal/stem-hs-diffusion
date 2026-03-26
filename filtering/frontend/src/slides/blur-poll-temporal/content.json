@@ -6,5 +6,5 @@
   "imageA": { "src": "/slides/blur-poll-temporal/imageA.jpg", "label": "Image A" },
   "imageB": { "src": "/slides/blur-poll-temporal/imageB.jpg", "label": "Image B" },
   "options": ["Image A", "Image B"],
-  "presetDistribution": [10, 40]
+  "presetDistribution": [0, 0]
 }

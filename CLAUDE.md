@@ -154,6 +154,15 @@ Deploy as a single service pointing to the repo root. Railway uses `npm run buil
 - **Start command**: `npm start` (runs `server/gateway.mjs`)
 - Set `PORT` env var if needed (defaults to 3000)
 
+### Disabling Voting
+
+Voting on polls can be disabled project-wide via environment variables in the root `.env` file:
+
+- `VOTING_DISABLED=true` — Backend: vote endpoint returns 403
+- `VITE_VOTING_DISABLED=true` — Frontend: `submitVote` in `usePollData` becomes a no-op; hook exposes `votingDisabled` boolean for components
+
+Both Vite configs set `envDir` to the repo root so presentations share the same `.env`. The `usePollData` hook returns `votingDisabled` so poll components can optionally reflect the disabled state in their UI.
+
 ## Presentation-Specific Extras
 
 - `diffusion/assets/` — `diffusion_workshop.pptx`, `diffusion_workshop.ipynb`

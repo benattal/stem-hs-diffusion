@@ -5,6 +5,7 @@ import { resolve } from 'path'
 export default defineConfig({
   plugins: [react()],
   base: process.env.VITE_BASE || '/',
+  envDir: resolve(__dirname, '../..'),
   resolve: {
     alias: {
       '@core': resolve(__dirname, '../../packages/core/frontend'),

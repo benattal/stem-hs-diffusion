@@ -287,6 +287,17 @@ The gateway server (`server/gateway.mjs`) serves both presentations and their AP
 
 Set the `PORT` environment variable if Railway requires a specific port (the gateway reads `process.env.PORT`, defaulting to 3000).
 
+### Disabling Voting
+
+To disable audience voting on polls, set the following environment variables (in the root `.env` file or your hosting platform):
+
+| Variable | Layer | Effect |
+|----------|-------|--------|
+| `VOTING_DISABLED=true` | Backend | Vote endpoint returns 403 |
+| `VITE_VOTING_DISABLED=true` | Frontend | Vote buttons become no-ops |
+
+Both should be set together. To re-enable voting, set them to `false` or remove them.
+
 #### Alternative: Deploy presentations independently
 
 Each presentation can also be deployed as separate Railway services using the `railway.toml` and `nixpacks.toml` files in `{presentation}/frontend/` and `{presentation}/backend/`.

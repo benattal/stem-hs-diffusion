@@ -77,7 +77,10 @@
       "Bash(for layout:*)",
       "Read(//c/Users/battal/Documents/Projects/vision_workshop/diffusion/frontend/src/components/layouts/**)",
       "WebFetch(domain:www.pexels.com)",
-      "WebFetch(domain:pixabay.com)"
+      "WebFetch(domain:pixabay.com)",
+      "WebFetch(domain:dev.to)",
+      "WebFetch(domain:source.unsplash.com)",
+      "WebFetch(domain:images.unsplash.com)"
     ]
   }
 }

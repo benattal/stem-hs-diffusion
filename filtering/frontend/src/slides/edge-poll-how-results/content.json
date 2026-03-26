@@ -10,5 +10,5 @@
     "Keep only the center pixel",
     "Multiply all pixels by 2"
   ],
-  "presetDistribution": [5, 38, 8, 3]
+  "presetDistribution": [0, 0, 0, 0]
 }

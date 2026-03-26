@@ -5,5 +5,5 @@
   "pollId": "edge-spot",
   "question": "Which image has stronger edges?",
   "options": ["Image A", "Image B"],
-  "presetDistribution": [35, 15]
+  "presetDistribution": [0, 0]
 }

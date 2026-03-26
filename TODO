@@ -1,5 +1,8 @@
 Website features
 =======
+* Zero out polls
+* Disable polls
+* Empty links for colabs
 * Student view tracks presenter view
 * Uploading and sharing results
 
@@ -14,45 +17,21 @@ Filtering
 =======
 
 ## Slides
-* Fun intro to filtering
-    - Introduce as "blurring"
-    - Set of polls: which image is more "blurry"
-        - Spatial blur
-        - Temporal blur
-        - Background blur (zoom meeting)
-    - Build up to what "blurry" means
-        - We think of it as something that is removing information
-            - zoom meeting example
-        - But what is it?
-            - temporal blur example
-                - Play a video
-                - Show average of frames
-                - it is an "average" of images!
-            - Spatial blur example
-                - Zoom into an image
-                - Cycle through overlaid images, each with a different shift
-                - Show average
-                - Show which pixels contribute to the value at the pixel in an output
-    - All of these example of a more general operation called filtering
-        - Bring back original examples
-        - Describe the filtering operation with abstract example
-            - Animate a 3x3 filter sliding over an image
-            - Show entries being multiplied by image entries
-            - Show entries being added up
-    - What is the filter for spatial averaging?
-        - Show original image
-        - Spatially averaged images
-        - Provide a set of choices
-        - Poll results
-        - Reveal correct answer
-    - What is the filter for temporal blur, when an object is moving left to right
-        - Show image
-        - Temporally blurred image
-        - Poll results
-        - Reveal correct answer
-    - Designing your own filter
-        - Show image
-        - Interactive demo that allows you to specify values in different entries
-        - Result of filtering operation
+
+* Which image is more blurry #1
+    - Use an image that's out of focus paired with an image that's in focus
+        * https://upload.wikimedia.org/wikipedia/commons/5/59/Focus_stacking_Tachinid_fly.jpg
+    - After poll, ask students what the cause of the blur is (don't provide the answer in the slides)
+* Which image is more blurry #2
+    - Use an image with clear motion blur paired with an image without
+        * https://images.squarespace-cdn.com/content/v1/5d3c3d8a01c19f00011603bc/e73031e4-94de-4eef-bc96-75a3fb096962/Motion+Blur+thumbnail+%E2%80%93+1.jpg
+    - After poll, ask students what the cause of the blur is (don't provide the answer in the slides)
+* Which image is more blurry #3
+    - Remove it
+* What does blurry mean slide
+    - In the first box, use the image at this link: https://cdn.prod.website-files.com/685be7dcd32275d383065239/685be7dcd32275d3830681f5_Blog%20Cover_%202024_03_%20How%20to%20Blur%20Your%20Zoom%20Background%20Before%20_%20During%20Your%20Meetings.webp
+
+* Remove the "/ N" after the filter grid visualizations. No need to clarify how these filters are normalized.
+
 
 ## Presenter notes

@@ -1,26 +1,12 @@
 {
-  "benefits-dangers": {
-    "options": [
-      "Creative help",
-      "Useful automation tool for STEM",
-      "Spread of misinformation",
-      "Job loss because of AI"
-    ],
-    "counts": [
-      20,
-      28,
-      30,
-      22
-    ]
-  },
   "blur-spatial": {
     "options": [
       "Image A",
       "Image B"
     ],
     "counts": [
-      12,
-      38
+      0,
+      0
     ]
   },
   "blur-temporal": {
@@ -29,8 +15,8 @@
       "Image B"
     ],
     "counts": [
-      10,
-      40
+      0,
+      0
     ]
   },
   "blur-background": {
@@ -39,88 +25,22 @@
       "Image B"
     ],
     "counts": [
-      25,
-      25
+      0,
+      0
     ]
   },
-  "blur-spatial-kernel": {
+  "benefits-dangers": {
     "options": [
-      "[[1,0,1], [0,1,0], [1,0,1]] / 5",
-      "[[1,1,1], [1,1,1], [1,1,1]] / 9",
-      "[[0,-1,0], [-1,5,-1], [0,-1,0]]",
-      "[[1,2,1], [2,4,2], [1,2,1]] / 16"
+      "Creative help",
+      "Useful automation tool for STEM",
+      "Spread of misinformation",
+      "Job loss because of AI"
     ],
     "counts": [
-      8,
-      45,
-      5,
-      12
-    ]
-  },
-  "blur-temporal-kernel": {
-    "options": [
-      "[1, 0, 0, 0, 1] / 2",
-      "[0, 0, 1, 0, 0]",
-      "[1, 1, 1, 1, 1] / 5",
-      "[1, 2, 3, 2, 1] / 9"
-    ],
-    "counts": [
-      5,
-      8,
-      35,
-      12
-    ]
-  },
-  "edge-how": {
-    "options": [
-      "Average all 9 pixels together",
-      "Subtract one side from the other",
-      "Keep only the center pixel",
-      "Multiply all pixels by 2"
-    ],
-    "counts": [
-      5,
-      38,
-      8,
-      3
-    ]
-  },
-  "edge-horizontal-kernel": {
-    "options": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "counts": [
-      3,
-      30,
-      15,
-      8
-    ]
-  },
-  "edge-vertical-kernel": {
-    "options": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "counts": [
-      10,
-      2,
-      35,
-      6
-    ]
-  },
-  "edge-spot": {
-    "options": [
-      "Image A",
-      "Image B"
-    ],
-    "counts": [
-      35,
-      15
+      0,
+      0,
+      0,
+      0
     ]
   }
 }

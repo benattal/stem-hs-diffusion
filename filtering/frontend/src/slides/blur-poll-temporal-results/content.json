@@ -5,5 +5,5 @@
   "pollId": "blur-temporal",
   "question": "Which image is more blurry?",
   "options": ["Image A", "Image B"],
-  "presetDistribution": [10, 40]
+  "presetDistribution": [0, 0]
 }

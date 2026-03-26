@@ -5,5 +5,5 @@
   "pollId": "blur-spatial",
   "question": "Which image is more blurry?",
   "options": ["Image A", "Image B"],
-  "presetDistribution": [12, 38]
+  "presetDistribution": [0, 0]
 }

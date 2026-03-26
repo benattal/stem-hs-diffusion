@@ -5,5 +5,5 @@
   "pollId": "blur-background",
   "question": "Which image is more blurry?",
   "options": ["Image A", "Image B"],
-  "presetDistribution": [25, 25]
+  "presetDistribution": [0, 0]
 }
