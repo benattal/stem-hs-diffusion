@@ -1,5 +1,6 @@
 {
   "layout": "progressiveBuild",
+  "className": "build-compact",
   "sectionLabel": "Introduction to Filtering",
   "title": "These Are Both Examples of Filtering!",
   "buildSteps": [

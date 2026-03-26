@@ -5,8 +5,10 @@ export default function ProgressiveBuildSlide({ slide, buildStep }) {
   const steps = slide.buildSteps || [];
   const visibleCount = buildStep + 1;
 
+  const extraClass = slide.className || '';
+
   return (
-    <div className="slide--progressive">
+    <div className={`slide--progressive ${extraClass}`}>
       <h2>{slide.title}</h2>
 
       <div className="build-steps">

@@ -5,10 +5,10 @@
   "pollId": "blur-temporal-kernel",
   "question": "The correct answer is C: uniform horizontal averaging, same idea as spatial box blur but only in the direction of motion",
   "kernelOptions": [
-    { "kernel": [[0,0,0,0,0],[0,0,0,0,0],[1,0,0,0,1],[0,0,0,0,0],[0,0,0,0,0]], "divisor": 2 },
-    { "kernel": [[0,0,0,0,0],[0,0,0,0,0],[0,0,1,0,0],[0,0,0,0,0],[0,0,0,0,0]] },
-    { "kernel": [[0,0,0,0,0],[0,0,0,0,0],[1,1,1,1,1],[0,0,0,0,0],[0,0,0,0,0]], "divisor": 5 },
-    { "kernel": [[0,0,0,0,0],[0,0,0,0,0],[1,2,3,2,1],[0,0,0,0,0],[0,0,0,0,0]], "divisor": 9 }
+    { "kernel": [[0,0,0],[1,0,1],[0,0,0]], "divisor": 2 },
+    { "kernel": [[0,0,0],[0,1,0],[0,0,0]] },
+    { "kernel": [[0,0,0],[1,1,1],[0,0,0]], "divisor": 3 },
+    { "kernel": [[0,0,0],[1,2,1],[0,0,0]], "divisor": 4 }
   ],
   "presetDistribution": [0, 0, 0, 0]
 }
