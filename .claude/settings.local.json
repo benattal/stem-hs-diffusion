@@ -80,7 +80,16 @@
       "WebFetch(domain:pixabay.com)",
       "WebFetch(domain:dev.to)",
       "WebFetch(domain:source.unsplash.com)",
-      "WebFetch(domain:images.unsplash.com)"
+      "WebFetch(domain:images.unsplash.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:www.nature.com)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:www.mdpi.com)",
+      "WebFetch(domain:arxiv.org)",
+      "WebFetch(domain:docs.ultralytics.com)",
+      "WebFetch(domain:www.frontiersin.org)",
+      "WebFetch(domain:gomagic.org)",
+      "WebFetch(domain:cdn.jsdelivr.net)"
     ]
   }
 }

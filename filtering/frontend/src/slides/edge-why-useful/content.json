@@ -1,35 +1,23 @@
 {
-  "layout": "progressiveBuild",
+  "layout": "diagram",
   "sectionLabel": "Introduction to Filtering",
-  "title": "Why Is Edge Detection Useful?",
-  "buildSteps": [
+  "title": "Deep Learning Applications",
+  "description": "Computer vision and deep neural networks power AI: on the road, in the hospital, and on the game board.",
+  "media": [
     {
-      "label": "Think about it: what could you do if you knew where every edge was?",
-      "description": "Take a moment — where might this be valuable?"
+      "type": "image",
+      "src": "/slides/edge-why-useful/autonomous-driving.jpg",
+      "caption": "Object detection for autonomous driving"
     },
     {
-      "label": "Self-driving cars",
-      "description": "Find lane markings, pedestrians, and road signs by detecting their edges first",
-      "media": [{ "type": "image", "src": "/slides/edge-why-useful/self-driving.jpg" }]
+      "type": "image",
+      "src": "/slides/edge-why-useful/mri-enhancement.jpg",
+      "caption": "MRI image enhancement with neural networks"
     },
     {
-      "label": "Medical imaging",
-      "description": "Outline tumors, organs, and fractures in X-rays, MRIs, and CT scans",
-      "media": [{ "type": "image", "src": "/slides/edge-why-useful/medical.jpg" }]
-    },
-    {
-      "label": "Manufacturing & quality control",
-      "description": "Inspect products on assembly lines — spot cracks, misalignments, and defects in real time",
-      "media": [{ "type": "image", "src": "/slides/edge-why-useful/manufacturing.jpg" }]
-    },
-    {
-      "label": "Robotics & navigation",
-      "description": "Robots use edges to understand room layouts, avoid obstacles, and pick up objects",
-      "media": [{ "type": "image", "src": "/slides/edge-why-useful/robotics.jpg" }]
-    },
-    {
-      "label": "The takeaway",
-      "description": "A simple 3×3 kernel — the Sobel filter — is the foundation for all of this. Filtering is one of the most important building blocks in computer vision."
+      "type": "image",
+      "src": "/slides/edge-why-useful/alphago.png",
+      "caption": "AlphaGo — deep learning masters the game of Go"
     }
   ]
 }
