@@ -26,6 +26,7 @@ import KernelPollSlide from './layouts/KernelPollSlide/KernelPollSlide.jsx';
 import KernelPollResultsSlide from './layouts/KernelPollResultsSlide/KernelPollResultsSlide.jsx';
 import MultiFilterCompareSlide from './layouts/MultiFilterCompareSlide/MultiFilterCompareSlide.jsx';
 import FilterStackSlide from './layouts/FilterStackSlide/FilterStackSlide.jsx';
+import ImagePipelineSlide from './layouts/ImagePipelineSlide/ImagePipelineSlide.jsx';
 
 const layoutMap = {
   title: TitleSlide,
@@ -50,6 +51,7 @@ const layoutMap = {
   kernelPollResults: KernelPollResultsSlide,
   multiFilterCompare: MultiFilterCompareSlide,
   filterStack: FilterStackSlide,
+  imagePipeline: ImagePipelineSlide,
 };
 
 export default createSlideRenderer(layoutMap, () => presentation);

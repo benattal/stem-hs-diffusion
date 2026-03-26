@@ -1,0 +1,33 @@
+{
+  "layout": "imagePipeline",
+  "sectionLabel": "Introduction to Filtering",
+  "title": "Canny Edge Detection",
+  "steps": [
+    {
+      "label": "Gradient Magnitude",
+      "src": "/slides/canny-steps/4-gradient-magnitude.png"
+    },
+    {
+      "label": "Non-Max Suppression",
+      "src": "/slides/canny-steps/5-non-max-suppression.png",
+      "description": "Thin edges to 1 pixel wide"
+    },
+    {
+      "label": "Double Threshold",
+      "src": "/slides/canny-steps/6-double-threshold.png",
+      "description": "Green = strong, yellow = maybe"
+    },
+    {
+      "label": "Final Edges",
+      "src": "/slides/canny-steps/7-hysteresis.png",
+      "description": "Keep weak edges only if connected to strong ones"
+    }
+  ],
+  "summary": "Canny (1986) — five steps, all built on convolution.",
+  "buildSteps": [
+    { "label": "magnitude" },
+    { "label": "nms" },
+    { "label": "threshold" },
+    { "label": "final" }
+  ]
+}

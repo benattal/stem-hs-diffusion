@@ -23,6 +23,8 @@
         "blur-filter-designer",
         "blur-negative-intro",
         "edge-sobel-results",
+        "canny-steps",
+        "canny-refinement",
         "edge-dnn-connection",
         "edge-why-useful"
       ]

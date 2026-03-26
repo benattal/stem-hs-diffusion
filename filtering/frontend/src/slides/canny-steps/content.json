@@ -1,0 +1,33 @@
+{
+  "layout": "imagePipeline",
+  "sectionLabel": "Introduction to Filtering",
+  "title": "Canny Edge Detection",
+  "steps": [
+    {
+      "label": "Original",
+      "src": "/slides/canny-steps/0-original.png"
+    },
+    {
+      "label": "Grayscale",
+      "src": "/slides/canny-steps/1-grayscale.png",
+      "description": "Edges are about brightness, not color"
+    },
+    {
+      "label": "Gaussian Blur",
+      "src": "/slides/canny-steps/2-gaussian-blur.png",
+      "description": "Reduce noise"
+    },
+    {
+      "label": "Gradient Magnitude",
+      "src": "/slides/canny-steps/4-gradient-magnitude.png",
+      "description": "Color = direction, brightness = strength"
+    }
+  ],
+  "summary": "Just Sobel with a blur — edges detected, but thick and noisy.",
+  "buildSteps": [
+    { "label": "original" },
+    { "label": "grayscale" },
+    { "label": "blur" },
+    { "label": "magnitude" }
+  ]
+}
