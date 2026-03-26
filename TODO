@@ -18,20 +18,12 @@ Filtering
 
 ## Slides
 
-* Which image is more blurry #1
-    - Use an image that's out of focus paired with an image that's in focus
-        * https://upload.wikimedia.org/wikipedia/commons/5/59/Focus_stacking_Tachinid_fly.jpg
-    - After poll, ask students what the cause of the blur is (don't provide the answer in the slides)
-* Which image is more blurry #2
-    - Use an image with clear motion blur paired with an image without
-        * https://images.squarespace-cdn.com/content/v1/5d3c3d8a01c19f00011603bc/e73031e4-94de-4eef-bc96-75a3fb096962/Motion+Blur+thumbnail+%E2%80%93+1.jpg
-    - After poll, ask students what the cause of the blur is (don't provide the answer in the slides)
-* Which image is more blurry #3
-    - Remove it
-* What does blurry mean slide
-    - In the first box, use the image at this link: https://cdn.prod.website-files.com/685be7dcd32275d383065239/685be7dcd32275d3830681f5_Blog%20Cover_%202024_03_%20How%20to%20Blur%20Your%20Zoom%20Background%20Before%20_%20During%20Your%20Meetings.webp
-
-* Remove the "/ N" after the filter grid visualizations. No need to clarify how these filters are normalized.
+* Sobel x and sobel y as lead into why filtering is a useful operation in computer vision
+* Deep neural networks as a bunch of these filtering operations stacked together
+* What else can we do with these filters? Edge detection
+    * Why edge detection is useful
+        - Ask them
+        - Some examples
 
 
 ## Presenter notes

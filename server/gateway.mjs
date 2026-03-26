@@ -117,7 +117,7 @@ app.get('/', (req, res) => {
     <a class="card" href="/filtering/">
       <div class="card-icon">&#x1f50d;</div>
       <h2>Image Filtering</h2>
-      <p>Kernels, convolution, edge detection &amp; denoising</p>
+      <p>Blurring, filtering, &amp edge detection</p>
     </a>
     <a class="card" href="/diffusion/">
       <div class="card-icon">&#x1f3a8;</div>
