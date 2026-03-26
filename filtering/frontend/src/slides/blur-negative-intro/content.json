@@ -1,0 +1,12 @@
+{
+  "layout": "filterDesigner",
+  "sectionLabel": "Introduction to Filtering",
+  "title": "What About Negative Numbers?",
+  "imageSrc": "/slides/blur-filter-designer/sample.jpg",
+  "kernelSize": 3,
+  "defaultKernel": [[-1,0,1],[-2,0,2],[-1,0,1]],
+  "presets": [
+    { "name": "Sobel Horizontal", "kernel": [[-1,0,1],[-2,0,2],[-1,0,1]] },
+    { "name": "Sobel Vertical", "kernel": [[-1,-2,-1],[0,0,0],[1,2,1]] }
+  ]
+}

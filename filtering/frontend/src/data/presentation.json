@@ -20,28 +20,8 @@
         "blur-convolution-anim",
         "blur-poll-temporal-kernel",
         "blur-poll-temporal-kernel-results",
-        "blur-filter-designer"
-      ]
-    },
-    {
-      "id": "edge-detection",
-      "title": "Edge Detection",
-      "slides": [
-        "edge-intro-title",
-        "edge-poll-spot",
-        "edge-poll-spot-results",
-        "edge-what-is-edge",
-        "edge-poll-how",
-        "edge-poll-how-results",
-        "edge-neighbors",
-        "edge-convolution-anim",
-        "edge-poll-horizontal-kernel",
-        "edge-poll-horizontal-kernel-results",
-        "edge-poll-vertical-kernel",
-        "edge-poll-vertical-kernel-results",
-        "edge-combining-directions",
-        "edge-filter-designer",
-        "edge-section-end"
+        "blur-filter-designer",
+        "blur-negative-intro"
       ]
     }
   ]

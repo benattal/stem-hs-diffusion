@@ -4,15 +4,14 @@ import './FilterDesignerSlide.css';
 
 const DISPLAY_SIZE = 300;
 
-function applyConvolution(imageData, kernel, normalize) {
+function applyConvolution(imageData, kernel) {
   const { width, height, data } = imageData;
   const kSize = kernel.length;
   const pad = Math.floor(kSize / 2);
+  const pixelCount = width * height;
 
-  const kernelSum = kernel.flat().reduce((a, b) => a + b, 0);
-  const divisor = normalize && kernelSum !== 0 ? Math.abs(kernelSum) : 1;
-
-  const output = new Uint8ClampedArray(data.length);
+  // First pass: compute raw convolution into float buffer
+  const raw = new Float32Array(pixelCount * 3);
 
   for (let y = 0; y < height; y++) {
     for (let x = 0; x < width; x++) {
@@ -30,10 +29,30 @@ function applyConvolution(imageData, kernel, normalize) {
         }
       }
 
+      const ri = (y * width + x) * 3;
+      raw[ri] = rSum;
+      raw[ri + 1] = gSum;
+      raw[ri + 2] = bSum;
+    }
+  }
+
+  // Second pass: find min/max across all channels and normalize to [0, 255]
+  let min = raw[0], max = raw[0];
+  for (let i = 1; i < raw.length; i++) {
+    if (raw[i] < min) min = raw[i];
+    if (raw[i] > max) max = raw[i];
+  }
+
+  const range = max - min;
+  const output = new Uint8ClampedArray(data.length);
+
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      const ri = (y * width + x) * 3;
       const oIdx = (y * width + x) * 4;
-      output[oIdx] = Math.max(0, Math.min(255, Math.round(rSum / divisor)));
-      output[oIdx + 1] = Math.max(0, Math.min(255, Math.round(gSum / divisor)));
-      output[oIdx + 2] = Math.max(0, Math.min(255, Math.round(bSum / divisor)));
+      output[oIdx] = range > 0 ? Math.round(((raw[ri] - min) / range) * 255) : 128;
+      output[oIdx + 1] = range > 0 ? Math.round(((raw[ri + 1] - min) / range) * 255) : 128;
+      output[oIdx + 2] = range > 0 ? Math.round(((raw[ri + 2] - min) / range) * 255) : 128;
       output[oIdx + 3] = 255;
     }
   }
@@ -42,12 +61,11 @@ function applyConvolution(imageData, kernel, normalize) {
 }
 
 export default function FilterDesignerSlide({ slide }) {
-  const { title, imageSrc, defaultKernel, presets = [] } = slide;
+  const { title, imageSrc, defaultKernel } = slide;
 
   const [kernel, setKernel] = useState(() =>
     defaultKernel ? defaultKernel.map(r => [...r]) : [[0,0,0],[0,1,0],[0,0,0]]
   );
-  const [activePreset, setActivePreset] = useState(null);
   const [sourceImageData, setSourceImageData] = useState(null);
 
   const originalCanvasRef = useRef(null);
@@ -84,7 +102,7 @@ export default function FilterDesignerSlide({ slide }) {
   useEffect(() => {
     if (!sourceImageData || !filteredCanvasRef.current) return;
 
-    const result = applyConvolution(sourceImageData, kernel, true);
+    const result = applyConvolution(sourceImageData, kernel);
     filteredCanvasRef.current.width = result.width;
     filteredCanvasRef.current.height = result.height;
     filteredCanvasRef.current.getContext('2d').putImageData(result, 0, 0);
@@ -97,15 +115,13 @@ export default function FilterDesignerSlide({ slide }) {
       next[row][col] = isNaN(num) ? 0 : num;
       return next;
     });
-    setActivePreset(null);
   }, []);
 
-  const applyPreset = useCallback((preset) => {
-    setKernel(preset.kernel.map(r => [...r]));
-    setActivePreset(preset.name);
-  }, []);
+  const initialKernel = defaultKernel ? defaultKernel.map(r => [...r]) : [[0,0,0],[0,1,0],[0,0,0]];
 
-  const kernelSum = kernel.flat().reduce((a, b) => a + b, 0);
+  const handleReset = useCallback(() => {
+    setKernel(initialKernel.map(r => [...r]));
+  }, []);
 
   return (
     <div className="slide--filter-designer" onClick={(e) => e.stopPropagation()}>
@@ -132,15 +148,7 @@ export default function FilterDesignerSlide({ slide }) {
         {/* Kernel editor */}
         <div className="filter-designer-controls">
           <div className="preset-buttons">
-            {presets.map((preset) => (
-              <button
-                key={preset.name}
-                className={`preset-btn ${activePreset === preset.name ? 'preset-btn--active' : ''}`}
-                onClick={() => applyPreset(preset)}
-              >
-                {preset.name}
-              </button>
-            ))}
+            <button className="preset-btn" onClick={handleReset}>Reset</button>
           </div>
 
           <div className="kernel-grid" style={{ gridTemplateColumns: `repeat(${kernel[0]?.length || 3}, 1fr)` }}>
@@ -158,9 +166,6 @@ export default function FilterDesignerSlide({ slide }) {
             )}
           </div>
 
-          <span className="kernel-sum-display">
-            Kernel sum: {kernelSum}{kernelSum !== 0 ? ` (auto-normalized ÷ ${Math.abs(kernelSum)})` : ''}
-          </span>
         </div>
 
         {/* Filtered image */}
