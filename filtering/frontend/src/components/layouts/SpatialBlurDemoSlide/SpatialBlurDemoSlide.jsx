@@ -78,6 +78,39 @@ function drawSuperpixels(canvas, imageData, blockSize) {
   }
 }
 
+function drawBoxBlur(canvas, imageData, radius) {
+  if (!canvas || !imageData) return;
+  const { width, height, data } = imageData;
+  canvas.width = width;
+  canvas.height = height;
+  const ctx = canvas.getContext('2d');
+  const output = new Uint8ClampedArray(data.length);
+
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      let rSum = 0, gSum = 0, bSum = 0, count = 0;
+      for (let dy = -radius; dy <= radius; dy++) {
+        for (let dx = -radius; dx <= radius; dx++) {
+          const sy = Math.min(height - 1, Math.max(0, y + dy));
+          const sx = Math.min(width - 1, Math.max(0, x + dx));
+          const idx = (sy * width + sx) * 4;
+          rSum += data[idx];
+          gSum += data[idx + 1];
+          bSum += data[idx + 2];
+          count++;
+        }
+      }
+      const oIdx = (y * width + x) * 4;
+      output[oIdx] = Math.round(rSum / count);
+      output[oIdx + 1] = Math.round(gSum / count);
+      output[oIdx + 2] = Math.round(bSum / count);
+      output[oIdx + 3] = 255;
+    }
+  }
+
+  ctx.putImageData(new ImageData(output, width, height), 0, 0);
+}
+
 // Cardinal directions: center, then N, E, S, W, then diagonals NE, SE, SW, NW
 const DIRECTIONS = [
   { dx: 0, dy: 0, label: 'Center', color: '#6c9fff' },
@@ -433,12 +466,12 @@ export default function SpatialBlurDemoSlide({ slide, buildStep }) {
     if (imageData && originalRef.current) drawOriginal(originalRef.current, imageData);
   }, [imageData]);
 
-  // Draw 4x4 averaging (always)
+  // Draw box blur (always)
   useEffect(() => {
     if (imageData && avgRef.current) {
-      drawSuperpixels(avgRef.current, imageData, smallBlock);
+      drawBoxBlur(avgRef.current, imageData, 4);
     }
-  }, [imageData, smallBlock]);
+  }, [imageData]);
 
   // Draw pixel contribution animation (step 1+)
   useEffect(() => {

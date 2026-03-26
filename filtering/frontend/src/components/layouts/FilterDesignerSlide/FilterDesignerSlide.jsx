@@ -61,7 +61,7 @@ function applyConvolution(imageData, kernel) {
 }
 
 export default function FilterDesignerSlide({ slide }) {
-  const { title, imageSrc, defaultKernel } = slide;
+  const { title, imageSrc, defaultKernel, presets = [] } = slide;
 
   const [kernel, setKernel] = useState(() =>
     defaultKernel ? defaultKernel.map(r => [...r]) : [[0,0,0],[0,1,0],[0,0,0]]
@@ -123,6 +123,10 @@ export default function FilterDesignerSlide({ slide }) {
     setKernel(initialKernel.map(r => [...r]));
   }, []);
 
+  const handleRandom = useCallback(() => {
+    setKernel(prev => prev.map(row => row.map(() => Math.floor(Math.random() * 5))));
+  }, []);
+
   return (
     <div className="slide--filter-designer" onClick={(e) => e.stopPropagation()}>
       <motion.h2
@@ -148,7 +152,21 @@ export default function FilterDesignerSlide({ slide }) {
         {/* Kernel editor */}
         <div className="filter-designer-controls">
           <div className="preset-buttons">
-            <button className="preset-btn" onClick={handleReset}>Reset</button>
+            {presets.length === 0 && (
+              <>
+                <button className="preset-btn" onClick={handleReset}>Reset</button>
+                <button className="preset-btn" onClick={handleRandom}>Random</button>
+              </>
+            )}
+            {presets.map((preset) => (
+              <button
+                key={preset.name}
+                className="preset-btn"
+                onClick={() => setKernel(preset.kernel.map(r => [...r]))}
+              >
+                {preset.name}
+              </button>
+            ))}
           </div>
 
           <div className="kernel-grid" style={{ gridTemplateColumns: `repeat(${kernel[0]?.length || 3}, 1fr)` }}>
