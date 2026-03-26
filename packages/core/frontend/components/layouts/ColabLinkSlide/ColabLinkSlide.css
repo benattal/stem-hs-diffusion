@@ -43,6 +43,19 @@
   box-shadow: 0 8px 30px var(--accent-glow);
 }
 
+.colab-button--disabled {
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  cursor: default;
+  box-shadow: none;
+  border: 1px solid var(--border);
+}
+
+.colab-button--disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
 .colab-qr {
   padding: 1rem;
   background: white;

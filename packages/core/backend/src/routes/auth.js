@@ -3,7 +3,7 @@ import crypto from 'crypto';
 
 const router = Router();
 
-const PRESENTER_PASSWORD = 'bagattal';
+const PRESENTER_PASSWORD = 'compimaging';
 
 export function generateToken(password) {
   return crypto.createHash('sha256').update(password).digest('hex');

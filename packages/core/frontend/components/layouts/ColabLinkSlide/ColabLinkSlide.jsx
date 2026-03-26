@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { QRCodeSVG } from 'qrcode.react';
 import './ColabLinkSlide.css';
 
+const PLACEHOLDER_URL = 'https://stem-hs-diffusion-production.up.railway.app/';
+
 export default function ColabLinkSlide({ slide }) {
   return (
     <div className="slide--colab">
@@ -28,18 +30,12 @@ export default function ColabLinkSlide({ slide }) {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.5 }}
       >
-        <a
-          href={slide.colabUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="colab-button"
-          onClick={(e) => e.stopPropagation()}
-        >
-          Open in Google Colab &#8599;
-        </a>
+        <span className="colab-button colab-button--disabled">
+          Google Colab — Link Coming Soon
+        </span>
 
         <div className="colab-qr">
-          <QRCodeSVG value={slide.colabUrl} size={180} />
+          <QRCodeSVG value={PLACEHOLDER_URL} size={180} />
         </div>
 
         {slide.note && <div className="colab-note">{slide.note}</div>}

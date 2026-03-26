@@ -38,6 +38,12 @@ This starts a single server with both presentations:
 | Escape | Close overview |
 | Swipe | Mobile touch navigation |
 
+### Presenter Password
+
+To enter presenter mode, append `?mode=presenter` to a presentation URL and enter the password when prompted. The current password is `compimaging`.
+
+To change the password, edit the `PRESENTER_PASSWORD` constant in `packages/core/backend/src/routes/auth.js`. No restart is needed in dev mode; in production, redeploy after changing.
+
 ### Presenter Notes
 
 Press **P** (or click the clipboard button in the top-right toolbar) to open a presenter notes window. Drag it to a second monitor while presenting in fullscreen on the main display. Navigation from either window stays in sync.
