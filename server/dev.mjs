@@ -109,15 +109,15 @@ app.get('/', (req, res) => {
       <h2>Image Filtering</h2>
       <p>Blurring, filtering, &amp edge detection</p>
     </a>
-    <a class="card" href="/diffusion/">
-      <div class="card-icon">&#x1f3a8;</div>
-      <h2>Generative AI &amp; Diffusion</h2>
-      <p>How to make images with generative AI</p>
-    </a>
     <a class="card" href="/tracking/">
       <div class="card-icon">&#x1f91a;</div>
       <h2>Face &amp; Hand Tracking</h2>
       <p>Computer vision for interactive digital humans</p>
+    </a>
+    <a class="card" href="/diffusion/">
+      <div class="card-icon">&#x1f3a8;</div>
+      <h2>Generative AI &amp; Diffusion</h2>
+      <p>How to make images with generative AI</p>
     </a>
   </div>
 </body>
