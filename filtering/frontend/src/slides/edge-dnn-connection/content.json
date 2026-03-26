@@ -1,6 +1,6 @@
 {
   "layout": "filterStack",
-  "sectionLabel": "Introduction to Filtering",
+  "sectionLabel": "From Filters to Deep Learning",
   "title": "Deep Learning = Stacked Filters",
   "imageSrc": "/slides/blur-filter-designer/sample.jpg",
   "filters": [

@@ -1,6 +1,6 @@
 {
   "layout": "multiFilterCompare",
-  "sectionLabel": "Introduction to Filtering",
+  "sectionLabel": "Edge Detection",
   "title": "What Do Sobel Filters Actually Do?",
   "imageSrc": "/slides/blur-filter-designer/sample.jpg",
   "filters": [

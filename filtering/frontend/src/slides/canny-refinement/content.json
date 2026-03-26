@@ -1,6 +1,6 @@
 {
   "layout": "imagePipeline",
-  "sectionLabel": "Introduction to Filtering",
+  "sectionLabel": "Edge Detection",
   "title": "Canny Edge Detection",
   "steps": [
     {
@@ -23,7 +23,7 @@
       "description": "Keep weak edges only if connected to strong ones"
     }
   ],
-  "summary": "Canny (1986) — five steps, all built on convolution.",
+  "summary": "Canny (1986): five steps, all built on filtering.",
   "buildSteps": [
     { "label": "magnitude" },
     { "label": "nms" },

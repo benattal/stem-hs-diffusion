@@ -1,6 +1,6 @@
 {
   "layout": "imagePoll",
-  "sectionLabel": "Introduction to Filtering",
+  "sectionLabel": "What is Blur?",
   "title": "Which image is more blurry?",
   "pollId": "blur-spatial",
   "imageA": { "src": "/slides/blur-poll-spatial/imageA.jpg", "label": "Image A" },

@@ -1,6 +1,6 @@
 {
   "layout": "spatialBlurDemo",
-  "sectionLabel": "Introduction to Filtering",
+  "sectionLabel": "Examples of Blur",
   "title": "Spatial Blur: Averaging Neighbors",
   "imageSrc": "/slides/blur-spatial-demo/sample.jpg",
   "blockSizes": [1, 2, 4, 8, 16],

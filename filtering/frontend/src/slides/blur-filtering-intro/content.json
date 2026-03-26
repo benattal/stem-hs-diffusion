@@ -1,7 +1,7 @@
 {
   "layout": "progressiveBuild",
   "className": "build-compact",
-  "sectionLabel": "Introduction to Filtering",
+  "sectionLabel": "Examples of Blur",
   "title": "These Are Both Examples of Filtering!",
   "buildSteps": [
     {
