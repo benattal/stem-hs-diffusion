@@ -1,5 +1,5 @@
 {
-  "layout": "progressiveBuild",
+  "layout": "revealCompare",
   "sectionLabel": "What is Blur?",
   "title": "What Does \"Blurry\" Mean?",
   "buildSteps": [

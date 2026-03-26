@@ -27,6 +27,7 @@ import KernelPollResultsSlide from './layouts/KernelPollResultsSlide/KernelPollR
 import MultiFilterCompareSlide from './layouts/MultiFilterCompareSlide/MultiFilterCompareSlide.jsx';
 import FilterStackSlide from './layouts/FilterStackSlide/FilterStackSlide.jsx';
 import ImagePipelineSlide from './layouts/ImagePipelineSlide/ImagePipelineSlide.jsx';
+import RevealCompareSlide from './layouts/RevealCompareSlide/RevealCompareSlide.jsx';
 
 const layoutMap = {
   title: TitleSlide,
@@ -52,6 +53,7 @@ const layoutMap = {
   multiFilterCompare: MultiFilterCompareSlide,
   filterStack: FilterStackSlide,
   imagePipeline: ImagePipelineSlide,
+  revealCompare: RevealCompareSlide,
 };
 
 export default createSlideRenderer(layoutMap, () => presentation);
