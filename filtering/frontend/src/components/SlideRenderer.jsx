@@ -24,6 +24,8 @@ import ConvolutionAnimationSlide from './layouts/ConvolutionAnimationSlide/Convo
 import FilterDesignerSlide from './layouts/FilterDesignerSlide/FilterDesignerSlide.jsx';
 import KernelPollSlide from './layouts/KernelPollSlide/KernelPollSlide.jsx';
 import KernelPollResultsSlide from './layouts/KernelPollResultsSlide/KernelPollResultsSlide.jsx';
+import MultiFilterCompareSlide from './layouts/MultiFilterCompareSlide/MultiFilterCompareSlide.jsx';
+import FilterStackSlide from './layouts/FilterStackSlide/FilterStackSlide.jsx';
 
 const layoutMap = {
   title: TitleSlide,
@@ -46,6 +48,8 @@ const layoutMap = {
   filterDesigner: FilterDesignerSlide,
   kernelPoll: KernelPollSlide,
   kernelPollResults: KernelPollResultsSlide,
+  multiFilterCompare: MultiFilterCompareSlide,
+  filterStack: FilterStackSlide,
 };
 
 export default createSlideRenderer(layoutMap, () => presentation);

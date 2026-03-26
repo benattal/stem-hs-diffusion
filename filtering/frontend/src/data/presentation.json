@@ -21,7 +21,10 @@
         "blur-poll-temporal-kernel",
         "blur-poll-temporal-kernel-results",
         "blur-filter-designer",
-        "blur-negative-intro"
+        "blur-negative-intro",
+        "edge-sobel-results",
+        "edge-dnn-connection",
+        "edge-why-useful"
       ]
     }
   ]

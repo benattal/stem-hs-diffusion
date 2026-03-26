@@ -1,0 +1,48 @@
+{
+  "layout": "filterStack",
+  "sectionLabel": "Introduction to Filtering",
+  "title": "Deep Learning = Stacked Filters",
+  "imageSrc": "/slides/blur-filter-designer/sample.jpg",
+  "filters": [
+    { "name": "Blur", "kernel": [[1,1,1],[1,1,1],[1,1,1]] },
+    { "name": "Sobel-X", "kernel": [[-1,0,1],[-2,0,2],[-1,0,1]] },
+    { "name": "Sobel-Y", "kernel": [[-1,-2,-1],[0,0,0],[1,2,1]] },
+    { "name": "Laplacian", "kernel": [[0,-1,0],[-1,4,-1],[0,-1,0]] },
+    { "name": "Sharpen", "kernel": [[0,-1,0],[-1,5,-1],[0,-1,0]] },
+    { "name": "Emboss", "kernel": [[-2,-1,0],[-1,1,1],[0,1,2]] }
+  ],
+  "layers": [
+    {
+      "label": "Layer 1",
+      "description": "Edges & blurs",
+      "filterCount": 6
+    },
+    {
+      "label": "Layer 2",
+      "description": "Corners & textures",
+      "filterCount": 16,
+      "images": [
+        { "name": "Texture (horiz)", "src": "/slides/edge-dnn-connection/texture-horizontal.jpg" },
+        { "name": "Texture (diag)", "src": "/slides/edge-dnn-connection/texture-diagonal.jpg" },
+        { "name": "Corners", "src": "/slides/edge-dnn-connection/corners-harris.jpg" }
+      ]
+    },
+    {
+      "label": "Layer 3",
+      "description": "Parts & objects",
+      "filterCount": 64,
+      "images": [
+        { "name": "Face", "src": "/slides/edge-dnn-connection/objects-parts.jpg" },
+        { "name": "Paw", "src": "/slides/edge-dnn-connection/objects-paws.jpg" },
+        { "name": "Dog", "src": "/slides/edge-dnn-connection/objects-dog.jpg" },
+        { "name": "Flower", "src": "/slides/edge-dnn-connection/objects-flower.jpg" }
+      ]
+    }
+  ],
+  "buildSteps": [
+    { "label": "filter-gallery" },
+    { "label": "early-layers" },
+    { "label": "deeper-layers" },
+    { "label": "full-network" }
+  ]
+}

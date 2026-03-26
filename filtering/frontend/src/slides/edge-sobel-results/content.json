@@ -1,0 +1,26 @@
+{
+  "layout": "multiFilterCompare",
+  "sectionLabel": "Introduction to Filtering",
+  "title": "What Do Sobel Filters Actually Do?",
+  "imageSrc": "/slides/blur-filter-designer/sample.jpg",
+  "filters": [
+    {
+      "name": "Sobel-X",
+      "kernel": [[-1,0,1],[-2,0,2],[-1,0,1]],
+      "description": "Subtracts left from right — vertical edges light up"
+    },
+    {
+      "name": "Sobel-Y",
+      "kernel": [[-1,-2,-1],[0,0,0],[1,2,1]],
+      "description": "Subtracts top from bottom — horizontal edges light up"
+    }
+  ],
+  "combinedDescription": "Edge magnitude = √(Gx² + Gy²) — merge both directions for every edge in the image",
+  "summary": "Same operation, different kernel → completely different result. Blurring and edge detection are both filtering.",
+  "buildSteps": [
+    { "label": "original" },
+    { "label": "sobel-x" },
+    { "label": "sobel-y" },
+    { "label": "combined" }
+  ]
+}

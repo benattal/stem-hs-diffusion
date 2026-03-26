@@ -1,5 +1,6 @@
 Website features
 =======
+* Make the presenter notes password "compimaging"
 * Zero out polls
 * Disable polls
 * Empty links for colabs
@@ -18,9 +19,12 @@ Filtering
 
 ## Slides
 
-* Sobel x and sobel y as lead into why filtering is a useful operation in computer vision
-* Deep neural networks as a bunch of these filtering operations stacked together
-* What else can we do with these filters? Edge detection
+* Edge detection slide 1
+    * Sobel x and sobel y as lead into why filtering is a useful operation in computer vision
+* Edge detection slide 2
+    * Deep neural networks as a bunch of these filtering operations stacked together
+* Edge detection slide 3
+    * What else can we do with these filters? Edge detection
     * Why edge detection is useful
         - Ask them
         - Some examples

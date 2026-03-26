@@ -1,64 +1,9 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
+import { applyConvolution } from '@app/utils/convolution.js';
 import './FilterDesignerSlide.css';
 
 const DISPLAY_SIZE = 300;
-
-function applyConvolution(imageData, kernel) {
-  const { width, height, data } = imageData;
-  const kSize = kernel.length;
-  const pad = Math.floor(kSize / 2);
-  const pixelCount = width * height;
-
-  // First pass: compute raw convolution into float buffer
-  const raw = new Float32Array(pixelCount * 3);
-
-  for (let y = 0; y < height; y++) {
-    for (let x = 0; x < width; x++) {
-      let rSum = 0, gSum = 0, bSum = 0;
-
-      for (let ky = 0; ky < kSize; ky++) {
-        for (let kx = 0; kx < kSize; kx++) {
-          const sy = Math.min(height - 1, Math.max(0, y + ky - pad));
-          const sx = Math.min(width - 1, Math.max(0, x + kx - pad));
-          const idx = (sy * width + sx) * 4;
-          const kVal = kernel[ky][kx];
-          rSum += data[idx] * kVal;
-          gSum += data[idx + 1] * kVal;
-          bSum += data[idx + 2] * kVal;
-        }
-      }
-
-      const ri = (y * width + x) * 3;
-      raw[ri] = rSum;
-      raw[ri + 1] = gSum;
-      raw[ri + 2] = bSum;
-    }
-  }
-
-  // Second pass: find min/max across all channels and normalize to [0, 255]
-  let min = raw[0], max = raw[0];
-  for (let i = 1; i < raw.length; i++) {
-    if (raw[i] < min) min = raw[i];
-    if (raw[i] > max) max = raw[i];
-  }
-
-  const range = max - min;
-  const output = new Uint8ClampedArray(data.length);
-
-  for (let y = 0; y < height; y++) {
-    for (let x = 0; x < width; x++) {
-      const ri = (y * width + x) * 3;
-      const oIdx = (y * width + x) * 4;
-      output[oIdx] = range > 0 ? Math.round(((raw[ri] - min) / range) * 255) : 128;
-      output[oIdx + 1] = range > 0 ? Math.round(((raw[ri + 1] - min) / range) * 255) : 128;
-      output[oIdx + 2] = range > 0 ? Math.round(((raw[ri + 2] - min) / range) * 255) : 128;
-      output[oIdx + 3] = 255;
-    }
-  }
-
-  return new ImageData(output, width, height);
-}
 
 export default function FilterDesignerSlide({ slide }) {
   const { title, imageSrc, defaultKernel, presets = [] } = slide;
