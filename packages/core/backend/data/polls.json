@@ -42,5 +42,43 @@
       0,
       0
     ]
+  },
+  "blur-spatial-kernel": {
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "counts": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "blur-temporal-kernel": {
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "counts": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "edge-spot": {
+    "options": [
+      "Image A",
+      "Image B"
+    ],
+    "counts": [
+      0,
+      0
+    ]
   }
 }

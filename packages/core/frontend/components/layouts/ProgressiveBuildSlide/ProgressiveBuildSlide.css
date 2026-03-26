@@ -7,14 +7,14 @@
 .build-steps {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 0.75rem;
 }
 
 .build-step {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  padding: 1.5rem;
+  gap: 0.35rem;
+  padding: 0.6rem 1rem;
   border-radius: var(--radius);
   background: var(--bg-elevated);
   border: 1px solid var(--border);
@@ -23,32 +23,32 @@
 .build-step-header {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .build-step-label {
-  font-size: 1.5rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--accent-secondary);
 }
 
 .build-step-description {
-  font-size: 1rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
 }
 
 .build-step-media {
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
   flex-wrap: wrap;
   align-items: center;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
 
 .build-step-media img,
 .build-step-media video {
-  max-height: 160px;
-  max-width: 200px;
+  max-height: 120px;
+  max-width: 160px;
   border-radius: var(--radius-sm);
   object-fit: contain;
 }

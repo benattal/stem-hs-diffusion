@@ -217,12 +217,9 @@ function drawDirectionalContribution(canvas, imageData, dirStep, px, py) {
   canvas.width = width;
   canvas.height = height;
   const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, width, height);
   const layout = getGridLayout(width, height, px, py);
   const { cx, cy, gridCount, halfGrid, cellSize, gridW, gridH, gridX, gridY } = layout;
-
-  // Dark background
-  ctx.fillStyle = '#1a1a2e';
-  ctx.fillRect(0, 0, width, height);
 
   // Draw full pixel grid
   drawPixelGrid(ctx, imageData, layout);
@@ -377,11 +374,10 @@ export default function SpatialBlurDemoSlide({ slide, buildStep }) {
   const { imageData, dims } = useImageData(imageSrc);
 
   const originalRef = useRef(null);
-  const blur1Ref = useRef(null);
-  const blur2Ref = useRef(null);
+  const avgRef = useRef(null);
+  const contribRef = useRef(null);
 
   const smallBlock = blockSizes[2] || 4;
-  const largeBlock = blockSizes[3] || 8;
 
   // Find a boundary pixel once when image loads
   const boundaryRef = useRef(null);
@@ -389,14 +385,14 @@ export default function SpatialBlurDemoSlide({ slide, buildStep }) {
     boundaryRef.current = findBoundaryPixel(imageData);
   }
 
-  // Direction animation state for pixel contribution step (buildStep 4)
+  // Direction animation state for pixel contribution step (buildStep 1)
   const [dirStep, setDirStep] = useState(-1);
   const dirTimerRef = useRef(null);
   const dirStartedRef = useRef(false);
 
-  // Reset animation when navigating away from step 4
+  // Reset animation when navigating away from step 1
   useEffect(() => {
-    if (buildStep < 4) {
+    if (buildStep < 1) {
       dirStartedRef.current = false;
       setDirStep(-1);
       if (dirTimerRef.current) {
@@ -406,9 +402,9 @@ export default function SpatialBlurDemoSlide({ slide, buildStep }) {
     }
   }, [buildStep]);
 
-  // Start animation when reaching step 4
+  // Start animation when reaching step 1
   useEffect(() => {
-    if (buildStep >= 4 && imageData && !dirStartedRef.current) {
+    if (buildStep >= 1 && imageData && !dirStartedRef.current) {
       dirStartedRef.current = true;
       let step = 0;
       setDirStep(0);
@@ -437,46 +433,24 @@ export default function SpatialBlurDemoSlide({ slide, buildStep }) {
     if (imageData && originalRef.current) drawOriginal(originalRef.current, imageData);
   }, [imageData]);
 
-  // Draw small-block superpixels (step 1+)
+  // Draw 4x4 averaging (always)
   useEffect(() => {
-    if (imageData && blur1Ref.current) {
-      if (buildStep >= 1) {
-        drawSuperpixels(blur1Ref.current, imageData, smallBlock);
-      }
+    if (imageData && avgRef.current) {
+      drawSuperpixels(avgRef.current, imageData, smallBlock);
     }
-  }, [imageData, buildStep, smallBlock]);
+  }, [imageData, smallBlock]);
 
-  // Draw large-block, zoomed center, or directional contribution (step 2+)
+  // Draw pixel contribution animation (step 1+)
   useEffect(() => {
-    if (imageData && blur2Ref.current && dims && boundaryRef.current) {
+    if (imageData && contribRef.current && dims && boundaryRef.current) {
       const { x: bpx, y: bpy } = boundaryRef.current;
-      if (buildStep === 2) {
-        drawSuperpixels(blur2Ref.current, imageData, largeBlock);
-      } else if (buildStep === 3) {
-        drawZoomedCenter(blur2Ref.current, imageData, bpx, bpy);
-      } else if (buildStep >= 4 && dirStep >= 0) {
-        drawDirectionalContribution(blur2Ref.current, imageData, dirStep, bpx, bpy);
+      if (buildStep >= 1 && dirStep >= 0) {
+        drawDirectionalContribution(contribRef.current, imageData, dirStep, bpx, bpy);
       }
     }
-  }, [imageData, dims, buildStep, largeBlock, dirStep]);
+  }, [imageData, dims, buildStep, dirStep]);
 
   const canvasH = dims ? dims.height : Math.round(DISPLAY_WIDTH * 0.67);
-
-  const descriptions = [
-    '',
-    '',
-    '',
-    '',
-    '',
-  ];
-
-  const slotLabel = buildStep >= 4
-    ? 'Pixel Contribution'
-    : buildStep === 3
-      ? 'Zoomed In'
-      : buildStep >= 2
-        ? `${largeBlock}×${largeBlock} Averaging`
-        : '\u00A0';
 
   return (
     <div className="slide--spatial-blur">
@@ -494,7 +468,7 @@ export default function SpatialBlurDemoSlide({ slide, buildStep }) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.4 }}
       >
-        {/* Slot 1: always original */}
+        {/* Left: original image */}
         <div className="spatial-slot">
           <span className="spatial-slot-label">Original</span>
           <div className="spatial-canvas-box" style={{ width: DISPLAY_WIDTH, height: canvasH }}>
@@ -502,37 +476,26 @@ export default function SpatialBlurDemoSlide({ slide, buildStep }) {
           </div>
         </div>
 
-        {/* Slot 2: small-block superpixels (visible from step 1+) */}
+        {/* Middle: pixel contribution animation (no border) */}
         <div className="spatial-slot">
           <span className="spatial-slot-label">
-            {buildStep >= 1 ? `${smallBlock}×${smallBlock} Averaging` : '\u00A0'}
+            {buildStep >= 1 ? 'Pixel Contribution' : '\u00A0'}
           </span>
-          <div className="spatial-canvas-box" style={{ width: DISPLAY_WIDTH, height: canvasH, opacity: buildStep >= 1 ? 1 : 0 }}>
-            <canvas ref={blur1Ref} />
+          <div className="spatial-canvas-no-border" style={{ width: DISPLAY_WIDTH, height: canvasH, opacity: buildStep >= 1 ? 1 : 0 }}>
+            <canvas ref={contribRef} />
           </div>
         </div>
 
-        {/* Slot 3: large-block, zoomed center, or contribution (visible from step 2+) */}
+        {/* Far right: 4x4 averaging */}
         <div className="spatial-slot">
-          <span className="spatial-slot-label">{slotLabel}</span>
-          <div className="spatial-canvas-box" style={{ width: DISPLAY_WIDTH, height: canvasH, opacity: buildStep >= 2 ? 1 : 0 }}>
-            <canvas ref={blur2Ref} />
+          <span className="spatial-slot-label">3×3 Averaging</span>
+          <div className="spatial-canvas-box" style={{ width: DISPLAY_WIDTH, height: canvasH }}>
+            <canvas ref={avgRef} />
           </div>
         </div>
       </motion.div>
 
-      <div className="spatial-description-bar">
-        <motion.p
-          key={buildStep}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3 }}
-        >
-          {descriptions[buildStep] || ''}
-        </motion.p>
-      </div>
-
-      <div className="spatial-insight" style={{ opacity: buildStep >= 1 ? 1 : 0 }}>
+      <div className="spatial-insight" style={{ opacity: buildStep >= 0 ? 1 : 0 }}>
         Spatial blur = averaging groups of neighboring pixels!
       </div>
     </div>

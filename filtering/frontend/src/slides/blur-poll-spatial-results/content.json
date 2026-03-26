@@ -1,9 +1,9 @@
 {
   "layout": "pollResults",
   "sectionLabel": "Introduction to Filtering",
-  "title": "Spatial Blur: Results",
+  "title": "Poll #1: Results",
   "pollId": "blur-spatial",
-  "question": "Which image is more blurry?",
+  "question": "What do you think caused the blur in this image?",
   "options": ["Image A", "Image B"],
   "presetDistribution": [0, 0]
 }

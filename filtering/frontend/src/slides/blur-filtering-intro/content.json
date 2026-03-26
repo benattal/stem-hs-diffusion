@@ -1,22 +1,23 @@
 {
   "layout": "progressiveBuild",
   "sectionLabel": "Introduction to Filtering",
-  "title": "These Are All Examples of Filtering!",
+  "title": "These Are Both Examples of Filtering!",
   "buildSteps": [
     {
       "label": "Spatial blur",
       "description": "Average of neighboring pixels in space",
-      "media": [{ "type": "image", "src": "/slides/blur-poll-spatial/imageB.jpg" }]
+      "media": [
+        { "type": "image", "src": "/slides/blur-poll-spatial/imageB.jpg" },
+        { "type": "image", "src": "/slides/blur-poll-spatial/imageA.jpg" }
+      ]
     },
     {
       "label": "Temporal blur",
       "description": "Average of frames over time",
-      "media": [{ "type": "image", "src": "/slides/blur-poll-temporal/imageB.jpg" }]
-    },
-    {
-      "label": "Background blur",
-      "description": "Selective averaging applied only to background regions",
-      "media": [{ "type": "image", "src": "/slides/blur-poll-background/imageB.jpg" }]
+      "media": [
+        { "type": "image", "src": "/slides/blur-poll-temporal/imageB.jpg" },
+        { "type": "image", "src": "/slides/blur-poll-temporal/imageA.jpg" }
+      ]
     },
     {
       "label": "The common pattern: Filtering",

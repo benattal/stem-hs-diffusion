@@ -6,7 +6,10 @@
     {
       "label": "It removes information",
       "description": "We think of blur as losing detail, like a Zoom background that hides your messy room",
-      "media": [{ "type": "image", "src": "/slides/blur-poll-background/imageB.jpg" }]
+      "media": [
+        { "type": "image", "src": "/slides/blur-poll-background/zoom_clean.jpg" },
+        { "type": "image", "src": "/slides/blur-poll-background/zoom_blur.jpg" }
+      ]
     },
     {
       "label": "But what is it, really?",
