@@ -111,7 +111,7 @@
   align-items: center;
   gap: 0.6rem;
   min-height: 0;
-  max-height: 68vh;
+  max-height: 430px;
 }
 
 .cg-image-item {
