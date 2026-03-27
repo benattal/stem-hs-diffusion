@@ -20,7 +20,7 @@
   ],
   "author": "",
   "license": "MIT",
-  "dependencies": {
-    "concurrently": "^8.2.2"
+  "devDependencies": {
+    "concurrently": "^9.2.1"
   }
 }

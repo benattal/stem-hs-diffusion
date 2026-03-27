@@ -12,23 +12,26 @@
       ]
     },
     {
-      "label": "Virtual character creation from images",
-      "media": [
-        { "type": "image", "src": "/slides/cv-applications/face-rig.jpeg" },
-        { "type": "image", "src": "/slides/cv-applications/personal-assistant.jpeg" }
-      ]
-    },
-    {
       "label": "Personal assistants",
       "media": [
         { "type": "image", "src": "/slides/cv-applications/emoji-animation.png" },
+        { "type": "image", "src": "/slides/cv-applications/face-rig.jpeg" }
+      ]
+    },
+    {
+      "label": "Virtual character creation from images",
+      "media": [
+        { "type": "image", "src": "/slides/cv-applications/personal-assistant.jpeg" },
         { "type": "image", "src": "/slides/cv-applications/tracking-demo.gif" }
       ]
     }
   ],
   "buildSteps": [
-    { "id": "card" },
-    { "id": "card" },
-    { "id": "card" }
+    { "id": "image" },
+    { "id": "image" },
+    { "id": "image" },
+    { "id": "image" },
+    { "id": "image" },
+    { "id": "image" }
   ]
 }

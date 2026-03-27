@@ -98,3 +98,63 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* Image cycling mode */
+.slide--card-grid--image {
+  height: 100%;
+}
+
+.cg-image-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 0;
+  max-height: 68vh;
+}
+
+.cg-image-item {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg-elevated);
+}
+
+.cg-image-item img,
+.cg-image-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.cg-image-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 0.1rem 0;
+}
+
+.cg-image-area .vs-dots {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding-bottom: 0.25rem;
+}
+
+.cg-image-area .vs-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.cg-image-area .vs-dot--active {
+  background: var(--accent);
+  transform: scale(1.3);
+}
