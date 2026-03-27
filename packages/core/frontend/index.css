@@ -49,21 +49,14 @@ html, body, #root {
   overflow: hidden;
 }
 
-/* ─── Slide Stage (fixed-aspect-ratio viewport on desktop) ───── */
+/* ─── Slide Stage (fixed-aspect-ratio viewport, always scaled) ── */
 .slide-stage {
   position: absolute;
-  inset: 0;
-}
-
-@media (min-width: 769px) {
-  .slide-stage {
-    inset: auto;
-    top: 50%;
-    left: 50%;
-    transform-origin: center center;
-    overflow: hidden;
-    border-radius: 4px;
-  }
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  overflow: hidden;
+  border-radius: 4px;
 }
 
 /* ─── Slide Base ──────────────────────────────────────────────── */
@@ -409,7 +402,7 @@ kbd {
   margin-bottom: 8px;
 }
 
-/* ─── Left column: mobile preview ──────────────────────────── */
+/* ─── Left column: slide preview ──────────────────────────── */
 
 .presenter-preview-col {
   display: flex;
@@ -420,8 +413,8 @@ kbd {
 .presenter-mobile-frame {
   flex: 1;
   min-height: 0;
-  width: 240px;
-  max-height: 426px; /* 667 * (240/375) */
+  width: 320px;
+  max-height: 180px; /* 720 * (320/1280) */
   border: 2px solid var(--border-light);
   border-radius: var(--radius);
   overflow: hidden;
@@ -430,11 +423,11 @@ kbd {
 }
 
 .presenter-mobile-iframe {
-  width: 375px;
-  height: 667px;
+  width: 1280px;
+  height: 720px;
   border: none;
   transform-origin: top left;
-  transform: scale(calc(240 / 375));
+  transform: scale(calc(320 / 1280));
   display: block;
 }
 

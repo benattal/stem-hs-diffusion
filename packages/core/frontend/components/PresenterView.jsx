@@ -239,7 +239,7 @@ function PresenterContent() {
       <div className="presenter-body">
         {/* Left: mobile preview */}
         <div className="presenter-preview-col">
-          <h3>Mobile Preview</h3>
+          <h3>Slide Preview</h3>
           <div className="presenter-mobile-frame">
             <iframe
               ref={iframeRef}
