@@ -1,1 +1,5 @@
-Poll: which 1D kernel produces temporal/motion blur? Correct answer is C: equal averaging across 5 frames. A only uses first and last frame. B is identity (no blur). D is a weighted average (triangular window).
+* Launch the poll before speaking. 
+
+"Now that we've seen how convolution works, let's test your intuition. An object is moving left to right across frames — think of a car driving past a camera. Which of these four kernels would produce motion blur? Take a look at the options and go ahead and vote." 
+
+Pause ~15 seconds while students vote.
