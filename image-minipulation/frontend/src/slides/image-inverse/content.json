@@ -1,0 +1,10 @@
+{
+  "layout": "videoCompare",
+  "sectionLabel": "Intensity Operations",
+  "title": "Image Inversion",
+  "subtitle": "What does 255 - pixel value do to an image?",
+  "videos": [
+    { "src": "/slides/image-inverse/inverse.mp4", "label": "Inverse: 255 - pixel value" }
+  ],
+  "layout_mode": "single"
+}

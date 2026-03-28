@@ -1,0 +1,24 @@
+{
+  "layout": "geometricTransform",
+  "sectionLabel": "Geometric Transformations",
+  "title": "Manipulating Pixel Positions",
+  "imageSrc": "/slides/pixel-zoom/grumpy_cat.png",
+  "operations": [
+    { "type": "original", "label": "Original" },
+    { "type": "crop", "label": "Cropping" },
+    { "type": "rotate", "label": "Rotate 90\u00b0" },
+    { "type": "flipH", "label": "Flip Horizontal" },
+    { "type": "flipV", "label": "Flip Vertical" }
+  ],
+  "buildSteps": [
+    { "id": "original" },
+    { "id": "crop-label" },
+    { "id": "crop-animate" },
+    { "id": "rotate-label" },
+    { "id": "rotate-animate" },
+    { "id": "flipH-label" },
+    { "id": "flipH-animate" },
+    { "id": "flipV-label" },
+    { "id": "flipV-animate" }
+  ]
+}

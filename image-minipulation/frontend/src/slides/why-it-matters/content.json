@@ -1,0 +1,33 @@
+{
+  "layout": "illustratedPoints",
+  "sectionLabel": "Introduction",
+  "title": "Why Does Image Manipulation Matter?",
+  "points": [
+    {
+      "text": "**Medical Imaging** -- Doctors enhance X-rays and MRIs to spot diseases that would otherwise be invisible to the naked eye",
+      "visual": {
+        "type": "image",
+        "src": "/slides/why-it-matters/medical_image_minipulation.png"
+      }
+    },
+    {
+      "text": "**Social Media Filters** -- Instagram and Snapchat filters are real-time image manipulation: face detection + transformation happening 30 times per second",
+      "visual": {
+        "type": "image",
+        "src": "/slides/why-it-matters/face minipulation.jpg"
+      }
+    },
+    {
+      "text": "**The Foundation of Computer Vision** -- Every CV algorithm (facial recognition, object detection, self-driving cars) starts with image manipulation. It's the building block for everything",
+      "visual": {
+        "type": "image",
+        "src": "/slides/why-it-matters/object detection boundaries image minipulation foundation to computer vision.gif"
+      }
+    }
+  ],
+  "buildSteps": [
+    { "id": "point" },
+    { "id": "point" },
+    { "id": "point" }
+  ]
+}

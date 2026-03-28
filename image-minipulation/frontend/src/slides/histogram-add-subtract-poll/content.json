@@ -1,0 +1,14 @@
+{
+  "layout": "poll",
+  "sectionLabel": "Intensity Operations",
+  "title": "Implementation Challenge",
+  "pollId": "histogram-add-subtract",
+  "question": "You just saw adding and subtracting a constant from every pixel. How would you implement 'add 50 to brightness' in code?",
+  "options": [
+    "Loop through each pixel and add 50, capping at 255 if it goes over",
+    "Multiply every pixel by 1.2 to make it brighter",
+    "Only add 50 to pixels that are below 200",
+    "Replace all pixels with the value 50"
+  ],
+  "presetDistribution": [0, 0, 0, 0]
+}

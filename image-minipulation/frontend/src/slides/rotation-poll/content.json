@@ -1,0 +1,14 @@
+{
+  "layout": "poll",
+  "sectionLabel": "Geometric Transformations",
+  "title": "How Does Rotation Work?",
+  "pollId": "rotation-implementation",
+  "question": "To rotate an image 90\u00b0 clockwise, what happens to each pixel's position in the grid?",
+  "options": [
+    "Row i, Column j moves to Row j, Column (height - 1 - i)",
+    "Every pixel shifts right by 90 positions and wraps around",
+    "The grid just gets transposed (rows become columns, columns become rows)",
+    "Each pixel rotates around the center point by 90 degrees"
+  ],
+  "presetDistribution": [0, 0, 0, 0]
+}

@@ -1,0 +1,14 @@
+{
+  "layout": "poll",
+  "sectionLabel": "Geometric Transformations",
+  "title": "How Does Cropping Work?",
+  "pollId": "crop-implementation",
+  "question": "To crop an image to a smaller region, what do you do with the pixel grid?",
+  "options": [
+    "Delete the unwanted rows and columns, keeping only the desired rectangle",
+    "Set all pixels outside the region to 0 (black)",
+    "Shrink the entire image down to fit the cropped size",
+    "Copy the region and paste it over the rest of the image"
+  ],
+  "presetDistribution": [0, 0, 0, 0]
+}

@@ -1,0 +1,14 @@
+{
+  "layout": "poll",
+  "sectionLabel": "Geometric Transformations",
+  "title": "How Does Flipping Work?",
+  "pollId": "flip-implementation",
+  "question": "To flip an image horizontally (like looking in a mirror), what happens to the pixel grid?",
+  "options": [
+    "Reverse the order of columns: column 0 swaps with the last column, column 1 with second-to-last, etc.",
+    "Reverse the order of rows: top row becomes bottom row",
+    "Rotate the grid 180 degrees",
+    "Swap the left half with the right half without reversing"
+  ],
+  "presetDistribution": [0, 0, 0, 0]
+}

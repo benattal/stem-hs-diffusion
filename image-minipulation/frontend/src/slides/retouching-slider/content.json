@@ -1,0 +1,10 @@
+{
+  "layout": "retouchingSlider",
+  "sectionLabel": "Advanced Techniques",
+  "title": "Photo Retouching",
+  "subtitle": "Drag the slider to compare before and after",
+  "beforeImage": "/slides/retouching-slider/before.jpg",
+  "afterImage": "/slides/retouching-slider/after.jpg",
+  "beforeLabel": "Before",
+  "afterLabel": "After"
+}

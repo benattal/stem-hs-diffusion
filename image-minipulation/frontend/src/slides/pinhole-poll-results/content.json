@@ -1,0 +1,14 @@
+{
+  "layout": "pollResults",
+  "sectionLabel": "Image Formation",
+  "title": "Poll Results",
+  "pollId": "pinhole-light",
+  "question": "How can we let in more light while ensuring that rays from one point in the scene map to one point on the camera sensor array?",
+  "options": [
+    "A mirror",
+    "A lens",
+    "A larger pinhole",
+    "Multiple pinholes"
+  ],
+  "presetDistribution": [0, 0, 0, 0]
+}

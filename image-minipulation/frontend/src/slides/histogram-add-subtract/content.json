@@ -1,0 +1,12 @@
+{
+  "layout": "videoCompare",
+  "sectionLabel": "Intensity Operations",
+  "title": "Manipulating Pixel Values",
+  "subtitle": "How would you implement these?",
+  "videos": [
+    { "src": "/slides/histogram-add-subtract/original.mp4", "label": "Original (no change)" },
+    { "src": "/slides/histogram-add-subtract/add.mp4", "label": "Add constant (+50)" },
+    { "src": "/slides/histogram-add-subtract/subtract.mp4", "label": "Subtract constant (-50)" }
+  ],
+  "layout_mode": "three-up"
+}

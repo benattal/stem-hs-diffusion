@@ -1,0 +1,7 @@
+{
+  "layout": "videoAutoplay",
+  "sectionLabel": "Image Formation",
+  "headerTitle": "Image Manipulation",
+  "video": "/slides/manim-04/video.mp4",
+  "nextVideo": "/slides/manim-05/video.mp4"
+}
