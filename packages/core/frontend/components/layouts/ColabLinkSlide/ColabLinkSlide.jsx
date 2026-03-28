@@ -47,9 +47,11 @@ export default function ColabLinkSlide({ slide }) {
           </span>
         )}
 
-        <div className="colab-qr">
-          <QRCodeSVG value={url} size={180} />
-        </div>
+        {!slide.imageSrc && (
+          <div className="colab-qr">
+            <QRCodeSVG value={url} size={180} />
+          </div>
+        )}
 
         {slide.note && <div className="colab-note">{slide.note}</div>}
       </motion.div>
