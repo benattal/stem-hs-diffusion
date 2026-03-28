@@ -5,13 +5,14 @@
   "description": "Interactive workshop presentations on computer vision and generative AI",
   "private": true,
   "scripts": {
-    "install:all": "cd diffusion && npm run install:all && cd ../filtering && npm run install:all && cd ../face-and-hand-tracking && npm run install:all",
-    "build": "cd diffusion/frontend && npm install && npx cross-env VITE_BASE=/diffusion/ npm run build && cd ../../filtering/frontend && npm install && npx cross-env VITE_BASE=/filtering/ npm run build && cd ../../face-and-hand-tracking/frontend && npm install && npx cross-env VITE_BASE=/tracking/ npm run build",
+    "install:all": "cd diffusion && npm run install:all && cd ../filtering && npm run install:all && cd ../face-and-hand-tracking && npm run install:all && cd ../image-minipulation && npm run install:all",
+    "build": "cd diffusion/frontend && npm install && npx cross-env VITE_BASE=/diffusion/ npm run build && cd ../../filtering/frontend && npm install && npx cross-env VITE_BASE=/filtering/ npm run build && cd ../../face-and-hand-tracking/frontend && npm install && npx cross-env VITE_BASE=/tracking/ npm run build && cd ../../image-minipulation/frontend && npm install && npx cross-env VITE_BASE=/image-manip/ npm run build",
     "start": "node server/gateway.mjs",
     "dev": "node server/dev.mjs",
     "dev:diffusion": "cd diffusion && npm run dev",
     "dev:filtering": "cd filtering && npm run dev",
-    "dev:tracking": "cd face-and-hand-tracking && npm run dev"
+    "dev:tracking": "cd face-and-hand-tracking && npm run dev",
+    "dev:image-manip": "cd image-minipulation && npm run dev"
   },
   "keywords": [
     "presentation",
