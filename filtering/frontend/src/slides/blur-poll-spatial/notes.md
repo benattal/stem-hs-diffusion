@@ -1,1 +1,1 @@
-Spatial blur example. Image A is sharp, Image B is spatially blurred (Gaussian or box blur). Most people should pick Image B. Don't reveal why yet, just collect votes.
+Launch the poll before speaking. "Let's start with a quick poll. I'm going to show you two images side by side. Vote for whichever one you think looks more blurry. Go ahead and vote now." Pause ~15 seconds while students vote.

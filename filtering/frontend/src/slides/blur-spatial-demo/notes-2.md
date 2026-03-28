@@ -1,1 +1,1 @@
-Show the average of all shifted copies. "Just like temporal blur is an average over time, spatial blur is an average over space, over neighboring pixels!"
+When we average all those shifted copies together, we get spatial blur. Just like temporal blur is an average over time, spatial blur is an average over space — over neighboring pixels. Same idea, different dimension.

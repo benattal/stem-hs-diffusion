@@ -1,1 +1,1 @@
-Play the video. Ask the audience: "What would happen if we took a long exposure photo of this?"
+Here's a short video of a moving object. Imagine you're taking a long-exposure photo of this — the shutter stays open for the entire duration.

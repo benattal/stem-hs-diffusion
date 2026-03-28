@@ -1,1 +1,1 @@
-Show results. This one should be straightforward; most people recognize spatial blur. Move on quickly to the next example.
+Good — most of you got that one. This is what we typically think of as spatial blur: the image looks soft and out of focus, like when a camera can't find its focal point. The cause is physical — the lens is averaging light from slightly different angles, which blends together neighboring parts of the scene. We'll come back to exactly why in a moment.

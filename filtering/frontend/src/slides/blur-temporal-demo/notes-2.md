@@ -1,1 +1,1 @@
-The averaged result! Temporal blur is literally the average of multiple frames. Moving objects get smeared, static parts stay sharp. "Blur is an average!"
+When we average all those frames together, we get this — motion blur. The static parts of the scene add up cleanly, so they stay sharp. The moving parts appear in different positions in each frame, so they smear together. Blur is literally an average. That's the key idea.
