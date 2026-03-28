@@ -2,5 +2,6 @@
   "layout": "twoImage",
   "sectionLabel": "Pixels & Color Channels",
   "leftSrc": "/slides/pixel-zoom2/hungry.png",
-  "rightSrc": "/slides/pixel-zoom2/rgb_array.png"
+  "rightSrc": "/slides/pixel-zoom2/rgb_array.png",
+  "caption": "Each color channel is a 2D array of numbers between 0 and 255"
 }

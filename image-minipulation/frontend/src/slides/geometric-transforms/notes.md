@@ -1,11 +1,17 @@
-Here are some image manipulations that affect many pixels at once
+Instead of changing the values at the pixel, we can also manipulate the position of the pixels
 
-Again, how do you think you would implement these?
+For example, to crop an image, we can remove several rows and/or columns from the image
+(see on left)
 
-Crop: cut out several rows and/or columns from the image
+To rotate an image, we can swap the rows and columns of the image
+That is, to rotate the image 90 degrees clockwise, the topmost row becomes rightmost column
+(see in middle)
 
-Rotate: rows become columns (rotating 90 degrees clockwise—topmost row becomes rightmost column)
+We can also flip the image horizontally or vertically.
 
-Flip h: reverses order of columns (leftmost column becomes rightmost)
+To flip an image horizontally or across the vertical axis, we reverse the order of the columns 
+so the leftmost column becomes the rightmost
 
-Flip v: reverses order of rows (top row becomes bottom)
+And to flip an image vertically or across the horizontal axis, we reverse the order of the rows
+so the top row becomes the bottom row
+(see in middle and right)

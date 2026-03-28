@@ -27,6 +27,14 @@
   gap: 0;
 }
 
+.two-image__caption {
+  flex-shrink: 0;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  margin: 10px 0 0;
+}
+
 .two-image__img {
   flex: 1;
   min-width: 0;

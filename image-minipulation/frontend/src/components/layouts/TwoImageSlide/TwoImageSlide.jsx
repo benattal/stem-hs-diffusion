@@ -1,7 +1,7 @@
 import './TwoImageSlide.css';
 
 export default function TwoImageSlide({ slide }) {
-  const { title, leftSrc, rightSrc } = slide;
+  const { title, leftSrc, rightSrc, caption } = slide;
 
   return (
     <div className="slide--two-image">
@@ -10,6 +10,7 @@ export default function TwoImageSlide({ slide }) {
         <img src={leftSrc} alt="" className="two-image__img" />
         <img src={rightSrc} alt="" className="two-image__img" />
       </div>
+      {caption && <p className="two-image__caption">{caption}</p>}
     </div>
   );
 }
