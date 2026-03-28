@@ -53,6 +53,12 @@
   object-fit: contain;
 }
 
+/* Large variant for emphasis slides */
+.build-large h2 { font-size: 3.5rem; }
+.build-large .build-step { padding: 1.5rem 2rem; }
+.build-large .build-step-label { font-size: 2rem; }
+.build-large .build-step-description { font-size: 1.25rem; line-height: 1.6; }
+
 /* Compact variant for slides with many build steps + media */
 .build-compact .build-steps { gap: 0.75rem; }
 .build-compact .build-step { gap: 0.35rem; padding: 0.6rem 1rem; }

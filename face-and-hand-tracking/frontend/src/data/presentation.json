@@ -46,6 +46,9 @@
       "title": "Hands-on Challenge",
       "slides": [
         "outline-hands-on",
+        "fingers-poll",
+        "binary-intro",
+        "binary-counting",
         "task-notebook",
         "task-solution"
       ]

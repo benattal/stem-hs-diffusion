@@ -1,0 +1,120 @@
+.slide--binary-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 2.5rem;
+  height: 100%;
+}
+
+.slide--binary-count h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  align-self: flex-start;
+  width: 100%;
+}
+
+.bc-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 700px;
+}
+
+/* Place value labels */
+.bc-labels {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+}
+
+.bc-label {
+  width: 110px;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  transition: color 0.25s ease;
+}
+
+.bc-label--on {
+  color: var(--accent);
+}
+
+/* Bit boxes */
+.bc-bits {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+}
+
+.bc-bit {
+  width: 110px;
+  height: 110px;
+  border-radius: 16px;
+  border: 3px solid var(--border);
+  background: var(--bg-elevated);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text-secondary);
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.bc-bit--on {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 15%, var(--bg-elevated));
+  color: var(--accent);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+/* Equation + decimal */
+.bc-result {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.bc-equation {
+  font-size: 1.4rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-family: monospace;
+}
+
+.bc-decimal {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--accent);
+  min-width: 3rem;
+  text-align: center;
+  line-height: 1;
+}
+
+/* Dots */
+.bc-dots {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 300px;
+}
+
+.bc-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.bc-dot--active {
+  background: var(--accent);
+  transform: scale(1.4);
+}

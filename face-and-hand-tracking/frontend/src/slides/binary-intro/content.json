@@ -1,0 +1,12 @@
+{
+  "layout": "progressiveBuild",
+  "sectionLabel": "Hands-on Challenge",
+  "title": "The answer is 31!",
+  "className": "build-large",
+  "buildSteps": [
+    {
+      "label": "The trick is to use binary",
+      "description": "Each finger represents a bit — ON (1) or OFF (0). With 5 fingers you get 5 bits, which can represent 0 to 31. Let's see how it works →"
+    }
+  ]
+}

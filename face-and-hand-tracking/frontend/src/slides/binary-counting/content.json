@@ -1,0 +1,12 @@
+{
+  "layout": "binaryCount",
+  "sectionLabel": "Hands-on Challenge",
+  "title": "Counting in Binary",
+  "bits": 5,
+  "buildSteps": [
+    {}, {}, {}, {}, {}, {}, {}, {},
+    {}, {}, {}, {}, {}, {}, {}, {},
+    {}, {}, {}, {}, {}, {}, {}, {},
+    {}, {}, {}, {}, {}, {}, {}, {}
+  ]
+}

@@ -21,6 +21,8 @@ import VideoShowcaseSlide from './layouts/VideoShowcaseSlide/VideoShowcaseSlide.
 import CardGridSlide from './layouts/CardGridSlide/CardGridSlide.jsx';
 import FlowDiagramSlide from './layouts/FlowDiagramSlide/FlowDiagramSlide.jsx';
 import SplitRevealSlide from './layouts/SplitRevealSlide/SplitRevealSlide.jsx';
+import BinaryCountSlide from './layouts/BinaryCountSlide/BinaryCountSlide.jsx';
+import NumericPollSlide from './layouts/NumericPollSlide/NumericPollSlide.jsx';
 
 const layoutMap = {
   title: TitleSlide,
@@ -40,6 +42,8 @@ const layoutMap = {
   cardGrid: CardGridSlide,
   flowDiagram: FlowDiagramSlide,
   splitReveal: SplitRevealSlide,
+  binaryCount: BinaryCountSlide,
+  numericPoll: NumericPollSlide,
 };
 
 export default createSlideRenderer(layoutMap, () => presentation);

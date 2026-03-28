@@ -1,0 +1,174 @@
+.slide--numeric-poll {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.75rem 2.5rem;
+  height: 100%;
+}
+
+.slide--numeric-poll h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.np-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.np-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  min-height: 0;
+}
+
+/* Input row */
+.np-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.np-input-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.np-input {
+  width: 160px;
+  padding: 0.75rem 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 14px;
+  border: 2.5px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.np-input::-webkit-outer-spin-button,
+.np-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.np-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.np-input--done {
+  border-color: #22c55e;
+  color: #22c55e;
+}
+
+.np-submit {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 14px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+  letter-spacing: 0.02em;
+}
+
+.np-submit:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.np-submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.np-submit:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.np-submitted-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #22c55e;
+  padding: 0.75rem 1rem;
+}
+
+/* Bar chart */
+.np-results {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  min-height: 0;
+}
+
+.np-chart {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+  min-height: 0;
+}
+
+.np-bar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  min-width: 44px;
+}
+
+.np-count-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  min-height: 1.2em;
+}
+
+.np-bar {
+  width: 36px;
+  height: calc(var(--bar-frac, 0) * 160px);
+  min-height: 4px;
+  border-radius: 6px 6px 2px 2px;
+  background: var(--accent);
+  transform-origin: bottom;
+  opacity: 0.85;
+}
+
+.np-bar-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.np-total {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Live indicator */
+.np-status {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  align-self: flex-end;
+}
+
+.np-status--live {
+  color: #22c55e;
+}

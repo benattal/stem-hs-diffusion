@@ -3,6 +3,7 @@ import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import authRouter, { requirePresenter } from '../packages/core/backend/src/routes/auth.js';
 import pollRouter from '../packages/core/backend/src/routes/poll.js';
+import numericPollRouter from '../packages/core/backend/src/routes/numericPoll.js';
 import createNotesRouter from '../packages/core/backend/src/routes/notes.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -38,6 +39,7 @@ app.get('/filtering/health', (req, res) => res.json({ status: 'ok', presentation
 // Tracking API
 app.use('/tracking/api/auth', authRouter);
 app.use('/tracking/api/poll', pollRouter);
+app.use('/tracking/api/numeric-poll', numericPollRouter);
 app.use('/tracking/api/notes', requirePresenter, trackingNotesRouter);
 app.get('/tracking/health', (req, res) => res.json({ status: 'ok', presentation: 'tracking', timestamp: new Date().toISOString() }));
 
