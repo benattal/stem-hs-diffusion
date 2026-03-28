@@ -16,8 +16,8 @@
     },
     {
       "type": "image",
-      "src": "/slides/edge-why-useful/alphago.png",
-      "caption": "AlphaGo — deep learning masters the game of Go"
+      "src": "/slides/edge-why-useful/robot-manipulation.png",
+      "caption": "Finding and moving objects with robot arms"
     }
   ]
 }

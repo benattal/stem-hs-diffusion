@@ -16,7 +16,7 @@ export default function Presentation() {
   const state = useSlideState();
   const [showOverview, setShowOverview] = useState(false);
   const { isFullscreen, toggleFullscreen } = useFullscreen();
-  const { scale, isDesktop, designWidth, designHeight } = useSlideScaling();
+  const { scale, designWidth, designHeight } = useSlideScaling();
   const handlePresenterCommand = useCallback((command) => {
     if (command === 'next') state.goNext();
     if (command === 'prev') state.goPrev();
@@ -66,11 +66,11 @@ export default function Presentation() {
 
       <div
         className="slide-stage"
-        style={isDesktop ? {
+        style={{
           width: designWidth,
           height: designHeight,
           transform: `translate(-50%, -50%) scale(${scale})`,
-        } : undefined}
+        }}
       >
         <AnimatePresence mode="wait">
           <SlideRenderer
