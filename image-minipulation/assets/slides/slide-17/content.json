@@ -1,0 +1,33 @@
+{
+  "slideIndex": 17,
+  "originalSlideNum": 17,
+  "texts": [
+    "How are images formatted?"
+  ],
+  "shapes": [
+    {
+      "name": "Title 1",
+      "placeholderType": "title",
+      "texts": [
+        "How are images formatted?"
+      ]
+    },
+    {
+      "name": "Picture 3",
+      "type": "picture",
+      "embedRef": "rId3"
+    }
+  ],
+  "media": [
+    {
+      "filename": "image12.png",
+      "relId": "rId3",
+      "type": "image",
+      "size": 1360922
+    }
+  ],
+  "layoutHints": {
+    "hasTitle": true,
+    "hasPictures": true
+  }
+}

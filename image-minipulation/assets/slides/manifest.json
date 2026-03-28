@@ -1,0 +1,218 @@
+[
+  {
+    "slideDir": "slide-01",
+    "slideIndex": 1,
+    "originalSlideNum": 1,
+    "title": "Image Manipulation",
+    "mediaCount": 1,
+    "hasNotes": true,
+    "hasAnimations": false
+  },
+  {
+    "slideDir": "slide-02",
+    "slideIndex": 2,
+    "originalSlideNum": 2,
+    "title": "What is Image Manipulation?Why care about image Manipulation?",
+    "mediaCount": 0,
+    "hasNotes": true,
+    "hasAnimations": false
+  },
+  {
+    "slideDir": "slide-03",
+    "slideIndex": 3,
+    "originalSlideNum": 3,
+    "title": "Image Formatting",
+    "mediaCount": 4,
+    "hasNotes": true,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-04",
+    "slideIndex": 4,
+    "originalSlideNum": 4,
+    "title": null,
+    "mediaCount": 3,
+    "hasNotes": true,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-05",
+    "slideIndex": 5,
+    "originalSlideNum": 5,
+    "title": null,
+    "mediaCount": 3,
+    "hasNotes": true,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-06",
+    "slideIndex": 6,
+    "originalSlideNum": 6,
+    "title": null,
+    "mediaCount": 3,
+    "hasNotes": true,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-07",
+    "slideIndex": 7,
+    "originalSlideNum": 7,
+    "title": null,
+    "mediaCount": 3,
+    "hasNotes": true,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-08",
+    "slideIndex": 8,
+    "originalSlideNum": 8,
+    "title": null,
+    "mediaCount": 3,
+    "hasNotes": true,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-09",
+    "slideIndex": 9,
+    "originalSlideNum": 9,
+    "title": null,
+    "mediaCount": 3,
+    "hasNotes": true,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-10",
+    "slideIndex": 10,
+    "originalSlideNum": 10,
+    "title": null,
+    "mediaCount": 3,
+    "hasNotes": true,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-11",
+    "slideIndex": 11,
+    "originalSlideNum": 11,
+    "title": null,
+    "mediaCount": 3,
+    "hasNotes": true,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-12",
+    "slideIndex": 12,
+    "originalSlideNum": 12,
+    "title": null,
+    "mediaCount": 3,
+    "hasNotes": true,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-13",
+    "slideIndex": 13,
+    "originalSlideNum": 13,
+    "title": null,
+    "mediaCount": 3,
+    "hasNotes": true,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-14",
+    "slideIndex": 14,
+    "originalSlideNum": 14,
+    "title": null,
+    "mediaCount": 3,
+    "hasNotes": true,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-15",
+    "slideIndex": 15,
+    "originalSlideNum": 15,
+    "title": null,
+    "mediaCount": 3,
+    "hasNotes": true,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-16",
+    "slideIndex": 16,
+    "originalSlideNum": 16,
+    "title": null,
+    "mediaCount": 3,
+    "hasNotes": true,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-17",
+    "slideIndex": 17,
+    "originalSlideNum": 17,
+    "title": "How are images formatted?",
+    "mediaCount": 1,
+    "hasNotes": true,
+    "hasAnimations": false
+  },
+  {
+    "slideDir": "slide-18",
+    "slideIndex": 18,
+    "originalSlideNum": 18,
+    "title": "How are images formatted?",
+    "mediaCount": 2,
+    "hasNotes": true,
+    "hasAnimations": false
+  },
+  {
+    "slideDir": "slide-19",
+    "slideIndex": 19,
+    "originalSlideNum": 19,
+    "title": "Manipulating pixel values",
+    "mediaCount": 12,
+    "hasNotes": true,
+    "hasAnimations": false
+  },
+  {
+    "slideDir": "slide-20",
+    "slideIndex": 20,
+    "originalSlideNum": 20,
+    "title": "Manipulating pixel values",
+    "mediaCount": 9,
+    "hasNotes": true,
+    "hasAnimations": false
+  },
+  {
+    "slideDir": "slide-21",
+    "slideIndex": 21,
+    "originalSlideNum": 21,
+    "title": "Manipulating pixel positions",
+    "mediaCount": 15,
+    "hasNotes": true,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-22",
+    "slideIndex": 22,
+    "originalSlideNum": 22,
+    "title": "More complex image manipulations",
+    "mediaCount": 5,
+    "hasNotes": true,
+    "hasAnimations": true
+  },
+  {
+    "slideDir": "slide-23",
+    "slideIndex": 23,
+    "originalSlideNum": 23,
+    "title": "Intro to Google colab notebooks",
+    "mediaCount": 1,
+    "hasNotes": true,
+    "hasAnimations": false
+  },
+  {
+    "slideDir": "slide-24",
+    "slideIndex": 24,
+    "originalSlideNum": 24,
+    "title": "Activity: Image Manipulation Google colab",
+    "mediaCount": 0,
+    "hasNotes": true,
+    "hasAnimations": false
+  }
+]

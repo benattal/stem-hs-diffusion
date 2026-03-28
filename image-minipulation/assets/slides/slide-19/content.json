@@ -1,0 +1,127 @@
+{
+  "slideIndex": 19,
+  "originalSlideNum": 19,
+  "texts": [
+    "Manipulating pixel values",
+    "How would you implement these?"
+  ],
+  "shapes": [
+    {
+      "name": "Google Shape;161;p28",
+      "placeholderType": "title",
+      "texts": [
+        "Manipulating pixel values"
+      ]
+    },
+    {
+      "name": "Google Shape;183;p29",
+      "texts": [
+        "How would you implement these?"
+      ]
+    },
+    {
+      "name": "OriginalStaticColumn",
+      "type": "picture",
+      "embedRef": "rId3",
+      "linkRef": "rId4"
+    },
+    {
+      "name": "PixelAddAnimation",
+      "type": "picture",
+      "embedRef": "rId5",
+      "linkRef": "rId6"
+    },
+    {
+      "name": "PixelSubtractAnimation",
+      "type": "picture",
+      "embedRef": "rId7",
+      "linkRef": "rId8"
+    },
+    {
+      "name": "PixelInvertAnimation",
+      "type": "picture",
+      "embedRef": "rId1",
+      "linkRef": "rId2"
+    }
+  ],
+  "media": [
+    {
+      "filename": "media17.mp4",
+      "relId": "rId8",
+      "type": "video",
+      "size": 262312
+    },
+    {
+      "filename": "image17.png",
+      "relId": "rId13",
+      "type": "image",
+      "size": 516372
+    },
+    {
+      "filename": "media15.mp4",
+      "relId": "rId3",
+      "type": "video",
+      "size": 64177
+    },
+    {
+      "filename": "media17.mp4",
+      "relId": "rId7",
+      "type": "video",
+      "size": 262312
+    },
+    {
+      "filename": "image16.png",
+      "relId": "rId12",
+      "type": "image",
+      "size": 513904
+    },
+    {
+      "filename": "media14.mp4",
+      "relId": "rId2",
+      "type": "video",
+      "size": 379075
+    },
+    {
+      "filename": "media14.mp4",
+      "relId": "rId1",
+      "type": "video",
+      "size": 379075
+    },
+    {
+      "filename": "media16.mp4",
+      "relId": "rId6",
+      "type": "video",
+      "size": 240608
+    },
+    {
+      "filename": "image15.png",
+      "relId": "rId11",
+      "type": "image",
+      "size": 537198
+    },
+    {
+      "filename": "media16.mp4",
+      "relId": "rId5",
+      "type": "video",
+      "size": 240608
+    },
+    {
+      "filename": "media15.mp4",
+      "relId": "rId4",
+      "type": "video",
+      "size": 64177
+    },
+    {
+      "filename": "image18.png",
+      "relId": "rId14",
+      "type": "image",
+      "size": 61278
+    }
+  ],
+  "layoutHints": {
+    "hasTitle": true,
+    "hasPictures": true,
+    "hasGroups": true,
+    "hasVideo": true
+  }
+}

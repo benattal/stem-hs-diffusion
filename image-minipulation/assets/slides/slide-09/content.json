@@ -1,0 +1,47 @@
+{
+  "slideIndex": 9,
+  "originalSlideNum": 9,
+  "texts": [],
+  "shapes": [
+    {
+      "name": "BlurryResult",
+      "type": "picture",
+      "embedRef": "rId1",
+      "linkRef": "rId2"
+    }
+  ],
+  "media": [
+    {
+      "filename": "media6.mp4",
+      "relId": "rId2",
+      "type": "video",
+      "size": 400130
+    },
+    {
+      "filename": "media6.mp4",
+      "relId": "rId1",
+      "type": "video",
+      "size": 400130
+    },
+    {
+      "filename": "image10.png",
+      "relId": "rId5",
+      "type": "image",
+      "size": 15870
+    }
+  ],
+  "animations": [
+    {
+      "type": "buildSequence",
+      "steps": 5
+    },
+    {
+      "type": "buildSequence",
+      "steps": 5
+    }
+  ],
+  "layoutHints": {
+    "hasPictures": true,
+    "hasVideo": true
+  }
+}

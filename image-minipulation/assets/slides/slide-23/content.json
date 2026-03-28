@@ -1,0 +1,33 @@
+{
+  "slideIndex": 23,
+  "originalSlideNum": 23,
+  "texts": [
+    "Intro to Google colab notebooks"
+  ],
+  "shapes": [
+    {
+      "name": "Google Shape;199;p31",
+      "placeholderType": "title",
+      "texts": [
+        "Intro to Google colab notebooks"
+      ]
+    },
+    {
+      "name": "Google Shape;198;p31",
+      "type": "picture",
+      "embedRef": "rId3"
+    }
+  ],
+  "media": [
+    {
+      "filename": "image31.png",
+      "relId": "rId3",
+      "type": "image",
+      "size": 56021
+    }
+  ],
+  "layoutHints": {
+    "hasTitle": true,
+    "hasPictures": true
+  }
+}

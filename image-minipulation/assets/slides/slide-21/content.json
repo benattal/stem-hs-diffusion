@@ -1,0 +1,196 @@
+{
+  "slideIndex": 21,
+  "originalSlideNum": 21,
+  "texts": [
+    "Manipulating pixel positions",
+    "crop",
+    "rotate",
+    "flip horizontally",
+    "flip vertically",
+    "original",
+    "How would you implement these?"
+  ],
+  "shapes": [
+    {
+      "name": "Google Shape;161;p28",
+      "placeholderType": "title",
+      "texts": [
+        "Manipulating pixel positions"
+      ]
+    },
+    {
+      "name": "Google Shape;163;p28",
+      "texts": [
+        "crop"
+      ]
+    },
+    {
+      "name": "Google Shape;164;p28",
+      "texts": [
+        "rotate"
+      ]
+    },
+    {
+      "name": "Google Shape;164;p28",
+      "texts": [
+        "flip horizontally"
+      ]
+    },
+    {
+      "name": "Google Shape;164;p28",
+      "texts": [
+        "flip vertically"
+      ]
+    },
+    {
+      "name": "Google Shape;162;p28",
+      "texts": [
+        "original"
+      ]
+    },
+    {
+      "name": "Google Shape;183;p29",
+      "texts": [
+        "How would you implement these?"
+      ]
+    },
+    {
+      "name": "OriginalStateScene",
+      "type": "picture",
+      "embedRef": "rId1",
+      "linkRef": "rId2"
+    },
+    {
+      "name": "CropAnimatedScene",
+      "type": "picture",
+      "embedRef": "rId3",
+      "linkRef": "rId4"
+    },
+    {
+      "name": "RotateAnimatedScene",
+      "type": "picture",
+      "embedRef": "rId5",
+      "linkRef": "rId6"
+    },
+    {
+      "name": "FlipHorizontalAnimatedScene",
+      "type": "picture",
+      "embedRef": "rId7",
+      "linkRef": "rId8"
+    },
+    {
+      "name": "FlipVerticalAnimatedScene",
+      "type": "picture",
+      "embedRef": "rId9",
+      "linkRef": "rId10"
+    }
+  ],
+  "media": [
+    {
+      "filename": "media23.mp4",
+      "relId": "rId8",
+      "type": "video",
+      "size": 110814
+    },
+    {
+      "filename": "image21.png",
+      "relId": "rId13",
+      "type": "image",
+      "size": 521561
+    },
+    {
+      "filename": "media21.mp4",
+      "relId": "rId3",
+      "type": "video",
+      "size": 245314
+    },
+    {
+      "filename": "media23.mp4",
+      "relId": "rId7",
+      "type": "video",
+      "size": 110814
+    },
+    {
+      "filename": "image25.png",
+      "relId": "rId17",
+      "type": "image",
+      "size": 226874
+    },
+    {
+      "filename": "media20.mp4",
+      "relId": "rId2",
+      "type": "video",
+      "size": 50628
+    },
+    {
+      "filename": "image24.png",
+      "relId": "rId16",
+      "type": "image",
+      "size": 228177
+    },
+    {
+      "filename": "media20.mp4",
+      "relId": "rId1",
+      "type": "video",
+      "size": 50628
+    },
+    {
+      "filename": "media22.mp4",
+      "relId": "rId6",
+      "type": "video",
+      "size": 192403
+    },
+    {
+      "filename": "media22.mp4",
+      "relId": "rId5",
+      "type": "video",
+      "size": 192403
+    },
+    {
+      "filename": "image23.png",
+      "relId": "rId15",
+      "type": "image",
+      "size": 212947
+    },
+    {
+      "filename": "media24.mp4",
+      "relId": "rId10",
+      "type": "video",
+      "size": 105366
+    },
+    {
+      "filename": "media21.mp4",
+      "relId": "rId4",
+      "type": "video",
+      "size": 245314
+    },
+    {
+      "filename": "media24.mp4",
+      "relId": "rId9",
+      "type": "video",
+      "size": 105366
+    },
+    {
+      "filename": "image22.png",
+      "relId": "rId14",
+      "type": "image",
+      "size": 515184
+    }
+  ],
+  "animations": [
+    {
+      "type": "buildSequence",
+      "steps": 5
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    }
+  ],
+  "layoutHints": {
+    "hasTitle": true,
+    "hasPictures": true,
+    "hasGroups": true,
+    "hasVideo": true
+  }
+}

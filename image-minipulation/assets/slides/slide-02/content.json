@@ -1,0 +1,21 @@
+{
+  "slideIndex": 2,
+  "originalSlideNum": 2,
+  "texts": [
+    "What is Image Manipulation?Why care about image Manipulation?"
+  ],
+  "shapes": [
+    {
+      "name": "Google Shape;60;p14",
+      "placeholderType": "ctrTitle",
+      "texts": [
+        "What is Image Manipulation?Why care about image Manipulation?"
+      ]
+    }
+  ],
+  "media": [],
+  "layoutHints": {
+    "hasTitle": true,
+    "centerTitle": true
+  }
+}
