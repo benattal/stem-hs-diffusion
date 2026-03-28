@@ -27,6 +27,23 @@ export default function ColabLinkSlide({ slide }) {
         {slide.description}
       </motion.p>
 
+      {slide.steps && (
+        <motion.ol
+          className="colab-steps"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.25, duration: 0.4 }}
+        >
+          {slide.steps.map((step, i) => (
+            <li key={i} className="colab-step">
+              {step.url
+                ? <a href={step.url} target="_blank" rel="noopener noreferrer">{step.text}</a>
+                : step.text}
+            </li>
+          ))}
+        </motion.ol>
+      )}
+
       <motion.div
         className="colab-link-container"
         initial={{ opacity: 0 }}

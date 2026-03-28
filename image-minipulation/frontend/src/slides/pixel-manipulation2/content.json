@@ -1,0 +1,10 @@
+{
+  "layout": "threeVideo",
+  "sectionLabel": "Intensity Operations",
+  "title": "Pixel Manipulation",
+  "videos": [
+    { "src": "/slides/pixel-manipulation2/PixelMultAnimation.mp4", "label": "Increasing Contrast" },
+    { "src": "/slides/pixel-manipulation2/PixelDivAnimation.mp4", "label": "Decreasing Contrast" },
+    { "src": "/slides/pixel-manipulation2/PixelInvertAnimation.mp4", "label": "Inverting the Image" }
+  ]
+}

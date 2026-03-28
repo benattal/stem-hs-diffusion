@@ -3,11 +3,11 @@
   "sectionLabel": "Intensity Operations",
   "title": "Think About It",
   "pollId": "inverse-operation",
-  "question": "The inverse operation computes (255 - pixel value) for every pixel. What happens to a pixel that was originally 0 (pure black)?",
+  "question": "The inverse operation computes (255 - pixel value) for every channel. What happens to a pixel with R=0, G=0, B=0?",
   "options": [
-    "It stays 0 (black)",
-    "It becomes 255 (white)",
-    "It becomes 128 (gray)",
+    "R:0, G:0, B:0 — stays black",
+    "R:255, G:255, B:255 — becomes white",
+    "R:128, G:128, B:128 — becomes gray",
     "It becomes negative"
   ],
   "presetDistribution": [0, 0, 0, 0]

@@ -23,29 +23,23 @@
     {
       "id": "pixels",
       "title": "Pixels & Color Channels",
-      "slides": ["outline-pixels", "pixel-zoom"]
+      "slides": ["pixel-zoom","pixel-zoom2"]
     },
     {
       "id": "intensity-ops",
       "title": "Intensity Operations",
       "slides": [
-        "outline-intensity",
-        "histogram-add-subtract",
-        "histogram-add-subtract-poll", "histogram-add-subtract-poll-results",
-        "histogram-multiply-divide",
-        "image-inverse",
+        "pixel-manipulation1", "histogram-add-subtract-poll", "histogram-add-subtract-poll-results", "pixel-manipulation2",
         "inverse-poll", "inverse-poll-results"
       ]
     },
     {
       "id": "geometric",
-      "title": "Geometric Transformations",
+      "title": "Position Transformations",
       "slides": [
         "outline-geometric",
         "geometric-transforms",
-        "crop-poll", "crop-poll-results",
-        "rotation-poll", "rotation-poll-results",
-        "flip-poll", "flip-poll-results"
+        "crop-poll", "crop-poll-results"
       ]
     },
     {

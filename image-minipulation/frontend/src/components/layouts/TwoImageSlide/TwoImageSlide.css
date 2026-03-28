@@ -1,4 +1,4 @@
-.slide--pixel-zoom {
+.slide--two-image {
   width: 100%;
   flex: 1;
   display: flex;
@@ -8,7 +8,7 @@
   overflow: hidden;
 }
 
-.pixel-zoom__title {
+.two-image__title {
   color: var(--accent, #6c63ff);
   font-size: 1.55rem;
   font-weight: 700;
@@ -18,18 +18,19 @@
   flex-shrink: 0;
 }
 
-.pixel-zoom__body {
+.two-image__body {
   flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
   width: 100%;
   min-height: 0;
+  gap: 0;
 }
 
-.pixel-zoom__image {
-  width: 100%;
+.two-image__img {
+  flex: 1;
+  min-width: 0;
+  width: 50%;
   height: 100%;
   object-fit: contain;
-  border-radius: 8px;
 }
