@@ -1,0 +1,1 @@
+Everything so far used positive values. This kernel has −1s on the left and +1s on the right: it subtracts the left side of a neighborhood from the right side. Wherever brightness changes sharply left-to-right, you get a large value; wherever it's flat, the positives and negatives cancel to zero. Switch preset to Sobel Vertical to show the same idea rotated 90 degrees.
