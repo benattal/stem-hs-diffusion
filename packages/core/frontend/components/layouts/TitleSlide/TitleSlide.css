@@ -3,6 +3,10 @@
   padding-top: 60px;
 }
 
+.slide-content:has(.slide--title) {
+  justify-content: center;
+}
+
 .slide--title {
   text-align: center;
   justify-content: center;

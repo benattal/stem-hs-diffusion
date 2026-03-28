@@ -1,3 +1,4 @@
+import dotenv from 'dotenv';
 import express from 'express';
 import { createServer as createViteServer } from 'vite';
 import { fileURLToPath } from 'url';
@@ -9,6 +10,8 @@ import createNotesRouter from '../packages/core/backend/src/routes/notes.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
+
+dotenv.config({ path: join(root, '.env') });
 
 const app = express();
 
