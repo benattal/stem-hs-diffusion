@@ -112,12 +112,42 @@ app.get('/', (req, res) => {
     .card-icon { font-size: 2.5rem; margin-bottom: 1rem; }
     .card h2 { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; text-align: center; }
     .card p { font-size: 0.85rem; color: #9898b0; margin-bottom: 0; text-align: center; }
+    .qr-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    .qr-section canvas {
+      padding: 1rem;
+      background: white;
+      border-radius: 12px;
+      margin-bottom: 0.75rem;
+    }
+    .qr-section a {
+      color: #00d2ff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .qr-section a:hover { text-decoration: underline; }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"><\/script>
 </head>
 <body>
   <h1>Vision Workshop</h1>
   <p>Choose a presentation (dev mode)</p>
+  <div class="qr-section">
+    <canvas id="qr"></canvas>
+    <a href="https://www.cv-workshop.ca" target="_blank" rel="noopener noreferrer">www.cv-workshop.ca</a>
+  </div>
+  <script>new QRious({ element: document.getElementById('qr'), value: 'https://www.cv-workshop.ca', size: 180 });<\/script>
   <div class="cards">
+    <a class="card" href="/image-manip/">
+      <div class="card-icon">&#x1f5bc;</div>
+      <h2>Image Manipulation</h2>
+      <p>Crop, rotate, recolor &amp; transform images</p>
+    </a>
     <a class="card" href="/filtering/">
       <div class="card-icon">&#x1f50d;</div>
       <h2>Image Filtering</h2>
@@ -132,11 +162,6 @@ app.get('/', (req, res) => {
       <div class="card-icon">&#x1f3a8;</div>
       <h2>Generative AI &amp; Diffusion</h2>
       <p>How to make images with generative AI</p>
-    </a>
-    <a class="card" href="/image-manip/">
-      <div class="card-icon">&#x1f5bc;</div>
-      <h2>Image Manipulation</h2>
-      <p>Crop, rotate, recolor &amp; transform images</p>
     </a>
   </div>
 </body>

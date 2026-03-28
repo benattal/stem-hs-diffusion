@@ -50,7 +50,8 @@
       "title": "From Filters to Deep Learning",
       "slides": [
         "edge-dnn-connection",
-        "edge-why-useful"
+        "edge-why-useful",
+        "colab-notebook"
       ]
     }
   ]
