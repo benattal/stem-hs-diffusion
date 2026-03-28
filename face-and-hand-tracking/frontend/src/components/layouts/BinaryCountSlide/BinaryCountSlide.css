@@ -96,25 +96,3 @@
   text-align: center;
   line-height: 1;
 }
-
-/* Dots */
-.bc-dots {
-  display: flex;
-  gap: 5px;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: 300px;
-}
-
-.bc-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--border);
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.bc-dot--active {
-  background: var(--accent);
-  transform: scale(1.4);
-}

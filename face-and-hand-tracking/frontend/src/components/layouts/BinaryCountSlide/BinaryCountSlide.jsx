@@ -73,12 +73,6 @@ export default function BinaryCountSlide({ slide, buildStep }) {
         </AnimatePresence>
       </div>
 
-      {/* Progress dots */}
-      <div className="bc-dots">
-        {Array.from({ length: total }).map((_, i) => (
-          <div key={i} className={`bc-dot${i === n ? ' bc-dot--active' : ''}`} />
-        ))}
-      </div>
     </div>
   );
 }
