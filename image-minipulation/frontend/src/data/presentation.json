@@ -1,0 +1,62 @@
+{
+  "title": "Image Manipulation",
+  "authors": [],
+  "defaultTransition": "fade",
+
+  "sections": [
+    {
+      "id": "intro",
+      "title": "Introduction",
+      "slides": ["title", "outline-intro", "what-is-image-manipulation", "why-it-matters"]
+    },
+    {
+      "id": "image-formation",
+      "title": "Image Formation",
+      "slides": [
+        "outline-image-formation",
+        "manim-01", "manim-02", "manim-03", "manim-04",
+        "manim-05", "manim-06", "manim-07", "manim-08",
+        "pinhole-poll", "pinhole-poll-results",
+        "manim-09", "manim-10", "manim-11", "manim-12", "manim-13"
+      ]
+    },
+    {
+      "id": "pixels",
+      "title": "Pixels & Color Channels",
+      "slides": ["outline-pixels", "pixel-zoom"]
+    },
+    {
+      "id": "intensity-ops",
+      "title": "Intensity Operations",
+      "slides": [
+        "outline-intensity",
+        "histogram-add-subtract",
+        "histogram-add-subtract-poll", "histogram-add-subtract-poll-results",
+        "histogram-multiply-divide",
+        "image-inverse",
+        "inverse-poll", "inverse-poll-results"
+      ]
+    },
+    {
+      "id": "geometric",
+      "title": "Geometric Transformations",
+      "slides": [
+        "outline-geometric",
+        "geometric-transforms",
+        "crop-poll", "crop-poll-results",
+        "rotation-poll", "rotation-poll-results",
+        "flip-poll", "flip-poll-results"
+      ]
+    },
+    {
+      "id": "advanced",
+      "title": "Advanced Techniques",
+      "slides": ["outline-advanced", "retouching-slider", "panorama-builder"]
+    },
+    {
+      "id": "hands-on",
+      "title": "Hands-On Activity",
+      "slides": ["colab-notebook"]
+    }
+  ]
+}
