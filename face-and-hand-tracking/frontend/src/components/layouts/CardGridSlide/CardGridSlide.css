@@ -93,11 +93,6 @@
   line-height: 1.45;
 }
 
-@media (max-width: 800px) {
-  .cg-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
 /* Image cycling mode */
 .slide--card-grid--image {

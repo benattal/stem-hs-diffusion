@@ -181,13 +181,3 @@
   margin-top: auto;
 }
 
-@media (max-width: 800px) {
-  .fd-pipeline {
-    flex-direction: column;
-  }
-  .fd-arrow {
-    transform: rotate(90deg);
-    width: 40px;
-    margin: 0.25rem 0;
-  }
-}
