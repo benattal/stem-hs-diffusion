@@ -3,6 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import pollRouter from './routes/poll.js';
 import numericPollRouter from './routes/numericPoll.js';
+import slideSyncRouter from './routes/slideSync.js';
 import createNotesRouter from './routes/notes.js';
 import authRouter, { requirePresenter } from './routes/auth.js';
 
@@ -39,6 +40,7 @@ export function createApp(slidesDir) {
   app.use('/api/auth', authRouter);
   app.use('/api/poll', pollRouter);
   app.use('/api/numeric-poll', numericPollRouter);
+  app.use('/api/slide-sync', slideSyncRouter);
   app.use('/api/notes', requirePresenter, createNotesRouter(slidesDir));
 
   app.get('/', (req, res) => {

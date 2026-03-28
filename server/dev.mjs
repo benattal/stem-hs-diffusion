@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import authRouter, { requirePresenter } from '../packages/core/backend/src/routes/auth.js';
 import pollRouter from '../packages/core/backend/src/routes/poll.js';
+import slideSyncRouter from '../packages/core/backend/src/routes/slideSync.js';
 import createNotesRouter from '../packages/core/backend/src/routes/notes.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -23,21 +24,25 @@ const imageManipNotesRouter = createNotesRouter(join(root, 'image-minipulation/f
 // ── Backend API routes ─────────────────────────────────────────
 app.use('/diffusion/api/auth', authRouter);
 app.use('/diffusion/api/poll', pollRouter);
+app.use('/diffusion/api/slide-sync', slideSyncRouter);
 app.use('/diffusion/api/notes', requirePresenter, diffusionNotesRouter);
 app.get('/diffusion/health', (req, res) => res.json({ status: 'ok', presentation: 'diffusion' }));
 
 app.use('/filtering/api/auth', authRouter);
 app.use('/filtering/api/poll', pollRouter);
+app.use('/filtering/api/slide-sync', slideSyncRouter);
 app.use('/filtering/api/notes', requirePresenter, filteringNotesRouter);
 app.get('/filtering/health', (req, res) => res.json({ status: 'ok', presentation: 'filtering' }));
 
 app.use('/tracking/api/auth', authRouter);
 app.use('/tracking/api/poll', pollRouter);
+app.use('/tracking/api/slide-sync', slideSyncRouter);
 app.use('/tracking/api/notes', requirePresenter, trackingNotesRouter);
 app.get('/tracking/health', (req, res) => res.json({ status: 'ok', presentation: 'tracking' }));
 
 app.use('/image-manip/api/auth', authRouter);
 app.use('/image-manip/api/poll', pollRouter);
+app.use('/image-manip/api/slide-sync', slideSyncRouter);
 app.use('/image-manip/api/notes', requirePresenter, imageManipNotesRouter);
 app.get('/image-manip/health', (req, res) => res.json({ status: 'ok', presentation: 'image-manip' }));
 

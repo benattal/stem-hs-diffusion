@@ -66,6 +66,20 @@ export default function useSlideState() {
     }
   }, [currentIndex, totalSlides]);
 
+  const setSlidePosition = useCallback((index, step) => {
+    if (index < 0 || index >= totalSlides) return;
+    setCurrentIndex(prev => {
+      setDirection(index > prev ? 1 : index < prev ? -1 : 1);
+      return index;
+    });
+    setBuildStep(step);
+  }, [totalSlides]);
+
+  const resetPosition = useCallback(() => {
+    sessionStorage.removeItem('slide-index');
+    sessionStorage.removeItem('slide-build');
+  }, []);
+
   return {
     currentSlide,
     currentIndex,
@@ -77,6 +91,8 @@ export default function useSlideState() {
     goNext,
     goPrev,
     goToSlide,
+    setSlidePosition,
+    resetPosition,
     isFirst: currentIndex === 0 && buildStep === 0,
     isLast: currentIndex === totalSlides - 1 && buildStep >= maxBuildSteps - 1,
   };

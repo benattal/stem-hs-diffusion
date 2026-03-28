@@ -61,10 +61,10 @@ The presenter window shows:
 
 Shared presentation framework used by all presentations via Vite alias `@core`.
 
-- **Hooks** (8): useSlideState, useKeyboardNavigation, useSwipeNavigation, useFullscreen, useSlideScaling, usePresentationSync, usePresenterMode, usePollData
+- **Hooks** (9): useSlideState, useKeyboardNavigation, useSwipeNavigation, useFullscreen, useSlideScaling, usePresentationSync, usePresenterMode, usePollData, usePresenterControlled
 - **Components**: Navigation, SlideOverview, ProgressBar, PresenterView, PreviewMode, SlideRenderer factory
 - **Layouts** (13): TitleSlide, ContentSlide, OutlineSlide, ProgressiveBuildSlide, DiscussionSlide, DiagramSlide, MediaSlide, ColabLinkSlide, PollSlide, PollResultsSlide, GenAiDemoSlide, GenAiOverviewSlide, IllustratedPointsSlide
-- **Backend**: Express server factory with auth (JWT), live polling (SSE), and presenter notes routes
+- **Backend**: Express server factory with auth (JWT), live polling (SSE), slide sync (SSE), and presenter notes routes
 
 ---
 
@@ -303,6 +303,19 @@ To disable audience voting on polls, set the following environment variables (in
 | `VITE_VOTING_DISABLED=true` | Frontend | Vote buttons become no-ops |
 
 Both should be set together. To re-enable voting, set them to `false` or remove them.
+
+### Presenter-Controlled Navigation
+
+When enabled, only the presenter can advance slides. Students viewing the site automatically follow the presenter's current slide in real-time, with smooth transitions. All student navigation (keyboard, touch, click) is disabled.
+
+| Variable | Layer | Effect |
+|----------|-------|--------|
+| `PRESENTER_CONTROLLED=true` | Backend | Enables slide-sync SSE endpoint |
+| `VITE_PRESENTER_CONTROLLED=true` | Frontend | Students follow presenter, navigation disabled |
+
+Both should be set together. To let students navigate freely, set them to `false`.
+
+The presenter must be logged in (see [Presenter Password](#presenter-password)) for their slide position to be broadcast. Students connect automatically via Server-Sent Events.
 
 #### Alternative: Deploy presentations independently
 

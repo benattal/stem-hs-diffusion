@@ -26,7 +26,7 @@ server/                  — Gateway server (production + dev)
 
 Shared presentation framework used by all presentations via Vite alias `@core`.
 
-- `hooks/` — All 8 hooks (useSlideState, useKeyboardNavigation, useSwipeNavigation, useFullscreen, useSlideScaling, usePresentationSync, usePresenterMode, usePollData)
+- `hooks/` — All 9 hooks (useSlideState, useKeyboardNavigation, useSwipeNavigation, useFullscreen, useSlideScaling, usePresentationSync, usePresenterMode, usePollData, usePresenterControlled)
 - `components/` — Shared components (Navigation, SlideOverview, ProgressBar, PresenterView, PreviewMode)
 - `components/SlideRenderer.jsx` — `createSlideRenderer(layoutMap, getPresentation)` factory
 - `components/layouts/` — 13 shared layout components (TitleSlide, ContentSlide, OutlineSlide, ProgressiveBuildSlide, DiscussionSlide, DiagramSlide, MediaSlide, ColabLinkSlide, PollSlide, PollResultsSlide, GenAiDemoSlide, GenAiOverviewSlide, IllustratedPointsSlide)
@@ -40,8 +40,10 @@ Shared presentation framework used by all presentations via Vite alias `@core`.
 - `app.js` — `createApp(slidesDir)` factory for standalone Express server
 - `routes/auth.js` — Presenter authentication (password verify + JWT token)
 - `routes/poll.js` — Live polling with SSE streaming
+- `routes/slideSync.js` — Presenter-controlled slide sync with SSE streaming
 - `routes/notes.js` — `createNotesRouter(slidesDir)` factory for saving presenter notes
 - `store/pollStore.js` — In-memory poll state with pub/sub
+- `store/slideSyncStore.js` — In-memory slide position state with SSE pub/sub (per presentation)
 
 ### Vite Aliases
 
@@ -171,6 +173,15 @@ Voting on polls can be disabled project-wide via environment variables in the ro
 - `VITE_VOTING_DISABLED=true` — Frontend: `submitVote` in `usePollData` becomes a no-op; hook exposes `votingDisabled` boolean for components
 
 Both Vite configs set `envDir` to the repo root so presentations share the same `.env`. The `usePollData` hook returns `votingDisabled` so poll components can optionally reflect the disabled state in their UI.
+
+### Presenter-Controlled Navigation
+
+When enabled, only the presenter can advance slides. Students automatically follow the presenter's position via server-side SSE, with smooth transitions. Controlled via environment variables in the root `.env` file:
+
+- `PRESENTER_CONTROLLED=true` — Backend: enables the slide-sync SSE endpoint and position POST
+- `VITE_PRESENTER_CONTROLLED=true` — Frontend: students subscribe to SSE stream, navigation controls are disabled
+
+The `usePresenterControlled` hook handles both sides: presenters POST their position on every change, students receive updates via EventSource. The backend route is at `/{presentation}/api/slide-sync/{presentationId}/stream` (SSE) and `/{presentation}/api/slide-sync/{presentationId}/position` (POST, presenter-only).
 
 ## Presentation-Specific Extras
 

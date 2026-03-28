@@ -7,6 +7,7 @@ import useFullscreen from '@core/hooks/useFullscreen.js';
 import useSlideScaling from '@core/hooks/useSlideScaling.js';
 import { useSyncBroadcaster } from '@core/hooks/usePresentationSync.js';
 import { usePresenterMode } from '@core/hooks/usePresenterMode.jsx';
+import usePresenterControlled from '@core/hooks/usePresenterControlled.js';
 import SlideRenderer from './SlideRenderer.jsx';
 import Navigation from '@core/components/Navigation.jsx';
 import ProgressBar from '@core/components/ProgressBar.jsx';
@@ -35,14 +36,32 @@ export default function Presentation() {
 
   const { isPresenter, token } = usePresenterMode();
 
+  const { isFollowing } = usePresenterControlled({
+    currentIndex: state.currentIndex,
+    buildStep: state.buildStep,
+    setSlidePosition: state.setSlidePosition,
+    isPresenter,
+    token,
+    presentationId: 'diffusion',
+  });
+
+  const noop = useCallback(() => {}, []);
+  const goNext = isFollowing ? noop : state.goNext;
+  const goPrev = isFollowing ? noop : state.goPrev;
+
+  const goToLanding = useCallback(() => {
+    if (isPresenter) state.resetPosition();
+    window.location.href = import.meta.env.BASE_URL + '../';
+  }, [isPresenter, state.resetPosition]);
+
   const toggleNotes = useCallback(() => {
     openPresenterWindow();
   }, [openPresenterWindow]);
 
   useKeyboardNavigation({
-    goNext: state.goNext,
-    goPrev: state.goPrev,
-    toggleOverview,
+    goNext,
+    goPrev,
+    toggleOverview: isFollowing ? noop : toggleOverview,
     toggleFullscreen,
     openPresenterWindow: toggleNotes,
     currentSlide: state.currentSlide,
@@ -51,8 +70,8 @@ export default function Presentation() {
   });
 
   useSwipeNavigation({
-    goNext: state.goNext,
-    goPrev: state.goPrev,
+    goNext,
+    goPrev,
   });
 
   const handleOverviewSelect = useCallback((index) => {
@@ -88,14 +107,22 @@ export default function Presentation() {
         totalSlides={state.totalSlides}
         flatSlides={state.flatSlides}
         sectionTitle={state.currentSlide?.sectionTitle}
-        goNext={state.goNext}
-        goPrev={state.goPrev}
+        goNext={goNext}
+        goPrev={goPrev}
         goToSlide={state.goToSlide}
         isFirst={state.isFirst}
         isLast={state.isLast}
+        disabled={isFollowing}
       />
 
       <div className="toolbar-buttons">
+        <button
+          className="toolbar-btn"
+          onClick={goToLanding}
+          title="Back to landing page"
+        >
+          &#8592;
+        </button>
         <button
           className="toolbar-btn"
           onClick={toggleFullscreen}
