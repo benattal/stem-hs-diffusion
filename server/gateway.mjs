@@ -102,6 +102,7 @@ app.get('/', (req, res) => {
       background: linear-gradient(135deg, #e8e8f0 0%, #00d2ff 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      text-align: center;
     }
     p { color: #9898b0; margin-bottom: 2.5rem; }
     .cards {
