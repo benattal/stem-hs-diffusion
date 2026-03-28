@@ -18,6 +18,7 @@ app.use(express.json());
 const diffusionNotesRouter = createNotesRouter(join(root, 'diffusion/frontend/src/slides'));
 const filteringNotesRouter = createNotesRouter(join(root, 'filtering/frontend/src/slides'));
 const trackingNotesRouter = createNotesRouter(join(root, 'face-and-hand-tracking/frontend/src/slides'));
+const imageManipNotesRouter = createNotesRouter(join(root, 'image-minipulation/frontend/src/slides'));
 
 // ── Backend API routes ─────────────────────────────────────────
 app.use('/diffusion/api/auth', authRouter);
@@ -34,6 +35,11 @@ app.use('/tracking/api/auth', authRouter);
 app.use('/tracking/api/poll', pollRouter);
 app.use('/tracking/api/notes', requirePresenter, trackingNotesRouter);
 app.get('/tracking/health', (req, res) => res.json({ status: 'ok', presentation: 'tracking' }));
+
+app.use('/image-manip/api/auth', authRouter);
+app.use('/image-manip/api/poll', pollRouter);
+app.use('/image-manip/api/notes', requirePresenter, imageManipNotesRouter);
+app.get('/image-manip/health', (req, res) => res.json({ status: 'ok', presentation: 'image-manip' }));
 
 // ── Vite dev servers in middleware mode (HMR enabled) ──────────
 const diffusionVite = await createViteServer({
@@ -57,9 +63,17 @@ const trackingVite = await createViteServer({
   appType: 'spa',
 });
 
+const imageManipVite = await createViteServer({
+  root: join(root, 'image-minipulation/frontend'),
+  base: '/image-manip/',
+  server: { middlewareMode: true, hmr: { port: 24681 } },
+  appType: 'spa',
+});
+
 app.use('/diffusion', diffusionVite.middlewares);
 app.use('/filtering', filteringVite.middlewares);
 app.use('/tracking', trackingVite.middlewares);
+app.use('/image-manip', imageManipVite.middlewares);
 
 // ── Landing page ──────────────────────────────────────────────
 app.get('/', (req, res) => {
@@ -119,6 +133,11 @@ app.get('/', (req, res) => {
       <h2>Generative AI &amp; Diffusion</h2>
       <p>How to make images with generative AI</p>
     </a>
+    <a class="card" href="/image-manip/">
+      <div class="card-icon">&#x1f5bc;</div>
+      <h2>Image Manipulation</h2>
+      <p>Crop, rotate, recolor &amp; transform images</p>
+    </a>
   </div>
 </body>
 </html>`);
@@ -135,6 +154,7 @@ const server = app.listen(PORT, () => {
   console.log(`  http://localhost:${PORT}/diffusion/   Diffusion (HMR)`);
   console.log(`  http://localhost:${PORT}/filtering/   Filtering (HMR)`);
   console.log(`  http://localhost:${PORT}/tracking/    Tracking (HMR)`);
+  console.log(`  http://localhost:${PORT}/image-manip/ Image Manipulation (HMR)`);
   console.log('='.repeat(60));
 });
 
@@ -142,11 +162,13 @@ process.on('SIGTERM', () => {
   diffusionVite.close();
   filteringVite.close();
   trackingVite.close();
+  imageManipVite.close();
   server.close(() => process.exit(0));
 });
 process.on('SIGINT', () => {
   diffusionVite.close();
   filteringVite.close();
   trackingVite.close();
+  imageManipVite.close();
   server.close(() => process.exit(0));
 });
