@@ -1,0 +1,15 @@
+{
+  "layout": "panoramaBuilder",
+  "sectionLabel": "Advanced Techniques",
+  "title": "Panorama Stitching",
+  "subtitle": "Drag the images into the correct order to build a panorama",
+  "images": [
+    { "src": "/slides/panorama-builder/S1.jpg" },
+    { "src": "/slides/panorama-builder/S2.jpg" },
+    { "src": "/slides/panorama-builder/S3.jpg" },
+    { "src": "/slides/panorama-builder/S5.jpg" },
+    { "src": "/slides/panorama-builder/S6.jpg" }
+  ],
+  "targetOrder": [0, 1, 2, 3, 4],
+  "overlapPercent": 30
+}

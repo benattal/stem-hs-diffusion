@@ -1,0 +1,90 @@
+{
+  "slideIndex": 3,
+  "originalSlideNum": 3,
+  "texts": [
+    "Image Formatting",
+    "Why are images formatted this way?",
+    "Image Formation gives us the intuition..."
+  ],
+  "shapes": [
+    {
+      "name": "Google Shape;126;p25",
+      "placeholderType": "title",
+      "texts": [
+        "Image Formatting"
+      ]
+    },
+    {
+      "name": "Google Shape;65;p15",
+      "texts": [
+        "Why are images formatted this way?",
+        "Image Formation gives us the intuition..."
+      ]
+    },
+    {
+      "name": "Picture 1",
+      "type": "picture",
+      "embedRef": "rId3"
+    },
+    {
+      "name": "Picture 2",
+      "type": "picture",
+      "embedRef": "rId4"
+    },
+    {
+      "name": "Picture 3",
+      "type": "picture",
+      "embedRef": "rId5"
+    },
+    {
+      "name": "Picture 7",
+      "type": "picture",
+      "embedRef": "rId6"
+    }
+  ],
+  "media": [
+    {
+      "filename": "image2.gif",
+      "relId": "rId3",
+      "type": "gif",
+      "size": 18033
+    },
+    {
+      "filename": "image5.png",
+      "relId": "rId6",
+      "type": "image",
+      "size": 6443297
+    },
+    {
+      "filename": "image4.png",
+      "relId": "rId5",
+      "type": "image",
+      "size": 31942
+    },
+    {
+      "filename": "image3.png",
+      "relId": "rId4",
+      "type": "image",
+      "size": 6331
+    }
+  ],
+  "animations": [
+    {
+      "type": "animEffect",
+      "transition": "in",
+      "filter": "fade"
+    },
+    {
+      "type": "buildSequence",
+      "steps": 6
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    }
+  ],
+  "layoutHints": {
+    "hasTitle": true,
+    "hasPictures": true
+  }
+}

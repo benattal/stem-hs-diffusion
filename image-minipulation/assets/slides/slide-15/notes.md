@@ -1,0 +1,1 @@
+Speaking of image processing, after the sensor reads the physical RGB intensity values at each pixel, the measured raw image is processed through an image signal processor. This is a pipeline of operations done on the image to make it more perceptually appealing.

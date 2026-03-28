@@ -1,6 +1,17 @@
 import { motion } from 'framer-motion';
 import './IllustratedPointsSlide.css';
 
+/** Parse **bold** markdown into React elements */
+function parseBold(text) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={i}>{part.slice(2, -2)}</strong>;
+    }
+    return part;
+  });
+}
+
 function Badge({ type }) {
   const isGood = type === 'check';
   return (
@@ -73,6 +84,14 @@ function PointVisual({ visual }) {
     );
   }
 
+  if (visual.type === 'image') {
+    return (
+      <div className="ip-single-image">
+        <img src={visual.src} alt="" />
+      </div>
+    );
+  }
+
   return null;
 }
 
@@ -103,7 +122,7 @@ export default function IllustratedPointsSlide({ slide, buildStep }) {
             >
               <div className="ip-point-text">
                 <span className="ip-point-number">{i + 1}</span>
-                <span>{point.text}</span>
+                <span>{parseBold(point.text)}</span>
               </div>
               {point.visual && (
                 <div className="ip-point-visual">

@@ -1,0 +1,117 @@
+{
+  "slideIndex": 22,
+  "originalSlideNum": 22,
+  "texts": [
+    "More complex image manipulations",
+    "photo retouching",
+    "panoramas"
+  ],
+  "shapes": [
+    {
+      "name": "Google Shape;192;p30",
+      "placeholderType": "title",
+      "texts": [
+        "More complex image manipulations"
+      ]
+    },
+    {
+      "name": "Google Shape;155;p27",
+      "texts": [
+        "photo retouching"
+      ]
+    },
+    {
+      "name": "Google Shape;155;p27",
+      "texts": [
+        "panoramas"
+      ]
+    },
+    {
+      "name": "Picture 1",
+      "type": "picture",
+      "embedRef": "rId3"
+    },
+    {
+      "name": "Picture 4",
+      "type": "picture",
+      "embedRef": "rId4"
+    },
+    {
+      "name": "Picture 6",
+      "type": "picture",
+      "embedRef": "rId5"
+    },
+    {
+      "name": "Picture 3",
+      "type": "picture",
+      "embedRef": "rId6"
+    },
+    {
+      "name": "Picture 11",
+      "type": "picture",
+      "embedRef": "rId7"
+    }
+  ],
+  "media": [
+    {
+      "filename": "image26.png",
+      "relId": "rId3",
+      "type": "image",
+      "size": 328451
+    },
+    {
+      "filename": "image30.png",
+      "relId": "rId7",
+      "type": "image",
+      "size": 4879035
+    },
+    {
+      "filename": "image29.jpeg",
+      "relId": "rId6",
+      "type": "image",
+      "size": 71871
+    },
+    {
+      "filename": "image28.png",
+      "relId": "rId5",
+      "type": "image",
+      "size": 1431310
+    },
+    {
+      "filename": "image27.jpeg",
+      "relId": "rId4",
+      "type": "image",
+      "size": 748102
+    }
+  ],
+  "animations": [
+    {
+      "type": "buildSequence",
+      "steps": 21
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    },
+    {
+      "type": "set",
+      "raw": "visibility change"
+    }
+  ],
+  "layoutHints": {
+    "hasTitle": true,
+    "hasPictures": true
+  }
+}

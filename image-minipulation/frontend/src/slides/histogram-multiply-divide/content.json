@@ -1,0 +1,10 @@
+{
+  "layout": "videoCompare",
+  "sectionLabel": "Intensity Operations",
+  "title": "More Pixel Value Operations",
+  "videos": [
+    { "src": "/slides/histogram-multiply-divide/multiply.mp4", "label": "Multiply by constant (\u00d72)" },
+    { "src": "/slides/histogram-multiply-divide/divide.mp4", "label": "Divide by constant (\u00f72)" }
+  ],
+  "layout_mode": "two-up"
+}

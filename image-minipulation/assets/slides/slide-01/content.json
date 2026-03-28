@@ -1,0 +1,34 @@
+{
+  "slideIndex": 1,
+  "originalSlideNum": 1,
+  "texts": [
+    "Image Manipulation"
+  ],
+  "shapes": [
+    {
+      "name": "Google Shape;54;p13",
+      "placeholderType": "ctrTitle",
+      "texts": [
+        "Image Manipulation"
+      ]
+    },
+    {
+      "name": "Picture 2",
+      "type": "picture",
+      "embedRef": "rId3"
+    }
+  ],
+  "media": [
+    {
+      "filename": "image1.png",
+      "relId": "rId3",
+      "type": "image",
+      "size": 233580
+    }
+  ],
+  "layoutHints": {
+    "hasTitle": true,
+    "centerTitle": true,
+    "hasPictures": true
+  }
+}

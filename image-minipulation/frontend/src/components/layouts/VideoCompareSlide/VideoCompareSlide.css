@@ -1,0 +1,81 @@
+.slide--video-compare {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.vc-title {
+  margin: 0 0 4px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary, #fff);
+  text-align: center;
+}
+
+.vc-subtitle {
+  margin: 0 0 16px;
+  font-size: 1.1rem;
+  color: var(--text-primary, #ccc);
+  opacity: 0.75;
+  text-align: center;
+}
+
+.vc-row {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+  justify-content: center;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+}
+
+.vc-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex: 1;
+  overflow: hidden;
+}
+
+.vc-row--single .vc-item {
+  max-width: 780px;
+}
+
+.vc-row--two-up .vc-item {
+  max-width: 560px;
+}
+
+.vc-row--three-up .vc-item {
+  max-width: 380px;
+}
+
+.vc-video-container {
+  width: 100%;
+  min-height: 0;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.vc-video {
+  display: block;
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.vc-label {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary, #ccc);
+  text-align: center;
+}

@@ -1,0 +1,42 @@
+{
+  "slideIndex": 24,
+  "originalSlideNum": 24,
+  "texts": [
+    "Activity: Image Manipulation Google colab",
+    "Please go to: tinyurl.com/img-manipulation",
+    "Make a copy of the notebook in your drive (File &gt; Save a copy in Drive)",
+    "Follow the instructions on the notebook",
+    "Ask us if you have any questions!!"
+  ],
+  "shapes": [
+    {
+      "name": "Google Shape;206;p32",
+      "placeholderType": "title",
+      "texts": [
+        "Activity: Image Manipulation Google colab"
+      ]
+    },
+    {
+      "name": "Google Shape;207;p32",
+      "placeholderType": "body",
+      "texts": [
+        "Please go to: tinyurl.com/img-manipulation",
+        "Make a copy of the notebook in your drive (File &gt; Save a copy in Drive)",
+        "Follow the instructions on the notebook",
+        "Ask us if you have any questions!!"
+      ]
+    }
+  ],
+  "media": [],
+  "externalLinks": [
+    {
+      "id": "rId3",
+      "url": "https://tinyurl.com/img-manipulation",
+      "type": "hyperlink"
+    }
+  ],
+  "layoutHints": {
+    "hasTitle": true,
+    "hasBody": true
+  }
+}

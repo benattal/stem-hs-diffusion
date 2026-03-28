@@ -1,0 +1,120 @@
+.slide--geometric-transform {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ---- Title ---- */
+.geo-transform__title {
+  color: var(--accent, #6c63ff);
+  font-size: 1.7rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.02em;
+  margin: 0 0 20px;
+  flex-shrink: 0;
+}
+
+/* ---- Two-column body ---- */
+.geo-transform__body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  width: 100%;
+  min-height: 0;
+}
+
+/* ---- Image panel ---- */
+.geo-transform__image-panel {
+  flex: 0 0 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.geo-transform__image-wrapper {
+  position: relative;
+  width: 340px;
+  height: 340px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  background: #111;
+}
+
+.geo-transform__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Crop overlay: darkens outside the crop region */
+.geo-transform__crop-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  /* cut out center 60% rectangle via mask */
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='340'%3E%3Crect width='340' height='340' fill='white'/%3E%3Crect x='68' y='68' width='204' height='204' fill='black'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='340'%3E%3Crect width='340' height='340' fill='white'/%3E%3Crect x='68' y='68' width='204' height='204' fill='black'/%3E%3C/svg%3E");
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+  pointer-events: none;
+}
+
+.geo-transform__crop-hole {
+  position: absolute;
+  top: 68px;
+  left: 68px;
+  width: 204px;
+  height: 204px;
+  border: 3px solid var(--accent, #6c63ff);
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.3);
+}
+
+/* ---- Grid panel ---- */
+.geo-transform__grid-panel {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.geo-transform__op-label {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
+  background: rgba(108, 99, 255, 0.15);
+  border: 1px solid rgba(108, 99, 255, 0.3);
+  padding: 6px 20px;
+  border-radius: 8px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.geo-transform__grid {
+  position: relative;
+}
+
+/* ---- Individual cell ---- */
+.geo-transform__cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  user-select: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}

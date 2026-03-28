@@ -1,0 +1,47 @@
+{
+  "slideIndex": 12,
+  "originalSlideNum": 12,
+  "texts": [],
+  "shapes": [
+    {
+      "name": "LensReplacePinhole",
+      "type": "picture",
+      "embedRef": "rId1",
+      "linkRef": "rId2"
+    }
+  ],
+  "media": [
+    {
+      "filename": "media9.mp4",
+      "relId": "rId2",
+      "type": "video",
+      "size": 1330377
+    },
+    {
+      "filename": "media9.mp4",
+      "relId": "rId1",
+      "type": "video",
+      "size": 1330377
+    },
+    {
+      "filename": "image11.png",
+      "relId": "rId5",
+      "type": "image",
+      "size": 273214
+    }
+  ],
+  "animations": [
+    {
+      "type": "buildSequence",
+      "steps": 5
+    },
+    {
+      "type": "buildSequence",
+      "steps": 5
+    }
+  ],
+  "layoutHints": {
+    "hasPictures": true,
+    "hasVideo": true
+  }
+}

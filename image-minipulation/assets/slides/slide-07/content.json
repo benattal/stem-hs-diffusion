@@ -1,0 +1,47 @@
+{
+  "slideIndex": 7,
+  "originalSlideNum": 7,
+  "texts": [],
+  "shapes": [
+    {
+      "name": "SensorArrayIntro",
+      "type": "picture",
+      "embedRef": "rId1",
+      "linkRef": "rId2"
+    }
+  ],
+  "media": [
+    {
+      "filename": "media4.mp4",
+      "relId": "rId2",
+      "type": "video",
+      "size": 2143863
+    },
+    {
+      "filename": "media4.mp4",
+      "relId": "rId1",
+      "type": "video",
+      "size": 2143863
+    },
+    {
+      "filename": "image9.png",
+      "relId": "rId5",
+      "type": "image",
+      "size": 250146
+    }
+  ],
+  "animations": [
+    {
+      "type": "buildSequence",
+      "steps": 5
+    },
+    {
+      "type": "buildSequence",
+      "steps": 5
+    }
+  ],
+  "layoutHints": {
+    "hasPictures": true,
+    "hasVideo": true
+  }
+}

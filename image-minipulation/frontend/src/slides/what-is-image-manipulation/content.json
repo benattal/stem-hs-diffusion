@@ -1,0 +1,20 @@
+{
+  "layout": "twoColumn",
+  "sectionLabel": "Introduction",
+  "title": "What is Image Manipulation?",
+  "bullets": [
+    "Image Manipulation is like giving a photo superpowers -- letting us crop, rotate, recolor, and transform images to highlight what matters or create something entirely new.",
+    "**Pixel-level** -- Adjust brightness, contrast, color balance",
+    "**Geometric** -- Crop, rotate, flip, scale, warp",
+    "**Compositing** -- Blend, stitch, and layer multiple images",
+    "**Enhancement** -- Sharpen, denoise, restore old photos"
+  ],
+  "imageSrc": "/slides/what-is-image-manipulation/image1.png",
+  "buildSteps": [
+    { "id": "bullet" },
+    { "id": "bullet" },
+    { "id": "bullet" },
+    { "id": "bullet" },
+    { "id": "bullet" }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "slideIndex": 18,
+  "originalSlideNum": 18,
+  "texts": [
+    "How are images formatted?",
+    "RGB channels",
+    "each channel is a 2D array of numbers between 0 and 255"
+  ],
+  "shapes": [
+    {
+      "name": "Title 1",
+      "placeholderType": "title",
+      "texts": [
+        "How are images formatted?"
+      ]
+    },
+    {
+      "name": "Google Shape;155;p27",
+      "texts": [
+        "RGB channels"
+      ]
+    },
+    {
+      "name": "Google Shape;155;p27",
+      "texts": [
+        "each channel is a 2D array of numbers between 0 and 255"
+      ]
+    },
+    {
+      "name": "Picture 4",
+      "type": "picture",
+      "embedRef": "rId3"
+    },
+    {
+      "name": "Picture 2",
+      "type": "picture",
+      "embedRef": "rId4"
+    }
+  ],
+  "media": [
+    {
+      "filename": "image13.png",
+      "relId": "rId3",
+      "type": "image",
+      "size": 39069
+    },
+    {
+      "filename": "image14.png",
+      "relId": "rId4",
+      "type": "image",
+      "size": 124106
+    }
+  ],
+  "transition": {
+    "type": "unknown",
+    "speed": "slow",
+    "advanceOnClick": true
+  },
+  "layoutHints": {
+    "hasTitle": true,
+    "hasPictures": true
+  }
+}

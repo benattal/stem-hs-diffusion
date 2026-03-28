@@ -23,6 +23,7 @@ app.use((req, res, next) => {
 const diffusionNotesRouter = createNotesRouter(join(root, 'diffusion/frontend/src/slides'));
 const filteringNotesRouter = createNotesRouter(join(root, 'filtering/frontend/src/slides'));
 const trackingNotesRouter = createNotesRouter(join(root, 'face-and-hand-tracking/frontend/src/slides'));
+const imageManipNotesRouter = createNotesRouter(join(root, 'image-minipulation/frontend/src/slides'));
 
 // Diffusion API
 app.use('/diffusion/api/auth', authRouter);
@@ -43,11 +44,18 @@ app.use('/tracking/api/numeric-poll', numericPollRouter);
 app.use('/tracking/api/notes', requirePresenter, trackingNotesRouter);
 app.get('/tracking/health', (req, res) => res.json({ status: 'ok', presentation: 'tracking', timestamp: new Date().toISOString() }));
 
+// Image Manipulation API
+app.use('/image-manip/api/auth', authRouter);
+app.use('/image-manip/api/poll', pollRouter);
+app.use('/image-manip/api/notes', requirePresenter, imageManipNotesRouter);
+app.get('/image-manip/health', (req, res) => res.json({ status: 'ok', presentation: 'image-manip', timestamp: new Date().toISOString() }));
+
 // ── Serve each frontend's built static files ──────────────────
 
 app.use('/diffusion', express.static(join(root, 'diffusion/frontend/dist')));
 app.use('/filtering', express.static(join(root, 'filtering/frontend/dist')));
 app.use('/tracking', express.static(join(root, 'face-and-hand-tracking/frontend/dist')));
+app.use('/image-manip', express.static(join(root, 'image-minipulation/frontend/dist')));
 
 // SPA fallback: serve index.html for any non-file route under each prefix
 app.get('/diffusion/*', (req, res) => {
@@ -58,6 +66,9 @@ app.get('/filtering/*', (req, res) => {
 });
 app.get('/tracking/*', (req, res) => {
   res.sendFile(join(root, 'face-and-hand-tracking/frontend/dist/index.html'));
+});
+app.get('/image-manip/*', (req, res) => {
+  res.sendFile(join(root, 'image-minipulation/frontend/dist/index.html'));
 });
 
 // ── Landing page ──────────────────────────────────────────────
@@ -142,6 +153,11 @@ app.get('/', (req, res) => {
       <h2>Generative AI &amp; Diffusion</h2>
       <p>How to make images with generative AI</p>
     </a>
+    <a class="card" href="/image-manip/">
+      <div class="card-icon">&#x1f5bc;</div>
+      <h2>Image Manipulation</h2>
+      <p>Crop, rotate, recolor &amp; transform images</p>
+    </a>
   </div>
 </body>
 </html>`);
@@ -151,7 +167,7 @@ app.get('/', (req, res) => {
 app.get('/health', (req, res) => {
   res.json({
     status: 'ok',
-    presentations: ['diffusion', 'filtering', 'tracking'],
+    presentations: ['diffusion', 'filtering', 'tracking', 'image-manip'],
     timestamp: new Date().toISOString(),
     uptime: process.uptime(),
   });
@@ -169,6 +185,7 @@ const server = app.listen(PORT, () => {
   console.log(`  http://localhost:${PORT}/diffusion/   Diffusion presentation`);
   console.log(`  http://localhost:${PORT}/filtering/   Filtering presentation`);
   console.log(`  http://localhost:${PORT}/tracking/    Tracking presentation`);
+  console.log(`  http://localhost:${PORT}/image-manip/ Image Manipulation presentation`);
   console.log('='.repeat(60));
 });
 

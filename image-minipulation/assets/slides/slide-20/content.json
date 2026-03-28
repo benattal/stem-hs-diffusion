@@ -1,0 +1,103 @@
+{
+  "slideIndex": 20,
+  "originalSlideNum": 20,
+  "texts": [
+    "Manipulating pixel values",
+    "How would you implement these?"
+  ],
+  "shapes": [
+    {
+      "name": "Google Shape;161;p28",
+      "placeholderType": "title",
+      "texts": [
+        "Manipulating pixel values"
+      ]
+    },
+    {
+      "name": "Google Shape;183;p29",
+      "texts": [
+        "How would you implement these?"
+      ]
+    },
+    {
+      "name": "PixelMultAnimation",
+      "type": "picture",
+      "embedRef": "rId1",
+      "linkRef": "rId2"
+    },
+    {
+      "name": "PixelDivAnimation",
+      "type": "picture",
+      "embedRef": "rId3",
+      "linkRef": "rId4"
+    },
+    {
+      "name": "PixelInvertAnimation",
+      "type": "picture",
+      "embedRef": "rId5",
+      "linkRef": "rId6"
+    }
+  ],
+  "media": [
+    {
+      "filename": "media19.mp4",
+      "relId": "rId3",
+      "type": "video",
+      "size": 183528
+    },
+    {
+      "filename": "media18.mp4",
+      "relId": "rId2",
+      "type": "video",
+      "size": 258610
+    },
+    {
+      "filename": "media18.mp4",
+      "relId": "rId1",
+      "type": "video",
+      "size": 258610
+    },
+    {
+      "filename": "media14.mp4",
+      "relId": "rId6",
+      "type": "video",
+      "size": 379075
+    },
+    {
+      "filename": "image18.png",
+      "relId": "rId11",
+      "type": "image",
+      "size": 61278
+    },
+    {
+      "filename": "media14.mp4",
+      "relId": "rId5",
+      "type": "video",
+      "size": 379075
+    },
+    {
+      "filename": "image20.png",
+      "relId": "rId10",
+      "type": "image",
+      "size": 519199
+    },
+    {
+      "filename": "media19.mp4",
+      "relId": "rId4",
+      "type": "video",
+      "size": 183528
+    },
+    {
+      "filename": "image19.png",
+      "relId": "rId9",
+      "type": "image",
+      "size": 517904
+    }
+  ],
+  "layoutHints": {
+    "hasTitle": true,
+    "hasPictures": true,
+    "hasGroups": true,
+    "hasVideo": true
+  }
+}

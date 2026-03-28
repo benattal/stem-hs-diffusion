@@ -1,0 +1,14 @@
+{
+  "layout": "pollResults",
+  "sectionLabel": "Intensity Operations",
+  "title": "Poll Results",
+  "pollId": "inverse-operation",
+  "question": "What happens to a pixel that was originally 0 (pure black)?",
+  "options": [
+    "It stays 0 (black)",
+    "It becomes 255 (white)",
+    "It becomes 128 (gray)",
+    "It becomes negative"
+  ],
+  "presetDistribution": [0, 0, 0, 0]
+}

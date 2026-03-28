@@ -1,0 +1,8 @@
+{
+  "layout": "colabLink",
+  "sectionLabel": "Hands-On Activity",
+  "title": "Image Manipulation Notebook",
+  "description": "Open the Google Colab notebook to follow along with the hands-on exercises.",
+  "colabUrl": "https://tinyurl.com/img-manipulation",
+  "imageSrc": "/slides/colab-notebook/image31.png"
+}
