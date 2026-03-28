@@ -2,18 +2,5 @@
   "layout": "pixelZoom",
   "sectionLabel": "Pixels & Color Channels",
   "title": "How Are Images Formatted?",
-  "imageSrc": "/slides/pixel-zoom/grumpy_cat.png",
-  "patchSize": 9,
-  "buildSteps": [
-    { "id": "zoom1x" },
-    { "id": "zoom2x" },
-    { "id": "zoom4x" },
-    { "id": "zoom8x" },
-    { "id": "zoom16x" },
-    { "id": "zoom32x" },
-    { "id": "zoom64x" },
-    { "id": "pixelGrid" },
-    { "id": "grayscaleIntensity" },
-    { "id": "rgbSplit" }
-  ]
+  "imageSrc": "/slides/pixel-zoom/hungry.png"
 }

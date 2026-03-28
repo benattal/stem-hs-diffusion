@@ -1,0 +1,6 @@
+{
+  "layout": "twoImage",
+  "sectionLabel": "Pixels & Color Channels",
+  "leftSrc": "/slides/pixel-zoom2/hungry.png",
+  "rightSrc": "/slides/pixel-zoom2/rgb_array.png"
+}

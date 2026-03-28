@@ -21,6 +21,9 @@ import GeometricTransformSlide from './layouts/GeometricTransformSlide/Geometric
 import RetouchingSliderSlide from './layouts/RetouchingSliderSlide/RetouchingSliderSlide.jsx';
 import PanoramaBuilderSlide from './layouts/PanoramaBuilderSlide/PanoramaBuilderSlide.jsx';
 import TwoColumnSlide from './layouts/TwoColumnSlide/TwoColumnSlide.jsx';
+import ThreeVideoSlide from './layouts/ThreeVideoSlide/ThreeVideoSlide.jsx';
+import TwoImageSlide from './layouts/TwoImageSlide/TwoImageSlide.jsx';
+import FiveVideoSlide from './layouts/FiveVideoSlide/FiveVideoSlide.jsx';
 
 const layoutMap = {
   title: TitleSlide,
@@ -40,6 +43,9 @@ const layoutMap = {
   retouchingSlider: RetouchingSliderSlide,
   panoramaBuilder: PanoramaBuilderSlide,
   twoColumn: TwoColumnSlide,
+  threeVideo: ThreeVideoSlide,
+  twoImage: TwoImageSlide,
+  fiveVideo: FiveVideoSlide,
 };
 
 export default createSlideRenderer(layoutMap, () => presentation);

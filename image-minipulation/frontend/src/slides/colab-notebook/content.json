@@ -4,5 +4,9 @@
   "title": "Image Manipulation Notebook",
   "description": "Open the Google Colab notebook to follow along with the hands-on exercises.",
   "colabUrl": "https://tinyurl.com/img-manipulation",
-  "imageSrc": "/slides/colab-notebook/image31.png"
+  "imageSrc": "/slides/colab-notebook/image31.png",
+  "steps": [
+    { "text": "Please go to: tinyurl.com/img-manipulation", "url": "https://tinyurl.com/img-manipulation" },
+    { "text": "Make a copy of the notebook in your drive (File > Save a copy in Drive)" }
+  ]
 }

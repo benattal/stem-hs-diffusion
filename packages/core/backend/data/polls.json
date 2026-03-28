@@ -18,5 +18,151 @@
       0,
       0
     ]
+  },
+  "blur-background": {
+    "options": [
+      "Image A",
+      "Image B"
+    ],
+    "counts": [
+      0,
+      0
+    ]
+  },
+  "benefits-dangers": {
+    "options": [
+      "Creative help",
+      "Useful automation tool for STEM",
+      "Spread of misinformation",
+      "Job loss because of AI"
+    ],
+    "counts": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "blur-spatial-kernel": {
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "counts": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "blur-temporal-kernel": {
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "counts": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "edge-spot": {
+    "options": [
+      "Image A",
+      "Image B"
+    ],
+    "counts": [
+      0,
+      0
+    ]
+  },
+  "pinhole-light": {
+    "options": [
+      "A mirror",
+      "A lens",
+      "A larger pinhole",
+      "Multiple pinholes"
+    ],
+    "counts": [
+      0,
+      1,
+      0,
+      0
+    ]
+  },
+  "histogram-add-subtract": {
+    "options": [
+      "Loop through each pixel and add 50, capping at 255 if it goes over",
+      "Multiply every pixel by 1.2 to make it brighter",
+      "Only add 50 to pixels that are below 200",
+      "Replace all pixels with the value 50"
+    ],
+    "counts": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "inverse-operation": {
+    "options": [
+      "It stays 0 (black)",
+      "It becomes 255 (white)",
+      "It becomes 128 (gray)",
+      "It becomes negative"
+    ],
+    "counts": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "crop-implementation": {
+    "options": [
+      "Delete the unwanted rows and columns, keeping only the desired rectangle",
+      "Set all pixels outside the region to 0 (black)",
+      "Shrink the entire image down to fit the cropped size",
+      "Copy the region and paste it over the rest of the image"
+    ],
+    "counts": [
+      0,
+      0,
+      1,
+      0
+    ]
+  },
+  "rotation-implementation": {
+    "options": [
+      "Row i, Column j moves to Row j, Column (height - 1 - i)",
+      "Every pixel shifts right by 90 positions and wraps around",
+      "The grid just gets transposed (rows become columns, columns become rows)",
+      "Each pixel rotates around the center point by 90 degrees"
+    ],
+    "counts": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "flip-implementation": {
+    "options": [
+      "Reverse the order of columns: column 0 swaps with the last column, column 1 with second-to-last, etc.",
+      "Reverse the order of rows: top row becomes bottom row",
+      "Rotate the grid 180 degrees",
+      "Swap the left half with the right half without reversing"
+    ],
+    "counts": [
+      0,
+      0,
+      0,
+      0
+    ]
   }
 }

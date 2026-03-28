@@ -1,0 +1,10 @@
+{
+  "layout": "threeVideo",
+  "sectionLabel": "Intensity Operations",
+  "title": "Pixel Manipulation",
+  "videos": [
+    { "src": "/slides/pixel-manipulation1/OriginalStaticColumn.mp4", "label": "Original Image" },
+    { "src": "/slides/pixel-manipulation1/PixelAddAnimation.mp4", "label": "Increasing Brightness" },
+    { "src": "/slides/pixel-manipulation1/PixelSubtractAnimation.mp4", "label": "Decreasing Brightness" }
+  ]
+}
